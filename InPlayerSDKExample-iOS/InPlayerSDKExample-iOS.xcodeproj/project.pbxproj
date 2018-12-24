@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		3672123F5C723EAB28870A93 /* Pods_InPlayerSDKExample_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7BA6C78590054282C7C7E4 /* Pods_InPlayerSDKExample_iOS.framework */; };
 		A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C05421CED043004D7EF7 /* AppDelegate.swift */; };
-		A718C05721CED043004D7EF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C05621CED043004D7EF7 /* ViewController.swift */; };
-		A718C05A21CED043004D7EF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C05821CED043004D7EF7 /* Main.storyboard */; };
-		A718C05C21CED044004D7EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A718C05B21CED044004D7EF7 /* Assets.xcassets */; };
 		A718C05F21CED044004D7EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */; };
 		A718C06A21CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C06921CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift */; };
 		A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80321D00FA50082D3AA /* InPlayer.swift */; };
@@ -37,9 +34,6 @@
 		88F6C7EEFF9614377F0481B2 /* Pods-InPlayerSDKExample-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOSTests/Pods-InPlayerSDKExample-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A718C05121CED043004D7EF7 /* InPlayerSDKExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InPlayerSDKExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A718C05421CED043004D7EF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A718C05621CED043004D7EF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A718C05921CED043004D7EF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A718C05B21CED044004D7EF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A718C05E21CED044004D7EF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A718C06021CED044004D7EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A718C06521CED044004D7EF7 /* InPlayerSDKExample-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPlayerSDKExample-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,9 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				A718C05421CED043004D7EF7 /* AppDelegate.swift */,
-				A718C05621CED043004D7EF7 /* ViewController.swift */,
-				A718C05821CED043004D7EF7 /* Main.storyboard */,
-				A718C05B21CED044004D7EF7 /* Assets.xcassets */,
 				A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */,
 				A718C06021CED044004D7EF7 /* Info.plist */,
 			);
@@ -306,8 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A718C05F21CED044004D7EF7 /* LaunchScreen.storyboard in Resources */,
-				A718C05C21CED044004D7EF7 /* Assets.xcassets in Resources */,
-				A718C05A21CED043004D7EF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +374,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
-				A718C05721CED043004D7EF7 /* ViewController.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
 				A74DB80C21D168440082D3AA /* Configuration.swift in Sources */,
 				A7D265D021D172AA0050085D /* StringConstants.swift in Sources */,
@@ -412,14 +400,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A718C05821CED043004D7EF7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A718C05921CED043004D7EF7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

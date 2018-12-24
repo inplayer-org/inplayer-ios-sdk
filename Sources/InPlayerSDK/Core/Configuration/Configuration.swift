@@ -76,7 +76,7 @@ extension InPlayer {
             guard isConfigured == false else { return }
             UserDefaults.clientId = clientId
             UserDefaults.environment = environment!
-            print("This should be executed once")
+            print("Configured: ClientId: \(clientId), environment: \(environment!.rawValue)")
             isConfigured = true
         }
 
