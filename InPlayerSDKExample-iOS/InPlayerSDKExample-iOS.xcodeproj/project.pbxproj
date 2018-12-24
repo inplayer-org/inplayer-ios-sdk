@@ -14,6 +14,10 @@
 		A718C05C21CED044004D7EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A718C05B21CED044004D7EF7 /* Assets.xcassets */; };
 		A718C05F21CED044004D7EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */; };
 		A718C06A21CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C06921CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift */; };
+		A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80321D00FA50082D3AA /* InPlayer.swift */; };
+		A74DB80C21D168440082D3AA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80B21D168440082D3AA /* Configuration.swift */; };
+		A7D265D021D172AA0050085D /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265CF21D172AA0050085D /* StringConstants.swift */; };
+		A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D321D1737E0050085D /* UserDefaultsExt.swift */; };
 		E4A087898FD13F8573C240E8 /* Pods_InPlayerSDKExample_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD8D52E622099CC4DFC6D74 /* Pods_InPlayerSDKExample_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		A718C06521CED044004D7EF7 /* InPlayerSDKExample-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPlayerSDKExample-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A718C06921CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSDKExample_iOSTests.swift; sourceTree = "<group>"; };
 		A718C06B21CED044004D7EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A74DB80321D00FA50082D3AA /* InPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayer.swift; sourceTree = "<group>"; };
+		A74DB80B21D168440082D3AA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A7D265CF21D172AA0050085D /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		A7D265D321D1737E0050085D /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
 		C1A9CB5F02C275EDB11C5D73 /* Pods-InPlayerSDKExample-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOSTests/Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7BA6C78590054282C7C7E4 /* Pods_InPlayerSDKExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDKExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A54D2FA744089C874FDD21 /* Pods-InPlayerSDKExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOS/Pods-InPlayerSDKExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,8 +149,76 @@
 		A718C09721CEDE6F004D7EF7 /* InPlayerSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A74DB80321D00FA50082D3AA /* InPlayer.swift */,
+				A7D265D121D1734B0050085D /* Core */,
+				A74DB80921D165D80082D3AA /* Notification */,
+				A74DB80821D165D00082D3AA /* Payment */,
 			);
 			path = InPlayerSDK;
+			sourceTree = "<group>";
+		};
+		A74DB80521D165410082D3AA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A74DB80721D165C30082D3AA /* Asset */,
+				A74DB80621D165B50082D3AA /* Account */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A74DB80621D165B50082D3AA /* Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		A74DB80721D165C30082D3AA /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		A74DB80821D165D00082D3AA /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		A74DB80921D165D80082D3AA /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		A74DB80A21D167790082D3AA /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A74DB80B21D168440082D3AA /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A7D265D121D1734B0050085D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A74DB80A21D167790082D3AA /* Configuration */,
+				A74DB80521D165410082D3AA /* API */,
+				A7D265D221D173660050085D /* Extensions */,
+				A7D265CF21D172AA0050085D /* StringConstants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A7D265D221D173660050085D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A7D265D321D1737E0050085D /* UserDefaultsExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,8 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
 				A718C05721CED043004D7EF7 /* ViewController.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
+				A74DB80C21D168440082D3AA /* Configuration.swift in Sources */,
+				A7D265D021D172AA0050085D /* StringConstants.swift in Sources */,
+				A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
