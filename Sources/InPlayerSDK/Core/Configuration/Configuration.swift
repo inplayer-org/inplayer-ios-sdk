@@ -3,18 +3,6 @@ import Foundation
 /// Interface declaring what is possible with Configuration class
 private protocol ConfigurationDataSource {
     /**
-     Bool property to check if configuration was set.
-
-     Used to prevent calling
-     ````
-     func configure(withClientId clientId: String, environment: EnvironmentType?)
-     ````
-     multiple times.
-     */
-    ///
-    static var isConfigured: Bool { get set }
-
-    /**
      Sets clientId and environment to UserDefaults.
      - Parameter clientId: Id of the client using the SDK
      - Parameter environment: Project *environment*. Defaults to production
@@ -64,11 +52,20 @@ public enum EnvironmentType: String {
 }
 
 
-extension InPlayer {
+public extension InPlayer {
     /// Class that setup project configuration
     final public class Configuration: ConfigurationDataSource {
 
-        static var isConfigured: Bool = false
+        /**
+         Bool property to check if configuration was set.
+
+         Used to prevent calling
+         ````
+         func configure(withClientId clientId: String, environment: EnvironmentType?)
+         ````
+         multiple times.
+         */
+        private static var isConfigured: Bool = false
 
         private init() {}
 

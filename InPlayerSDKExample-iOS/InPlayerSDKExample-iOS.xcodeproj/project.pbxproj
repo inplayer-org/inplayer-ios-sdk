@@ -15,6 +15,13 @@
 		A74DB80C21D168440082D3AA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80B21D168440082D3AA /* Configuration.swift */; };
 		A7D265D021D172AA0050085D /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265CF21D172AA0050085D /* StringConstants.swift */; };
 		A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D321D1737E0050085D /* UserDefaultsExt.swift */; };
+		A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D721D299230050085D /* INPAPIConfiguration.swift */; };
+		A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D921D29B230050085D /* NetworkConstants.swift */; };
+		A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265DB21D29F900050085D /* AccountAPIRouter.swift */; };
+		A7D265DE21D2A0310050085D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265DD21D2A0310050085D /* Account.swift */; };
+		A7D265E121D2D5190050085D /* INPAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E021D2D5190050085D /* INPAccountModel.swift */; };
+		A7D265E321D2D6210050085D /* INPAuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E221D2D6210050085D /* INPAuthorizationModel.swift */; };
+		A7D265E521D2DB6D0050085D /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */; };
 		E4A087898FD13F8573C240E8 /* Pods_InPlayerSDKExample_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD8D52E622099CC4DFC6D74 /* Pods_InPlayerSDKExample_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +50,13 @@
 		A74DB80B21D168440082D3AA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A7D265CF21D172AA0050085D /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		A7D265D321D1737E0050085D /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
+		A7D265D721D299230050085D /* INPAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAPIConfiguration.swift; sourceTree = "<group>"; };
+		A7D265D921D29B230050085D /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		A7D265DB21D29F900050085D /* AccountAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIRouter.swift; sourceTree = "<group>"; };
+		A7D265DD21D2A0310050085D /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		A7D265E021D2D5190050085D /* INPAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccountModel.swift; sourceTree = "<group>"; };
+		A7D265E221D2D6210050085D /* INPAuthorizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAuthorizationModel.swift; sourceTree = "<group>"; };
+		A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		C1A9CB5F02C275EDB11C5D73 /* Pods-InPlayerSDKExample-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOSTests/Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7BA6C78590054282C7C7E4 /* Pods_InPlayerSDKExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDKExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A54D2FA744089C874FDD21 /* Pods-InPlayerSDKExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOS/Pods-InPlayerSDKExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,8 +165,12 @@
 		A74DB80521D165410082D3AA /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A74DB80721D165C30082D3AA /* Asset */,
+				A7D265D721D299230050085D /* INPAPIConfiguration.swift */,
+				A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */,
+				A7D265DF21D2D4940050085D /* Models */,
 				A74DB80621D165B50082D3AA /* Account */,
+				A74DB80721D165C30082D3AA /* Asset */,
+				A7D265D921D29B230050085D /* NetworkConstants.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -160,6 +178,8 @@
 		A74DB80621D165B50082D3AA /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				A7D265DB21D29F900050085D /* AccountAPIRouter.swift */,
+				A7D265DD21D2A0310050085D /* Account.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -210,6 +230,15 @@
 				A7D265D321D1737E0050085D /* UserDefaultsExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A7D265DF21D2D4940050085D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7D265E021D2D5190050085D /* INPAccountModel.swift */,
+				A7D265E221D2D6210050085D /* INPAuthorizationModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,10 +402,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */,
+				A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */,
+				A7D265DE21D2A0310050085D /* Account.swift in Sources */,
 				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
+				A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
 				A74DB80C21D168440082D3AA /* Configuration.swift in Sources */,
+				A7D265E521D2DB6D0050085D /* NetworkDataSource.swift in Sources */,
+				A7D265E121D2D5190050085D /* INPAccountModel.swift in Sources */,
 				A7D265D021D172AA0050085D /* StringConstants.swift in Sources */,
+				A7D265E321D2D6210050085D /* INPAuthorizationModel.swift in Sources */,
 				A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
