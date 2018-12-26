@@ -5,7 +5,7 @@ public class NetworkDataSource {
      Generic method that creates and executes request.
         - Parameters:
             - route: Endpoint to be called
-            - decoder: Data decoder. Defaults to JSONDecored
+            - decoder: Data decoder. Defaults to JSONDecoder
             - completion: A closure to be executed once the request has finished.
             - result: Generic enum Result containing response or error depending of its state
      - Returns: The request

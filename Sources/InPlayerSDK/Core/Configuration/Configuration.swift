@@ -24,13 +24,15 @@ private protocol ConfigurationDataSource {
      was not called.
      - Returns: ClientId that was previously saved as optional string value.
      */
-    static func getClientId() -> String?
+    static func getClientId() -> String
 
     /**
      Method that retrieves project environment.
      - Returns: Project environment that was saved as EnvironmentTypes value.
      */
     static func getEnvironment() -> EnvironmentType
+
+    static func getBaseUrlString() -> String
 }
 
 /**
@@ -77,12 +79,23 @@ public extension InPlayer {
             isConfigured = true
         }
 
-        public static func getClientId() -> String? {
+        public static func getClientId() -> String {
             return UserDefaults.clientId
         }
 
         public static func getEnvironment() -> EnvironmentType {
             return UserDefaults.environment
+        }
+
+        public static func getBaseUrlString() -> String {
+            switch InPlayer.Configuration.getEnvironment() {
+            case .debug:
+                return NetworkConstants.BaseUrls.debug
+            case .staging:
+                return NetworkConstants.BaseUrls.staging
+            case .production:
+                return NetworkConstants.BaseUrls.production
+            }
         }
     }
 }

@@ -15,6 +15,9 @@ public struct INPAccount : Codable {
     let roles : [AccountType]?
     let createdAt : Double?
     let updatedAt : Double?
+    let uuid: String?
+    let merchantId: Int?
+    let merchantUUID: String?
     //    let socialAppsMetadata : [AnyObject]?
     //    let metadata : InPlayerMetadata?
 
@@ -28,6 +31,9 @@ public struct INPAccount : Codable {
         case referrer = "referrer"
         case roles = "roles"
         case updatedAt = "updated_at"
+        case uuid = "uuid"
+        case merchantId = "merchant_id"
+        case merchantUUID = "merchant_uuid"
 //        case metadata = "metadata"
 //        case socialAppsMetadata = "social_apps_metadata"
     }
@@ -48,6 +54,9 @@ public struct INPAccount : Codable {
         }
         createdAt = try values.decodeIfPresent(Double.self, forKey: .createdAt)
         updatedAt = try values.decodeIfPresent(Double.self, forKey: .updatedAt)
+        uuid = try values.decodeIfPresent(String.self, forKey: .uuid)
+        merchantId = try values.decodeIfPresent(Int.self, forKey: .merchantId)
+        merchantUUID = try values.decodeIfPresent(String.self, forKey: .merchantUUID)
         //        metadata = try InPlayerMetadata(from: decoder)
         //        socialAppsMetadata = try values.decodeIfPresent([AnyObject].self, forKey: .socialAppsMetadata)
     }

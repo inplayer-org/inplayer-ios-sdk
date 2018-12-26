@@ -21,14 +21,7 @@ public protocol INPAPIConfiguration: URLRequestConvertible {
 public extension INPAPIConfiguration {
 
     var baseURL: String {
-        switch InPlayer.Configuration.getEnvironment() {
-        case .debug:
-            return NetworkConstants.BaseUrls.debug
-        case .staging:
-            return NetworkConstants.BaseUrls.staging
-        case .production:
-            return NetworkConstants.BaseUrls.production
-        }
+        return InPlayer.Configuration.getBaseUrlString()
     }
     
     func asURLRequest() throws -> URLRequest {
@@ -44,6 +37,11 @@ public extension INPAPIConfiguration {
                             forHTTPHeaderField: NetworkConstants.HeaderParameters.contentType)
         urlRequest.setValue(NetworkConstants.HeaderParameters.applicationJSON,
                             forHTTPHeaderField: NetworkConstants.HeaderParameters.contentType)
+
+        if InPlayer.Account.isAuthenticated() {
+            urlRequest.setValue(NetworkConstants.HeaderParameters.bearerToken + INPCredentials.getCredentials().accessToken,
+                                forHTTPHeaderField: NetworkConstants.HeaderParameters.authorization)
+        }
 
         // Parameters
         guard let parameters = parameters else { return urlRequest }

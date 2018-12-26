@@ -19,6 +19,7 @@ public struct NetworkConstants {
     public struct Endpoints {
         public struct Account {
             public static let createAccount = "/accounts"
+            public static let accountInfo = "/accounts"
         }
     }
 }
