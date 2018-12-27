@@ -2,10 +2,10 @@ import Foundation
 
 protocol UserDefaultsDataSource {
     /// Sets and retrieves clientId from UserDefaults
-    static var clientId: String { get set }
+    static var clientId: String { set get }
 
     /// Sets and retrieves environment
-    static var environment: EnvironmentType { get set }
+    static var environment: EnvironmentType { set get }
 
     static var credentials: INPCredentials { get set }
 }
@@ -17,7 +17,7 @@ extension UserDefaults: UserDefaultsDataSource {
             return standard.string(forKey: InPlayerConstants.UserDefaultsKeys.clientId) ?? ""
         }
         set {
-            standard.set(clientId, forKey: InPlayerConstants.UserDefaultsKeys.clientId)
+            standard.set(newValue, forKey: InPlayerConstants.UserDefaultsKeys.clientId)
         }
     }
 
@@ -32,14 +32,15 @@ extension UserDefaults: UserDefaultsDataSource {
             return environment
         }
         set {
-            standard.set(environment.rawValue, forKey: InPlayerConstants.UserDefaultsKeys.environment)
+            standard.set(newValue.rawValue, forKey: InPlayerConstants.UserDefaultsKeys.environment)
+            standard.synchronize()
         }
     }
 
     static var credentials: INPCredentials {
         get {
             guard
-                let savedCredentialData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.token) as? Data,
+                let savedCredentialData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.credentials) as? Data,
                 let credentials = try? JSONDecoder().decode(INPCredentials.self, from: savedCredentialData)
             else {
                 return INPCredentials(accessToken: "", refreshToken: "", expires: 0)
@@ -47,8 +48,8 @@ extension UserDefaults: UserDefaultsDataSource {
             return credentials
         }
         set {
-            let encoded = try? JSONEncoder().encode(credentials)
-            standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.token)
+            let encoded = try? JSONEncoder().encode(newValue)
+            standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.credentials)
         }
     }
 }

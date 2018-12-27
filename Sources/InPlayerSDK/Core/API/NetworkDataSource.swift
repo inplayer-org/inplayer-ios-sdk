@@ -3,22 +3,23 @@ import Alamofire
 public class NetworkDataSource {
     /**
      Generic method that creates and executes request.
-        - Parameters:
-            - route: Endpoint to be called
-            - decoder: Data decoder. Defaults to JSONDecoder
-            - completion: A closure to be executed once the request has finished.
-            - result: Generic enum Result containing response or error depending of its state
+     - Parameters:
+        - route: Endpoint to be called
+        - decoder: Data decoder. Defaults to JSONDecoder
+        - completion: A closure to be executed once the request has finished.
+        - result: Generic enum Result containing response or error depending of its state
      - Returns: The request
      */
     @discardableResult
     public static func performRequest<T:Decodable>(route: INPAPIConfiguration,
                                                    decoder: JSONDecoder = JSONDecoder(),
                                                    completion: @escaping (_ result: Result<T>)->Void) -> Request {
-        return AF.request(route).responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
+        return AF.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
             // TODO: Maybe this should use different parameter check
-            if InPlayer.Configuration.getEnvironment() == .debug {
+            if InPlayer.Configuration.getEnvironment() != .production {
                 print("=================================")
-                print("[POST REQUEST]:  \(response.request!)")
+                print("[REQUEST]:  \(response.request!)")
+                print("[REQUEST METHOD]: \(String(describing:response.request?.httpMethod))")
                 print("[REQUEST HEADERS]:  \(String(describing: response.request?.allHTTPHeaderFields))")
                 print("[PARAMS]: \(String(describing: route.parameters))")
                 print("[RESPONSE RESULT]: \(response.result)")

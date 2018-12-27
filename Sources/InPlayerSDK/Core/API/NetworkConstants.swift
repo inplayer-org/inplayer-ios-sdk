@@ -20,6 +20,12 @@ public struct NetworkConstants {
         public struct Account {
             public static let createAccount = "/accounts"
             public static let accountInfo = "/accounts"
+            public static let logout = "/accounts/logout"
+            public static let updateAccount = "/accounts"
+            public static let changePassword = "/accounts/change-password"
+            public static let eraseAccount = "/accounts/erase"
+            public static let forgotPassword = "/accounts/forgot-password"
+            public static let authenticate = "/accounts/authenticate"
         }
     }
 }

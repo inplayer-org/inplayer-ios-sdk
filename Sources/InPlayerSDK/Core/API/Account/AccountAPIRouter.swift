@@ -3,21 +3,24 @@ import Alamofire
 /// Enum of available account api routes
 enum AccountAPIRouter: INPAPIConfiguration {
     //    static func authenticateUser()
-    //    static func logout()
-    //    static func getUser()
-    //    static func updateUser()
-    //    static func eraseUser()
-    //    static func changePassword()
     //    static func requestForgotPasswordToken()
     //    static func setNewPassword()
 
     case createAccount(parameters: [String: Any])
     case getAccountInfo()
+    case logout()
+    case updateAccount(parameters: [String: Any])
+    case changePassword(parameters: [String: Any])
+    case eraseAccount(parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
-        case .createAccount:
+        case .createAccount, .changePassword:
             return .post
+        case .updateAccount:
+            return .put
+        case .eraseAccount:
+            return .delete
         default:
             return .get
         }
@@ -29,12 +32,26 @@ enum AccountAPIRouter: INPAPIConfiguration {
             return NetworkConstants.Endpoints.Account.createAccount
         case .getAccountInfo:
             return NetworkConstants.Endpoints.Account.accountInfo
+        case .logout:
+            return NetworkConstants.Endpoints.Account.logout
+        case .updateAccount:
+            return NetworkConstants.Endpoints.Account.updateAccount
+        case .changePassword:
+            return NetworkConstants.Endpoints.Account.changePassword
+        case .eraseAccount:
+            return NetworkConstants.Endpoints.Account.eraseAccount
         }
     }
 
     var parameters: Parameters? {
         switch self {
         case .createAccount(let parameters):
+            return parameters
+        case .updateAccount(let parameters):
+            return parameters
+        case .changePassword(let parameters):
+            return parameters
+        case .eraseAccount(let parameters):
             return parameters
         default:
             return nil
@@ -58,6 +75,7 @@ public class INPAccountService {
                                      passwordConfirmation: String,
                                      type: AccountType,
                                      referrer: String? = nil,
+                                     metadata: [String: Any]? = nil,
                                      completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
         var params: [String: Any] = [
             AccountParameters.fullName: fullName,
@@ -70,6 +88,9 @@ public class INPAccountService {
         if let referrer = referrer {
             params[AccountParameters.referrer] = referrer
         }
+        if let metadata = metadata {
+            params[AccountParameters.metadata] = metadata
+        }
         return NetworkDataSource.performRequest(route: AccountAPIRouter.createAccount(parameters: params),
                                                 completion: completion)
     }
@@ -77,6 +98,49 @@ public class INPAccountService {
     @discardableResult
     public static func getUserInfo(completion: @escaping (Result<INPAccount>) -> Void) -> Request {
         return NetworkDataSource.performRequest(route: AccountAPIRouter.getAccountInfo(), completion: completion)
+    }
+
+    @discardableResult
+    public static func logout(completion: @escaping (Result<Empty>) -> Void) -> Request {
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.logout(), completion: completion)
+    }
+
+    @discardableResult
+    public static func updateAccount(fullName: String,
+                                     referrer: String? = nil,
+                                     metadata: [String: Any]? = nil,
+                                     completion: @escaping (Result<INPAccount>) -> Void) -> Request {
+        var params: [String: Any] = [AccountParameters.fullName: fullName]
+        if let metadata = metadata {
+            params[AccountParameters.metadata] = metadata
+        }
+        if let referrer = referrer {
+            params[AccountParameters.referrer] = referrer
+        }
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.updateAccount(parameters: params),
+                                                completion: completion)
+    }
+
+    @discardableResult
+    public static func changePassword(oldPassword: String,
+                                      newPassword: String,
+                                      newPasswordConfirmation: String,
+                                      completion: @escaping (Result<Empty>) -> Void) -> Request {
+        let params: [String: Any] = [
+            AccountParameters.oldPassword: oldPassword,
+            AccountParameters.password: newPassword,
+            AccountParameters.passwordConfirmation: newPasswordConfirmation
+        ]
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.changePassword(parameters: params),
+                                                completion: completion)
+    }
+
+    @discardableResult
+    public static func eraseAccount(password: String,
+                                    completion: @escaping (Result<Empty>) -> Void) -> Request {
+        let params = [AccountParameters.password: password]
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.eraseAccount(parameters: params),
+                                                completion: completion)
     }
 }
 
@@ -92,4 +156,5 @@ private struct AccountParameters {
     static let merchantUUID = "merchant_uuid"
     static let referrer = "referrer"
     static let metadata = "metadata"
+    static let oldPassword = "old_password"
 }
