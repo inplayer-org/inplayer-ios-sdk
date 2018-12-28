@@ -26,6 +26,7 @@ public struct NetworkConstants {
             public static let eraseAccount = "/accounts/erase"
             public static let forgotPassword = "/accounts/forgot-password"
             public static let authenticate = "/accounts/authenticate"
+            public static let setNewPassword = "/accounts/forgot-password/%@"
         }
     }
 }

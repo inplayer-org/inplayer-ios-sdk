@@ -12,12 +12,15 @@ enum AccountAPIRouter: INPAPIConfiguration {
     case updateAccount(parameters: [String: Any])
     case changePassword(parameters: [String: Any])
     case eraseAccount(parameters: [String: Any])
+    case setNewPassword(token: String, parameters: [String: Any])
+    case forgotPassword(parameters: [String: Any])
+    case authenticate(parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
-        case .createAccount, .changePassword:
+        case .createAccount, .changePassword, .forgotPassword, .authenticate:
             return .post
-        case .updateAccount:
+        case .updateAccount, .setNewPassword:
             return .put
         case .eraseAccount:
             return .delete
@@ -40,6 +43,12 @@ enum AccountAPIRouter: INPAPIConfiguration {
             return NetworkConstants.Endpoints.Account.changePassword
         case .eraseAccount:
             return NetworkConstants.Endpoints.Account.eraseAccount
+        case .setNewPassword(let token, _):
+            return String(format: NetworkConstants.Endpoints.Account.setNewPassword, token)
+        case .forgotPassword:
+            return NetworkConstants.Endpoints.Account.forgotPassword
+        case .authenticate:
+            return NetworkConstants.Endpoints.Account.authenticate
         }
     }
 
@@ -52,6 +61,12 @@ enum AccountAPIRouter: INPAPIConfiguration {
         case .changePassword(let parameters):
             return parameters
         case .eraseAccount(let parameters):
+            return parameters
+        case .setNewPassword(_, let parameters):
+            return parameters
+        case .forgotPassword(let parameters):
+            return parameters
+        case .authenticate(let parameters):
             return parameters
         default:
             return nil
@@ -142,6 +157,46 @@ public class INPAccountService {
         return NetworkDataSource.performRequest(route: AccountAPIRouter.eraseAccount(parameters: params),
                                                 completion: completion)
     }
+
+    @discardableResult
+    public static func setNewPassword(token: String,
+                                      password: String,
+                                      passwordConfirmation: String,
+                                      completion: @escaping (Result<Empty>) -> Void) -> Request {
+        let params = [
+            AccountParameters.password: password,
+            AccountParameters.passwordConfirmation: passwordConfirmation
+        ]
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.setNewPassword(token: token,
+                                                                                       parameters: params),
+                                                completion: completion)
+    }
+
+    @discardableResult
+    public static func forgotPassword(email: String,
+                                      completion: @escaping (Result<Empty>) -> Void) -> Request {
+        let params = [
+            AccountParameters.merchantUUID: InPlayer.Configuration.getClientId(),
+            AccountParameters.email: email
+        ]
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.forgotPassword(parameters: params),
+                                                completion: completion)
+    }
+
+    @discardableResult
+    public static func authenticate(username: String,
+                                    password: String,
+                                    completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
+        let params = [
+            AccountParameters.username: username,
+            AccountParameters.password: password,
+            AccountParameters.grantType: "password",
+            AccountParameters.clientId: InPlayer.Configuration.getClientId()
+        ]
+
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.authenticate(parameters: params),
+                                                completion: completion)
+    }
 }
 
 
@@ -149,6 +204,7 @@ public class INPAccountService {
 
 private struct AccountParameters {
     static let fullName = "full_name"
+    static let username = "username"
     static let email = "email"
     static let password = "password"
     static let passwordConfirmation = "password_confirmation"
@@ -157,4 +213,6 @@ private struct AccountParameters {
     static let referrer = "referrer"
     static let metadata = "metadata"
     static let oldPassword = "old_password"
+    static let grantType = "grant_type"
+    static let clientId = "client_id"
 }

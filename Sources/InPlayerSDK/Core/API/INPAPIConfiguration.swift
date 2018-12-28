@@ -50,7 +50,7 @@ public extension INPAPIConfiguration {
             let encoding: ParameterEncoding = (method == .post) ?
                 Alamofire.JSONEncoding.default : Alamofire.URLEncoding.default
             do {
-                urlRequest = try encoding.encode(urlRequest, with: parameters)
+                urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }

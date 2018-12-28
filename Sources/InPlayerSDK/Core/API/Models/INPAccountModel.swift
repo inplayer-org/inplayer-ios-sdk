@@ -21,7 +21,6 @@ public struct INPAccount : Codable {
     //    let socialAppsMetadata : [AnyObject]?
     let metadata : [String: String]?
 
-
     enum CodingKeys: String, CodingKey {
         case completed = "completed"
         case createdAt = "created_at"

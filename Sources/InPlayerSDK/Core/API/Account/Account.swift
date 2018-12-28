@@ -57,12 +57,12 @@ private protocol AccountsAPI {
     static func logout(success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
-     Updates account information
+     Updates account information.
      - Parameters:
-         - fullName: Account full name. Can be new or updated. (Required)
+         - fullName: Account full name. Can be new or updated. (Required).
          - metadata: Optional key-value object containing additional fields that needs to be updated or added.
          - success: A closure to be executed once the request has finished successfully.
-         - account: Contains account info
+         - account: Contains account info.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
      */
@@ -74,7 +74,7 @@ private protocol AccountsAPI {
                               failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
-     Updates account password
+     Updates account password.
      - Parameters:
          - oldPassword: Old account password.
          - newPassword: New account password.
@@ -91,9 +91,9 @@ private protocol AccountsAPI {
                                failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
-     Deletes account and all information stored with it
+     Deletes account and all information stored with it.
      - Parameters:
-         - password: Account password
+         - password: Account password.
          - success: A closure to be executed once the request has finished successfully.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
@@ -104,9 +104,20 @@ private protocol AccountsAPI {
                              failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
-     Authenticates account
+     Authenticates account using username and password
+     - Parameters:
+         - username: Account username
+         - password: Account password
+         - success: A closure to be executed once the request has finished successfully.
+         - account: Logged in account
+         - failure: A closure to be executed once the request has finished with error.
+         - error: Containing information about the error that occurred.
      */
-//    static func authenticateUser()
+    @discardableResult
+    static func authenticate(username: String,
+                             password: String,
+                             success: @escaping (_ authorizationModel: INPAuthorizationModel) -> Void,
+                             failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
      Refreshes account access_token
@@ -114,14 +125,34 @@ private protocol AccountsAPI {
 // static func refreshToken()
 
     /**
-     Sends forgot password email
+     Sends forgot password instructions on specified email.
+     - Parameters:
+         - email: Email on which instructions should be sent.
+         - success: A closure to be executed once the request has finished successfully.
+         - failure: A closure to be executed once the request has finished with error.
+         - error: Containing information about the error that occurred.
      */
-//    static func requestForgotPasswordToken()
+    @discardableResult
+    static func forgotPassword(email: String,
+                               success: @escaping () -> Void,
+                               failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
-     Sets new password
+     Sets new password for account using the token from account's email.
+     - Parameters:
+         - token: String received on account's email.
+         - password: New account password.
+         - passwordConfirmation: New password confirmation.
+         - success: A closure to be executed once the request has finished successfully.
+         - failure: A closure to be executed once the request has finished with error.
+         - error: Containing information about the error that occurred.
      */
-//    static func setNewPassword()
+    @discardableResult
+    static func setNewPassword(token: String,
+                               password: String,
+                               passwordConfirmation: String,
+                               success: @escaping () -> Void,
+                               failure: @escaping (_ error: Error) -> Void) -> Request
 }
 
 public extension InPlayer {
@@ -152,6 +183,10 @@ public extension InPlayer {
                                                    metadata: metadata) { (result) in
                 switch result {
                 case .success(let response):
+                    //---------------------------------------------//
+                    // TODO: do a guard check of properties exists,
+                    // else return custom error!
+                    //---------------------------------------------//
                     UserDefaults.credentials = INPCredentials(accessToken: response.accessToken ?? "",
                                                               refreshToken: "",
                                                               expires: response.expires ?? 0)
@@ -233,6 +268,62 @@ public extension InPlayer {
                 switch result {
                 case .success(_):
                     success()
+                case .failure(let error):
+                    failure(error)
+                }
+            })
+        }
+
+        @discardableResult
+        public static func setNewPassword(token: String,
+                                          password: String,
+                                          passwordConfirmation: String,
+                                          success: @escaping () -> Void,
+                                          failure: @escaping (Error) -> Void) -> Request {
+            return INPAccountService.setNewPassword(token: token,
+                                                    password: password,
+                                                    passwordConfirmation: passwordConfirmation,
+                                                    completion: { result in
+                switch result {
+                case .success(_):
+                    success()
+                case .failure(let error):
+                    failure(error)
+                }
+            })
+        }
+
+        @discardableResult
+        public static func forgotPassword(email: String,
+                                          success: @escaping () -> Void,
+                                          failure: @escaping (Error) -> Void) -> Request {
+            return INPAccountService.forgotPassword(email: email, completion: { result in
+                switch result {
+                case .success(_):
+                    success()
+                case .failure(let error):
+                    failure(error)
+                }
+            })
+        }
+
+        @discardableResult
+        public static func authenticate(username: String,
+                                        password: String,
+                                        success: @escaping (INPAuthorizationModel) -> Void,
+                                        failure: @escaping (Error) -> Void) -> Request {
+            return INPAccountService.authenticate(username: username, password: password, completion: { result in
+                switch result {
+                case .success(let authorization):
+                    //---------------------------------------------//
+                    // TODO: do a guard check of properties exists,
+                    // else return custom error!
+                    //---------------------------------------------//
+                    UserDefaults.credentials = INPCredentials(accessToken: authorization.accessToken ?? "",
+                                                              refreshToken: authorization.refreshToken ?? "",
+                                                              expires: authorization.expires ?? 0)
+
+                    success(authorization)
                 case .failure(let error):
                     failure(error)
                 }
