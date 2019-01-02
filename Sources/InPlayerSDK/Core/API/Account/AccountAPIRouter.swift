@@ -15,10 +15,12 @@ enum AccountAPIRouter: INPAPIConfiguration {
     case setNewPassword(token: String, parameters: [String: Any])
     case forgotPassword(parameters: [String: Any])
     case authenticate(parameters: [String: Any])
+    case refreshToken(parameters: [String: Any])
+    case authenticateClientCredentials(parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
-        case .createAccount, .changePassword, .forgotPassword, .authenticate:
+        case .createAccount, .changePassword, .forgotPassword, .authenticate, .refreshToken, .authenticateClientCredentials:
             return .post
         case .updateAccount, .setNewPassword:
             return .put
@@ -47,7 +49,7 @@ enum AccountAPIRouter: INPAPIConfiguration {
             return String(format: NetworkConstants.Endpoints.Account.setNewPassword, token)
         case .forgotPassword:
             return NetworkConstants.Endpoints.Account.forgotPassword
-        case .authenticate:
+        case .authenticate, .refreshToken, .authenticateClientCredentials:
             return NetworkConstants.Endpoints.Account.authenticate
         }
     }
@@ -67,6 +69,10 @@ enum AccountAPIRouter: INPAPIConfiguration {
         case .forgotPassword(let parameters):
             return parameters
         case .authenticate(let parameters):
+            return parameters
+        case .refreshToken(let parameters):
+            return parameters
+        case .authenticateClientCredentials(let parameters):
             return parameters
         default:
             return nil
@@ -190,11 +196,35 @@ public class INPAccountService {
         let params = [
             AccountParameters.username: username,
             AccountParameters.password: password,
-            AccountParameters.grantType: "password",
+            AccountParameters.grantType: AuthenticationTypes.password.rawValue,
             AccountParameters.clientId: InPlayer.Configuration.getClientId()
         ]
 
         return NetworkDataSource.performRequest(route: AccountAPIRouter.authenticate(parameters: params),
+                                                completion: completion)
+    }
+
+    @discardableResult
+    public static func refreshAccessToken(using refreshToken: String,
+                                          completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
+        let params = [
+            AccountParameters.clientId: InPlayer.Configuration.getClientId(),
+            AccountParameters.grantType: AuthenticationTypes.refreshToken.rawValue,
+            AccountParameters.refreshToken: refreshToken
+        ]
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.refreshToken(parameters: params),
+                                                completion: completion)
+    }
+
+    @discardableResult
+    public static func authenticateUsingClientCredentials(clientSecret: String,
+                                                          completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
+        let params = [
+            AccountParameters.clientId: InPlayer.Configuration.getClientId(),
+            AccountParameters.grantType: AuthenticationTypes.clientCredentials.rawValue,
+            AccountParameters.clientSecret: clientSecret
+        ]
+        return NetworkDataSource.performRequest(route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
                                                 completion: completion)
     }
 }
@@ -203,16 +233,24 @@ public class INPAccountService {
 
 
 private struct AccountParameters {
-    static let fullName = "full_name"
-    static let username = "username"
-    static let email = "email"
-    static let password = "password"
+    static let fullName             = "full_name"
+    static let username             = "username"
+    static let email                = "email"
+    static let password             = "password"
     static let passwordConfirmation = "password_confirmation"
-    static let type = "type"
-    static let merchantUUID = "merchant_uuid"
-    static let referrer = "referrer"
-    static let metadata = "metadata"
-    static let oldPassword = "old_password"
-    static let grantType = "grant_type"
-    static let clientId = "client_id"
+    static let type                 = "type"
+    static let merchantUUID         = "merchant_uuid"
+    static let referrer             = "referrer"
+    static let metadata             = "metadata"
+    static let oldPassword          = "old_password"
+    static let grantType            = "grant_type"
+    static let clientId             = "client_id"
+    static let refreshToken         = "refresh_token"
+    static let clientSecret         = "client_secret"
+}
+
+private enum AuthenticationTypes: String {
+    case password           = "password"
+    case clientCredentials  = "client_credentials"
+    case refreshToken       = "refresh_token"
 }

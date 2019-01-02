@@ -109,7 +109,7 @@ private protocol AccountsAPI {
          - username: Account username
          - password: Account password
          - success: A closure to be executed once the request has finished successfully.
-         - account: Logged in account
+         - authorizationModel: Model containing access tokens and logged in account.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
      */
@@ -121,8 +121,31 @@ private protocol AccountsAPI {
 
     /**
      Refreshes account access_token
+     - Parameters:
+         - refreshToken: Valid refresh token.
+         - success: A closure to be executed once the request has finished successfully.
+         - authorizationModel: Model containing access tokens and logged in account.
+         - failure: A closure to be executed once the request has finished with error.
+         - error: Containing information about the error that occurred.
      */
-// static func refreshToken()
+    @discardableResult
+    static func refreshAccessToken(using refreshToken: String,
+                                   success: @escaping (_ authorizationModel: INPAuthorizationModel) -> Void,
+                                   failure: @escaping (_ error: Error) -> Void) -> Request
+
+    /**
+     Authenticates account using client credentials
+     - Parameters:
+         - clientSecret: Client secret
+         - success: A closure to be executed once the request has finished successfully.
+         - authorizationModel: Model containing access tokens and logged in account.
+         - failure: A closure to be executed once the request has finished with error.
+         - error: Containing information about the error that occurred.
+     */
+    @discardableResult
+    static func authenticateUsingClientCredentials(clientSecret: String,
+                                                   success: @escaping (_ authorizationModel: INPAuthorizationModel) -> Void,
+                                                   failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
      Sends forgot password instructions on specified email.
@@ -324,6 +347,37 @@ public extension InPlayer {
                                                               expires: authorization.expires ?? 0)
 
                     success(authorization)
+                case .failure(let error):
+                    failure(error)
+                }
+            })
+        }
+
+        @discardableResult
+        public static func refreshAccessToken(using refreshToken: String,
+                                              success: @escaping (INPAuthorizationModel) -> Void,
+                                              failure: @escaping (Error) -> Void) -> Request {
+            return INPAccountService.refreshAccessToken(using: refreshToken, completion: { result in
+                switch result {
+                case .success(let authorization):
+                    UserDefaults.credentials = INPCredentials(accessToken: authorization.accessToken ?? "",
+                                                              refreshToken: authorization.refreshToken ?? "",
+                                                              expires: authorization.expires ?? 0)
+                    success(authorization)
+                case .failure(let error):
+                    failure(error)
+                }
+            })
+        }
+
+        @discardableResult
+        public static func authenticateUsingClientCredentials(clientSecret: String,
+                                                              success: @escaping (INPAuthorizationModel) -> Void,
+                                                              failure: @escaping (Error) -> Void) -> Request {
+            return INPAccountService.authenticateUsingClientCredentials(clientSecret: clientSecret, completion: { result in
+                switch result {
+                case .success(let response):
+                    success(response)
                 case .failure(let error):
                     failure(error)
                 }
