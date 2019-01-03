@@ -28,5 +28,10 @@ public struct NetworkConstants {
             public static let authenticate   = "/accounts/authenticate"
             public static let setNewPassword = "/accounts/forgot-password/%@"
         }
+
+        public struct Asset {
+            public static let itemDetails = "/items/%@"
+            public static let itemAccessFees = "items/%@/access-fees"
+        }
     }
 }
