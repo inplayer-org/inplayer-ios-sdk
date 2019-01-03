@@ -13,7 +13,7 @@ public struct INPCredentials: Codable {
 
 extension INPCredentials: CredentialsProvider {
     public static func getCredentials() -> INPCredentials {
-        return UserDefaults.token
+        return UserDefaults.credentials
     }
 
     public func isTokenValid() -> Bool {

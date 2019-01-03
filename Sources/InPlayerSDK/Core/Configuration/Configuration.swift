@@ -12,12 +12,12 @@ private protocol ConfigurationDataSource {
      InPlayer.Configuration.configure(withClientId: "XXXXX")
      InPlayer.Configuration.configure(withClientId: "XXXXX", environment: .debug)
      ````
-    */
+     */
     static func configure(withClientId clientId: String, environment: EnvironmentType?)
 
     /**
      Method that retrieves clientId
-     - Warning: It can be nil if
+     - Warning: It can be empty string if
      ````
      func configure(withClientId clientId: String, environment: EnvironmentType?)
      ````
@@ -32,6 +32,10 @@ private protocol ConfigurationDataSource {
      */
     static func getEnvironment() -> EnvironmentType
 
+    /**
+     Method that retrieves server base url string.
+     - Returns: String representation of server base url depending on environment.
+     */
     static func getBaseUrlString() -> String
 }
 
@@ -41,7 +45,7 @@ private protocol ConfigurationDataSource {
  case production
  case debug
  case staging
-*/
+ */
 public enum EnvironmentType: String {
     /// Sets project environment to production (default)
     case production
@@ -69,22 +73,34 @@ public extension InPlayer {
          */
         private static var isConfigured: Bool = false
 
+        /**
+         ClientId from the configuration. Defaults to empty string.
+         */
+        private static var clientId: String = ""
+
+        /**
+         Environment from the configuration. Defaults to production.
+         */
+        private static var environment: EnvironmentType = .production
+
         private init() {}
 
         public static func configure(withClientId clientId: String, environment: EnvironmentType? = .production) {
             guard isConfigured == false else { return }
             UserDefaults.clientId = clientId
             UserDefaults.environment = environment!
-            print("Configured: ClientId: \(clientId), environment: \(environment!.rawValue)")
+            self.clientId = clientId
+            self.environment = environment!
+            print("Configured: ClientId: \(self.clientId), environment: \(self.environment.rawValue)")
             isConfigured = true
         }
 
         public static func getClientId() -> String {
-            return UserDefaults.clientId
+            return clientId
         }
 
         public static func getEnvironment() -> EnvironmentType {
-            return UserDefaults.environment
+            return environment
         }
 
         public static func getBaseUrlString() -> String {
@@ -99,3 +115,4 @@ public extension InPlayer {
         }
     }
 }
+
