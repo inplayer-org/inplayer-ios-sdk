@@ -39,7 +39,8 @@ public extension InPlayer {
         public static func getItem(id: Int,
                                    success: @escaping (INPItemModel) -> Void,
                                    failure: @escaping (Error) -> Void) -> Request {
-            return INPAssetService.getItem(id: id, completion: { result in
+            let merchantUUID = InPlayer.Configuration.getClientId()
+            return INPAssetService.getItem(id: id, merchantUUID: merchantUUID, completion: { result in
                 switch result {
                 case .success(let response):
                     success(response)

@@ -30,7 +30,7 @@ public struct NetworkConstants {
         }
 
         public struct Asset {
-            public static let itemDetails = "/items/%@"
+            public static let itemDetails = "/items/%@/%@"
             public static let itemAccessFees = "items/%@/access-fees"
         }
     }

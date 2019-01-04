@@ -3,7 +3,7 @@ import Alamofire
 /// Enum of available asset api routes
 enum AssetAPIRouter: INPAPIConfiguration {
 
-    case getItem(id: Int)
+    case getItem(id: Int, merchantUUID: String)
     case getItemAccessFees(id: Int)
     case getItemAccess(id: Int)
 
@@ -16,8 +16,8 @@ enum AssetAPIRouter: INPAPIConfiguration {
 
     var path: String {
         switch self {
-        case .getItem(let id):
-            return String(format: NetworkConstants.Endpoints.Asset.itemDetails, "\(id)")
+        case .getItem(let id, let merchantUUID):
+            return String(format: NetworkConstants.Endpoints.Asset.itemDetails, merchantUUID, "\(id)")
         case .getItemAccessFees(let id):
             return String(format: NetworkConstants.Endpoints.Asset.itemAccessFees, "\(id)")
         default:
@@ -43,8 +43,10 @@ enum AssetAPIRouter: INPAPIConfiguration {
 public class INPAssetService {
 
     @discardableResult
-    public static func getItem(id: Int, completion: @escaping (Result<INPItemModel>) -> Void) -> Request {
-        return NetworkDataSource.performRequest(route: AssetAPIRouter.getItem(id: id), completion: completion)
+    public static func getItem(id: Int, merchantUUID: String, completion: @escaping (Result<INPItemModel>) -> Void) -> Request {
+        return NetworkDataSource.performRequest(route: AssetAPIRouter.getItem(id: id,
+                                                                              merchantUUID: merchantUUID),
+                                                completion: completion)
     }
 
     @discardableResult
