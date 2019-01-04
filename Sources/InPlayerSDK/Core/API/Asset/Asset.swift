@@ -16,7 +16,7 @@ private protocol AssetsAPI {
                         failure: @escaping (_ error: Error) -> Void) -> Request
 
     /**
-     Returns a collection of fees for a specific asset
+     Returns a collection of fees for a specific item
      - Parameters:
          - id: Id of item that we are interested in.
          - success: A closure to be executed once the request has finished successfully.
@@ -28,6 +28,19 @@ private protocol AssetsAPI {
     static func getItemAccessFees(id: Int,
                                   success: @escaping (_ accessFees: [INPAccessFeeModel]) -> Void,
                                   failure: @escaping (_ error: Error) -> Void) -> Request
+
+    /**
+     Grants access to item
+     - Parameters:
+     - id: Id of item that we want access to
+     - success: A closure to be executed once the request has finished successfully.
+     - itemAccess: Object containing info about the item plus additional info.
+     - failure: A closure to be executed once the request has finished with error.
+     - error: Containing information about the error that occurred.
+     */
+    static func getItemAccess(id: Int,
+                              success: @escaping (_ itemAccess: INPItemAccessModel) -> Void,
+                              failure: @escaping (_ error: Error) -> Void) -> Request
 }
 
 public extension InPlayer {
@@ -55,6 +68,20 @@ public extension InPlayer {
                                              success: @escaping ([INPAccessFeeModel]) -> Void,
                                              failure: @escaping (Error) -> Void) -> Request {
             return INPAssetService.getItemAccessFees(id: id, completion: { result in
+                switch result {
+                case .success(let response):
+                    success(response)
+                case .failure(let error):
+                    failure(error)
+                }
+            })
+        }
+
+        @discardableResult
+        public static func getItemAccess(id: Int,
+                                         success: @escaping (INPItemAccessModel) -> Void,
+                                         failure: @escaping (Error) -> Void) -> Request {
+            return INPAssetService.getItemAccess(id: id, completion: { result in
                 switch result {
                 case .success(let response):
                     success(response)
