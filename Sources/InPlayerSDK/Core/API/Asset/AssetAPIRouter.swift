@@ -44,7 +44,7 @@ public class INPAssetService {
     @discardableResult
     public static func getItem(id: Int,
                                merchantUUID: String,
-                               completion: @escaping (Result<INPItemModel>) -> Void) -> Request {
+                               completion: @escaping RequestCompletion<INPItemModel>) -> Request {
         return NetworkDataSource.performRequest(route: AssetAPIRouter.getItem(id: id,
                                                                               merchantUUID: merchantUUID),
                                                 completion: completion)
@@ -52,14 +52,14 @@ public class INPAssetService {
 
     @discardableResult
     public static func getItemAccessFees(id: Int,
-                                         completion: @escaping (Result<[INPAccessFeeModel]>) -> Void) -> Request {
+                                         completion: @escaping RequestCompletion<[INPAccessFeeModel]>) -> Request {
         return NetworkDataSource.performRequest(route: AssetAPIRouter.getItemAccessFees(id: id),
                                                 completion: completion)
     }
 
     @discardableResult
     public static func getItemAccess(id: Int,
-                                     completion: @escaping (Result<INPItemAccessModel>) -> Void) -> Request {
+                                     completion: @escaping RequestCompletion<INPItemAccessModel>) -> Request {
         return NetworkDataSource.performRequest(route: AssetAPIRouter.getItemAccess(id: id),
                                                 completion: completion)
     }

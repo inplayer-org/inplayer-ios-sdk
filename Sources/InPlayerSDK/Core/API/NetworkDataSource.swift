@@ -1,5 +1,13 @@
 import Alamofire
 
+/**
+ Typealias for request completion block
+ - Parameters:
+    - value: Parsed value of response result
+    - error: InPlayerError containing information about what happened.
+ */
+public typealias RequestCompletion<T> = (_ value: T?, _ error: InPlayerError?) -> Void
+
 public class NetworkDataSource {
     /**
      Generic method that creates and executes request.
@@ -13,10 +21,10 @@ public class NetworkDataSource {
     @discardableResult
     public static func performRequest<T:Decodable>(route: INPAPIConfiguration,
                                                    decoder: JSONDecoder = JSONDecoder(),
-                                                   completion: @escaping (_ result: Result<T>)->Void) -> Request {
+                                                   completion: @escaping RequestCompletion<T> ) -> Request {
         return AF.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
             // TODO: Maybe this should use different parameter check
-            if InPlayer.Configuration.getEnvironment() != .production {
+            if InPlayer.Configuration.getEnvironment() == .debug {
                 print("=================================")
                 print("[REQUEST]:  \(response.request!)")
                 print("[REQUEST METHOD]: \(String(describing:response.request?.httpMethod))")
@@ -26,13 +34,20 @@ public class NetworkDataSource {
                 if let statusCode = response.response?.statusCode {
                     print("[RESPONSE STATUS CODE]: \(statusCode)")
                 }
-                if (response.data != nil) {
+                if response.data != nil {
                     let str = String(data: response.data!, encoding: String.Encoding.utf8)!
                     print("[RESPONSE]: \(str)")
                 }
                 print("=================================")
             }
-            completion(response.result)
+
+            if response.result.isFailure {
+                let error = InPlayerErrorMapper.mapFromError(originalError: response.result.error!,
+                                                             withResponseData: response.data)
+                completion(nil, error)
+            } else {
+                completion(response.result.value, nil)
+            }
         }
     }
 }

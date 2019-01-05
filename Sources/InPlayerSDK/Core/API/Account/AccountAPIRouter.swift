@@ -91,9 +91,8 @@ public class INPAccountService {
                                      password: String,
                                      passwordConfirmation: String,
                                      type: AccountType,
-                                     referrer: String? = nil,
-                                     metadata: [String: Any]? = nil,
-                                     completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
+                                     metadata: [String: Any]?,
+                                     completion: @escaping RequestCompletion<INPAuthorizationModel>) -> Request {
         var params: [String: Any] = [
             AccountParameters.fullName: fullName,
             AccountParameters.email: email,
@@ -102,7 +101,7 @@ public class INPAccountService {
             AccountParameters.type: type.rawValue,
             AccountParameters.merchantUUID: InPlayer.Configuration.getClientId()
         ]
-        if let referrer = referrer {
+        if let referrer = InPlayer.Configuration.getReferrer() {
             params[AccountParameters.referrer] = referrer
         }
         if let metadata = metadata {
@@ -113,25 +112,24 @@ public class INPAccountService {
     }
 
     @discardableResult
-    public static func getUserInfo(completion: @escaping (Result<INPAccount>) -> Void) -> Request {
+    public static func getUserInfo(completion: @escaping RequestCompletion<INPAccount>) -> Request {
         return NetworkDataSource.performRequest(route: AccountAPIRouter.getAccountInfo(), completion: completion)
     }
 
     @discardableResult
-    public static func logout(completion: @escaping (Result<Empty>) -> Void) -> Request {
+    public static func logout(completion: @escaping RequestCompletion<Empty>) -> Request {
         return NetworkDataSource.performRequest(route: AccountAPIRouter.logout(), completion: completion)
     }
 
     @discardableResult
     public static func updateAccount(fullName: String,
-                                     referrer: String? = nil,
-                                     metadata: [String: Any]? = nil,
-                                     completion: @escaping (Result<INPAccount>) -> Void) -> Request {
+                                     metadata: [String: Any]?,
+                                     completion: @escaping RequestCompletion<INPAccount>) -> Request {
         var params: [String: Any] = [AccountParameters.fullName: fullName]
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
         }
-        if let referrer = referrer {
+        if let referrer = InPlayer.Configuration.getReferrer() {
             params[AccountParameters.referrer] = referrer
         }
         return NetworkDataSource.performRequest(route: AccountAPIRouter.updateAccount(parameters: params),
@@ -142,7 +140,7 @@ public class INPAccountService {
     public static func changePassword(oldPassword: String,
                                       newPassword: String,
                                       newPasswordConfirmation: String,
-                                      completion: @escaping (Result<Empty>) -> Void) -> Request {
+                                      completion: @escaping RequestCompletion<Empty>) -> Request {
         let params: [String: Any] = [
             AccountParameters.oldPassword: oldPassword,
             AccountParameters.password: newPassword,
@@ -154,7 +152,7 @@ public class INPAccountService {
 
     @discardableResult
     public static func eraseAccount(password: String,
-                                    completion: @escaping (Result<Empty>) -> Void) -> Request {
+                                    completion: @escaping RequestCompletion<Empty>) -> Request {
         let params = [AccountParameters.password: password]
         return NetworkDataSource.performRequest(route: AccountAPIRouter.eraseAccount(parameters: params),
                                                 completion: completion)
@@ -164,7 +162,7 @@ public class INPAccountService {
     public static func setNewPassword(token: String,
                                       password: String,
                                       passwordConfirmation: String,
-                                      completion: @escaping (Result<Empty>) -> Void) -> Request {
+                                      completion: @escaping RequestCompletion<Empty>) -> Request {
         let params = [
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation
@@ -176,7 +174,7 @@ public class INPAccountService {
 
     @discardableResult
     public static func forgotPassword(email: String,
-                                      completion: @escaping (Result<Empty>) -> Void) -> Request {
+                                      completion: @escaping RequestCompletion<Empty>) -> Request {
         let params = [
             AccountParameters.merchantUUID: InPlayer.Configuration.getClientId(),
             AccountParameters.email: email
@@ -188,7 +186,7 @@ public class INPAccountService {
     @discardableResult
     public static func authenticate(username: String,
                                     password: String,
-                                    completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
+                                    completion: @escaping RequestCompletion<INPAuthorizationModel>) -> Request {
         let params = [
             AccountParameters.username: username,
             AccountParameters.password: password,
@@ -202,7 +200,7 @@ public class INPAccountService {
 
     @discardableResult
     public static func refreshAccessToken(using refreshToken: String,
-                                          completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
+                                          completion: @escaping RequestCompletion<INPAuthorizationModel>) -> Request {
         let params = [
             AccountParameters.clientId: InPlayer.Configuration.getClientId(),
             AccountParameters.grantType: AuthenticationTypes.refreshToken.rawValue,
@@ -214,7 +212,7 @@ public class INPAccountService {
 
     @discardableResult
     public static func authenticateUsingClientCredentials(clientSecret: String,
-                                                          completion: @escaping (Result<INPAuthorizationModel>) -> Void) -> Request {
+                                                          completion: @escaping RequestCompletion<INPAuthorizationModel>) -> Request {
         let params = [
             AccountParameters.clientId: InPlayer.Configuration.getClientId(),
             AccountParameters.grantType: AuthenticationTypes.clientCredentials.rawValue,

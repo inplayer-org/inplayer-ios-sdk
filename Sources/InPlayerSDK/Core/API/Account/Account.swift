@@ -16,7 +16,6 @@ private protocol AccountsAPI {
         - password: Password of account
         - passwordConfirmation: Password confirmation of account
         - type: Account type
-        - referrer: ??? (Optional)
         - metadata: Additional information for account
         - success: A closure to be executed once the request has finished successfully.
         - authorization: Authorization model containing info regarding token and account
@@ -30,10 +29,9 @@ private protocol AccountsAPI {
                               password: String,
                               passwordConfirmation: String,
                               type: AccountType,
-                              referrer: String?,
                               metadata: [String: Any]?,
                               success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
-                              failure: @escaping (_ error: Error) -> Void) -> Request
+                              failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Gets the account information for a given authorization token
@@ -46,7 +44,7 @@ private protocol AccountsAPI {
      */
     @discardableResult
     static func getAccountInfo(success: @escaping (_ account: INPAccount) -> Void,
-                              failure: @escaping (_ error: Error) -> Void) -> Request
+                              failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Logout currently authenticated account
@@ -57,7 +55,8 @@ private protocol AccountsAPI {
      - Returns: The request
      */
     @discardableResult
-    static func logout(success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) -> Request
+    static func logout(success: @escaping () -> Void,
+                       failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Updates account information.
@@ -72,10 +71,9 @@ private protocol AccountsAPI {
      */
     @discardableResult
     static func updateAccount(fullName: String,
-                              referrer: String?,
                               metadata: [String: Any]?,
                               success: @escaping (_ account: INPAccount) -> Void,
-                              failure: @escaping (_ error: Error) -> Void) -> Request
+                              failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Updates account password.
@@ -93,7 +91,7 @@ private protocol AccountsAPI {
                                newPassword: String,
                                newPasswordConfirmation: String,
                                success: @escaping () -> Void,
-                               failure: @escaping (_ error: Error) -> Void) -> Request
+                               failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Deletes account and all information stored with it.
@@ -107,7 +105,7 @@ private protocol AccountsAPI {
     @discardableResult
     static func eraseAccount(password: String,
                              success: @escaping () -> Void,
-                             failure: @escaping (_ error: Error) -> Void) -> Request
+                             failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Authenticates account using username and password
@@ -124,7 +122,7 @@ private protocol AccountsAPI {
     static func authenticate(username: String,
                              password: String,
                              success: @escaping (_ authorizationModel: INPAuthorizationModel) -> Void,
-                             failure: @escaping (_ error: Error) -> Void) -> Request
+                             failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Refreshes account access_token
@@ -139,7 +137,7 @@ private protocol AccountsAPI {
     @discardableResult
     static func refreshAccessToken(using refreshToken: String,
                                    success: @escaping (_ authorizationModel: INPAuthorizationModel) -> Void,
-                                   failure: @escaping (_ error: Error) -> Void) -> Request
+                                   failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Authenticates account using client credentials
@@ -154,7 +152,7 @@ private protocol AccountsAPI {
     @discardableResult
     static func authenticateUsingClientCredentials(clientSecret: String,
                                                    success: @escaping (_ authorizationModel: INPAuthorizationModel) -> Void,
-                                                   failure: @escaping (_ error: Error) -> Void) -> Request
+                                                   failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Sends forgot password instructions on specified email.
@@ -168,7 +166,7 @@ private protocol AccountsAPI {
     @discardableResult
     static func forgotPassword(email: String,
                                success: @escaping () -> Void,
-                               failure: @escaping (_ error: Error) -> Void) -> Request
+                               failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Sets new password for account using the token from account's email.
@@ -186,7 +184,7 @@ private protocol AccountsAPI {
                                password: String,
                                passwordConfirmation: String,
                                success: @escaping () -> Void,
-                               failure: @escaping (_ error: Error) -> Void) -> Request
+                               failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 }
 
 public extension InPlayer {
@@ -204,74 +202,75 @@ public extension InPlayer {
                                          password: String,
                                          passwordConfirmation: String,
                                          type: AccountType,
-                                         referrer: String?,
-                                         metadata: [String: Any]?,
+                                         metadata: [String: Any]? = nil,
                                          success: @escaping (INPAuthorizationModel) -> Void,
-                                         failure: @escaping (Error) -> Void) -> Request {
+                                         failure: @escaping (InPlayerError) -> Void) -> Request {
             return INPAccountService.createAccount(fullName: fullName,
                                                    email: email,
                                                    password: password,
                                                    passwordConfirmation: passwordConfirmation,
                                                    type: type,
-                                                   referrer: referrer,
-                                                   metadata: metadata) { (result) in
-                switch result {
-                case .success(let response):
-                    //---------------------------------------------//
-                    // TODO: do a guard check of properties exists,
-                    // else return custom error!
-                    //---------------------------------------------//
-                    UserDefaults.credentials = INPCredentials(accessToken: response.accessToken ?? "",
-                                                              refreshToken: "",
-                                                              expires: response.expires ?? 0)
-                    success(response)
-                case .failure(let error):
+                                                   metadata: metadata,
+                                                   completion: { (authorization, error) in
+                if let error = error {
                     failure(error)
-                }
-            }
-        }
+                } else {
+                    guard let authorization = authorization,
+                        let accessToken = authorization.accessToken,
+                        let refreshToken = authorization.refreshToken,
+                        let expires = authorization.expires
+                    else {
+                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
+                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
+                        let missingTokenError = InPlayerMissigTokenError(error: err)
+                        failure(missingTokenError)
+                        return
+                    }
 
-        @discardableResult
-        public static func getAccountInfo(success: @escaping (INPAccount) -> Void,
-                                          failure: @escaping (Error) -> Void) -> Request {
-            return INPAccountService.getUserInfo(completion: { result in
-                switch result {
-                case .success(let response):
-                    success(response)
-                case .failure(let error):
-                    failure(error)
+                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
+                                                              refreshToken: refreshToken,
+                                                              expires: expires)
+                    success(authorization)
                 }
             })
         }
 
         @discardableResult
-        public static func logout(success: @escaping () -> Void, failure: @escaping (Error) -> Void) -> Request {
-            return INPAccountService.logout(completion: { (result) in
-                switch result {
-                case .success(_):
-                    UserDefaults.credentials = nil
-                    success()
-                case .failure(let error):
+        public static func getAccountInfo(success: @escaping (INPAccount) -> Void,
+                                          failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAccountService.getUserInfo(completion: { (account, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success(account!)
+                }
+            })
+        }
+
+        @discardableResult
+        public static func logout(success: @escaping () -> Void,
+                                  failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAccountService.logout(completion: { (_, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
                 }
             })
         }
 
         @discardableResult
         public static func updateAccount(fullName: String,
-                                         referrer: String?,
-                                         metadata: [String : Any]?,
+                                         metadata: [String : Any]? = nil,
                                          success: @escaping (INPAccount) -> Void,
-                                         failure: @escaping (Error) -> Void) -> Request {
+                                         failure: @escaping (InPlayerError) -> Void) -> Request {
             return INPAccountService.updateAccount(fullName: fullName,
-                                                   referrer: referrer,
                                                    metadata: metadata,
-                                                   completion: { result in
-                switch result {
-                case .success(let resposne):
-                    success(resposne)
-                case .failure(let error):
+                                                   completion: { (account, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success(account!)
                 }
             })
         }
@@ -281,16 +280,15 @@ public extension InPlayer {
                                           newPassword: String,
                                           newPasswordConfirmation: String,
                                           success: @escaping () -> Void,
-                                          failure: @escaping (Error) -> Void) -> Request {
+                                          failure: @escaping (InPlayerError) -> Void) -> Request {
             return INPAccountService.changePassword(oldPassword: oldPassword,
                                                     newPassword: newPassword,
                                                     newPasswordConfirmation: newPasswordConfirmation,
-                                                    completion: { result in
-                switch result {
-                case .success(_):
-                    success()
-                case .failure(let error):
+                                                    completion: { (_, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success()
                 }
             })
         }
@@ -298,13 +296,12 @@ public extension InPlayer {
         @discardableResult
         public static func eraseAccount(password: String,
                                         success: @escaping () -> Void,
-                                        failure: @escaping (Error) -> Void) -> Request {
-            return INPAccountService.eraseAccount(password: password, completion: { result in
-                switch result {
-                case .success(_):
-                    success()
-                case .failure(let error):
+                                        failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAccountService.eraseAccount(password: password, completion: { (_, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success()
                 }
             })
         }
@@ -314,16 +311,15 @@ public extension InPlayer {
                                           password: String,
                                           passwordConfirmation: String,
                                           success: @escaping () -> Void,
-                                          failure: @escaping (Error) -> Void) -> Request {
+                                          failure: @escaping (InPlayerError) -> Void) -> Request {
             return INPAccountService.setNewPassword(token: token,
                                                     password: password,
                                                     passwordConfirmation: passwordConfirmation,
-                                                    completion: { result in
-                switch result {
-                case .success(_):
-                    success()
-                case .failure(let error):
+                                                    completion: { (_, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success()
                 }
             })
         }
@@ -331,13 +327,12 @@ public extension InPlayer {
         @discardableResult
         public static func forgotPassword(email: String,
                                           success: @escaping () -> Void,
-                                          failure: @escaping (Error) -> Void) -> Request {
-            return INPAccountService.forgotPassword(email: email, completion: { result in
-                switch result {
-                case .success(_):
-                    success()
-                case .failure(let error):
+                                          failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAccountService.forgotPassword(email: email, completion: { (_, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success()
                 }
             })
         }
@@ -346,21 +341,29 @@ public extension InPlayer {
         public static func authenticate(username: String,
                                         password: String,
                                         success: @escaping (INPAuthorizationModel) -> Void,
-                                        failure: @escaping (Error) -> Void) -> Request {
-            return INPAccountService.authenticate(username: username, password: password, completion: { result in
-                switch result {
-                case .success(let authorization):
-                    //---------------------------------------------//
-                    // TODO: do a guard check of properties exists,
-                    // else return custom error!
-                    //---------------------------------------------//
-                    UserDefaults.credentials = INPCredentials(accessToken: authorization.accessToken ?? "",
-                                                              refreshToken: authorization.refreshToken ?? "",
-                                                              expires: authorization.expires ?? 0)
-
-                    success(authorization)
-                case .failure(let error):
+                                        failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAccountService.authenticate(username: username,
+                                                  password: password,
+                                                  completion: { (authorization, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    guard let authorization = authorization,
+                        let accessToken = authorization.accessToken,
+                        let refreshToken = authorization.refreshToken,
+                        let expires = authorization.expires
+                    else {
+                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
+                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
+                        let missingTokenError = InPlayerMissigTokenError(error: err)
+                        failure(missingTokenError)
+                        return
+                    }
+
+                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
+                                                              refreshToken: refreshToken,
+                                                              expires: expires)
+                    success(authorization)
                 }
             })
         }
@@ -368,16 +371,27 @@ public extension InPlayer {
         @discardableResult
         public static func refreshAccessToken(using refreshToken: String,
                                               success: @escaping (INPAuthorizationModel) -> Void,
-                                              failure: @escaping (Error) -> Void) -> Request {
-            return INPAccountService.refreshAccessToken(using: refreshToken, completion: { result in
-                switch result {
-                case .success(let authorization):
-                    UserDefaults.credentials = INPCredentials(accessToken: authorization.accessToken ?? "",
-                                                              refreshToken: authorization.refreshToken ?? "",
-                                                              expires: authorization.expires ?? 0)
-                    success(authorization)
-                case .failure(let error):
+                                              failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAccountService.refreshAccessToken(using: refreshToken, completion: { (authorization, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    guard let authorization = authorization,
+                        let accessToken = authorization.accessToken,
+                        let refreshToken = authorization.refreshToken,
+                        let expires = authorization.expires
+                    else {
+                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
+                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
+                        let missingTokenError = InPlayerMissigTokenError(error: err)
+                        failure(missingTokenError)
+                        return
+                    }
+
+                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
+                                                              refreshToken: refreshToken,
+                                                              expires: expires)
+                    success(authorization)
                 }
             })
         }
@@ -385,13 +399,28 @@ public extension InPlayer {
         @discardableResult
         public static func authenticateUsingClientCredentials(clientSecret: String,
                                                               success: @escaping (INPAuthorizationModel) -> Void,
-                                                              failure: @escaping (Error) -> Void) -> Request {
-            return INPAccountService.authenticateUsingClientCredentials(clientSecret: clientSecret, completion: { result in
-                switch result {
-                case .success(let response):
-                    success(response)
-                case .failure(let error):
+                                                              failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAccountService.authenticateUsingClientCredentials(clientSecret: clientSecret,
+                                                                        completion: { (authorization, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    guard let authorization = authorization,
+                        let accessToken = authorization.accessToken,
+                        let refreshToken = authorization.refreshToken,
+                        let expires = authorization.expires
+                    else {
+                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
+                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
+                        let missingTokenError = InPlayerMissigTokenError(error: err)
+                        failure(missingTokenError)
+                        return
+                    }
+
+                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
+                                                              refreshToken: refreshToken,
+                                                              expires: expires)
+                    success(authorization)
                 }
             })
         }
