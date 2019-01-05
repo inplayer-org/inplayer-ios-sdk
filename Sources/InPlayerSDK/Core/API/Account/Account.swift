@@ -22,6 +22,7 @@ private protocol AccountsAPI {
         - authorization: Authorization model containing info regarding token and account
         - failure: A closure to be executed once the request has finished with error.
         - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func createAccount(fullName: String,
@@ -41,6 +42,7 @@ private protocol AccountsAPI {
         - account: Contains account info
         - failure: A closure to be executed once the request has finished with error.
         - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func getAccountInfo(success: @escaping (_ account: INPAccount) -> Void,
@@ -52,6 +54,7 @@ private protocol AccountsAPI {
         - success: A closure to be executed once the request has finished successfully.
         - failure: A closure to be executed once the request has finished with error.
         - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func logout(success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) -> Request
@@ -65,6 +68,7 @@ private protocol AccountsAPI {
          - account: Contains account info.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func updateAccount(fullName: String,
@@ -82,6 +86,7 @@ private protocol AccountsAPI {
          - success: A closure to be executed once the request has finished successfully.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func changePassword(oldPassword: String,
@@ -97,6 +102,7 @@ private protocol AccountsAPI {
          - success: A closure to be executed once the request has finished successfully.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func eraseAccount(password: String,
@@ -112,6 +118,7 @@ private protocol AccountsAPI {
          - authorizationModel: Model containing access tokens and logged in account.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func authenticate(username: String,
@@ -127,6 +134,7 @@ private protocol AccountsAPI {
          - authorizationModel: Model containing access tokens and logged in account.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func refreshAccessToken(using refreshToken: String,
@@ -141,6 +149,7 @@ private protocol AccountsAPI {
          - authorizationModel: Model containing access tokens and logged in account.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func authenticateUsingClientCredentials(clientSecret: String,
@@ -154,6 +163,7 @@ private protocol AccountsAPI {
          - success: A closure to be executed once the request has finished successfully.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func forgotPassword(email: String,
@@ -169,6 +179,7 @@ private protocol AccountsAPI {
          - success: A closure to be executed once the request has finished successfully.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     @discardableResult
     static func setNewPassword(token: String,
@@ -183,7 +194,7 @@ public extension InPlayer {
         private init() {}
 
         public static func isAuthenticated() -> Bool {
-            let credentials = INPCredentials.getCredentials()
+            guard let credentials = INPCredentials.getCredentials() else { return false }
             return !credentials.accessToken.isEmpty && credentials.accessToken != ""
         }
 
@@ -238,6 +249,7 @@ public extension InPlayer {
             return INPAccountService.logout(completion: { (result) in
                 switch result {
                 case .success(_):
+                    UserDefaults.credentials = nil
                     success()
                 case .failure(let error):
                     failure(error)

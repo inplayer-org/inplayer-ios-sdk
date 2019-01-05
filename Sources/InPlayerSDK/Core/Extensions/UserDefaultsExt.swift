@@ -7,7 +7,7 @@ protocol UserDefaultsDataSource {
     /// Sets and retrieves environment
     static var environment: EnvironmentType { set get }
 
-    static var credentials: INPCredentials { get set }
+    static var credentials: INPCredentials? { get set }
 }
 
 extension UserDefaults: UserDefaultsDataSource {
@@ -37,19 +37,23 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var credentials: INPCredentials {
+    static var credentials: INPCredentials? {
         get {
             guard
                 let savedCredentialData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.credentials) as? Data,
                 let credentials = try? JSONDecoder().decode(INPCredentials.self, from: savedCredentialData)
             else {
-                return INPCredentials(accessToken: "", refreshToken: "", expires: 0)
+                return nil // INPCredentials(accessToken: "", refreshToken: "", expires: 0)
             }
             return credentials
         }
         set {
-            let encoded = try? JSONEncoder().encode(newValue)
-            standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.credentials)
+            if let newValue = newValue {
+                let encoded = try? JSONEncoder().encode(newValue)
+                standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.credentials)
+            } else {
+                standard.removeObject(forKey: InPlayerConstants.UserDefaultsKeys.credentials)
+            }
         }
     }
 }

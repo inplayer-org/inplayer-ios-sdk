@@ -38,8 +38,7 @@ public extension INPAPIConfiguration {
         urlRequest.setValue(NetworkConstants.HeaderParameters.applicationJSON,
                             forHTTPHeaderField: NetworkConstants.HeaderParameters.accept)
 
-        if InPlayer.Account.isAuthenticated() {
-            let token = INPCredentials.getCredentials().accessToken
+        if let token = UserDefaults.credentials?.accessToken {
             urlRequest.setValue(NetworkConstants.HeaderParameters.bearerToken + token,
                                 forHTTPHeaderField: NetworkConstants.HeaderParameters.authorization)
         }

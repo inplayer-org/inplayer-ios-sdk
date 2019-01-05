@@ -2,7 +2,6 @@ import Alamofire
 
 /// Enum of available asset api routes
 enum AssetAPIRouter: INPAPIConfiguration {
-
     case getItem(id: Int, merchantUUID: String)
     case getItemAccessFees(id: Int)
     case getItemAccess(id: Int)

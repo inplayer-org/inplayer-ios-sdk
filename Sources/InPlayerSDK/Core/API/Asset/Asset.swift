@@ -32,11 +32,12 @@ private protocol AssetsAPI {
     /**
      Grants access to item
      - Parameters:
-     - id: Id of item that we want access to
-     - success: A closure to be executed once the request has finished successfully.
-     - itemAccess: Object containing info about the item plus additional info.
-     - failure: A closure to be executed once the request has finished with error.
-     - error: Containing information about the error that occurred.
+         - id: Id of item that we want access to
+         - success: A closure to be executed once the request has finished successfully.
+         - itemAccess: Object containing info about the item plus additional info.
+         - failure: A closure to be executed once the request has finished with error.
+         - error: Containing information about the error that occurred.
+     - Returns: The request
      */
     static func getItemAccess(id: Int,
                               success: @escaping (_ itemAccess: INPItemAccessModel) -> Void,
