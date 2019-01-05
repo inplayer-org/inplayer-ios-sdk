@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol CredentialsProvider {
-    static func getCredentials() -> INPCredentials
+    static func getCredentials() -> INPCredentials?
     func isTokenValid() -> Bool
 }
 
@@ -12,7 +12,7 @@ public struct INPCredentials: Codable {
 }
 
 extension INPCredentials: CredentialsProvider {
-    public static func getCredentials() -> INPCredentials {
+    public static func getCredentials() -> INPCredentials? {
         return UserDefaults.credentials
     }
 

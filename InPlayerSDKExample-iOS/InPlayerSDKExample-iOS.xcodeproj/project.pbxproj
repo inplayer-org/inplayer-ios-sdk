@@ -24,6 +24,16 @@
 		A7D265E521D2DB6D0050085D /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */; };
 		A7D265E921D4212E0050085D /* INPCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E821D4212E0050085D /* INPCredentials.swift */; };
 		A7D265ED21D42A480050085D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265EC21D42A480050085D /* Date.swift */; };
+		A7D265F021DE586A0050085D /* AssetAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265EF21DE58690050085D /* AssetAPIRouter.swift */; };
+		A7D265F221DE58740050085D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F121DE58740050085D /* Asset.swift */; };
+		A7D265F421DE7DAD0050085D /* INPItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F321DE7DAC0050085D /* INPItemModel.swift */; };
+		A7D265F621DE7E2B0050085D /* INPAccessFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F521DE7E2B0050085D /* INPAccessFeeModel.swift */; };
+		A7D265F821DE7E610050085D /* INPAccessTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F721DE7E610050085D /* INPAccessTypeModel.swift */; };
+		A7D265FA21DE7EB10050085D /* INPAccessControlTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F921DE7EB10050085D /* INPAccessControlTypeModel.swift */; };
+		A7D265FC21DE7F7E0050085D /* INPItemTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265FB21DE7F7E0050085D /* INPItemTypeModel.swift */; };
+		A7D265FE21DE7FC70050085D /* INPItemMetahashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265FD21DE7FC70050085D /* INPItemMetahashModel.swift */; };
+		A7D2660321DE80270050085D /* INPItemMetadataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2660221DE80270050085D /* INPItemMetadataModel.swift */; };
+		A7D2660521DFD1310050085D /* INPItemAccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2660421DFD1310050085D /* INPItemAccessModel.swift */; };
 		E4A087898FD13F8573C240E8 /* Pods_InPlayerSDKExample_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD8D52E622099CC4DFC6D74 /* Pods_InPlayerSDKExample_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +71,16 @@
 		A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		A7D265E821D4212E0050085D /* INPCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPCredentials.swift; sourceTree = "<group>"; };
 		A7D265EC21D42A480050085D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A7D265EF21DE58690050085D /* AssetAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAPIRouter.swift; sourceTree = "<group>"; };
+		A7D265F121DE58740050085D /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		A7D265F321DE7DAC0050085D /* INPItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPItemModel.swift; sourceTree = "<group>"; };
+		A7D265F521DE7E2B0050085D /* INPAccessFeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccessFeeModel.swift; sourceTree = "<group>"; };
+		A7D265F721DE7E610050085D /* INPAccessTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccessTypeModel.swift; sourceTree = "<group>"; };
+		A7D265F921DE7EB10050085D /* INPAccessControlTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccessControlTypeModel.swift; sourceTree = "<group>"; };
+		A7D265FB21DE7F7E0050085D /* INPItemTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPItemTypeModel.swift; sourceTree = "<group>"; };
+		A7D265FD21DE7FC70050085D /* INPItemMetahashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPItemMetahashModel.swift; sourceTree = "<group>"; };
+		A7D2660221DE80270050085D /* INPItemMetadataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPItemMetadataModel.swift; sourceTree = "<group>"; };
+		A7D2660421DFD1310050085D /* INPItemAccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPItemAccessModel.swift; sourceTree = "<group>"; };
 		C1A9CB5F02C275EDB11C5D73 /* Pods-InPlayerSDKExample-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOSTests/Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7BA6C78590054282C7C7E4 /* Pods_InPlayerSDKExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDKExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A54D2FA744089C874FDD21 /* Pods-InPlayerSDKExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOS/Pods-InPlayerSDKExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +211,8 @@
 		A74DB80721D165C30082D3AA /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				A7D265EF21DE58690050085D /* AssetAPIRouter.swift */,
+				A7D265F121DE58740050085D /* Asset.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -240,11 +262,35 @@
 		A7D265DF21D2D4940050085D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A7D2660021DE7FF20050085D /* Account */,
+				A7D2660121DE80010050085D /* Asset */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A7D2660021DE7FF20050085D /* Account */ = {
+			isa = PBXGroup;
+			children = (
 				A7D265E021D2D5190050085D /* INPAccountModel.swift */,
 				A7D265E221D2D6210050085D /* INPAuthorizationModel.swift */,
 				A7D265E821D4212E0050085D /* INPCredentials.swift */,
 			);
-			path = Models;
+			path = Account;
+			sourceTree = "<group>";
+		};
+		A7D2660121DE80010050085D /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				A7D265F321DE7DAC0050085D /* INPItemModel.swift */,
+				A7D265F521DE7E2B0050085D /* INPAccessFeeModel.swift */,
+				A7D265F721DE7E610050085D /* INPAccessTypeModel.swift */,
+				A7D265F921DE7EB10050085D /* INPAccessControlTypeModel.swift */,
+				A7D265FB21DE7F7E0050085D /* INPItemTypeModel.swift */,
+				A7D265FD21DE7FC70050085D /* INPItemMetahashModel.swift */,
+				A7D2660221DE80270050085D /* INPItemMetadataModel.swift */,
+				A7D2660421DFD1310050085D /* INPItemAccessModel.swift */,
+			);
+			path = Asset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,11 +454,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D265F021DE586A0050085D /* AssetAPIRouter.swift in Sources */,
 				A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */,
 				A7D265ED21D42A480050085D /* Date.swift in Sources */,
+				A7D265F821DE7E610050085D /* INPAccessTypeModel.swift in Sources */,
 				A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */,
+				A7D265FC21DE7F7E0050085D /* INPItemTypeModel.swift in Sources */,
+				A7D2660321DE80270050085D /* INPItemMetadataModel.swift in Sources */,
 				A7D265DE21D2A0310050085D /* Account.swift in Sources */,
+				A7D265FE21DE7FC70050085D /* INPItemMetahashModel.swift in Sources */,
 				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
+				A7D265FA21DE7EB10050085D /* INPAccessControlTypeModel.swift in Sources */,
+				A7D265F221DE58740050085D /* Asset.swift in Sources */,
 				A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
 				A74DB80C21D168440082D3AA /* Configuration.swift in Sources */,
@@ -420,6 +473,9 @@
 				A7D265E921D4212E0050085D /* INPCredentials.swift in Sources */,
 				A7D265E121D2D5190050085D /* INPAccountModel.swift in Sources */,
 				A7D265D021D172AA0050085D /* StringConstants.swift in Sources */,
+				A7D265F421DE7DAD0050085D /* INPItemModel.swift in Sources */,
+				A7D2660521DFD1310050085D /* INPItemAccessModel.swift in Sources */,
+				A7D265F621DE7E2B0050085D /* INPAccessFeeModel.swift in Sources */,
 				A7D265E321D2D6210050085D /* INPAuthorizationModel.swift in Sources */,
 				A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */,
 			);

@@ -2,10 +2,6 @@ import Alamofire
 
 /// Enum of available account api routes
 enum AccountAPIRouter: INPAPIConfiguration {
-    //    static func authenticateUser()
-    //    static func requestForgotPasswordToken()
-    //    static func setNewPassword()
-
     case createAccount(parameters: [String: Any])
     case getAccountInfo()
     case logout()

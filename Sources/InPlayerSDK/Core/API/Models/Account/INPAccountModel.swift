@@ -18,8 +18,8 @@ public struct INPAccount : Codable {
     let uuid: String?
     let merchantId: Int?
     let merchantUUID: String?
-    //    let socialAppsMetadata : [AnyObject]?
     let metadata : [String: String]?
+//    let socialAppsMetadata : [AnyObject]?
 
     enum CodingKeys: String, CodingKey {
         case completed = "completed"
@@ -57,7 +57,7 @@ public struct INPAccount : Codable {
         merchantId = try values.decodeIfPresent(Int.self, forKey: .merchantId)
         merchantUUID = try values.decodeIfPresent(String.self, forKey: .merchantUUID)
         metadata = try values.decodeIfPresent([String: String].self, forKey: .metadata)
-        //        socialAppsMetadata = try values.decodeIfPresent([AnyObject].self, forKey: .socialAppsMetadata)
+//        socialAppsMetadata = try values.decodeIfPresent([AnyObject].self, forKey: .socialAppsMetadata)
     }
 
 }
