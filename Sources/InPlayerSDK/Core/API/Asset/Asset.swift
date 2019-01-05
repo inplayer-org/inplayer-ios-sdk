@@ -13,7 +13,7 @@ private protocol AssetsAPI {
      */
     static func getItem(id: Int,
                         success: @escaping (_ item: INPItemModel) -> Void,
-                        failure: @escaping (_ error: Error) -> Void) -> Request
+                        failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Returns a collection of fees for a specific item
@@ -27,7 +27,7 @@ private protocol AssetsAPI {
      */
     static func getItemAccessFees(id: Int,
                                   success: @escaping (_ accessFees: [INPAccessFeeModel]) -> Void,
-                                  failure: @escaping (_ error: Error) -> Void) -> Request
+                                  failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 
     /**
      Grants access to item
@@ -41,7 +41,7 @@ private protocol AssetsAPI {
      */
     static func getItemAccess(id: Int,
                               success: @escaping (_ itemAccess: INPItemAccessModel) -> Void,
-                              failure: @escaping (_ error: Error) -> Void) -> Request
+                              failure: @escaping (_ error: InPlayerError) -> Void) -> Request
 }
 
 public extension InPlayer {
@@ -52,14 +52,13 @@ public extension InPlayer {
         @discardableResult
         public static func getItem(id: Int,
                                    success: @escaping (INPItemModel) -> Void,
-                                   failure: @escaping (Error) -> Void) -> Request {
+                                   failure: @escaping (InPlayerError) -> Void) -> Request {
             let merchantUUID = InPlayer.Configuration.getClientId()
-            return INPAssetService.getItem(id: id, merchantUUID: merchantUUID, completion: { result in
-                switch result {
-                case .success(let response):
-                    success(response)
-                case .failure(let error):
+            return INPAssetService.getItem(id: id, merchantUUID: merchantUUID, completion: { (item, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success(item!)
                 }
             })
         }
@@ -67,13 +66,12 @@ public extension InPlayer {
         @discardableResult
         public static func getItemAccessFees(id: Int,
                                              success: @escaping ([INPAccessFeeModel]) -> Void,
-                                             failure: @escaping (Error) -> Void) -> Request {
-            return INPAssetService.getItemAccessFees(id: id, completion: { result in
-                switch result {
-                case .success(let response):
-                    success(response)
-                case .failure(let error):
+                                             failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAssetService.getItemAccessFees(id: id, completion: { (accessFees, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success(accessFees!)
                 }
             })
         }
@@ -81,13 +79,12 @@ public extension InPlayer {
         @discardableResult
         public static func getItemAccess(id: Int,
                                          success: @escaping (INPItemAccessModel) -> Void,
-                                         failure: @escaping (Error) -> Void) -> Request {
-            return INPAssetService.getItemAccess(id: id, completion: { result in
-                switch result {
-                case .success(let response):
-                    success(response)
-                case .failure(let error):
+                                         failure: @escaping (InPlayerError) -> Void) -> Request {
+            return INPAssetService.getItemAccess(id: id, completion: { (itemAccess, error) in
+                if let error = error {
                     failure(error)
+                } else {
+                    success(itemAccess!)
                 }
             })
         }
