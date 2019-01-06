@@ -9,6 +9,11 @@ private protocol AccountsAPI {
     static func isAuthenticated() -> Bool
 
     /**
+     Returns user credentials.
+     */
+    static func getCredentials() -> INPCredentials?
+
+    /**
      Creates new account.
      - Parameters:
         - fullName: Full name of account
@@ -191,8 +196,12 @@ public extension InPlayer {
     final public class Account: AccountsAPI {
         private init() {}
 
+        public static func getCredentials() -> INPCredentials? {
+            return UserDefaults.credentials
+        }
+
         public static func isAuthenticated() -> Bool {
-            guard let credentials = INPCredentials.getCredentials() else { return false }
+            guard let credentials = getCredentials() else { return false }
             return !credentials.accessToken.isEmpty && credentials.accessToken != ""
         }
 
@@ -220,7 +229,7 @@ public extension InPlayer {
                         let refreshToken = authorization.refreshToken,
                         let expires = authorization.expires
                     else {
-                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
+                        let message = "Authorization tokens are missing. Please re-authenticate."
                         let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
                         let missingTokenError = InPlayerMissigTokenError(error: err)
                         failure(missingTokenError)

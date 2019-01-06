@@ -107,18 +107,22 @@ public class INPAccountService {
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
         }
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.createAccount(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.createAccount(parameters: params),
                                                 completion: completion)
     }
 
     @discardableResult
     public static func getUserInfo(completion: @escaping RequestCompletion<INPAccount>) -> Request {
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.getAccountInfo(), completion: completion)
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.getAccountInfo(),
+                                                completion: completion)
     }
 
     @discardableResult
     public static func logout(completion: @escaping RequestCompletion<Empty>) -> Request {
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.logout(), completion: completion)
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.logout(), completion: completion)
     }
 
     @discardableResult
@@ -132,7 +136,8 @@ public class INPAccountService {
         if let referrer = InPlayer.Configuration.getReferrer() {
             params[AccountParameters.referrer] = referrer
         }
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.updateAccount(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.updateAccount(parameters: params),
                                                 completion: completion)
     }
 
@@ -146,7 +151,8 @@ public class INPAccountService {
             AccountParameters.password: newPassword,
             AccountParameters.passwordConfirmation: newPasswordConfirmation
         ]
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.changePassword(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.changePassword(parameters: params),
                                                 completion: completion)
     }
 
@@ -154,7 +160,8 @@ public class INPAccountService {
     public static func eraseAccount(password: String,
                                     completion: @escaping RequestCompletion<Empty>) -> Request {
         let params = [AccountParameters.password: password]
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.eraseAccount(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.eraseAccount(parameters: params),
                                                 completion: completion)
     }
 
@@ -167,7 +174,8 @@ public class INPAccountService {
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation
         ]
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.setNewPassword(token: token,
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.setNewPassword(token: token,
                                                                                        parameters: params),
                                                 completion: completion)
     }
@@ -179,7 +187,8 @@ public class INPAccountService {
             AccountParameters.merchantUUID: InPlayer.Configuration.getClientId(),
             AccountParameters.email: email
         ]
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.forgotPassword(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.forgotPassword(parameters: params),
                                                 completion: completion)
     }
 
@@ -194,7 +203,8 @@ public class INPAccountService {
             AccountParameters.clientId: InPlayer.Configuration.getClientId()
         ]
 
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.authenticate(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.authenticate(parameters: params),
                                                 completion: completion)
     }
 
@@ -206,7 +216,8 @@ public class INPAccountService {
             AccountParameters.grantType: AuthenticationTypes.refreshToken.rawValue,
             AccountParameters.refreshToken: refreshToken
         ]
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.refreshToken(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.refreshToken(parameters: params),
                                                 completion: completion)
     }
 
@@ -218,12 +229,11 @@ public class INPAccountService {
             AccountParameters.grantType: AuthenticationTypes.clientCredentials.rawValue,
             AccountParameters.clientSecret: clientSecret
         ]
-        return NetworkDataSource.performRequest(route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
+        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                                route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
                                                 completion: completion)
     }
 }
-
-
 
 
 private struct AccountParameters {

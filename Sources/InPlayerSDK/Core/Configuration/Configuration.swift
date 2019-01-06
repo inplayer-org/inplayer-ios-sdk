@@ -15,7 +15,7 @@ private protocol ConfigurationDataSource {
      InPlayer.Configuration.configure(withClientId: "XXXXX", referrer: "http://inplayer.com" environment: .debug)
      ````
      */
-    static func configure(withClientId clientId: String, referrer: String?, environment: EnvironmentType?)
+    static func configure(withClientId clientId: String, referrer: String?, environment: EnvironmentType)
 
     /**
      Method that retrieves clientId
@@ -97,14 +97,16 @@ public extension InPlayer {
 
         private init() {}
 
-        public static func configure(withClientId clientId: String, referrer: String? = nil, environment: EnvironmentType? = .production) {
+        public static func configure(withClientId clientId: String,
+                                     referrer: String? = nil,
+                                     environment: EnvironmentType = .production) {
+
             guard isConfigured == false else { return }
             UserDefaults.clientId = clientId
-            UserDefaults.environment = environment!
+            UserDefaults.environment = environment
             self.clientId = clientId
             self.referrer = referrer
-            self.environment = environment!
-            print("Configured: ClientId: \(self.clientId), environment: \(self.environment.rawValue)")
+            self.environment = environment
             isConfigured = true
         }
 

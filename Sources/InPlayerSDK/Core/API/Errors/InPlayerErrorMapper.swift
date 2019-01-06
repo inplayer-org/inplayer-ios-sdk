@@ -16,8 +16,7 @@ public final class InPlayerErrorMapper {
         if let data = data {
             do {
                 guard
-                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                    let code: Int = json["code"] as? Int
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 else {
                     return InPlayerInvalidJSONError(error: originalError)
                 }
@@ -32,6 +31,15 @@ public final class InPlayerErrorMapper {
                     errors = errorsJson.map{ $0.value }
                 } else if let message = message {
                     errors?.append(message)
+                }
+
+                var code: Int
+                if let jsonCode = json["code"] as? Int {
+                    code = jsonCode
+                } else if let afErrorCode = originalError.asAFError?.responseCode {
+                    code = afErrorCode
+                } else {
+                    code = (originalError as NSError).code
                 }
 
                 return InPlayerHttpError(code: code, message: message, errorList: errors, error: originalError)
