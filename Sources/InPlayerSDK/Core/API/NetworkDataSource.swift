@@ -19,10 +19,11 @@ public class NetworkDataSource {
      - Returns: The request
      */
     @discardableResult
-    public static func performRequest<T:Decodable>(route: INPAPIConfiguration,
+    public static func performRequest<T:Decodable>(session: Session = Session.default,
+                                                   route: INPAPIConfiguration,
                                                    decoder: JSONDecoder = JSONDecoder(),
                                                    completion: @escaping RequestCompletion<T> ) -> Request {
-        return AF.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
+        return session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
             // TODO: Maybe this should use different parameter check
             if InPlayer.Configuration.getEnvironment() == .debug {
                 print("=================================")

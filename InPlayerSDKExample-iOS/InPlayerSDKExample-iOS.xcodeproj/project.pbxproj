@@ -39,6 +39,8 @@
 		A7D2661121E0FF650050085D /* InPlayerUnknownError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661021E0FF650050085D /* InPlayerUnknownError.swift */; };
 		A7D2661321E101600050085D /* InPlayerInvalidResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661221E101600050085D /* InPlayerInvalidResponseError.swift */; };
 		A7D2661521E148D60050085D /* InPlayerMissigTokenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661421E148D60050085D /* InPlayerMissigTokenError.swift */; };
+		A7D2661821E237FD0050085D /* INPAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661721E237FD0050085D /* INPAuthHandler.swift */; };
+		A7D2661A21E2583B0050085D /* INPSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661921E2583B0050085D /* INPSessionManager.swift */; };
 		E4A087898FD13F8573C240E8 /* Pods_InPlayerSDKExample_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD8D52E622099CC4DFC6D74 /* Pods_InPlayerSDKExample_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,8 @@
 		A7D2661021E0FF650050085D /* InPlayerUnknownError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerUnknownError.swift; sourceTree = "<group>"; };
 		A7D2661221E101600050085D /* InPlayerInvalidResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerInvalidResponseError.swift; sourceTree = "<group>"; };
 		A7D2661421E148D60050085D /* InPlayerMissigTokenError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerMissigTokenError.swift; sourceTree = "<group>"; };
+		A7D2661721E237FD0050085D /* INPAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAuthHandler.swift; sourceTree = "<group>"; };
+		A7D2661921E2583B0050085D /* INPSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPSessionManager.swift; sourceTree = "<group>"; };
 		C1A9CB5F02C275EDB11C5D73 /* Pods-InPlayerSDKExample-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOSTests/Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7BA6C78590054282C7C7E4 /* Pods_InPlayerSDKExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDKExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A54D2FA744089C874FDD21 /* Pods-InPlayerSDKExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOS/Pods-InPlayerSDKExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 		A74DB80521D165410082D3AA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A7D2661921E2583B0050085D /* INPSessionManager.swift */,
+				A7D2661721E237FD0050085D /* INPAuthHandler.swift */,
 				A7D265DF21D2D4940050085D /* Models */,
 				A7D265D721D299230050085D /* INPAPIConfiguration.swift */,
 				A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */,
@@ -481,10 +487,12 @@
 				A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */,
 				A7D265ED21D42A480050085D /* Date.swift in Sources */,
 				A7D265F821DE7E610050085D /* INPAccessTypeModel.swift in Sources */,
+				A7D2661821E237FD0050085D /* INPAuthHandler.swift in Sources */,
 				A7D2661121E0FF650050085D /* InPlayerUnknownError.swift in Sources */,
 				A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */,
 				A7D265FC21DE7F7E0050085D /* INPItemTypeModel.swift in Sources */,
 				A7D2660321DE80270050085D /* INPItemMetadataModel.swift in Sources */,
+				A7D2661A21E2583B0050085D /* INPSessionManager.swift in Sources */,
 				A7D265DE21D2A0310050085D /* Account.swift in Sources */,
 				A7D265FE21DE7FC70050085D /* INPItemMetahashModel.swift in Sources */,
 				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
