@@ -41,6 +41,8 @@
 		A7D2661521E148D60050085D /* InPlayerMissigTokenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661421E148D60050085D /* InPlayerMissigTokenError.swift */; };
 		A7D2661821E237FD0050085D /* INPAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661721E237FD0050085D /* INPAuthHandler.swift */; };
 		A7D2661A21E2583B0050085D /* INPSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661921E2583B0050085D /* INPSessionManager.swift */; };
+		A7D2661C21E523630050085D /* INPTrialPeriodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661B21E523630050085D /* INPTrialPeriodModel.swift */; };
+		A7D2661E21E523860050085D /* INPSetupFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661D21E523860050085D /* INPSetupFeeModel.swift */; };
 		E4A087898FD13F8573C240E8 /* Pods_InPlayerSDKExample_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD8D52E622099CC4DFC6D74 /* Pods_InPlayerSDKExample_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,8 @@
 		A7D2661421E148D60050085D /* InPlayerMissigTokenError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerMissigTokenError.swift; sourceTree = "<group>"; };
 		A7D2661721E237FD0050085D /* INPAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAuthHandler.swift; sourceTree = "<group>"; };
 		A7D2661921E2583B0050085D /* INPSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPSessionManager.swift; sourceTree = "<group>"; };
+		A7D2661B21E523630050085D /* INPTrialPeriodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPTrialPeriodModel.swift; sourceTree = "<group>"; };
+		A7D2661D21E523860050085D /* INPSetupFeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPSetupFeeModel.swift; sourceTree = "<group>"; };
 		C1A9CB5F02C275EDB11C5D73 /* Pods-InPlayerSDKExample-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOSTests/Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7BA6C78590054282C7C7E4 /* Pods_InPlayerSDKExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDKExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A54D2FA744089C874FDD21 /* Pods-InPlayerSDKExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOS/Pods-InPlayerSDKExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				A7D265FD21DE7FC70050085D /* INPItemMetahashModel.swift */,
 				A7D2660221DE80270050085D /* INPItemMetadataModel.swift */,
 				A7D2660421DFD1310050085D /* INPItemAccessModel.swift */,
+				A7D2661B21E523630050085D /* INPTrialPeriodModel.swift */,
+				A7D2661D21E523860050085D /* INPSetupFeeModel.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -494,9 +500,11 @@
 				A7D2660321DE80270050085D /* INPItemMetadataModel.swift in Sources */,
 				A7D2661A21E2583B0050085D /* INPSessionManager.swift in Sources */,
 				A7D265DE21D2A0310050085D /* Account.swift in Sources */,
+				A7D2661C21E523630050085D /* INPTrialPeriodModel.swift in Sources */,
 				A7D265FE21DE7FC70050085D /* INPItemMetahashModel.swift in Sources */,
 				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
 				A7D265FA21DE7EB10050085D /* INPAccessControlTypeModel.swift in Sources */,
+				A7D2661E21E523860050085D /* INPSetupFeeModel.swift in Sources */,
 				A7D265F221DE58740050085D /* Asset.swift in Sources */,
 				A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,

@@ -20,3 +20,9 @@ public final class INPSessionManager {
         session = Session(adapter: handler, retrier: handler)
     }
 }
+
+extension Session {
+    var isAuthorized: Bool {
+        return InPlayer.Account.isAuthenticated()
+    }
+}

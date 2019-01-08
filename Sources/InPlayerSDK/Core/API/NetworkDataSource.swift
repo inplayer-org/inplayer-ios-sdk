@@ -16,14 +16,19 @@ public class NetworkDataSource {
         - decoder: Data decoder. Defaults to JSONDecoder
         - completion: A closure to be executed once the request has finished.
         - result: Generic enum Result containing response or error depending of its state
-     - Returns: The request
      */
-    @discardableResult
     public static func performRequest<T:Decodable>(session: Session = Session.default,
                                                    route: INPAPIConfiguration,
                                                    decoder: JSONDecoder = JSONDecoder(),
-                                                   completion: @escaping RequestCompletion<T> ) -> Request {
-        return session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
+                                                   completion: @escaping RequestCompletion<T>) {
+        if route.requiresAuthorization, !session.isAuthorized {
+            let message = "Endpoint " + route.path + " requires authorization."
+            let err = NSError(domain: "Error", code: 401, userInfo: [NSLocalizedDescriptionKey: message])
+            let missingTokenError = InPlayerMissigTokenError(error: err)
+            completion(nil, missingTokenError)
+            return
+        }
+        session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
             // TODO: Maybe this should use different parameter check
             if InPlayer.Configuration.getEnvironment() == .debug {
                 print("=================================")

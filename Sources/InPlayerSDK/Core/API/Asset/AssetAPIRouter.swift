@@ -2,7 +2,7 @@ import Alamofire
 
 /// Enum of available asset api routes
 enum AssetAPIRouter: INPAPIConfiguration {
-    case getItem(id: Int, merchantUUID: String)
+    case getItemDetails(id: Int, merchantUUID: String)
     case getItemAccessFees(id: Int)
     case getItemAccess(id: Int)
 
@@ -15,7 +15,7 @@ enum AssetAPIRouter: INPAPIConfiguration {
 
     var path: String {
         switch self {
-        case .getItem(let id, let merchantUUID):
+        case .getItemDetails(let id, let merchantUUID):
             return String(format: NetworkConstants.Endpoints.Asset.itemDetails, merchantUUID, "\(id)")
         case .getItemAccessFees(let id):
             return String(format: NetworkConstants.Endpoints.Asset.itemAccessFees, "\(id)")
@@ -37,33 +37,40 @@ enum AssetAPIRouter: INPAPIConfiguration {
             return true
         }
     }
+
+    var requiresAuthorization: Bool {
+        switch self {
+        case .getItemAccessFees,
+             .getItemDetails:
+            return false
+        default:
+            return true
+        }
+    }
 }
 
 public class INPAssetService {
 
-    @discardableResult
-    public static func getItem(id: Int,
-                               merchantUUID: String,
-                               completion: @escaping RequestCompletion<INPItemModel>) -> Request {
-        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
-                                                route: AssetAPIRouter.getItem(id: id,
+    public static func getItemDetails(id: Int,
+                                      merchantUUID: String,
+                                      completion: @escaping RequestCompletion<INPItemModel>) {
+        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                         route: AssetAPIRouter.getItemDetails(id: id,
                                                                               merchantUUID: merchantUUID),
-                                                completion: completion)
+                                         completion: completion)
     }
 
-    @discardableResult
     public static func getItemAccessFees(id: Int,
-                                         completion: @escaping RequestCompletion<[INPAccessFeeModel]>) -> Request {
-        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
-                                                route: AssetAPIRouter.getItemAccessFees(id: id),
-                                                completion: completion)
+                                         completion: @escaping RequestCompletion<[INPAccessFeeModel]>) {
+        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                         route: AssetAPIRouter.getItemAccessFees(id: id),
+                                         completion: completion)
     }
 
-    @discardableResult
     public static func getItemAccess(id: Int,
-                                     completion: @escaping RequestCompletion<INPItemAccessModel>) -> Request {
-        return NetworkDataSource.performRequest(session: INPSessionManager.default.session,
-                                                route: AssetAPIRouter.getItemAccess(id: id),
-                                                completion: completion)
+                                     completion: @escaping RequestCompletion<INPItemAccessModel>) {
+        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+                                         route: AssetAPIRouter.getItemAccess(id: id),
+                                         completion: completion)
     }
 }

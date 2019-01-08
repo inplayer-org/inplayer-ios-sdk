@@ -10,7 +10,8 @@ public struct INPAccessFeeModel : Codable {
     let itemType : String?
     let merchantId : Int?
     let startsAt : Double?
-//    let geoRestriction : AnyObject?
+    let trialPeriod: INPTrialPeriodModel?
+    let setupFee: INPSetupFeeModel?
 
     enum CodingKeys: String, CodingKey {
         case accessType = "access_type"
@@ -21,7 +22,8 @@ public struct INPAccessFeeModel : Codable {
         case itemType = "item_type"
         case merchantId = "merchant_id"
         case startsAt = "starts_at"
-//        case geoRestriction = "geo_restriction"
+        case trialPeriod = "trial_period"
+        case setupFee = "setup_fee"
     }
 
     public init(from decoder: Decoder) throws {
@@ -34,7 +36,8 @@ public struct INPAccessFeeModel : Codable {
         itemType = try values.decodeIfPresent(String.self, forKey: .itemType)
         merchantId = try values.decodeIfPresent(Int.self, forKey: .merchantId)
         startsAt = try values.decodeIfPresent(Double.self, forKey: .startsAt)
-//        geoRestriction = try values.decodeIfPresent(AnyObject.self, forKey: .geoRestriction)
+        trialPeriod = try values.decode(INPTrialPeriodModel.self, forKey: .trialPeriod)
+        setupFee = try values.decode(INPSetupFeeModel.self, forKey: .setupFee)
     }
 
 }

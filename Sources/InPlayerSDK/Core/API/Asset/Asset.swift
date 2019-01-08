@@ -9,11 +9,10 @@ private protocol AssetsAPI {
         - item: Contains item info.
         - failure: A closure to be executed once the request has finished with error.
         - error: Containing information about the error that occurred.
-     - Retuns: The request.
      */
-    static func getItem(id: Int,
-                        success: @escaping (_ item: INPItemModel) -> Void,
-                        failure: @escaping (_ error: InPlayerError) -> Void) -> Request
+    static func getItemDetails(id: Int,
+                               success: @escaping (_ item: INPItemModel) -> Void,
+                               failure: @escaping (_ error: InPlayerError) -> Void)
 
     /**
      Returns a collection of fees for a specific item
@@ -23,11 +22,10 @@ private protocol AssetsAPI {
          - accessFees: Collection of access fees for specific asset.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
-     - Retuns: The request.
      */
     static func getItemAccessFees(id: Int,
                                   success: @escaping (_ accessFees: [INPAccessFeeModel]) -> Void,
-                                  failure: @escaping (_ error: InPlayerError) -> Void) -> Request
+                                  failure: @escaping (_ error: InPlayerError) -> Void)
 
     /**
      Grants access to item
@@ -37,11 +35,10 @@ private protocol AssetsAPI {
          - itemAccess: Object containing info about the item plus additional info.
          - failure: A closure to be executed once the request has finished with error.
          - error: Containing information about the error that occurred.
-     - Returns: The request
      */
     static func getItemAccess(id: Int,
                               success: @escaping (_ itemAccess: INPItemAccessModel) -> Void,
-                              failure: @escaping (_ error: InPlayerError) -> Void) -> Request
+                              failure: @escaping (_ error: InPlayerError) -> Void)
 }
 
 public extension InPlayer {
@@ -49,12 +46,11 @@ public extension InPlayer {
 
         private init() {}
 
-        @discardableResult
-        public static func getItem(id: Int,
-                                   success: @escaping (INPItemModel) -> Void,
-                                   failure: @escaping (InPlayerError) -> Void) -> Request {
+        public static func getItemDetails(id: Int,
+                                          success: @escaping (INPItemModel) -> Void,
+                                          failure: @escaping (InPlayerError) -> Void) {
             let merchantUUID = InPlayer.Configuration.getClientId()
-            return INPAssetService.getItem(id: id, merchantUUID: merchantUUID, completion: { (item, error) in
+            INPAssetService.getItemDetails(id: id, merchantUUID: merchantUUID, completion: { (item, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -63,11 +59,10 @@ public extension InPlayer {
             })
         }
 
-        @discardableResult
         public static func getItemAccessFees(id: Int,
                                              success: @escaping ([INPAccessFeeModel]) -> Void,
-                                             failure: @escaping (InPlayerError) -> Void) -> Request {
-            return INPAssetService.getItemAccessFees(id: id, completion: { (accessFees, error) in
+                                             failure: @escaping (InPlayerError) -> Void) {
+            INPAssetService.getItemAccessFees(id: id, completion: { (accessFees, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -76,11 +71,10 @@ public extension InPlayer {
             })
         }
 
-        @discardableResult
         public static func getItemAccess(id: Int,
                                          success: @escaping (INPItemAccessModel) -> Void,
-                                         failure: @escaping (InPlayerError) -> Void) -> Request {
-            return INPAssetService.getItemAccess(id: id, completion: { (itemAccess, error) in
+                                         failure: @escaping (InPlayerError) -> Void) {
+            INPAssetService.getItemAccess(id: id, completion: { (itemAccess, error) in
                 if let error = error {
                     failure(error)
                 } else {
