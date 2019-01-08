@@ -263,6 +263,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
+                    UserDefaults.credentials = nil
                     success()
                 }
             })

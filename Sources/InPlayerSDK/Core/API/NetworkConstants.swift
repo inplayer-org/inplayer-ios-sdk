@@ -14,6 +14,8 @@ public struct NetworkConstants {
         public static let bearerToken           = "Bearer "
         public static let applicationJSON       = "application/json"
         public static let applicationUrlEncoded = "application/x-www-form-urlencoded"
+        public static let authenticationType    = "Authentication-Type"
+        public static let refreshToken          = "Refresh-Token"
     }
 
     public struct Endpoints {
