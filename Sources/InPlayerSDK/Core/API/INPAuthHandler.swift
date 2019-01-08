@@ -77,7 +77,7 @@ public final class INPAuthHandler: RequestAdapter, RequestRetrier {
         }
     }
 
-    public func refreshTokens(completion: @escaping RefreshCompletion) {
+    private func refreshTokens(completion: @escaping RefreshCompletion) {
         if let refreshToken = InPlayer.Account.getCredentials()?.refreshToken {
 
             isRefreshing = true

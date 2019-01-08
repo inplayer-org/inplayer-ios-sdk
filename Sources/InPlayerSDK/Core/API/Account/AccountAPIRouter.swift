@@ -1,7 +1,7 @@
 import Alamofire
 
 /// Enum of available account api routes
-enum AccountAPIRouter: INPAPIConfiguration {
+private enum AccountAPIRouter: INPAPIConfiguration {
     case createAccount(parameters: [String: Any])
     case getAccountInfo()
     case logout()

@@ -17,7 +17,7 @@ public class NetworkDataSource {
         - completion: A closure to be executed once the request has finished.
         - result: Generic enum Result containing response or error depending of its state
      */
-    public static func performRequest<T:Decodable>(session: Session = Session.default,
+    public static func performRequest<T:Decodable>(session: INPSession,
                                                    route: INPAPIConfiguration,
                                                    decoder: JSONDecoder = JSONDecoder(),
                                                    completion: @escaping RequestCompletion<T>) {

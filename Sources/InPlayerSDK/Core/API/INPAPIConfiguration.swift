@@ -17,6 +17,7 @@ public protocol INPAPIConfiguration: URLRequestConvertible {
     /// It defines if url string should be encoded or not
     var urlEncoding: Bool { get }
 
+    /// It determines if endpoint requires authenticated user
     var requiresAuthorization: Bool { get }
 }
 
