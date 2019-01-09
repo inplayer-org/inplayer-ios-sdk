@@ -32,6 +32,10 @@ public final class INPAuthHandler: RequestAdapter, RequestRetrier {
 
     public func adapt(_ urlRequest: URLRequest, completion: @escaping (Result<URLRequest>) -> Void) {
         let result: Result<URLRequest> = Result {
+            if let authenticationType = urlRequest.value(forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType),
+                authenticationType == NetworkConstants.HeaderParameters.refreshToken {
+                    return urlRequest
+            }
             guard
                 let accessToken = InPlayer.Account.getCredentials()?.accessToken,
                 let urlString = urlRequest.url?.absoluteString,
@@ -50,26 +54,32 @@ public final class INPAuthHandler: RequestAdapter, RequestRetrier {
 
     public func should(_ manager: Session, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
         lock.lock(); defer { lock.unlock() }
-        guard request.retryCount == 0 else { return completion(false, 0.0) }
-        guard let response = request.response, (response.statusCode == 401 || response.statusCode == 403)
+
+        if let authenticationType = request.request?.value(forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType),
+            authenticationType == NetworkConstants.HeaderParameters.refreshToken {
+            return completion(false, 0.0)
+        }
+        guard
+            request.retryCount == 0,
+            let response = request.response,
+            response.statusCode == 401 || response.statusCode == 403
         else {
             return completion(false, 0.0)
         }
-
         requestToRetry.append(completion)
 
         if !isRefreshing {
             refreshTokens { [weak self] (succeeded, accessToken, refreshToken) in
                 guard let strongSelf = self else { return }
-
                 strongSelf.requestToRetry.forEach { $0(succeeded, 0.25) }
                 strongSelf.requestToRetry.removeAll()
             }
         }
     }
 
-    public func refreshTokens(completion: @escaping RefreshCompletion) {
+    private func refreshTokens(completion: @escaping RefreshCompletion) {
         if let refreshToken = InPlayer.Account.getCredentials()?.refreshToken {
+
             isRefreshing = true
             InPlayer.Account.refreshAccessToken(using: refreshToken, success: { [weak self] (authorization) in
                 guard let strongSelf = self else { return }

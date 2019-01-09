@@ -9,7 +9,7 @@ public final class INPSessionManager {
     public static let `default` = INPSessionManager()
 
     /// The session.
-    public var session: Session
+    public var session: INPSession
 
     /// Session base url string.
     public var baseURLString: String
@@ -17,6 +17,12 @@ public final class INPSessionManager {
     private init() {
         baseURLString = InPlayer.Configuration.getBaseUrlString()
         let handler = INPAuthHandler(baseURLString: baseURLString)
-        session = Session(adapter: handler, retrier: handler)
+        session = INPSession(adapter: handler, retrier: handler)
+    }
+}
+
+public class INPSession: Session {
+    var isAuthorized: Bool {
+        return InPlayer.Account.isAuthenticated()
     }
 }

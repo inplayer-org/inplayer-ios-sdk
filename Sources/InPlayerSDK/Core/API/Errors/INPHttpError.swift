@@ -1,6 +1,6 @@
 import Foundation
 
-final public class InPlayerMissigTokenError: InPlayerError {
+public struct INPHttpError: InPlayerError {
     public var code: Int
     public var message: String?
     public var errorList: [String]?
@@ -11,12 +11,5 @@ final public class InPlayerMissigTokenError: InPlayerError {
         self.message = message
         self.errorList = errorList
         self.originalError = error
-    }
-
-    public convenience init(error: Error) {
-        self.init(code: (error as NSError).code,
-                  message: (error as NSError).localizedDescription,
-                  errorList: [(error as NSError).localizedDescription],
-                  error: error)
     }
 }

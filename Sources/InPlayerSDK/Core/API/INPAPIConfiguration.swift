@@ -16,12 +16,15 @@ public protocol INPAPIConfiguration: URLRequestConvertible {
 
     /// It defines if url string should be encoded or not
     var urlEncoding: Bool { get }
+
+    /// It determines if endpoint requires authenticated user
+    var requiresAuthorization: Bool { get }
 }
 
 public extension INPAPIConfiguration {
 
     var baseURL: String {
-        return InPlayer.Configuration.getBaseUrlString()
+        return INPSessionManager.default.baseURLString
     }
 
     func asURLRequest() throws -> URLRequest {
@@ -41,8 +44,6 @@ public extension INPAPIConfiguration {
         // Parameters
         guard let parameters = parameters else { return urlRequest }
         if urlEncoding {
-//            let encoding: ParameterEncoding = (method == .post) ?
-//                Alamofire.JSONEncoding.default : Alamofire.URLEncoding.default
             do {
                 urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             } catch {

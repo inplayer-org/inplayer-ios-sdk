@@ -102,8 +102,6 @@ public extension InPlayer {
                                      environment: EnvironmentType = .production) {
 
             guard isConfigured == false else { return }
-            UserDefaults.clientId = clientId
-            UserDefaults.environment = environment
             self.clientId = clientId
             self.referrer = referrer
             self.environment = environment
