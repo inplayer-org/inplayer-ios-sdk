@@ -24,7 +24,7 @@ public protocol INPAPIConfiguration: URLRequestConvertible {
 public extension INPAPIConfiguration {
 
     var baseURL: String {
-        return InPlayer.Configuration.getBaseUrlString()
+        return INPSessionManager.default.baseURLString
     }
 
     func asURLRequest() throws -> URLRequest {

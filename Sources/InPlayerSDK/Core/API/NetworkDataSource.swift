@@ -22,11 +22,7 @@ public class NetworkDataSource {
                                                    decoder: JSONDecoder = JSONDecoder(),
                                                    completion: @escaping RequestCompletion<T>) {
         if route.requiresAuthorization, !session.isAuthorized {
-            let message = "Endpoint " + route.path + " requires authorization."
-            let err = NSError(domain: "Error", code: 401, userInfo: [NSLocalizedDescriptionKey: message])
-            let missingTokenError = InPlayerMissigTokenError(error: err)
-            completion(nil, missingTokenError)
-            return
+            return completion(nil, INPUserNotAuthenticatedError())
         }
         session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
             // TODO: Maybe this should use different parameter check

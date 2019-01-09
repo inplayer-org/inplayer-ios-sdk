@@ -4,7 +4,7 @@ public class InPlayer {
     private init () {}
 
     /**
-     Initialize SDK with clientID and enviorment.
+     Initialize SDK with clientID, referrer string and enviorment type.
      - Parameters:
          - clientId: Also called merchantId, to identify client using the SDK.
          - referrer: The request’s source URL

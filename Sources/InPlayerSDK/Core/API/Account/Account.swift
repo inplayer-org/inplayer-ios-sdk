@@ -9,7 +9,8 @@ private protocol AccountsAPI {
     static func isAuthenticated() -> Bool
 
     /**
-     Returns user credentials.
+     Get user credentials.
+     - Returns: User credentials. (Optional)
      */
     static func getCredentials() -> INPCredentials?
 
@@ -172,7 +173,6 @@ private protocol AccountsAPI {
 
 public extension InPlayer {
     final public class Account: AccountsAPI {
-        
         private init() {}
 
         public static func getCredentials() -> INPCredentials? {
@@ -193,12 +193,12 @@ public extension InPlayer {
                                          success: @escaping (INPAuthorizationModel) -> Void,
                                          failure: @escaping (InPlayerError) -> Void) {
             INPAccountService.createAccount(fullName: fullName,
-                                                   email: email,
-                                                   password: password,
-                                                   passwordConfirmation: passwordConfirmation,
-                                                   type: type,
-                                                   metadata: metadata,
-                                                   completion: { (authorization, error) in
+                                            email: email,
+                                            password: password,
+                                            passwordConfirmation: passwordConfirmation,
+                                            type: type,
+                                            metadata: metadata,
+                                            completion: { (authorization, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -207,10 +207,7 @@ public extension InPlayer {
                         let refreshToken = authorization.refreshToken,
                         let expires = authorization.expires
                     else {
-                        let message = "Authorization tokens are missing. Please re-authenticate."
-                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
-                        let missingTokenError = InPlayerMissigTokenError(error: err)
-                        failure(missingTokenError)
+                        failure(INPUserNotAuthenticatedError())
                         return
                     }
 
@@ -250,8 +247,8 @@ public extension InPlayer {
                                          success: @escaping (INPAccount) -> Void,
                                          failure: @escaping (InPlayerError) -> Void) {
             INPAccountService.updateAccount(fullName: fullName,
-                                                   metadata: metadata,
-                                                   completion: { (account, error) in
+                                            metadata: metadata,
+                                            completion: { (account, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -266,9 +263,9 @@ public extension InPlayer {
                                           success: @escaping () -> Void,
                                           failure: @escaping (InPlayerError) -> Void) {
             INPAccountService.changePassword(oldPassword: oldPassword,
-                                                    newPassword: newPassword,
-                                                    newPasswordConfirmation: newPasswordConfirmation,
-                                                    completion: { (_, error) in
+                                             newPassword: newPassword,
+                                             newPasswordConfirmation: newPasswordConfirmation,
+                                             completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -295,9 +292,9 @@ public extension InPlayer {
                                           success: @escaping () -> Void,
                                           failure: @escaping (InPlayerError) -> Void) {
             INPAccountService.setNewPassword(token: token,
-                                                    password: password,
-                                                    passwordConfirmation: passwordConfirmation,
-                                                    completion: { (_, error) in
+                                             password: password,
+                                             passwordConfirmation: passwordConfirmation,
+                                             completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -323,8 +320,8 @@ public extension InPlayer {
                                         success: @escaping (INPAuthorizationModel) -> Void,
                                         failure: @escaping (InPlayerError) -> Void) {
             INPAccountService.authenticate(username: username,
-                                                  password: password,
-                                                  completion: { (authorization, error) in
+                                           password: password,
+                                           completion: { (authorization, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -333,11 +330,7 @@ public extension InPlayer {
                         let refreshToken = authorization.refreshToken,
                         let expires = authorization.expires
                     else {
-                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
-                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
-                        let missingTokenError = InPlayerMissigTokenError(error: err)
-                        failure(missingTokenError)
-                        return
+                        return failure(INPUserNotAuthenticatedError())
                     }
 
                     UserDefaults.credentials = INPCredentials(accessToken: accessToken,
@@ -360,11 +353,7 @@ public extension InPlayer {
                         let refreshToken = authorization.refreshToken,
                         let expires = authorization.expires
                     else {
-                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
-                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
-                        let missingTokenError = InPlayerMissigTokenError(error: err)
-                        failure(missingTokenError)
-                        return
+                        return failure(INPUserNotAuthenticatedError())
                     }
 
                     UserDefaults.credentials = INPCredentials(accessToken: accessToken,
@@ -379,7 +368,7 @@ public extension InPlayer {
                                                               success: @escaping (INPAuthorizationModel) -> Void,
                                                               failure: @escaping (InPlayerError) -> Void) {
             INPAccountService.authenticateUsingClientCredentials(clientSecret: clientSecret,
-                                                                        completion: { (authorization, error) in
+                                                                 completion: { (authorization, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -388,11 +377,7 @@ public extension InPlayer {
                         let refreshToken = authorization.refreshToken,
                         let expires = authorization.expires
                     else {
-                        let message = "Authorization tokens are missing.\nPlease re-authenticate."
-                        let err = NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
-                        let missingTokenError = InPlayerMissigTokenError(error: err)
-                        failure(missingTokenError)
-                        return
+                        return failure(INPUserNotAuthenticatedError())
                     }
 
                     UserDefaults.credentials = INPCredentials(accessToken: accessToken,

@@ -1,6 +1,6 @@
 import Foundation
 
-public final class InPlayerUnknownError: InPlayerError {
+public struct INPUnknownError: InPlayerError {
     public var code: Int
     public var message: String?
     public var errorList: [String]?
@@ -13,7 +13,8 @@ public final class InPlayerUnknownError: InPlayerError {
         self.originalError = error
     }
 
-    public convenience init(error: Error) {
-        self.init(code: 0, message: "Unknown error occured", errorList: ["Unknown error occured"], error: error)
+    public init(error: Error) {
+        let message = "Unknown error occured"
+        self.init(code: 0, message: message, errorList: [message], error: error)
     }
 }
