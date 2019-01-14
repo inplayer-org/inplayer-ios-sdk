@@ -9,6 +9,8 @@ import Alamofire
 public typealias RequestCompletion<T> = (_ value: T?, _ error: InPlayerError?) -> Void
 
 public class NetworkDataSource {
+    private init() {}
+    
     /**
      Generic method that creates and executes request.
      - Parameters:

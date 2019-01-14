@@ -11,6 +11,11 @@
 		A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C05421CED043004D7EF7 /* AppDelegate.swift */; };
 		A718C05F21CED044004D7EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */; };
 		A718C06A21CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C06921CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift */; };
+		A71F031F21ED2EFF00647B38 /* INPNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F031E21ED2EFF00647B38 /* INPNotificationService.swift */; };
+		A71F032321ED311C00647B38 /* INPAwsKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F032221ED311C00647B38 /* INPAwsKeyModel.swift */; };
+		A71F032521ED320700647B38 /* NotificationNetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F032421ED320700647B38 /* NotificationNetworkConstants.swift */; };
+		A71F032721ED347300647B38 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F032621ED347300647B38 /* Notification.swift */; };
+		A71F032921ED3C6500647B38 /* INPNotificationAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F032821ED3C6500647B38 /* INPNotificationAPIManager.swift */; };
 		A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80321D00FA50082D3AA /* InPlayer.swift */; };
 		A74DB80C21D168440082D3AA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80B21D168440082D3AA /* Configuration.swift */; };
 		A7D265D021D172AA0050085D /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265CF21D172AA0050085D /* StringConstants.swift */; };
@@ -67,6 +72,11 @@
 		A718C06521CED044004D7EF7 /* InPlayerSDKExample-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPlayerSDKExample-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A718C06921CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSDKExample_iOSTests.swift; sourceTree = "<group>"; };
 		A718C06B21CED044004D7EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71F031E21ED2EFF00647B38 /* INPNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPNotificationService.swift; sourceTree = "<group>"; };
+		A71F032221ED311C00647B38 /* INPAwsKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAwsKeyModel.swift; sourceTree = "<group>"; };
+		A71F032421ED320700647B38 /* NotificationNetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNetworkConstants.swift; sourceTree = "<group>"; };
+		A71F032621ED347300647B38 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		A71F032821ED3C6500647B38 /* INPNotificationAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPNotificationAPIManager.swift; sourceTree = "<group>"; };
 		A74DB80321D00FA50082D3AA /* InPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayer.swift; sourceTree = "<group>"; };
 		A74DB80B21D168440082D3AA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A7D265CF21D172AA0050085D /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -204,6 +214,26 @@
 			path = InPlayerSDK;
 			sourceTree = "<group>";
 		};
+		A71F032021ED30F500647B38 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A71F032821ED3C6500647B38 /* INPNotificationAPIManager.swift */,
+				A71F031E21ED2EFF00647B38 /* INPNotificationService.swift */,
+				A71F032121ED310500647B38 /* Models */,
+				A71F032421ED320700647B38 /* NotificationNetworkConstants.swift */,
+				A71F032621ED347300647B38 /* Notification.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A71F032121ED310500647B38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A71F032221ED311C00647B38 /* INPAwsKeyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A74DB80521D165410082D3AA /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +278,7 @@
 		A74DB80921D165D80082D3AA /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				A71F032021ED30F500647B38 /* API */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -490,11 +521,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D265F021DE586A0050085D /* AssetAPIRouter.swift in Sources */,
+				A71F032921ED3C6500647B38 /* INPNotificationAPIManager.swift in Sources */,
 				A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */,
 				A7D265ED21D42A480050085D /* Date.swift in Sources */,
+				A71F032521ED320700647B38 /* NotificationNetworkConstants.swift in Sources */,
 				A7D265F821DE7E610050085D /* INPAccessTypeModel.swift in Sources */,
 				A7D2661821E237FD0050085D /* INPAuthHandler.swift in Sources */,
 				A7D2661121E0FF650050085D /* INPUnknownError.swift in Sources */,
+				A71F031F21ED2EFF00647B38 /* INPNotificationService.swift in Sources */,
 				A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */,
 				A7D265FC21DE7F7E0050085D /* INPItemTypeModel.swift in Sources */,
 				A7D2660321DE80270050085D /* INPItemMetadataModel.swift in Sources */,
@@ -504,6 +538,7 @@
 				A7D265FE21DE7FC70050085D /* INPItemMetahashModel.swift in Sources */,
 				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
 				A7D265FA21DE7EB10050085D /* INPAccessControlTypeModel.swift in Sources */,
+				A71F032721ED347300647B38 /* Notification.swift in Sources */,
 				A7D2661E21E523860050085D /* INPSetupFeeModel.swift in Sources */,
 				A7D265F221DE58740050085D /* Asset.swift in Sources */,
 				A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */,
@@ -522,6 +557,7 @@
 				A7D2661321E101600050085D /* INPInvalidResponseError.swift in Sources */,
 				A7D265E321D2D6210050085D /* INPAuthorizationModel.swift in Sources */,
 				A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */,
+				A71F032321ED311C00647B38 /* INPAwsKeyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

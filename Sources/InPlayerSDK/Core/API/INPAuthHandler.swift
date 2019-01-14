@@ -12,7 +12,7 @@ public final class INPAuthHandler: RequestAdapter, RequestRetrier {
         - accessToken: The newly obtained access token.
         - refreshToken: The newly obtained refresh token.
      */
-    public typealias RefreshCompletion = (_ succeeded: Bool, _ accessToken: String?, _ refreshToken: String?) -> Void
+    private typealias RefreshCompletion = (_ succeeded: Bool, _ accessToken: String?, _ refreshToken: String?) -> Void
 
     /// Base url string, used to determine on which requests we need to add access token
     private var baseURLString: String
