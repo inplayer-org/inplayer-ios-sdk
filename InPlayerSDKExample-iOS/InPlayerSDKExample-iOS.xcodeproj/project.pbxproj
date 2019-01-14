@@ -11,20 +11,23 @@
 		A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C05421CED043004D7EF7 /* AppDelegate.swift */; };
 		A718C05F21CED044004D7EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */; };
 		A718C06A21CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C06921CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift */; };
+		A71F031B21ED068000647B38 /* PaymentNetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F031A21ED068000647B38 /* PaymentNetworkConstants.swift */; };
+		A71F031D21ED11C600647B38 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F031C21ED11C600647B38 /* Payment.swift */; };
 		A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80321D00FA50082D3AA /* InPlayer.swift */; };
 		A74DB80C21D168440082D3AA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80B21D168440082D3AA /* Configuration.swift */; };
+		A769515021ECFEF900206F09 /* INPPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A769514F21ECFEF900206F09 /* INPPaymentService.swift */; };
 		A7D265D021D172AA0050085D /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265CF21D172AA0050085D /* StringConstants.swift */; };
 		A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D321D1737E0050085D /* UserDefaultsExt.swift */; };
 		A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D721D299230050085D /* INPAPIConfiguration.swift */; };
 		A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D921D29B230050085D /* NetworkConstants.swift */; };
-		A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265DB21D29F900050085D /* AccountAPIRouter.swift */; };
+		A7D265DC21D29F900050085D /* INPAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265DB21D29F900050085D /* INPAccountService.swift */; };
 		A7D265DE21D2A0310050085D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265DD21D2A0310050085D /* Account.swift */; };
 		A7D265E121D2D5190050085D /* INPAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E021D2D5190050085D /* INPAccountModel.swift */; };
 		A7D265E321D2D6210050085D /* INPAuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E221D2D6210050085D /* INPAuthorizationModel.swift */; };
 		A7D265E521D2DB6D0050085D /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */; };
 		A7D265E921D4212E0050085D /* INPCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265E821D4212E0050085D /* INPCredentials.swift */; };
 		A7D265ED21D42A480050085D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265EC21D42A480050085D /* Date.swift */; };
-		A7D265F021DE586A0050085D /* AssetAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265EF21DE58690050085D /* AssetAPIRouter.swift */; };
+		A7D265F021DE586A0050085D /* INPAssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265EF21DE58690050085D /* INPAssetService.swift */; };
 		A7D265F221DE58740050085D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F121DE58740050085D /* Asset.swift */; };
 		A7D265F421DE7DAD0050085D /* INPItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F321DE7DAC0050085D /* INPItemModel.swift */; };
 		A7D265F621DE7E2B0050085D /* INPAccessFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265F521DE7E2B0050085D /* INPAccessFeeModel.swift */; };
@@ -67,20 +70,23 @@
 		A718C06521CED044004D7EF7 /* InPlayerSDKExample-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPlayerSDKExample-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A718C06921CED044004D7EF7 /* InPlayerSDKExample_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSDKExample_iOSTests.swift; sourceTree = "<group>"; };
 		A718C06B21CED044004D7EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71F031A21ED068000647B38 /* PaymentNetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentNetworkConstants.swift; sourceTree = "<group>"; };
+		A71F031C21ED11C600647B38 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		A74DB80321D00FA50082D3AA /* InPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayer.swift; sourceTree = "<group>"; };
 		A74DB80B21D168440082D3AA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A769514F21ECFEF900206F09 /* INPPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPPaymentService.swift; sourceTree = "<group>"; };
 		A7D265CF21D172AA0050085D /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		A7D265D321D1737E0050085D /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
 		A7D265D721D299230050085D /* INPAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAPIConfiguration.swift; sourceTree = "<group>"; };
 		A7D265D921D29B230050085D /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
-		A7D265DB21D29F900050085D /* AccountAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIRouter.swift; sourceTree = "<group>"; };
+		A7D265DB21D29F900050085D /* INPAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccountService.swift; sourceTree = "<group>"; };
 		A7D265DD21D2A0310050085D /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A7D265E021D2D5190050085D /* INPAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccountModel.swift; sourceTree = "<group>"; };
 		A7D265E221D2D6210050085D /* INPAuthorizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAuthorizationModel.swift; sourceTree = "<group>"; };
 		A7D265E421D2DB6D0050085D /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		A7D265E821D4212E0050085D /* INPCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPCredentials.swift; sourceTree = "<group>"; };
 		A7D265EC21D42A480050085D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		A7D265EF21DE58690050085D /* AssetAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAPIRouter.swift; sourceTree = "<group>"; };
+		A7D265EF21DE58690050085D /* INPAssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAssetService.swift; sourceTree = "<group>"; };
 		A7D265F121DE58740050085D /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		A7D265F321DE7DAC0050085D /* INPItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPItemModel.swift; sourceTree = "<group>"; };
 		A7D265F521DE7E2B0050085D /* INPAccessFeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccessFeeModel.swift; sourceTree = "<group>"; };
@@ -223,7 +229,7 @@
 		A74DB80621D165B50082D3AA /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				A7D265DB21D29F900050085D /* AccountAPIRouter.swift */,
+				A7D265DB21D29F900050085D /* INPAccountService.swift */,
 				A7D265DD21D2A0310050085D /* Account.swift */,
 			);
 			path = Account;
@@ -232,7 +238,7 @@
 		A74DB80721D165C30082D3AA /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				A7D265EF21DE58690050085D /* AssetAPIRouter.swift */,
+				A7D265EF21DE58690050085D /* INPAssetService.swift */,
 				A7D265F121DE58740050085D /* Asset.swift */,
 			);
 			path = Asset;
@@ -241,6 +247,7 @@
 		A74DB80821D165D00082D3AA /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				A769514E21ECFED700206F09 /* API */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -258,6 +265,16 @@
 				A74DB80B21D168440082D3AA /* Configuration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A769514E21ECFED700206F09 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A769514F21ECFEF900206F09 /* INPPaymentService.swift */,
+				A71F031A21ED068000647B38 /* PaymentNetworkConstants.swift */,
+				A71F031C21ED11C600647B38 /* Payment.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		A7D265D121D1734B0050085D /* Core */ = {
@@ -489,13 +506,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D265F021DE586A0050085D /* AssetAPIRouter.swift in Sources */,
+				A7D265F021DE586A0050085D /* INPAssetService.swift in Sources */,
 				A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */,
 				A7D265ED21D42A480050085D /* Date.swift in Sources */,
 				A7D265F821DE7E610050085D /* INPAccessTypeModel.swift in Sources */,
 				A7D2661821E237FD0050085D /* INPAuthHandler.swift in Sources */,
+				A71F031B21ED068000647B38 /* PaymentNetworkConstants.swift in Sources */,
 				A7D2661121E0FF650050085D /* INPUnknownError.swift in Sources */,
-				A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */,
+				A7D265DC21D29F900050085D /* INPAccountService.swift in Sources */,
 				A7D265FC21DE7F7E0050085D /* INPItemTypeModel.swift in Sources */,
 				A7D2660321DE80270050085D /* INPItemMetadataModel.swift in Sources */,
 				A7D2661A21E2583B0050085D /* INPSessionManager.swift in Sources */,
@@ -507,6 +525,7 @@
 				A7D2661E21E523860050085D /* INPSetupFeeModel.swift in Sources */,
 				A7D265F221DE58740050085D /* Asset.swift in Sources */,
 				A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */,
+				A769515021ECFEF900206F09 /* INPPaymentService.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
 				A74DB80C21D168440082D3AA /* Configuration.swift in Sources */,
 				A7D265E521D2DB6D0050085D /* NetworkDataSource.swift in Sources */,
@@ -521,6 +540,7 @@
 				A7D2660721E0F8820050085D /* InPlayerErrorMapper.swift in Sources */,
 				A7D2661321E101600050085D /* INPInvalidResponseError.swift in Sources */,
 				A7D265E321D2D6210050085D /* INPAuthorizationModel.swift in Sources */,
+				A71F031D21ED11C600647B38 /* Payment.swift in Sources */,
 				A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
