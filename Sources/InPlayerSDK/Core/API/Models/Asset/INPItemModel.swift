@@ -14,6 +14,7 @@ public struct INPItemModel : Codable {
     let metahash : INPItemMetahashModel?
     let title : String?
     let updatedAt : Double?
+    let content: String?
 
     enum CodingKeys: String, CodingKey {
         case accessControlType = "access_control_type"
@@ -28,6 +29,7 @@ public struct INPItemModel : Codable {
         case metahash = "metahash"
         case title = "title"
         case updatedAt = "updated_at"
+        case content = "content"
     }
 
     public init(from decoder: Decoder) throws {
@@ -44,6 +46,7 @@ public struct INPItemModel : Codable {
         metahash = try values.decodeIfPresent(INPItemMetahashModel.self, forKey: .metahash)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         updatedAt = try values.decodeIfPresent(Double.self, forKey: .updatedAt)
+        content = try values.decode(String.self, forKey: .content)
     }
 
 }
