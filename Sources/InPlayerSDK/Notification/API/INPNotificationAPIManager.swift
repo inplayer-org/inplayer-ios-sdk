@@ -17,9 +17,20 @@ public final class INPNotificationAPIManager {
     }
 
     private init() {
-        baseURLString = NetworkConstants.BaseUrls.Notification.debug
+        baseURLString = INPNotificationAPIManager.getBaseUrlString
         let handler = INPAuthHandler(baseURLString: baseURLString)
         session = INPSession(adapter: handler, retrier: handler)
+    }
+
+    private static var getBaseUrlString: String {
+        switch InPlayer.Configuration.getEnvironment() {
+        case .debug:
+            return NetworkConstants.BaseUrls.Notification.debug
+        case .staging:
+            return NetworkConstants.BaseUrls.Notification.staging
+        case .production:
+            return NetworkConstants.BaseUrls.Notification.production
+        }
     }
 }
 
