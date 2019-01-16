@@ -55,10 +55,10 @@ private enum NotificationAPIRouter: INPAPIConfiguration {
     }
 }
 
-public class INPNotificationService {
+class INPNotificationService {
     private init() {}
 
-    public static func takeAwsCredentials(completion: @escaping RequestCompletion<INPAwsKeyModel>) {
+    static func takeAwsCredentials(completion: @escaping RequestCompletion<INPAwsKeyModel>) {
         INPNotificationAPIManager.default.baseURLString = NotificationAPIRouter.takeAwsCredentials().baseURL
         NetworkDataSource.performRequest(session: INPNotificationAPIManager.default.session,
                                          route: NotificationAPIRouter.takeAwsCredentials(),
