@@ -1,20 +1,29 @@
 import AWSIoT
 import AWSCore
 
+enum INPPayloadResult<InPlayerNotification, InPlayerError> {
+    case success(_ value: InPlayerNotification)
+    case failure(_ error: InPlayerError)
+}
+
 final class INPNotificationManager {
 
+    private typealias InPlayerPayloadResult = INPPayloadResult<InPlayerNotification, InPlayerError>
     private static let InPlayerIoTDataManager = "InPlayerIoTDataManager"
     private static var awsKeys: INPAwsKeyModel?
     private static var iotDataManager: AWSIoTDataManager?
 
     private init() {}
 
-    static func subscribe(clientUUID: String,
-                          statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
-                          onError: @escaping (_ error: InPlayerError) -> Void,
-                          messageCallback: @escaping (_ notification: INPNotification) -> Void) {
+    static func subscribe(statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
+                          messageCallback: @escaping (_ notification: InPlayerNotification) -> Void,
+                          onError: @escaping (_ error: InPlayerError) -> Void) {
 
         // Get credentials
+        guard let clientUUID = UserDefaults.account?.uuid else {
+            return onError(INPUserNotAuthenticatedError())
+        }
+
         takeAWSCredentials(success: { awsKeys in
             self.awsKeys = awsKeys
             // setup aws
@@ -83,12 +92,19 @@ final class INPNotificationManager {
     }
 
     private static func subscribe(clientUUID: String,
-                                  messageCallback: @escaping (INPPayloadResult<INPNotification, InPlayerError>) -> Void) {
+                                  messageCallback: @escaping (InPlayerPayloadResult) -> Void) {
 
         iotDataManager?.subscribe(toTopic: clientUUID,
                                   qoS: .messageDeliveryAttemptedAtMostOnce,
                                   messageCallback: { payload in
-            messageCallback(INPNotificationMapper.notificationForPayload(payload: payload))
+                                    do {
+                                        let notification = try payload.decoded() as InPlayerNotification
+                                        messageCallback(INPPayloadResult.success(notification))
+                                    } catch {
+                                        let inpError = InPlayerErrorMapper.mapFromError(originalError: error,
+                                                                                        withResponseData: nil)
+                                        messageCallback(INPPayloadResult.failure(inpError))
+                                    }
         })
     }
 }

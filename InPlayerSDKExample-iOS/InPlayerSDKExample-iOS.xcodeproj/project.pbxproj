@@ -50,14 +50,9 @@
 		A7D2661E21E523860050085D /* INPSetupFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2661D21E523860050085D /* INPSetupFeeModel.swift */; };
 		A7EA937D21EE873600CDA238 /* INPNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA937C21EE873600CDA238 /* INPNotificationManager.swift */; };
 		A7EA937F21EE8D1300CDA238 /* INPCredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA937E21EE8D1300CDA238 /* INPCredentialProvider.swift */; };
-		A7EA938121F12FB600CDA238 /* INPNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA938021F12FB500CDA238 /* INPNotification.swift */; };
-		A7EA938321F1324200CDA238 /* INPAccountDeactivatedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA938221F1324200CDA238 /* INPAccountDeactivatedNotification.swift */; };
-		A7EA938721F1498B00CDA238 /* INPNotificaitonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA938621F1498B00CDA238 /* INPNotificaitonMapper.swift */; };
-		A7EA938D21F14FD400CDA238 /* INPAccountErasedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA938C21F14FD400CDA238 /* INPAccountErasedNotification.swift */; };
-		A7EA938F21F151A000CDA238 /* INPAccountLogoutNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA938E21F151A000CDA238 /* INPAccountLogoutNotification.swift */; };
-		A7EA939121F1542C00CDA238 /* INPAccessGrantedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA939021F1542C00CDA238 /* INPAccessGrantedNotification.swift */; };
-		A7EA939321F1543800CDA238 /* INPAccessRevokedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA939221F1543800CDA238 /* INPAccessRevokedNotification.swift */; };
 		A7EA939721F156EE00CDA238 /* DataDecodeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA939621F156EE00CDA238 /* DataDecodeExt.swift */; };
+		A7EA939921F2458400CDA238 /* InPlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA939821F2458400CDA238 /* InPlayerNotification.swift */; };
+		A7EA939B21F2542200CDA238 /* INPItemRevokedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA939A21F2542200CDA238 /* INPItemRevokedModel.swift */; };
 		E4A087898FD13F8573C240E8 /* Pods_InPlayerSDKExample_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD8D52E622099CC4DFC6D74 /* Pods_InPlayerSDKExample_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,14 +116,9 @@
 		A7D2661D21E523860050085D /* INPSetupFeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPSetupFeeModel.swift; sourceTree = "<group>"; };
 		A7EA937C21EE873600CDA238 /* INPNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPNotificationManager.swift; sourceTree = "<group>"; };
 		A7EA937E21EE8D1300CDA238 /* INPCredentialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPCredentialProvider.swift; sourceTree = "<group>"; };
-		A7EA938021F12FB500CDA238 /* INPNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPNotification.swift; sourceTree = "<group>"; };
-		A7EA938221F1324200CDA238 /* INPAccountDeactivatedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccountDeactivatedNotification.swift; sourceTree = "<group>"; };
-		A7EA938621F1498B00CDA238 /* INPNotificaitonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPNotificaitonMapper.swift; sourceTree = "<group>"; };
-		A7EA938C21F14FD400CDA238 /* INPAccountErasedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccountErasedNotification.swift; sourceTree = "<group>"; };
-		A7EA938E21F151A000CDA238 /* INPAccountLogoutNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccountLogoutNotification.swift; sourceTree = "<group>"; };
-		A7EA939021F1542C00CDA238 /* INPAccessGrantedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccessGrantedNotification.swift; sourceTree = "<group>"; };
-		A7EA939221F1543800CDA238 /* INPAccessRevokedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAccessRevokedNotification.swift; sourceTree = "<group>"; };
 		A7EA939621F156EE00CDA238 /* DataDecodeExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecodeExt.swift; sourceTree = "<group>"; };
+		A7EA939821F2458400CDA238 /* InPlayerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerNotification.swift; sourceTree = "<group>"; };
+		A7EA939A21F2542200CDA238 /* INPItemRevokedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPItemRevokedModel.swift; sourceTree = "<group>"; };
 		C1A9CB5F02C275EDB11C5D73 /* Pods-InPlayerSDKExample-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOSTests/Pods-InPlayerSDKExample-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7BA6C78590054282C7C7E4 /* Pods_InPlayerSDKExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDKExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A54D2FA744089C874FDD21 /* Pods-InPlayerSDKExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKExample-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKExample-iOS/Pods-InPlayerSDKExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,7 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				A71F032221ED311C00647B38 /* INPAwsKeyModel.swift */,
-				A7EA938921F149A900CDA238 /* Notification */,
+				A7EA939821F2458400CDA238 /* InPlayerNotification.swift */,
+				A7EA939A21F2542200CDA238 /* INPItemRevokedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,20 +372,6 @@
 				A7D2661421E148D60050085D /* INPUserNotAuthenticatedError.swift */,
 			);
 			path = Errors;
-			sourceTree = "<group>";
-		};
-		A7EA938921F149A900CDA238 /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				A7EA938621F1498B00CDA238 /* INPNotificaitonMapper.swift */,
-				A7EA938021F12FB500CDA238 /* INPNotification.swift */,
-				A7EA938221F1324200CDA238 /* INPAccountDeactivatedNotification.swift */,
-				A7EA938C21F14FD400CDA238 /* INPAccountErasedNotification.swift */,
-				A7EA938E21F151A000CDA238 /* INPAccountLogoutNotification.swift */,
-				A7EA939021F1542C00CDA238 /* INPAccessGrantedNotification.swift */,
-				A7EA939221F1543800CDA238 /* INPAccessRevokedNotification.swift */,
-			);
-			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,10 +538,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D265F021DE586A0050085D /* AssetAPIRouter.swift in Sources */,
-				A7EA938721F1498B00CDA238 /* INPNotificaitonMapper.swift in Sources */,
-				A7EA939321F1543800CDA238 /* INPAccessRevokedNotification.swift in Sources */,
+				A7EA939921F2458400CDA238 /* InPlayerNotification.swift in Sources */,
 				A71F032921ED3C6500647B38 /* INPNotificationAPIManager.swift in Sources */,
 				A7D265DA21D29B230050085D /* NetworkConstants.swift in Sources */,
+				A7EA939B21F2542200CDA238 /* INPItemRevokedModel.swift in Sources */,
 				A7D265ED21D42A480050085D /* DateExt.swift in Sources */,
 				A71F032521ED320700647B38 /* NotificationNetworkConstants.swift in Sources */,
 				A7D265F821DE7E610050085D /* INPAccessTypeModel.swift in Sources */,
@@ -572,17 +549,13 @@
 				A7D2661121E0FF650050085D /* INPUnknownError.swift in Sources */,
 				A71F031F21ED2EFF00647B38 /* INPNotificationService.swift in Sources */,
 				A7D265DC21D29F900050085D /* AccountAPIRouter.swift in Sources */,
-				A7EA938D21F14FD400CDA238 /* INPAccountErasedNotification.swift in Sources */,
 				A7EA939721F156EE00CDA238 /* DataDecodeExt.swift in Sources */,
-				A7EA938121F12FB600CDA238 /* INPNotification.swift in Sources */,
 				A7D265FC21DE7F7E0050085D /* INPItemTypeModel.swift in Sources */,
-				A7EA938F21F151A000CDA238 /* INPAccountLogoutNotification.swift in Sources */,
 				A7D2660321DE80270050085D /* INPItemMetadataModel.swift in Sources */,
 				A7D2661A21E2583B0050085D /* INPSessionManager.swift in Sources */,
 				A7D265DE21D2A0310050085D /* Account.swift in Sources */,
 				A7D2661C21E523630050085D /* INPTrialPeriodModel.swift in Sources */,
 				A7D265FE21DE7FC70050085D /* INPItemMetahashModel.swift in Sources */,
-				A7EA938321F1324200CDA238 /* INPAccountDeactivatedNotification.swift in Sources */,
 				A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */,
 				A7D265FA21DE7EB10050085D /* INPAccessControlTypeModel.swift in Sources */,
 				A71F032721ED347300647B38 /* Notification.swift in Sources */,
@@ -590,7 +563,6 @@
 				A7D2661E21E523860050085D /* INPSetupFeeModel.swift in Sources */,
 				A7D265F221DE58740050085D /* Asset.swift in Sources */,
 				A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */,
-				A7EA939121F1542C00CDA238 /* INPAccessGrantedNotification.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
 				A74DB80C21D168440082D3AA /* Configuration.swift in Sources */,
 				A7D265E521D2DB6D0050085D /* NetworkDataSource.swift in Sources */,

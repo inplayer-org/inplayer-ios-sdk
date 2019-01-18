@@ -10,7 +10,7 @@ protocol UserDefaultsDataSource {
     static var credentials: INPCredentials? { get set }
 }
 
-public extension UserDefaults: UserDefaultsDataSource {
+extension UserDefaults: UserDefaultsDataSource {
 
     public static var clientId: String {
         get {
@@ -43,7 +43,7 @@ public extension UserDefaults: UserDefaultsDataSource {
                 let savedCredentialData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.credentials) as? Data,
                 let credentials = try? JSONDecoder().decode(INPCredentials.self, from: savedCredentialData)
             else {
-                return nil // INPCredentials(accessToken: "", refreshToken: "", expires: 0)
+                return nil
             }
             return credentials
         }
@@ -53,6 +53,25 @@ public extension UserDefaults: UserDefaultsDataSource {
                 standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.credentials)
             } else {
                 standard.removeObject(forKey: InPlayerConstants.UserDefaultsKeys.credentials)
+            }
+        }
+    }
+
+    public static var account: INPAccount? {
+        get {
+            guard
+                let savedAccountData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.account) as? Data,
+                let account = try? JSONDecoder().decode(INPAccount.self, from: savedAccountData)
+                else {
+                    return nil
+            }
+            return account
+        } set {
+            if let newValue = newValue {
+                let encoded = try? JSONEncoder().encode(newValue)
+                standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.account)
+            } else {
+                standard.removeObject(forKey: InPlayerConstants.UserDefaultsKeys.account)
             }
         }
     }

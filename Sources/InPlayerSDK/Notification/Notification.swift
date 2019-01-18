@@ -6,10 +6,10 @@ private protocol AWSNotification {
 
     /**
      */
-    static func subscribe(clientUUID: String,
-                                 statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
-                                 onError: @escaping (_ error: InPlayerError) -> Void,
-                                 messageCallback: @escaping (_ notification: INPNotification) -> Void)
+    static func subscribe(statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
+                          messageCallback: @escaping (_ notification: InPlayerNotification) -> Void,
+                          onError: @escaping (_ error: InPlayerError) -> Void)
+
 
     /**
      */
@@ -20,14 +20,12 @@ public extension InPlayer {
     public final class Notification: AWSNotification {
         private init() {}
 
-        public static func subscribe(clientUUID: String,
-                                     statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
-                                     onError: @escaping (_ error: InPlayerError) -> Void,
-                                     messageCallback: @escaping (_ notification: INPNotification) -> Void) {
-            INPNotificationManager.subscribe(clientUUID: clientUUID,
-                                             statusCallback: statusCallback,
-                                             onError: onError,
-                                             messageCallback: messageCallback)
+        public static func subscribe(statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
+                                     messageCallback: @escaping (_ notification: InPlayerNotification) -> Void,
+                                     onError: @escaping (_ error: InPlayerError) -> Void) {
+            INPNotificationManager.subscribe(statusCallback: statusCallback,
+                                             messageCallback: messageCallback,
+                                             onError: onError)
         }
 
         public static func disconnect() {
