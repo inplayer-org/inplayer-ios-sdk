@@ -12,7 +12,7 @@ final class INPNotificationManager {
     static func subscribe(clientUUID: String,
                           statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
                           onError: @escaping (_ error: InPlayerError) -> Void,
-                          messageCallback: @escaping AWSIoTMQTTNewMessageBlock) {
+                          messageCallback: @escaping (_ notification: INPNotification) -> Void) {
 
         // Get credentials
         takeAWSCredentials(success: { awsKeys in
@@ -26,7 +26,14 @@ final class INPNotificationManager {
                 if status == .connected {
 
                     // subscribe for notifications
-                    subscribe(clientUUID: clientUUID, messageCallback: messageCallback)
+                    subscribe(clientUUID: clientUUID, messageCallback: { (result) in
+                        switch result {
+                        case .success(let notification):
+                            messageCallback(notification)
+                        case .failure(let error):
+                            onError(error)
+                        }
+                    })
                 }
             })
         }, failure: { (error) in
@@ -70,22 +77,23 @@ final class INPNotificationManager {
         assert(iotDataManager != nil, "Please call setupAWSConfiguration first")
         iotDataManager?.connectUsingWebSocket(withClientId: clientUUID,
                                               cleanSession: true,
-                                              statusCallback: { (status) in
+                                              statusCallback: { status in
             statusCallback(InPlayerNotificationStatus.fromAwsStatus(status: status))
         })
     }
 
-    private static func subscribe(clientUUID: String, messageCallback: @escaping AWSIoTMQTTNewMessageBlock) {
+    private static func subscribe(clientUUID: String,
+                                  messageCallback: @escaping (INPPayloadResult<INPNotification, InPlayerError>) -> Void) {
+
         iotDataManager?.subscribe(toTopic: clientUUID,
                                   qoS: .messageDeliveryAttemptedAtMostOnce,
-                                  messageCallback: { (payload) in
-            // modify the payload to our requirements.
-                                    messageCallback(payload)
+                                  messageCallback: { payload in
+            messageCallback(INPNotificationMapper.notificationForPayload(payload: payload))
         })
     }
 }
 
-enum InPlayerNotificationStatus: String {
+public enum InPlayerNotificationStatus: String {
     case unknown
     case connecting
     case connected

@@ -10,9 +10,9 @@ protocol UserDefaultsDataSource {
     static var credentials: INPCredentials? { get set }
 }
 
-extension UserDefaults: UserDefaultsDataSource {
+public extension UserDefaults: UserDefaultsDataSource {
 
-    static var clientId: String {
+    public static var clientId: String {
         get {
             return standard.string(forKey: InPlayerConstants.UserDefaultsKeys.clientId) ?? ""
         }
@@ -21,7 +21,7 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var environment: EnvironmentType {
+    public static var environment: EnvironmentType {
         get {
             guard
                 let environmentString = standard.string(forKey: InPlayerConstants.UserDefaultsKeys.environment),
@@ -37,7 +37,7 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var credentials: INPCredentials? {
+    public static var credentials: INPCredentials? {
         get {
             guard
                 let savedCredentialData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.credentials) as? Data,
