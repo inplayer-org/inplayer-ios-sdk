@@ -3,8 +3,8 @@ platform :ios, '10.0'
 target 'InPlayerSDKExample-iOS' do
   use_frameworks!
 
-  pod 'SwiftKeychainWrapper'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+  pod 'AWSIoT', '~>2.8'
 
   target 'InPlayerSDKExample-iOSTests' do
     inherit! :search_paths

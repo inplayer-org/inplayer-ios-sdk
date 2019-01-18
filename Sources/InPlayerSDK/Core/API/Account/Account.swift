@@ -214,6 +214,7 @@ public extension InPlayer {
                     UserDefaults.credentials = INPCredentials(accessToken: accessToken,
                                                               refreshToken: refreshToken,
                                                               expires: expires)
+                    UserDefaults.account = authorization.account
                     success(authorization)
                 }
             })
@@ -225,6 +226,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
+                    UserDefaults.account = account
                     success(account!)
                 }
             })
@@ -237,6 +239,7 @@ public extension InPlayer {
                     failure(error)
                 } else {
                     UserDefaults.credentials = nil
+                    UserDefaults.account = nil
                     success()
                 }
             })
@@ -252,6 +255,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
+                    UserDefaults.account = account
                     success(account!)
                 }
             })
@@ -281,6 +285,8 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
+                    UserDefaults.credentials = nil
+                    UserDefaults.account = nil
                     success()
                 }
             })
@@ -336,6 +342,7 @@ public extension InPlayer {
                     UserDefaults.credentials = INPCredentials(accessToken: accessToken,
                                                               refreshToken: refreshToken,
                                                               expires: expires)
+                    UserDefaults.account = authorization.account
                     success(authorization)
                 }
             })
@@ -359,6 +366,7 @@ public extension InPlayer {
                     UserDefaults.credentials = INPCredentials(accessToken: accessToken,
                                                               refreshToken: refreshToken,
                                                               expires: expires)
+                    UserDefaults.account = authorization.account
                     success(authorization)
                 }
             })
@@ -383,6 +391,7 @@ public extension InPlayer {
                     UserDefaults.credentials = INPCredentials(accessToken: accessToken,
                                                               refreshToken: refreshToken,
                                                               expires: expires)
+                    UserDefaults.account = authorization.account
                     success(authorization)
                 }
             })
