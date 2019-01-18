@@ -20,7 +20,7 @@
 		A71F032921ED3C6500647B38 /* INPNotificationAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F032821ED3C6500647B38 /* INPNotificationAPIManager.swift */; };
 		A74DB80421D00FA50082D3AA /* InPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80321D00FA50082D3AA /* InPlayer.swift */; };
 		A74DB80C21D168440082D3AA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DB80B21D168440082D3AA /* Configuration.swift */; };
-		A769515021ECFEF900206F09 /* INPPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A769514F21ECFEF900206F09 /* INPPaymentService.swift */; };
+		A769515021ECFEF900206F09 /* PaymentAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A769514F21ECFEF900206F09 /* PaymentAPIRouter.swift */; };
 		A7D265D021D172AA0050085D /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265CF21D172AA0050085D /* StringConstants.swift */; };
 		A7D265D421D1737E0050085D /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D321D1737E0050085D /* UserDefaultsExt.swift */; };
 		A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D265D721D299230050085D /* INPAPIConfiguration.swift */; };
@@ -89,7 +89,7 @@
 		A71F032821ED3C6500647B38 /* INPNotificationAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPNotificationAPIManager.swift; sourceTree = "<group>"; };
 		A74DB80321D00FA50082D3AA /* InPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayer.swift; sourceTree = "<group>"; };
 		A74DB80B21D168440082D3AA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		A769514F21ECFEF900206F09 /* INPPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPPaymentService.swift; sourceTree = "<group>"; };
+		A769514F21ECFEF900206F09 /* PaymentAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIRouter.swift; sourceTree = "<group>"; };
 		A7D265CF21D172AA0050085D /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		A7D265D321D1737E0050085D /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
 		A7D265D721D299230050085D /* INPAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPAPIConfiguration.swift; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 		A769514E21ECFED700206F09 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A769514F21ECFEF900206F09 /* INPPaymentService.swift */,
+				A769514F21ECFEF900206F09 /* PaymentAPIRouter.swift */,
 				A71F031A21ED068000647B38 /* PaymentNetworkConstants.swift */,
 				A71F031C21ED11C600647B38 /* Payment.swift */,
 			);
@@ -581,7 +581,7 @@
 				A7D2661E21E523860050085D /* INPSetupFeeModel.swift in Sources */,
 				A7D265F221DE58740050085D /* Asset.swift in Sources */,
 				A7D265D821D299230050085D /* INPAPIConfiguration.swift in Sources */,
-				A769515021ECFEF900206F09 /* INPPaymentService.swift in Sources */,
+				A769515021ECFEF900206F09 /* PaymentAPIRouter.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
 				A74DB80C21D168440082D3AA /* Configuration.swift in Sources */,
 				A7D265E521D2DB6D0050085D /* NetworkDataSource.swift in Sources */,

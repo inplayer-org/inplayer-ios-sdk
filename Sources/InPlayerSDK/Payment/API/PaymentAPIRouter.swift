@@ -52,11 +52,27 @@ public class INPPaymentService {
     private init() {}
     
     public static func validate(receiptData: Data,
-                                itemId: Int,
-                                accessFeeId: Int,
+                                productIdentifier: String,
                                 completion: @escaping RequestCompletion<Empty>) {
         let receiptString = receiptData.base64EncodedString()
 
+        let productComponents = productIdentifier.components(separatedBy: "_")
+        guard
+            let itemIdString = productComponents.first,
+            let itemId = Int(itemIdString),
+            let accessFeeIdString = productComponents.last,
+            let accessFeeId = Int(accessFeeIdString) else {
+                // create invalid input error
+                let message = "Invalid format of product identifier"
+                let error = NSError(domain: "Error",
+                                    code: 0,
+                                    userInfo: [NSLocalizedDescriptionKey: "Invalid format of product identifier"])
+                let inpError = INPUnknownError(code: 0,
+                                               message: message,
+                                               errorList: [message],
+                                               error: error)
+                 return completion(nil, inpError)
+        }
         let params: [String: Any] = [
             PaymentParameters.receipt: receiptString,
             PaymentParameters.itemId: itemId,

@@ -15,8 +15,7 @@ private protocol PaymentAPI {
 
      */
     static func validate(receiptData: Data,
-                         itemId: Int,
-                         accessFeeId: Int,
+                         productIdentifier: String,
                          success: @escaping ()-> Void,
                          failure: @escaping (_ error: InPlayerError) -> Void)
 }
@@ -26,13 +25,11 @@ public extension InPlayer {
         private init() {}
 
         public static func validate(receiptData: Data,
-                                    itemId: Int,
-                                    accessFeeId: Int,
+                                    productIdentifier: String,
                                     success: @escaping ()-> Void,
                                     failure: @escaping (_ error: InPlayerError) -> Void) {
             INPPaymentService.validate(receiptData: receiptData,
-                                       itemId: itemId,
-                                       accessFeeId: accessFeeId,
+                                       productIdentifier: productIdentifier,
                                        completion:  { (_, error) in
                 if let error = error {
                     failure(error)
