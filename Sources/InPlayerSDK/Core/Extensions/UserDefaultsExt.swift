@@ -12,7 +12,7 @@ protocol UserDefaultsDataSource {
 
 extension UserDefaults: UserDefaultsDataSource {
 
-    static var clientId: String {
+    public static var clientId: String {
         get {
             return standard.string(forKey: InPlayerConstants.UserDefaultsKeys.clientId) ?? ""
         }
@@ -21,7 +21,7 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var environment: EnvironmentType {
+    public static var environment: EnvironmentType {
         get {
             guard
                 let environmentString = standard.string(forKey: InPlayerConstants.UserDefaultsKeys.environment),
@@ -37,13 +37,13 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var credentials: INPCredentials? {
+    public static var credentials: INPCredentials? {
         get {
             guard
                 let savedCredentialData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.credentials) as? Data,
                 let credentials = try? JSONDecoder().decode(INPCredentials.self, from: savedCredentialData)
             else {
-                return nil // INPCredentials(accessToken: "", refreshToken: "", expires: 0)
+                return nil
             }
             return credentials
         }
@@ -53,6 +53,25 @@ extension UserDefaults: UserDefaultsDataSource {
                 standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.credentials)
             } else {
                 standard.removeObject(forKey: InPlayerConstants.UserDefaultsKeys.credentials)
+            }
+        }
+    }
+
+    public static var account: INPAccount? {
+        get {
+            guard
+                let savedAccountData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.account) as? Data,
+                let account = try? JSONDecoder().decode(INPAccount.self, from: savedAccountData)
+                else {
+                    return nil
+            }
+            return account
+        } set {
+            if let newValue = newValue {
+                let encoded = try? JSONEncoder().encode(newValue)
+                standard.set(encoded, forKey: InPlayerConstants.UserDefaultsKeys.account)
+            } else {
+                standard.removeObject(forKey: InPlayerConstants.UserDefaultsKeys.account)
             }
         }
     }
