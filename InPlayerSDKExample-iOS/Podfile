@@ -3,8 +3,7 @@ platform :ios, '10.0'
 target 'InPlayerSDKExample-iOS' do
   use_frameworks!
 
-  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
-  pod 'AWSIoT', '~>2.8'
+  pod 'InPlayerSDK', :path => '../'
 
   target 'InPlayerSDKExample-iOSTests' do
     inherit! :search_paths

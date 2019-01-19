@@ -1,4 +1,5 @@
 import UIKit
+import InPlayerSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // On first start of the app call this:
         InPlayer.initialize(withClienId: "xxx", environment: .staging)
-        
+
         return true
     }
 }
