@@ -71,7 +71,7 @@ final class INPNotificationManager {
     }
 
     private static func takeAWSCredentials(success: @escaping (_ awsKeys: INPAwsKeyModel) -> Void,
-                                    failure: @escaping (_ error: InPlayerError) -> Void) {
+                                           failure: @escaping (_ error: InPlayerError) -> Void) {
         INPNotificationService.takeAwsCredentials { (awsKeys, error) in
             if let error = error {
                 failure(error)
@@ -82,7 +82,7 @@ final class INPNotificationManager {
     }
 
     private static func connectToAws(clientUUID: String,
-                              statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void) {
+                                     statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void) {
         assert(iotDataManager != nil, "Please call setupAWSConfiguration first")
         iotDataManager?.connectUsingWebSocket(withClientId: clientUUID,
                                               cleanSession: true,

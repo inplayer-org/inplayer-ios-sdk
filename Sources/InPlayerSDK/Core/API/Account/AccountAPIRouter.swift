@@ -1,143 +1,7 @@
 import Alamofire
 
-/// Enum of available account api routes
-private enum AccountAPIRouter: INPAPIConfiguration {
-    case createAccount(parameters: [String: Any])
-    case getAccountInfo()
-    case logout()
-    case updateAccount(parameters: [String: Any])
-    case changePassword(parameters: [String: Any])
-    case eraseAccount(parameters: [String: Any])
-    case setNewPassword(token: String, parameters: [String: Any])
-    case forgotPassword(parameters: [String: Any])
-    case authenticate(parameters: [String: Any])
-    case refreshToken(parameters: [String: Any])
-    case authenticateClientCredentials(parameters: [String: Any])
-
-    var method: HTTPMethod {
-        switch self {
-        case .createAccount, .changePassword, .forgotPassword, .authenticate, .refreshToken, .authenticateClientCredentials:
-            return .post
-        case .updateAccount, .setNewPassword:
-            return .put
-        case .eraseAccount:
-            return .delete
-        default:
-            return .get
-        }
-    }
-
-    var path: String {
-        switch self {
-        case .createAccount:
-            return NetworkConstants.Endpoints.Account.createAccount
-        case .getAccountInfo:
-            return NetworkConstants.Endpoints.Account.accountInfo
-        case .logout:
-            return NetworkConstants.Endpoints.Account.logout
-        case .updateAccount:
-            return NetworkConstants.Endpoints.Account.updateAccount
-        case .changePassword:
-            return NetworkConstants.Endpoints.Account.changePassword
-        case .eraseAccount:
-            return NetworkConstants.Endpoints.Account.eraseAccount
-        case .setNewPassword(let token, _):
-            return String(format: NetworkConstants.Endpoints.Account.setNewPassword, token)
-        case .forgotPassword:
-            return NetworkConstants.Endpoints.Account.forgotPassword
-        case .authenticate, .refreshToken, .authenticateClientCredentials:
-            return NetworkConstants.Endpoints.Account.authenticate
-        }
-    }
-
-    var parameters: Parameters? {
-        switch self {
-        case .createAccount(let parameters):
-            return parameters
-        case .updateAccount(let parameters):
-            return parameters
-        case .changePassword(let parameters):
-            return parameters
-        case .eraseAccount(let parameters):
-            return parameters
-        case .setNewPassword(_, let parameters):
-            return parameters
-        case .forgotPassword(let parameters):
-            return parameters
-        case .authenticate(let parameters):
-            return parameters
-        case .refreshToken(let parameters):
-            return parameters
-        case .authenticateClientCredentials(let parameters):
-            return parameters
-        default:
-            return nil
-        }
-    }
-
-    var urlEncoding: Bool {
-        switch self {
-        default:
-            return true
-        }
-    }
-
-    func asURLRequest() throws -> URLRequest {
-        let url = try baseURL.asURL()
-
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-
-        // HTTP Method
-        urlRequest.httpMethod = method.rawValue
-
-        // Common Headers
-        urlRequest.setValue(NetworkConstants.HeaderParameters.applicationUrlEncoded,
-                            forHTTPHeaderField: NetworkConstants.HeaderParameters.contentType)
-        urlRequest.setValue(NetworkConstants.HeaderParameters.applicationJSON,
-                            forHTTPHeaderField: NetworkConstants.HeaderParameters.accept)
-
-        switch self {
-        case .refreshToken:
-            urlRequest.setValue(NetworkConstants.HeaderParameters.refreshToken,
-                                forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType)
-        default: break
-        }
-
-        // Parameters
-        guard let parameters = parameters else { return urlRequest }
-        if urlEncoding {
-            do {
-                urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-            }
-        } else {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-            }
-        }
-
-        return urlRequest
-    }
-
-    var requiresAuthorization: Bool {
-        switch self {
-        case .createAccount,
-             .setNewPassword,
-             .forgotPassword,
-             .authenticate,
-             .authenticateClientCredentials:
-            return false
-        default:
-            return true
-        }
-    }
-}
-
 /**
- Class that provides services which handles request creation and passes completion result
+ Class that provides account services which handles request creation and passes completion result
  */
 public class INPAccountService {
     public static func createAccount(fullName: String,
@@ -302,4 +166,140 @@ private enum AuthenticationTypes: String {
     case password           = "password"
     case clientCredentials  = "client_credentials"
     case refreshToken       = "refresh_token"
+}
+
+/// Enum of available account api routes
+private enum AccountAPIRouter: INPAPIConfiguration {
+    case createAccount(parameters: [String: Any])
+    case getAccountInfo()
+    case logout()
+    case updateAccount(parameters: [String: Any])
+    case changePassword(parameters: [String: Any])
+    case eraseAccount(parameters: [String: Any])
+    case setNewPassword(token: String, parameters: [String: Any])
+    case forgotPassword(parameters: [String: Any])
+    case authenticate(parameters: [String: Any])
+    case refreshToken(parameters: [String: Any])
+    case authenticateClientCredentials(parameters: [String: Any])
+
+    var method: HTTPMethod {
+        switch self {
+        case .createAccount, .changePassword, .forgotPassword, .authenticate, .refreshToken, .authenticateClientCredentials:
+            return .post
+        case .updateAccount, .setNewPassword:
+            return .put
+        case .eraseAccount:
+            return .delete
+        default:
+            return .get
+        }
+    }
+
+    var path: String {
+        switch self {
+        case .createAccount:
+            return NetworkConstants.Endpoints.Account.createAccount
+        case .getAccountInfo:
+            return NetworkConstants.Endpoints.Account.accountInfo
+        case .logout:
+            return NetworkConstants.Endpoints.Account.logout
+        case .updateAccount:
+            return NetworkConstants.Endpoints.Account.updateAccount
+        case .changePassword:
+            return NetworkConstants.Endpoints.Account.changePassword
+        case .eraseAccount:
+            return NetworkConstants.Endpoints.Account.eraseAccount
+        case .setNewPassword(let token, _):
+            return String(format: NetworkConstants.Endpoints.Account.setNewPassword, token)
+        case .forgotPassword:
+            return NetworkConstants.Endpoints.Account.forgotPassword
+        case .authenticate, .refreshToken, .authenticateClientCredentials:
+            return NetworkConstants.Endpoints.Account.authenticate
+        }
+    }
+
+    var parameters: Parameters? {
+        switch self {
+        case .createAccount(let parameters):
+            return parameters
+        case .updateAccount(let parameters):
+            return parameters
+        case .changePassword(let parameters):
+            return parameters
+        case .eraseAccount(let parameters):
+            return parameters
+        case .setNewPassword(_, let parameters):
+            return parameters
+        case .forgotPassword(let parameters):
+            return parameters
+        case .authenticate(let parameters):
+            return parameters
+        case .refreshToken(let parameters):
+            return parameters
+        case .authenticateClientCredentials(let parameters):
+            return parameters
+        default:
+            return nil
+        }
+    }
+
+    var urlEncoding: Bool {
+        switch self {
+        default:
+            return true
+        }
+    }
+
+    func asURLRequest() throws -> URLRequest {
+        let url = try baseURL.asURL()
+
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+
+        // HTTP Method
+        urlRequest.httpMethod = method.rawValue
+
+        // Common Headers
+        urlRequest.setValue(NetworkConstants.HeaderParameters.applicationUrlEncoded,
+                            forHTTPHeaderField: NetworkConstants.HeaderParameters.contentType)
+        urlRequest.setValue(NetworkConstants.HeaderParameters.applicationJSON,
+                            forHTTPHeaderField: NetworkConstants.HeaderParameters.accept)
+
+        switch self {
+        case .refreshToken:
+            urlRequest.setValue(NetworkConstants.HeaderParameters.refreshToken,
+                                forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType)
+        default: break
+        }
+
+        // Parameters
+        guard let parameters = parameters else { return urlRequest }
+        if urlEncoding {
+            do {
+                urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+            } catch {
+                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+            }
+        } else {
+            do {
+                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            } catch {
+                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+            }
+        }
+
+        return urlRequest
+    }
+
+    var requiresAuthorization: Bool {
+        switch self {
+        case .createAccount,
+             .setNewPassword,
+             .forgotPassword,
+             .authenticate,
+             .authenticateClientCredentials:
+            return false
+        default:
+            return true
+        }
+    }
 }

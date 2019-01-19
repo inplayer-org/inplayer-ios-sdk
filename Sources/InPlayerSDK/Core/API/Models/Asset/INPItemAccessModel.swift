@@ -11,6 +11,7 @@ public struct INPItemAccessModel : Codable {
     let id : Int?
     let ipAddress : String?
     let item : INPItemModel?
+    let startsAt: Double?
 
     enum CodingKeys: String, CodingKey {
         case accountId = "account_id"
@@ -22,6 +23,7 @@ public struct INPItemAccessModel : Codable {
         case id = "id"
         case ipAddress = "ip_address"
         case item = "item"
+        case startsAt = "starts_at"
     }
 
     public init(from decoder: Decoder) throws {
@@ -35,6 +37,7 @@ public struct INPItemAccessModel : Codable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         ipAddress = try values.decodeIfPresent(String.self, forKey: .ipAddress)
         item = try values.decodeIfPresent(INPItemModel.self, forKey: .item)
+        startsAt = try values.decode(Double.self, forKey: .startsAt)
     }
 
 }
