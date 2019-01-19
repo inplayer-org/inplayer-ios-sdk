@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
   #
 
   # s.source       = { :git => "http://EXAMPLE/InPlayerSDK.git", :tag => "#{s.version}" }
-   s.source = { :path => '.'}
+  s.source = { :path => '.', :submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -83,7 +83,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Source/**/*.{h,swift}"
+#  s.source_files  = "Source/**/*.{h,swift}"
+    s.source_files = "Source/**/*.swift"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -120,7 +121,20 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   s.requires_arc = true
-  s.dependency 'Alamofire', '5.0.0.beta.1'
-  s.dependency 'AWSIoT', '2.8.4'
+#  s.dependency 'Alamofire', '5.0.0.beta.1'
+#  s.dependency 'AWSIoT', '2.8.4'
 
+  s.subspec 'Core' do |core|
+      core.source_files = "Source/Core/**/*.swift"
+      s.dependency 'Alamofire', '5.0.0.beta.1'
+  end
+
+  s.subspec 'Notification' do |notification|
+      notification.source_files = "Source/{Core,Notification}/**/*.swift"
+      notification.dependency 'AWSIoT', '2.8.4'
+  end
+
+  s.subspec 'Payment' do |payment|
+      payment.source_files = "Source/{Core,Payment}/**/*.swift"
+  end
 end
