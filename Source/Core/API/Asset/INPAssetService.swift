@@ -7,7 +7,7 @@ class INPAssetService {
     static func getItemDetails(id: Int,
                                merchantUUID: String,
                                completion: @escaping RequestCompletion<INPItemModel>) {
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemDetails(id: id,
                                                                               merchantUUID: merchantUUID),
                                          completion: completion)
@@ -15,14 +15,14 @@ class INPAssetService {
 
     static func getItemAccessFees(id: Int,
                                   completion: @escaping RequestCompletion<[INPAccessFeeModel]>) {
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemAccessFees(id: id),
                                          completion: completion)
     }
 
     static func getItemAccess(id: Int,
                               completion: @escaping RequestCompletion<INPItemAccessModel>) {
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemAccess(id: id),
                                          completion: completion)
     }

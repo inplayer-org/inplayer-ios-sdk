@@ -25,26 +25,26 @@ class INPAccountService {
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
         }
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.createAccount(parameters: params),
                                          completion: completion)
     }
 
-    static func getUserInfo(completion: @escaping RequestCompletion<INPAccount>) {
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+    static func getUserInfo(completion: @escaping RequestCompletion<INPAccountModel>) {
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getAccountInfo(),
                                          completion: completion)
     }
 
     static func logout(completion: @escaping RequestCompletion<Empty>) {
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.logout(),
                                          completion: completion)
     }
 
     static func updateAccount(fullName: String,
                               metadata: [String: Any]?,
-                              completion: @escaping RequestCompletion<INPAccount>) {
+                              completion: @escaping RequestCompletion<INPAccountModel>) {
         var params: [String: Any] = [AccountParameters.fullName: fullName]
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
@@ -52,7 +52,7 @@ class INPAccountService {
         if let referrer = InPlayer.Configuration.getReferrer() {
             params[AccountParameters.referrer] = referrer
         }
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.updateAccount(parameters: params),
                                          completion: completion)
     }
@@ -66,7 +66,7 @@ class INPAccountService {
             AccountParameters.password: newPassword,
             AccountParameters.passwordConfirmation: newPasswordConfirmation
         ]
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.changePassword(parameters: params),
                                          completion: completion)
     }
@@ -74,7 +74,7 @@ class INPAccountService {
     static func eraseAccount(password: String,
                              completion: @escaping RequestCompletion<Empty>) {
         let params = [AccountParameters.password: password]
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.eraseAccount(parameters: params),
                                          completion: completion)
     }
@@ -87,7 +87,7 @@ class INPAccountService {
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation
         ]
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.setNewPassword(token: token,
                                                                                 parameters: params),
                                          completion: completion)
@@ -99,7 +99,7 @@ class INPAccountService {
             AccountParameters.merchantUUID: InPlayer.Configuration.getClientId(),
             AccountParameters.email: email
         ]
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.forgotPassword(parameters: params),
                                          completion: completion)
     }
@@ -114,7 +114,7 @@ class INPAccountService {
             AccountParameters.clientId: InPlayer.Configuration.getClientId()
         ]
 
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticate(parameters: params),
                                          completion: completion)
     }
@@ -126,7 +126,7 @@ class INPAccountService {
             AccountParameters.grantType: AuthenticationTypes.refreshToken.rawValue,
             AccountParameters.refreshToken: refreshToken
         ]
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.refreshToken(parameters: params),
                                          completion: completion)
     }
@@ -138,7 +138,7 @@ class INPAccountService {
             AccountParameters.grantType: AuthenticationTypes.clientCredentials.rawValue,
             AccountParameters.clientSecret: clientSecret
         ]
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
                                          completion: completion)
     }

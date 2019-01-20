@@ -1,11 +1,12 @@
 import Foundation
 
+/// Access type model
 public struct INPAccessTypeModel : Codable {
 
-    let id : Int?
-    let name : String?
-    let period : String?
-    let quantity : Int?
+    public let id : Int?
+    public let name : String?
+    public let period : String?
+    public let quantity : Int?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -14,6 +15,7 @@ public struct INPAccessTypeModel : Codable {
         case quantity = "quantity"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(Int.self, forKey: .id)

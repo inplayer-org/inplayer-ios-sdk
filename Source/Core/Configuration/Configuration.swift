@@ -49,10 +49,6 @@ private protocol ConfigurationDataSource {
 
 /**
  Project environment types
- ````
- case production
- case debug
- case staging
  */
 public enum EnvironmentType: String {
     /// Sets project environment to production (default)

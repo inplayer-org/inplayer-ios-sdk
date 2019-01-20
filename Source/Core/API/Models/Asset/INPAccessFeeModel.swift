@@ -1,17 +1,18 @@
 import Foundation
 
+// Access fee model
 public struct INPAccessFeeModel : Codable {
 
-    let accessType : INPAccessTypeModel?
-    let amount : Int?
-    let currency : String?
-    let descriptionField : String?
-    let id : Int?
-    let itemType : String?
-    let merchantId : Int?
-    let startsAt : Double?
-    let trialPeriod: INPTrialPeriodModel?
-    let setupFee: INPSetupFeeModel?
+    public let accessType : INPAccessTypeModel?
+    public let amount : Int?
+    public let currency : String?
+    public let descriptionField : String?
+    public let id : Int?
+    public let itemType : String?
+    public let merchantId : Int?
+    public let startsAt : Double?
+    public let trialPeriod: INPTrialPeriodModel?
+    public let setupFee: INPSetupFeeModel?
 
     enum CodingKeys: String, CodingKey {
         case accessType = "access_type"
@@ -26,6 +27,7 @@ public struct INPAccessFeeModel : Codable {
         case setupFee = "setup_fee"
     }
 
+    /// Decoder Method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accessType = try values.decodeIfPresent(INPAccessTypeModel.self, forKey: .accessType)

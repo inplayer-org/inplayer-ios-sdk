@@ -109,6 +109,7 @@ final class INPAWSManager {
     }
 }
 
+/// Notification status regarding websocket connection
 public enum InPlayerNotificationStatus: String {
     case unknown
     case connecting

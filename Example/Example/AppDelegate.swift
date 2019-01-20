@@ -10,7 +10,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // On first start of the app call this:
         InPlayer.initialize(withClienId: "xxx", environment: .staging)
+        InPlayer.Account.authenticate(username: "a", password: "b", success: { (e) in
 
+        }) { (r) in
+
+        }
         return true
     }
 }

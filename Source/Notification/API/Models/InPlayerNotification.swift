@@ -1,5 +1,16 @@
 import Foundation
 
+/**
+ Notification Type enum
+ ```
+ case accessGranted(resource: INPItemAccessModel, startsAt: Double)
+ case accessRevoked(resource: INPItemRevokedModel)
+ case accountLogout
+ case accountErased
+ case accountDeactivated
+ case unknown
+ ```
+*/
 public enum NotificationType {
     case accessGranted(resource: INPItemAccessModel, startsAt: Double)
     case accessRevoked(resource: INPItemRevokedModel)
@@ -9,6 +20,7 @@ public enum NotificationType {
     case unknown
 }
 
+/// InPlayer Notification
 public struct InPlayerNotification: Codable {
     var type: NotificationType
     var timestamp: Double
@@ -29,6 +41,7 @@ public struct InPlayerNotification: Codable {
         static let unknown = "unknown"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         timestamp = try values.decode(Double.self, forKey: .timestamp)
@@ -57,6 +70,7 @@ public struct InPlayerNotification: Codable {
         }
     }
 
+    /// Encoder method
     public func encode(to encoder: Encoder) throws {
         var values = encoder.container(keyedBy: CodingKeys.self)
         try values.encode(timestamp, forKey: .timestamp)

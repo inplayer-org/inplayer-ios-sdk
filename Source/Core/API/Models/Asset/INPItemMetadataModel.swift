@@ -1,10 +1,11 @@
 import Foundation
 
+/// Item metadata model
 public struct INPItemMetadataModel : Codable {
 
-    let id : Int?
-    let name : String?
-    let value : String?
+    public let id : Int?
+    public let name : String?
+    public let value : String?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -12,6 +13,7 @@ public struct INPItemMetadataModel : Codable {
         case value = "value"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(Int.self, forKey: .id)

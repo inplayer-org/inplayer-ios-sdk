@@ -1,5 +1,8 @@
 import Foundation
 
+/**
+ Http Error
+ */
 public struct INPHttpError: InPlayerError {
     public var code: Int
     public var message: String?

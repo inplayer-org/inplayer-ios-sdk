@@ -57,11 +57,11 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var account: INPAccount? {
+    static var account: INPAccountModel? {
         get {
             guard
                 let savedAccountData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.account) as? Data,
-                let account = try? JSONDecoder().decode(INPAccount.self, from: savedAccountData)
+                let account = try? JSONDecoder().decode(INPAccountModel.self, from: savedAccountData)
                 else {
                     return nil
             }

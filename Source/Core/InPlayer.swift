@@ -1,5 +1,8 @@
 import Foundation
 
+/**
+ Main class throught which developer access InPlayer API.
+ */
 public class InPlayer {
     private init () {}
 

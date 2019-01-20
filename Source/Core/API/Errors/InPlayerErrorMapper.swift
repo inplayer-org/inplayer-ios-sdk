@@ -17,6 +17,7 @@ public protocol InPlayerError: Error {
     /// The original error for further inspection.
     var originalError: Error { get }
 
+    /// Initializer
     init(code: Int, message: String?, errorList: [String]?, error: Error)
 }
 

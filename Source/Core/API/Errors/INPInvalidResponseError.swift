@@ -1,5 +1,8 @@
 import Foundation
 
+/**
+ Invalid Response Error
+ */
 public struct INPInvalidResponseError: InPlayerError {
     public var code: Int
     public var message: String?
@@ -18,11 +21,15 @@ public struct INPInvalidResponseError: InPlayerError {
     }
 }
 
+/**
+ Invalid JSON Error
+ */
 public struct INPInvalidJSONError: InPlayerError {
     public var code: Int
     public var message: String?
     public var errorList: [String]?
     public var originalError: Error
+
 
     init(error: Error) {
         let message = "Data cannot be parsed into JSON object"

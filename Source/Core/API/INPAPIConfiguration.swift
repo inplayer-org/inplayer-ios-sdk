@@ -24,7 +24,7 @@ protocol INPAPIConfiguration: URLRequestConvertible {
 extension INPAPIConfiguration {
 
     var baseURL: String {
-        return INPSessionManager.default.baseURLString
+        return INPSessionAPIManager.default.baseURLString
     }
 
     func asURLRequest() throws -> URLRequest {

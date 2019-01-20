@@ -1,5 +1,8 @@
 import Foundation
 
+/**
+ Unknown Error
+ */
 public struct INPUnknownError: InPlayerError {
     public var code: Int
     public var message: String?

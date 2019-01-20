@@ -1,5 +1,8 @@
 import Foundation
 
+/**
+ User not authenticated Error
+ */
 public struct INPUserNotAuthenticatedError: InPlayerError {
     public var code: Int
     public var message: String?

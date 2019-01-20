@@ -1,12 +1,13 @@
 import Foundation
 
+/// Item type model
 public struct INPItemTypeModel : Codable {
 
-    let contentType : String?
-    let descriptionField : String?
-    let host : String?
-    let id : Int?
-    let name : String?
+    public let contentType : String?
+    public let descriptionField : String?
+    public let host : String?
+    public let id : Int?
+    public let name : String?
 
     enum CodingKeys: String, CodingKey {
         case contentType = "content_type"
@@ -16,6 +17,7 @@ public struct INPItemTypeModel : Codable {
         case name = "name"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         contentType = try values.decodeIfPresent(String.self, forKey: .contentType)

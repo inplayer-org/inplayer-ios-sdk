@@ -1,24 +1,28 @@
 import Foundation
 
+/**
+ Account types
+ */
 public enum AccountType: String, Codable {
     case consumer = "consumer"
     case merchant = "merchant"
 }
 
-public struct INPAccount : Codable {
+/// Account Model
+public struct INPAccountModel : Codable {
 
-    let completed : Bool?
-    let email : String?
-    let fullName : String?
-    let id : Int?
-    let referrer : String?
-    let roles : [AccountType]?
-    let createdAt : Double?
-    let updatedAt : Double?
-    let uuid: String?
-    let merchantId: Int?
-    let merchantUUID: String?
-    let metadata : [String: String]?
+    public let completed : Bool?
+    public let email : String?
+    public let fullName : String?
+    public let id : Int?
+    public let referrer : String?
+    public let roles : [AccountType]?
+    public let createdAt : Double?
+    public let updatedAt : Double?
+    public let uuid: String?
+    public let merchantId: Int?
+    public let merchantUUID: String?
+    public let metadata : [String: String]?
 //    let socialAppsMetadata : [AnyObject]?
 
     enum CodingKeys: String, CodingKey {
@@ -37,6 +41,9 @@ public struct INPAccount : Codable {
 //        case socialAppsMetadata = "social_apps_metadata"
     }
 
+    /**
+     Decoder method
+     */
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         completed = try values.decodeIfPresent(Bool.self, forKey: .completed)

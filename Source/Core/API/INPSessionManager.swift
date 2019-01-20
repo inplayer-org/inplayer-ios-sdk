@@ -3,10 +3,10 @@ import Alamofire
 /**
  Class used to provide user ability to inject his own implementation of Session.
  */
-public final class INPSessionManager {
+public final class INPSessionAPIManager {
 
     /// Singleton object.
-    public static let `default` = INPSessionManager()
+    public static let `default` = INPSessionAPIManager()
 
     /// The session.
     public var session: INPSession
@@ -26,7 +26,12 @@ public final class INPSessionManager {
     }
 }
 
+/**
+ Subclass of Alamofire Session object.
+ */
 public class INPSession: Session {
+
+    /// Bool check if there is logged in account.
     var isAuthorized: Bool {
         return InPlayer.Account.isAuthenticated()
     }

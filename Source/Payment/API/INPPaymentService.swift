@@ -31,7 +31,7 @@ class INPPaymentService {
             PaymentParameters.itemId: itemId,
             PaymentParameters.accessFeeId: accessFeeId
         ]
-        NetworkDataSource.performRequest(session: INPSessionManager.default.session,
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: PaymentAPIRouter.validatePayment(parameters: params),
                                          completion: completion)
     }

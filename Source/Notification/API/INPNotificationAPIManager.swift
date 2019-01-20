@@ -1,5 +1,8 @@
 import Alamofire
 
+/**
+ Class used to provide user ability to inject his own implementation of Session.
+ */
 public final class INPNotificationAPIManager {
 
     /// Singleton object.

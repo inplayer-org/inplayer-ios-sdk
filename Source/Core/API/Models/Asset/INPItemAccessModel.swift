@@ -1,17 +1,18 @@
 import Foundation
 
+/// Item access model
 public struct INPItemAccessModel : Codable {
 
-    let accountId : Int?
-    let countryCode : String?
-    let createdAt : Double?
-    let customerId : Int?
-    let customerUuid : String?
-    let expiresAt : Double?
-    let id : Int?
-    let ipAddress : String?
-    let item : INPItemModel?
-    let startsAt: Double?
+    public let accountId : Int?
+    public let countryCode : String?
+    public let createdAt : Double?
+    public let customerId : Int?
+    public let customerUuid : String?
+    public let expiresAt : Double?
+    public let id : Int?
+    public let ipAddress : String?
+    public let item : INPItemModel?
+    public let startsAt: Double?
 
     enum CodingKeys: String, CodingKey {
         case accountId = "account_id"
@@ -26,6 +27,7 @@ public struct INPItemAccessModel : Codable {
         case startsAt = "starts_at"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accountId = try values.decodeIfPresent(Int.self, forKey: .accountId)

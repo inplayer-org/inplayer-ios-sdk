@@ -1,7 +1,8 @@
 import Foundation
 
+/// Credentials Model
 public struct INPCredentials: Codable {
-    let accessToken: String
-    let refreshToken: String
-    let expires: Double
+    public let accessToken: String
+    public let refreshToken: String
+    public let expires: Double
 }

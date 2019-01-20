@@ -1,20 +1,21 @@
 import Foundation
 
+/// Item model
 public struct INPItemModel : Codable {
 
-    let accessControlType : INPAccessControlTypeModel?
-    let accessFees : [INPAccessFeeModel]?
-    let createdAt : Double?
-    let id : Int?
-    let isActive : Bool?
-    let itemType : INPItemTypeModel?
-    let merchantId : Int?
-    let merchantUuid : String?
-    let metadata : [INPItemMetadataModel]?
-    let metahash : INPItemMetahashModel?
-    let title : String?
-    let updatedAt : Double?
-    let content: String?
+    public let accessControlType : INPAccessControlTypeModel?
+    public let accessFees : [INPAccessFeeModel]?
+    public let createdAt : Double?
+    public let id : Int?
+    public let isActive : Bool?
+    public let itemType : INPItemTypeModel?
+    public let merchantId : Int?
+    public let merchantUuid : String?
+    public let metadata : [INPItemMetadataModel]?
+    public let metahash : INPItemMetahashModel?
+    public let title : String?
+    public let updatedAt : Double?
+    public let content: String?
 
     enum CodingKeys: String, CodingKey {
         case accessControlType = "access_control_type"
@@ -32,6 +33,7 @@ public struct INPItemModel : Codable {
         case content = "content"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accessControlType = try values.decodeIfPresent(INPAccessControlTypeModel.self, forKey: .accessControlType)
