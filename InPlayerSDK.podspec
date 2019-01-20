@@ -83,8 +83,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-#  s.source_files  = "Source/**/*.{h,swift}"
-    s.source_files = "Source/**/*.swift"
+  s.source_files = "Source/**/*.{h.swift}"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -122,8 +121,6 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.swift_version = "4.2"
-#  s.dependency 'Alamofire', '5.0.0.beta.1'
-#  s.dependency 'AWSIoT', '2.8.4'
 
   s.subspec 'Core' do |core|
       core.source_files = "Source/Core/**/*.swift"

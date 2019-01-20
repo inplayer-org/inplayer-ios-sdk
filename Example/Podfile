@@ -1,11 +1,11 @@
 platform :ios, '10.0'
 
-target 'InPlayerSDKExample-iOS' do
+target 'Example' do
   use_frameworks!
 
   pod 'InPlayerSDK', :path => '../'
 
-  target 'InPlayerSDKExample-iOSTests' do
+  target 'ExampleTests' do
     inherit! :search_paths
   end
 

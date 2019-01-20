@@ -6,7 +6,7 @@ enum INPPayloadResult<InPlayerNotification, InPlayerError> {
     case failure(_ error: InPlayerError)
 }
 
-final class INPNotificationManager {
+final class INPAWSManager {
 
     private typealias InPlayerPayloadResult = INPPayloadResult<InPlayerNotification, InPlayerError>
     private static let InPlayerIoTDataManager = "InPlayerIoTDataManager"

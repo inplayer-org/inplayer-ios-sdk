@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import InPlayerSDKExample_iOS
+@testable import ExampleTests
 
-class InPlayerSDKExample_iOSTests: XCTestCase {
+class ExampleTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
