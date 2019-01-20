@@ -2,98 +2,98 @@
   "warnings": [
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 12,
+      "line": 7,
       "symbol": "AccountType.consumer",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 13,
+      "line": 8,
       "symbol": "AccountType.merchant",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 19,
+      "line": 14,
       "symbol": "INPAccountModel.completed",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 20,
+      "line": 15,
       "symbol": "INPAccountModel.email",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 21,
+      "line": 16,
       "symbol": "INPAccountModel.fullName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 22,
+      "line": 17,
       "symbol": "INPAccountModel.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 23,
+      "line": 18,
       "symbol": "INPAccountModel.referrer",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 24,
+      "line": 19,
       "symbol": "INPAccountModel.roles",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 25,
+      "line": 20,
       "symbol": "INPAccountModel.createdAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 26,
+      "line": 21,
       "symbol": "INPAccountModel.updatedAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 27,
+      "line": 22,
       "symbol": "INPAccountModel.uuid",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 28,
+      "line": 23,
       "symbol": "INPAccountModel.merchantId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 29,
+      "line": 24,
       "symbol": "INPAccountModel.merchantUUID",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/API/Models/Account/INPAccountModel.swift",
-      "line": 30,
+      "line": 25,
       "symbol": "INPAccountModel.metadata",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -618,56 +618,49 @@
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 112,
-      "symbol": "InPlayerNotificationStatus",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 113,
+      "line": 114,
       "symbol": "InPlayerNotificationStatus.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 114,
+      "line": 115,
       "symbol": "InPlayerNotificationStatus.connecting",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 115,
+      "line": 116,
       "symbol": "InPlayerNotificationStatus.connected",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 116,
+      "line": 117,
       "symbol": "InPlayerNotificationStatus.disconnected",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 117,
+      "line": 118,
       "symbol": "InPlayerNotificationStatus.connectionRefused",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 118,
+      "line": 119,
       "symbol": "InPlayerNotificationStatus.connectionError",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 119,
+      "line": 120,
       "symbol": "InPlayerNotificationStatus.protocolError",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
