@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Account Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Account" class="dashAnchor"></a>
+    <a title="Account Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html">InPlayerSDK Docs</a> (53% documented)</p>
+        <p class="header-right"><a href="https://github.com/inplayer-org/inplayer-ios-sdk"><img src="../../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html">InPlayerSDK Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        Account Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/INPNotificationAPIManager.html">INPNotificationAPIManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes.html#/s:11InPlayerSDK10INPSessionC">INPSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/INPSessionAPIManager.html">INPSessionAPIManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/InPlayer.html">InPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/InPlayer/Account.html">– Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/InPlayer/Asset.html">– Asset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/InPlayer/Notification.html">– Notification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/InPlayer/Payment.html">– Payment</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/EnvironmentType.html">EnvironmentType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/InPlayerNotificationStatus.html">InPlayerNotificationStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/NotificationType.html">NotificationType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/Date.html">Date</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/InPlayerError.html">InPlayerError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/INPAccessControlTypeModel.html">INPAccessControlTypeModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPAccessFeeModel.html">INPAccessFeeModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPAccessTypeModel.html">INPAccessTypeModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPAccountModel.html">INPAccountModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPAuthorizationModel.html">INPAuthorizationModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPCredentials.html">INPCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPHttpError.html">INPHttpError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPInvalidJSONError.html">INPInvalidJSONError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPInvalidResponseError.html">INPInvalidResponseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPItemAccessModel.html">INPItemAccessModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPItemMetadataModel.html">INPItemMetadataModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPItemMetahashModel.html">INPItemMetahashModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPItemModel.html">INPItemModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPItemRevokedModel.html">INPItemRevokedModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPItemTypeModel.html">INPItemTypeModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPSetupFeeModel.html">INPSetupFeeModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPTrialPeriodModel.html">INPTrialPeriodModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPUnknownError.html">INPUnknownError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/INPUserNotAuthenticatedError.html">INPUserNotAuthenticatedError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/InPlayerNotification.html">InPlayerNotification</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Account</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">final</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">Account</span></code></pre>
+
+                </div>
+              </div>
+            <p>Class providing Account related actions.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC14getCredentialsAA14INPCredentialsVSgyFZ"></a>
+                    <a name="//apple_ref/swift/Method/getCredentials()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC14getCredentialsAA14INPCredentialsVSgyFZ">getCredentials()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get user credentials.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getCredentials</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/INPCredentials.html">INPCredentials</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>User credentials. (Optional)</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC15isAuthenticatedSbyFZ"></a>
+                    <a name="//apple_ref/swift/Method/isAuthenticated()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC15isAuthenticatedSbyFZ">isAuthenticated()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if current user has access token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">isAuthenticated</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Bool result of the check.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC06createD08fullName5email8password0I12Confirmation4type8metadata7success7failureySS_S3SAA0D4TypeOSDySSypGSgyAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/createAccount(fullName:email:password:passwordConfirmation:type:metadata:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC06createD08fullName5email8password0I12Confirmation4type8metadata7success7failureySS_S3SAA0D4TypeOSDySSypGSgyAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ">createAccount(fullName:email:password:passwordConfirmation:type:metadata:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates new account.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createAccount</span><span class="p">(</span><span class="nv">fullName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                 <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                 <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                 <span class="nv">passwordConfirmation</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                 <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../../Enums/AccountType.html">AccountType</a></span><span class="p">,</span>
+                                 <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                 <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/INPAuthorizationModel.html">INPAuthorizationModel</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                 <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fullName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Full name of account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Email of account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Password of account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>passwordConfirmation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Password confirmation of account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Account type</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>metadata</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Additional information for account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authorization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Authorization model containing info regarding token and account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC03getD4Info7success7failureyyAA15INPAccountModelVc_yAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/getAccountInfo(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC03getD4Info7success7failureyyAA15INPAccountModelVc_yAA0aB5Error_pctFZ">getAccountInfo(success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the account information for a given authorization token</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getAccountInfo</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">account</span><span class="p">:</span> <span class="kt"><a href="../../Structs/INPAccountModel.html">INPAccountModel</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                  <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>account</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Contains account info</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC6logout7success7failureyyyc_yAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/logout(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC6logout7success7failureyyyc_yAA0aB5Error_pctFZ">logout(success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Logout currently authenticated account</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">logout</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                          <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC06updateD08fullName8metadata7success7failureySS_SDySSypGSgyAA15INPAccountModelVcyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateAccount(fullName:metadata:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC06updateD08fullName8metadata7success7failureySS_SDySSypGSgyAA15INPAccountModelVcyAA0aB5Error_pctFZ">updateAccount(fullName:metadata:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates account information.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateAccount</span><span class="p">(</span><span class="nv">fullName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                 <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                 <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">account</span><span class="p">:</span> <span class="kt"><a href="../../Structs/INPAccountModel.html">INPAccountModel</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                 <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fullName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Account full name. Can be new or updated. (Required).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>metadata</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional key-value object containing additional fields that needs to be updated or added.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>account</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Contains account info.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC14changePassword03oldF003newF00hF12Confirmation7success7failureySS_S2SyycyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/changePassword(oldPassword:newPassword:newPasswordConfirmation:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC14changePassword03oldF003newF00hF12Confirmation7success7failureySS_S2SyycyAA0aB5Error_pctFZ">changePassword(oldPassword:newPassword:newPasswordConfirmation:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates account password.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">changePassword</span><span class="p">(</span><span class="nv">oldPassword</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                  <span class="nv">newPassword</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                  <span class="nv">newPasswordConfirmation</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                  <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                  <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>oldPassword</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Old account password.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newPassword</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>New account password.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newPasswordConfirmation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>New password confirmation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC05eraseD08password7success7failureySS_yycyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/eraseAccount(password:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC05eraseD08password7success7failureySS_yycyAA0aB5Error_pctFZ">eraseAccount(password:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deletes account and all information stored with it.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">eraseAccount</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Account password.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC14setNewPassword5token8password0I12Confirmation7success7failureySS_S2SyycyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/setNewPassword(token:password:passwordConfirmation:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC14setNewPassword5token8password0I12Confirmation7success7failureySS_S2SyycyAA0aB5Error_pctFZ">setNewPassword(token:password:passwordConfirmation:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets new password for account using the token from account&rsquo;s email.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">setNewPassword</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                  <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                  <span class="nv">passwordConfirmation</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                  <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                  <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String received on account&rsquo;s email.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>New account password.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>passwordConfirmation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>New password confirmation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC14forgotPassword5email7success7failureySS_yycyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/forgotPassword(email:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC14forgotPassword5email7success7failureySS_yycyAA0aB5Error_pctFZ">forgotPassword(email:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends forgot password instructions on specified email.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">forgotPassword</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                  <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                  <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Email on which instructions should be sent.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC12authenticate8username8password7success7failureySS_SSyAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/authenticate(username:password:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC12authenticate8username8password7success7failureySS_SSyAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ">authenticate(username:password:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Authenticates account using username and password</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">authenticate</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/INPAuthorizationModel.html">INPAuthorizationModel</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>username</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Account username</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Account password</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authorization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Model containing access tokens and logged in account.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC18refreshAccessToken5using7success7failureySS_yAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/refreshAccessToken(using:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC18refreshAccessToken5using7success7failureySS_yAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ">refreshAccessToken(using:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Refreshes account access_token</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">refreshAccessToken</span><span class="p">(</span><span class="n">using</span> <span class="nv">refreshToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                      <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/INPAuthorizationModel.html">INPAuthorizationModel</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                      <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>refreshToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Valid refresh token.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authorization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Model containing access tokens and logged in account.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC34authenticateUsingClientCredentials12clientSecret7success7failureySS_yAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/authenticateUsingClientCredentials(clientSecret:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC34authenticateUsingClientCredentials12clientSecret7success7failureySS_yAA21INPAuthorizationModelVcyAA0aB5Error_pctFZ">authenticateUsingClientCredentials(clientSecret:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Authenticates account using client credentials</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">authenticateUsingClientCredentials</span><span class="p">(</span><span class="nv">clientSecret</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                                      <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/INPAuthorizationModel.html">INPAuthorizationModel</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                                      <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clientSecret</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Client secret</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authorization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Model containing access tokens and logged in account.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-01-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
