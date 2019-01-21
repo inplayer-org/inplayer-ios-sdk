@@ -212,11 +212,11 @@
 		A7EA962A21F501F000CDA238 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A7EA963221F501F000CDA238 /* InPlayer.swift */,
 				A7EA96D121F52B6900CDA238 /* InPlayerConstants.swift */,
 				A7EA962B21F501F000CDA238 /* Configuration */,
-				A7EA962E21F501F000CDA238 /* Extensions */,
-				A7EA963221F501F000CDA238 /* InPlayer.swift */,
 				A7EA963321F501F000CDA238 /* API */,
+				A7EA962E21F501F000CDA238 /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -242,14 +242,14 @@
 		A7EA963321F501F000CDA238 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A7EA963421F501F000CDA238 /* Asset */,
 				A7EA963721F501F000CDA238 /* INPAPIConfiguration.swift */,
 				A7EA963821F501F000CDA238 /* NetworkDataSource.swift */,
-				A7EA963921F501F000CDA238 /* Models */,
 				A7EA964921F501F000CDA238 /* INPAuthHandler.swift */,
 				A7EA964A21F501F000CDA238 /* INPSessionManager.swift */,
-				A7EA964B21F501F000CDA238 /* Errors */,
 				A7EA965121F501F000CDA238 /* Account */,
+				A7EA963421F501F000CDA238 /* Asset */,
+				A7EA963921F501F000CDA238 /* Models */,
+				A7EA964B21F501F000CDA238 /* Errors */,
 				A7EA965421F501F000CDA238 /* NetworkConstants.swift */,
 			);
 			path = API;
@@ -324,8 +324,8 @@
 		A7EA965521F501F000CDA238 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				A7EA96DB21F52C0000CDA238 /* AWS */,
 				A7EA965721F501F000CDA238 /* Notification.swift */,
+				A7EA96DB21F52C0000CDA238 /* AWS */,
 				A7EA965821F501F000CDA238 /* API */,
 			);
 			path = Notification;
