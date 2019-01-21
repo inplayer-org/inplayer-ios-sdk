@@ -8,7 +8,6 @@ class INPAccountService {
                               email: String,
                               password: String,
                               passwordConfirmation: String,
-                              type: AccountType,
                               metadata: [String: Any]?,
                               completion: @escaping RequestCompletion<INPAuthorizationModel>) {
         var params: [String: Any] = [
@@ -16,7 +15,7 @@ class INPAccountService {
             AccountParameters.email: email,
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation,
-            AccountParameters.type: type.rawValue,
+            AccountParameters.type: AccountType.consumer.rawValue,
             AccountParameters.merchantUUID: InPlayer.Configuration.getClientId()
         ]
         if let referrer = InPlayer.Configuration.getReferrer() {
@@ -28,18 +27,57 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.createAccount(parameters: params),
                                          completion: completion)
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.createAccount(parameters: params),
+                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+        })
     }
 
     static func getUserInfo(completion: @escaping RequestCompletion<INPAccountModel>) {
         NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getAccountInfo(),
                                          completion: completion)
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.getAccountInfo(),
+                                         completion: { (account: INPAccountModel?, error: InPlayerError?) in
+                                            saveAccount(account: account, error: error, completion: completion)
+        })
+    }
+
+    static func authenticate(username: String,
+                             password: String,
+                             completion: @escaping RequestCompletion<INPAuthorizationModel>) {
+        let params = [
+            AccountParameters.username: username,
+            AccountParameters.password: password,
+            AccountParameters.grantType: AuthenticationTypes.password.rawValue,
+            AccountParameters.clientId: InPlayer.Configuration.getClientId()
+        ]
+
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.authenticate(parameters: params),
+                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+
+        })
     }
 
     static func logout(completion: @escaping RequestCompletion<Empty>) {
         NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.logout(),
                                          completion: completion)
+        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.logout(),
+                                         completion: { (empty: Empty?, error: InPlayerError?) in
+                                            if error != nil {
+                                                completion(empty, error)
+                                            } else {
+                                                UserDefaults.credentials = nil
+                                                UserDefaults.account = nil
+                                                completion(empty, error)
+                                            }
+        })
     }
 
     static func updateAccount(fullName: String,
@@ -54,7 +92,10 @@ class INPAccountService {
         }
         NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.updateAccount(parameters: params),
-                                         completion: completion)
+                                         completion: { (account: INPAccountModel?, error: InPlayerError?) in
+                                            saveAccount(account: account, error: error, completion: completion)
+
+        })
     }
 
     static func changePassword(oldPassword: String,
@@ -76,7 +117,15 @@ class INPAccountService {
         let params = [AccountParameters.password: password]
         NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.eraseAccount(parameters: params),
-                                         completion: completion)
+                                         completion: { (empty: Empty?, error: InPlayerError?) in
+                                            if error != nil {
+                                                completion(empty, error)
+                                            } else {
+                                                UserDefaults.credentials = nil
+                                                UserDefaults.account = nil
+                                                completion(empty, error)
+                                            }
+        })
     }
 
     static func setNewPassword(token: String,
@@ -104,21 +153,6 @@ class INPAccountService {
                                          completion: completion)
     }
 
-    static func authenticate(username: String,
-                             password: String,
-                             completion: @escaping RequestCompletion<INPAuthorizationModel>) {
-        let params = [
-            AccountParameters.username: username,
-            AccountParameters.password: password,
-            AccountParameters.grantType: AuthenticationTypes.password.rawValue,
-            AccountParameters.clientId: InPlayer.Configuration.getClientId()
-        ]
-
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.authenticate(parameters: params),
-                                         completion: completion)
-    }
-
     static func refreshAccessToken(using refreshToken: String,
                                    completion: @escaping RequestCompletion<INPAuthorizationModel>) {
         let params = [
@@ -128,7 +162,9 @@ class INPAccountService {
         ]
         NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.refreshToken(parameters: params),
-                                         completion: completion)
+                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+        })
     }
 
     static func authenticateUsingClientCredentials(clientSecret: String,
@@ -140,10 +176,58 @@ class INPAccountService {
         ]
         NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
-                                         completion: completion)
+                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+        })
     }
 }
 
+private extension INPAccountService {
+    private static func updateAuthorization(authorization: INPAuthorizationModel?,
+                                            error: InPlayerError?,
+                                            completion: @escaping RequestCompletion<INPAuthorizationModel>) {
+        if error != nil {
+            completion(authorization, error)
+        } else {
+            guard let auth = authorization,
+                let accessToken = auth.accessToken,
+                let refreshToken = auth.refreshToken,
+                let expires = auth.expires
+                else {
+                    return completion(authorization, INPUnauthorizedError())
+            }
+
+            UserDefaults.credentials = INPCredentials(accessToken: accessToken,
+                                                      refreshToken: refreshToken,
+                                                      expires: expires)
+            UserDefaults.account = auth.account
+            completion(authorization, error)
+        }
+    }
+
+    private static func saveAccount(account: INPAccountModel?,
+                                    error: InPlayerError?,
+                                    completion: @escaping RequestCompletion<INPAccountModel>) {
+        if error != nil {
+            completion(account, error)
+        } else {
+            UserDefaults.account = account
+            completion(account, error)
+        }
+    }
+
+    private static func cleanUpCredentials(empty: Empty?,
+                                           error: InPlayerError?,
+                                           completion: @escaping RequestCompletion<Empty>) {
+        if error != nil {
+            completion(empty, error)
+        } else {
+            UserDefaults.credentials = nil
+            UserDefaults.account = nil
+            completion(empty, error)
+        }
+    }
+}
 
 private struct AccountParameters {
     static let fullName             = "full_name"

@@ -33,7 +33,6 @@ public extension InPlayer {
              - email: Email of account
              - password: Password of account
              - passwordConfirmation: Password confirmation of account
-             - type: Account type
              - metadata: Additional information for account
              - success: A closure to be executed once the request has finished successfully.
              - authorization: Authorization model containing info regarding token and account
@@ -44,7 +43,6 @@ public extension InPlayer {
                                          email: String,
                                          password: String,
                                          passwordConfirmation: String,
-                                         type: AccountType,
                                          metadata: [String: Any]? = nil,
                                          success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
                                          failure: @escaping (_ error: InPlayerError) -> Void) {
@@ -52,26 +50,12 @@ public extension InPlayer {
                                             email: email,
                                             password: password,
                                             passwordConfirmation: passwordConfirmation,
-                                            type: type,
                                             metadata: metadata,
                                             completion: { (authorization, error) in
                 if let error = error {
                     failure(error)
                 } else {
-                    guard let authorization = authorization,
-                        let accessToken = authorization.accessToken,
-                        let refreshToken = authorization.refreshToken,
-                        let expires = authorization.expires
-                    else {
-                        failure(INPUserNotAuthenticatedError())
-                        return
-                    }
-
-                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                              refreshToken: refreshToken,
-                                                              expires: expires)
-                    UserDefaults.account = authorization.account
-                    success(authorization)
+                    success(authorization!)
                 }
             })
         }
@@ -84,15 +68,39 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getAccountInfo(success: @escaping (_ account: INPAccountModel) -> Void,
-                                          failure: @escaping (_ error: InPlayerError) -> Void) {
+        public static func getAccountInformation(success: @escaping (_ account: INPAccountModel) -> Void,
+                                                 failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.getUserInfo(completion: { (account, error) in
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.account = account
                     success(account!)
                 }
+            })
+        }
+
+        /**
+         Authenticates account using username and password
+         - Parameters:
+             - username: Account username
+             - password: Account password
+             - success: A closure to be executed once the request has finished successfully.
+             - authorization: Model containing access tokens and logged in account.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
+         */
+        public static func authenticate(username: String,
+                                        password: String,
+                                        success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
+                                        failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.authenticate(username: username,
+                                           password: password,
+                                           completion: { (authorization, error) in
+                    if let error = error {
+                        failure(error)
+                    } else {
+                        success(authorization!)
+                    }
             })
         }
 
@@ -103,15 +111,12 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-
         public static func logout(success: @escaping () -> Void,
                                   failure: @escaping (_ error: InPlayerError) -> Void){
             INPAccountService.logout(completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.credentials = nil
-                    UserDefaults.account = nil
                     success()
                 }
             })
@@ -137,7 +142,6 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.account = account
                     success(account!)
                 }
             })
@@ -185,8 +189,6 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.credentials = nil
-                    UserDefaults.account = nil
                     success()
                 }
             })
@@ -239,42 +241,6 @@ public extension InPlayer {
             })
         }
 
-        /**
-         Authenticates account using username and password
-         - Parameters:
-             - username: Account username
-             - password: Account password
-             - success: A closure to be executed once the request has finished successfully.
-             - authorization: Model containing access tokens and logged in account.
-             - failure: A closure to be executed once the request has finished with error.
-             - error: Containing information about the error that occurred.
-         */
-        public static func authenticate(username: String,
-                                        password: String,
-                                        success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
-                                        failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.authenticate(username: username,
-                                           password: password,
-                                           completion: { (authorization, error) in
-                if let error = error {
-                    failure(error)
-                } else {
-                    guard let authorization = authorization,
-                        let accessToken = authorization.accessToken,
-                        let refreshToken = authorization.refreshToken,
-                        let expires = authorization.expires
-                    else {
-                        return failure(INPUserNotAuthenticatedError())
-                    }
-
-                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                              refreshToken: refreshToken,
-                                                              expires: expires)
-                    UserDefaults.account = authorization.account
-                    success(authorization)
-                }
-            })
-        }
 
         /**
          Refreshes account access_token
@@ -292,19 +258,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    guard let authorization = authorization,
-                        let accessToken = authorization.accessToken,
-                        let refreshToken = authorization.refreshToken,
-                        let expires = authorization.expires
-                    else {
-                        return failure(INPUserNotAuthenticatedError())
-                    }
-
-                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                              refreshToken: refreshToken,
-                                                              expires: expires)
-                    UserDefaults.account = authorization.account
-                    success(authorization)
+                    success(authorization!)
                 }
             })
         }
@@ -326,19 +280,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    guard let authorization = authorization,
-                        let accessToken = authorization.accessToken,
-                        let refreshToken = authorization.refreshToken,
-                        let expires = authorization.expires
-                    else {
-                        return failure(INPUserNotAuthenticatedError())
-                    }
-
-                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                              refreshToken: refreshToken,
-                                                              expires: expires)
-                    UserDefaults.account = authorization.account
-                    success(authorization)
+                    success(authorization!)
                 }
             })
         }

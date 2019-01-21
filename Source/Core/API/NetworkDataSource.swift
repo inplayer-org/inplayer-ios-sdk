@@ -24,27 +24,9 @@ class NetworkDataSource {
                                                    decoder: JSONDecoder = JSONDecoder(),
                                                    completion: @escaping RequestCompletion<T>) {
         if route.requiresAuthorization, !session.isAuthorized {
-            return completion(nil, INPUserNotAuthenticatedError())
+            return completion(nil, INPUnauthorizedError())
         }
         session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
-            // TODO: Maybe this should use different parameter check
-            if InPlayer.Configuration.getEnvironment() == .debug {
-                print("=================================")
-                print("[REQUEST]:  \(response.request!)")
-                print("[REQUEST METHOD]: \(String(describing:response.request?.httpMethod))")
-                print("[REQUEST HEADERS]:  \(String(describing: response.request?.allHTTPHeaderFields))")
-                print("[PARAMS]: \(String(describing: route.parameters))")
-                print("[RESPONSE RESULT]: \(response.result)")
-                if let statusCode = response.response?.statusCode {
-                    print("[RESPONSE STATUS CODE]: \(statusCode)")
-                }
-                if response.data != nil {
-                    let str = String(data: response.data!, encoding: String.Encoding.utf8)!
-                    print("[RESPONSE]: \(str)")
-                }
-                print("=================================")
-            }
-
             if response.result.isFailure {
                 let error = InPlayerErrorMapper.mapFromError(originalError: response.result.error!,
                                                              withResponseData: response.data)

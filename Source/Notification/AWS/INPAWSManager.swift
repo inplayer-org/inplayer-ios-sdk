@@ -15,13 +15,13 @@ final class INPAWSManager {
 
     private init() {}
 
-    static func subscribe(statusCallback: @escaping (_ status: InPlayerNotificationStatus) -> Void,
-                          messageCallback: @escaping (_ notification: InPlayerNotification) -> Void,
+    static func subscribe(onStatusChanged: @escaping (_ status: InPlayerNotificationStatus) -> Void,
+                          onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void,
                           onError: @escaping (_ error: InPlayerError) -> Void) {
 
         // Get credentials
         guard let clientUUID = UserDefaults.account?.uuid else {
-            return onError(INPUserNotAuthenticatedError())
+            return onError(INPUnauthorizedError())
         }
 
         takeAWSCredentials(success: { awsKeys in
@@ -31,14 +31,14 @@ final class INPAWSManager {
 
             // connect to aws
             connectToAws(clientUUID: clientUUID, statusCallback: { status in
-                statusCallback(status)
+                onStatusChanged(status)
                 if status == .connected {
 
                     // subscribe for notifications
                     subscribe(clientUUID: clientUUID, messageCallback: { (result) in
                         switch result {
                         case .success(let notification):
-                            messageCallback(notification)
+                            onMessageReceived(notification)
                         case .failure(let error):
                             onError(error)
                         }
@@ -54,6 +54,9 @@ final class INPAWSManager {
         iotDataManager?.disconnect()
     }
 
+}
+
+extension INPAWSManager {
 
     // MARK: - Private
 
