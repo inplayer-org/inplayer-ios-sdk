@@ -14,6 +14,7 @@ public struct INPAccountModel : Codable {
     public let completed : Bool?
     public let email : String?
     public let fullName : String?
+    public let username: String?
     public let id : Int?
     public let referrer : String?
     public let roles : [AccountType]?
@@ -29,6 +30,7 @@ public struct INPAccountModel : Codable {
         case createdAt = "created_at"
         case email = "email"
         case fullName = "full_name"
+        case username = "username"
         case id = "id"
         case referrer = "referrer"
         case roles = "roles"
@@ -47,6 +49,7 @@ public struct INPAccountModel : Codable {
         completed = try values.decodeIfPresent(Bool.self, forKey: .completed)
         email = try values.decodeIfPresent(String.self, forKey: .email)
         fullName = try values.decodeIfPresent(String.self, forKey: .fullName)
+        username = try values.decodeIfPresent(String.self, forKey: .username)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         referrer = try values.decodeIfPresent(String.self, forKey: .referrer)
         if let accountTypes = try values.decodeIfPresent([String].self, forKey: .roles) {

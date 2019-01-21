@@ -3,7 +3,7 @@ import Foundation
 /**
  Notification Type enum
  ```
- case accessGranted(resource: INPItemAccessModel, startsAt: Double)
+ case accessGranted(resource: INPItemAccessModel)
  case accessRevoked(resource: INPItemRevokedModel)
  case accountLogout
  case accountErased
@@ -12,7 +12,7 @@ import Foundation
  ```
 */
 public enum NotificationType {
-    case accessGranted(resource: INPItemAccessModel, startsAt: Double)
+    case accessGranted(resource: INPItemAccessModel)
     case accessRevoked(resource: INPItemRevokedModel)
     case accountLogout
     case accountErased
@@ -29,7 +29,6 @@ public struct InPlayerNotification: Codable {
         case typeString = "type"
         case timestamp
         case resource
-        case startsAt = "starts_at"
     }
 
     private struct NotificationTypeStrings {
@@ -50,8 +49,7 @@ public struct InPlayerNotification: Codable {
         switch typeString {
         case NotificationTypeStrings.accessGranted:
             let resource = try values.decode(INPItemAccessModel.self, forKey: .resource)
-            let startsAt = try values.decode(Double.self, forKey: .startsAt)
-            type = .accessGranted(resource: resource, startsAt: startsAt)
+            type = .accessGranted(resource: resource)
         case NotificationTypeStrings.accessRevoked:
             let resource = try values.decode(INPItemRevokedModel.self, forKey: .resource)
             type = .accessRevoked(resource: resource)
@@ -75,9 +73,8 @@ public struct InPlayerNotification: Codable {
         var values = encoder.container(keyedBy: CodingKeys.self)
         try values.encode(timestamp, forKey: .timestamp)
         switch type {
-        case .accessGranted(let resource, let startsAt):
+        case .accessGranted(let resource):
             try values.encode(resource, forKey: .resource)
-            try values.encode(startsAt, forKey: .startsAt)
             try values.encode(NotificationTypeStrings.accessGranted, forKey: .typeString)
         case .accessRevoked(let resource):
             try values.encode(resource, forKey: .resource)
