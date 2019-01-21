@@ -33,7 +33,6 @@ public extension InPlayer {
              - email: Email of account
              - password: Password of account
              - passwordConfirmation: Password confirmation of account
-             - type: Account type
              - metadata: Additional information for account
              - success: A closure to be executed once the request has finished successfully.
              - authorization: Authorization model containing info regarding token and account
@@ -44,7 +43,6 @@ public extension InPlayer {
                                          email: String,
                                          password: String,
                                          passwordConfirmation: String,
-                                         type: AccountType,
                                          metadata: [String: Any]? = nil,
                                          success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
                                          failure: @escaping (_ error: InPlayerError) -> Void) {
@@ -52,7 +50,6 @@ public extension InPlayer {
                                             email: email,
                                             password: password,
                                             passwordConfirmation: passwordConfirmation,
-                                            type: type,
                                             metadata: metadata,
                                             completion: { (authorization, error) in
                 if let error = error {

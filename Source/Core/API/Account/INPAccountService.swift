@@ -8,7 +8,6 @@ class INPAccountService {
                               email: String,
                               password: String,
                               passwordConfirmation: String,
-                              type: AccountType,
                               metadata: [String: Any]?,
                               completion: @escaping RequestCompletion<INPAuthorizationModel>) {
         var params: [String: Any] = [
@@ -16,7 +15,7 @@ class INPAccountService {
             AccountParameters.email: email,
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation,
-            AccountParameters.type: type.rawValue,
+            AccountParameters.type: AccountType.consumer.rawValue,
             AccountParameters.merchantUUID: InPlayer.Configuration.getClientId()
         ]
         if let referrer = InPlayer.Configuration.getReferrer() {
