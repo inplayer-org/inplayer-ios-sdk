@@ -54,6 +54,9 @@ final class INPAWSManager {
         iotDataManager?.disconnect()
     }
 
+}
+
+extension INPAWSManager {
 
     // MARK: - Private
 

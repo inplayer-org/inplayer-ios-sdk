@@ -55,20 +55,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    guard let authorization = authorization,
-                        let accessToken = authorization.accessToken,
-                        let refreshToken = authorization.refreshToken,
-                        let expires = authorization.expires
-                    else {
-                        failure(INPUnauthorizedError())
-                        return
-                    }
-
-                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                              refreshToken: refreshToken,
-                                                              expires: expires)
-                    UserDefaults.account = authorization.account
-                    success(authorization)
+                    success(authorization!)
                 }
             })
         }
@@ -87,7 +74,6 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.account = account
                     success(account!)
                 }
             })
@@ -113,19 +99,7 @@ public extension InPlayer {
                     if let error = error {
                         failure(error)
                     } else {
-                        guard let authorization = authorization,
-                            let accessToken = authorization.accessToken,
-                            let refreshToken = authorization.refreshToken,
-                            let expires = authorization.expires
-                            else {
-                                return failure(INPUnauthorizedError())
-                        }
-
-                        UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                                  refreshToken: refreshToken,
-                                                                  expires: expires)
-                        UserDefaults.account = authorization.account
-                        success(authorization)
+                        success(authorization!)
                     }
             })
         }
@@ -143,8 +117,6 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.credentials = nil
-                    UserDefaults.account = nil
                     success()
                 }
             })
@@ -170,7 +142,6 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.account = account
                     success(account!)
                 }
             })
@@ -218,8 +189,6 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    UserDefaults.credentials = nil
-                    UserDefaults.account = nil
                     success()
                 }
             })
@@ -289,19 +258,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    guard let authorization = authorization,
-                        let accessToken = authorization.accessToken,
-                        let refreshToken = authorization.refreshToken,
-                        let expires = authorization.expires
-                    else {
-                        return failure(INPUnauthorizedError())
-                    }
-
-                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                              refreshToken: refreshToken,
-                                                              expires: expires)
-                    UserDefaults.account = authorization.account
-                    success(authorization)
+                    success(authorization!)
                 }
             })
         }
@@ -323,19 +280,7 @@ public extension InPlayer {
                 if let error = error {
                     failure(error)
                 } else {
-                    guard let authorization = authorization,
-                        let accessToken = authorization.accessToken,
-                        let refreshToken = authorization.refreshToken,
-                        let expires = authorization.expires
-                    else {
-                        return failure(INPUnauthorizedError())
-                    }
-
-                    UserDefaults.credentials = INPCredentials(accessToken: accessToken,
-                                                              refreshToken: refreshToken,
-                                                              expires: expires)
-                    UserDefaults.account = authorization.account
-                    success(authorization)
+                    success(authorization!)
                 }
             })
         }
