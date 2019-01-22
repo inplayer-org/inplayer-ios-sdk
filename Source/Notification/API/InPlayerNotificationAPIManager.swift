@@ -3,26 +3,26 @@ import Alamofire
 /**
  Class used to provide user ability to inject his own implementation of Session.
  */
-public final class INPNotificationAPIManager {
+public final class InPlayerNotificationAPIManager {
 
     /// Singleton object.
-    public static let `default` = INPNotificationAPIManager()
+    public static let `default` = InPlayerNotificationAPIManager()
 
     /// The session.
-    public var session: INPSession
+    public var session: InPlayerSession
 
     /// Session base url string.
     public var baseURLString: String {
         didSet {
             let handler = INPAuthHandler(baseURLString: baseURLString)
-            session = INPSession(adapter: handler, retrier: handler)
+            session = InPlayerSession(adapter: handler, retrier: handler)
         }
     }
 
     private init() {
-        baseURLString = INPNotificationAPIManager.getBaseUrlString
+        baseURLString = InPlayerNotificationAPIManager.getBaseUrlString
         let handler = INPAuthHandler(baseURLString: baseURLString)
-        session = INPSession(adapter: handler, retrier: handler)
+        session = InPlayerSession(adapter: handler, retrier: handler)
     }
 
     private static var getBaseUrlString: String {

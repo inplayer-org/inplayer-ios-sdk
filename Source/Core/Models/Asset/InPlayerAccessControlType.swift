@@ -1,7 +1,7 @@
 import Foundation
 
 /// Access control type model
-public struct INPAccessControlTypeModel : Codable {
+public struct InPlayerAccessControlType : Codable {
 
     public let id: Int?
     public let auth : Bool?

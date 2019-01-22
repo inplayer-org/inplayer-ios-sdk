@@ -1,9 +1,9 @@
 import Foundation
 
 /**
- Http Error
+ Unknown Error
  */
-public struct INPHttpError: InPlayerError {
+public struct InPlayerUnknownError: InPlayerError {
     public var code: Int
     public var message: String?
     public var errorList: [String]?
@@ -14,5 +14,10 @@ public struct INPHttpError: InPlayerError {
         self.message = message
         self.errorList = errorList
         self.originalError = error
+    }
+
+    init(error: Error) {
+        let message = "Unknown error occured"
+        self.init(code: 0, message: message, errorList: [message], error: error)
     }
 }

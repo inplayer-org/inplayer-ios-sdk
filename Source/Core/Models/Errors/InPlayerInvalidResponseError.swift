@@ -3,7 +3,7 @@ import Foundation
 /**
  Invalid Response Error
  */
-public struct INPInvalidResponseError: InPlayerError {
+public struct InPlayerInvalidResponseError: InPlayerError {
     public var code: Int
     public var message: String?
     public var errorList: [String]?

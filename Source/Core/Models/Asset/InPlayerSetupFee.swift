@@ -1,7 +1,7 @@
 import Foundation
 
 /// Setup fee model
-public struct INPSetupFeeModel : Codable {
+public struct InPlayerSetupFee : Codable {
 
     public let descriptionField : String?
     public let feeAmount : Int?

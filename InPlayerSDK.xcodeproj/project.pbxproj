@@ -17,35 +17,34 @@
 		A7EA966F21F501F000CDA238 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963621F501F000CDA238 /* Asset.swift */; };
 		A7EA967021F501F000CDA238 /* INPAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963721F501F000CDA238 /* INPAPIConfiguration.swift */; };
 		A7EA967121F501F000CDA238 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963821F501F000CDA238 /* NetworkDataSource.swift */; };
-		A7EA967221F501F000CDA238 /* INPItemMetahashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963B21F501F000CDA238 /* INPItemMetahashModel.swift */; };
-		A7EA967321F501F000CDA238 /* INPAccessControlTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963C21F501F000CDA238 /* INPAccessControlTypeModel.swift */; };
-		A7EA967421F501F000CDA238 /* INPAccessFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963D21F501F000CDA238 /* INPAccessFeeModel.swift */; };
-		A7EA967521F501F000CDA238 /* INPTrialPeriodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963E21F501F000CDA238 /* INPTrialPeriodModel.swift */; };
-		A7EA967621F501F000CDA238 /* INPSetupFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963F21F501F000CDA238 /* INPSetupFeeModel.swift */; };
-		A7EA967721F501F000CDA238 /* INPAccessTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964021F501F000CDA238 /* INPAccessTypeModel.swift */; };
-		A7EA967821F501F000CDA238 /* INPItemTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964121F501F000CDA238 /* INPItemTypeModel.swift */; };
-		A7EA967921F501F000CDA238 /* INPItemAccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964221F501F000CDA238 /* INPItemAccessModel.swift */; };
-		A7EA967A21F501F000CDA238 /* INPItemMetadataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964321F501F000CDA238 /* INPItemMetadataModel.swift */; };
-		A7EA967B21F501F000CDA238 /* INPItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964421F501F000CDA238 /* INPItemModel.swift */; };
-		A7EA967C21F501F000CDA238 /* INPAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964621F501F000CDA238 /* INPAccountModel.swift */; };
-		A7EA967D21F501F000CDA238 /* INPCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964721F501F000CDA238 /* INPCredentials.swift */; };
-		A7EA967E21F501F000CDA238 /* INPAuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964821F501F000CDA238 /* INPAuthorizationModel.swift */; };
+		A7EA967321F501F000CDA238 /* InPlayerAccessControlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963C21F501F000CDA238 /* InPlayerAccessControlType.swift */; };
+		A7EA967421F501F000CDA238 /* InPlayerAccessFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963D21F501F000CDA238 /* InPlayerAccessFee.swift */; };
+		A7EA967521F501F000CDA238 /* InPlayerTrialPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963E21F501F000CDA238 /* InPlayerTrialPeriod.swift */; };
+		A7EA967621F501F000CDA238 /* InPlayerSetupFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA963F21F501F000CDA238 /* InPlayerSetupFee.swift */; };
+		A7EA967721F501F000CDA238 /* InPlayerAccessType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964021F501F000CDA238 /* InPlayerAccessType.swift */; };
+		A7EA967821F501F000CDA238 /* InPlayerItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964121F501F000CDA238 /* InPlayerItemType.swift */; };
+		A7EA967921F501F000CDA238 /* InPlayerItemAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964221F501F000CDA238 /* InPlayerItemAccess.swift */; };
+		A7EA967A21F501F000CDA238 /* InPlayerItemMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964321F501F000CDA238 /* InPlayerItemMetadata.swift */; };
+		A7EA967B21F501F000CDA238 /* InPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964421F501F000CDA238 /* InPlayerItem.swift */; };
+		A7EA967C21F501F000CDA238 /* InPlayerAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964621F501F000CDA238 /* InPlayerAccount.swift */; };
+		A7EA967D21F501F000CDA238 /* InPlayerCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964721F501F000CDA238 /* InPlayerCredentials.swift */; };
+		A7EA967E21F501F000CDA238 /* InPlayerAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964821F501F000CDA238 /* InPlayerAuthorization.swift */; };
 		A7EA967F21F501F000CDA238 /* INPAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964921F501F000CDA238 /* INPAuthHandler.swift */; };
-		A7EA968021F501F000CDA238 /* INPSessionAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964A21F501F000CDA238 /* INPSessionAPIManager.swift */; };
-		A7EA968121F501F000CDA238 /* INPHttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964C21F501F000CDA238 /* INPHttpError.swift */; };
-		A7EA968221F501F000CDA238 /* INPUnknownError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964D21F501F000CDA238 /* INPUnknownError.swift */; };
+		A7EA968021F501F000CDA238 /* InPlayerSessionAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964A21F501F000CDA238 /* InPlayerSessionAPIManager.swift */; };
+		A7EA968121F501F000CDA238 /* InPlayerHttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964C21F501F000CDA238 /* InPlayerHttpError.swift */; };
+		A7EA968221F501F000CDA238 /* InPlayerUnknownError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964D21F501F000CDA238 /* InPlayerUnknownError.swift */; };
 		A7EA968321F501F000CDA238 /* InPlayerErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964E21F501F000CDA238 /* InPlayerErrorMapper.swift */; };
-		A7EA968421F501F000CDA238 /* INPInvalidResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964F21F501F000CDA238 /* INPInvalidResponseError.swift */; };
-		A7EA968521F501F000CDA238 /* INPUnauthorizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965021F501F000CDA238 /* INPUnauthorizedError.swift */; };
+		A7EA968421F501F000CDA238 /* InPlayerInvalidResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA964F21F501F000CDA238 /* InPlayerInvalidResponseError.swift */; };
+		A7EA968521F501F000CDA238 /* InPlayerUnauthorizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965021F501F000CDA238 /* InPlayerUnauthorizedError.swift */; };
 		A7EA968721F501F000CDA238 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965321F501F000CDA238 /* Account.swift */; };
 		A7EA968821F501F000CDA238 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965421F501F000CDA238 /* NetworkConstants.swift */; };
 		A7EA968A21F501F000CDA238 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965721F501F000CDA238 /* Notification.swift */; };
 		A7EA968B21F501F000CDA238 /* NotificationNetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965921F501F000CDA238 /* NotificationNetworkConstants.swift */; };
 		A7EA968C21F501F000CDA238 /* InPlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965B21F501F000CDA238 /* InPlayerNotification.swift */; };
-		A7EA968D21F501F000CDA238 /* INPAwsKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965C21F501F000CDA238 /* INPAwsKeyModel.swift */; };
-		A7EA968E21F501F000CDA238 /* INPItemRevokedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965D21F501F000CDA238 /* INPItemRevokedModel.swift */; };
+		A7EA968D21F501F000CDA238 /* InPlayerAwsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965C21F501F000CDA238 /* InPlayerAwsKey.swift */; };
+		A7EA968E21F501F000CDA238 /* InPlayerItemRevoked.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965D21F501F000CDA238 /* InPlayerItemRevoked.swift */; };
 		A7EA968F21F501F000CDA238 /* INPNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965E21F501F000CDA238 /* INPNotificationService.swift */; };
-		A7EA969021F501F000CDA238 /* INPNotificationAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965F21F501F000CDA238 /* INPNotificationAPIManager.swift */; };
+		A7EA969021F501F000CDA238 /* InPlayerNotificationAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA965F21F501F000CDA238 /* InPlayerNotificationAPIManager.swift */; };
 		A7EA969321F501F000CDA238 /* PaymentNetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA966421F501F000CDA238 /* PaymentNetworkConstants.swift */; };
 		A7EA969521F501F000CDA238 /* InPlayerSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A7EA966621F501F000CDA238 /* InPlayerSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7EA96BF21F50F4900CDA238 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA96BE21F50F4900CDA238 /* Alamofire.framework */; };
@@ -88,35 +87,34 @@
 		A7EA963621F501F000CDA238 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		A7EA963721F501F000CDA238 /* INPAPIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAPIConfiguration.swift; sourceTree = "<group>"; };
 		A7EA963821F501F000CDA238 /* NetworkDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
-		A7EA963B21F501F000CDA238 /* INPItemMetahashModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPItemMetahashModel.swift; sourceTree = "<group>"; };
-		A7EA963C21F501F000CDA238 /* INPAccessControlTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAccessControlTypeModel.swift; sourceTree = "<group>"; };
-		A7EA963D21F501F000CDA238 /* INPAccessFeeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAccessFeeModel.swift; sourceTree = "<group>"; };
-		A7EA963E21F501F000CDA238 /* INPTrialPeriodModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPTrialPeriodModel.swift; sourceTree = "<group>"; };
-		A7EA963F21F501F000CDA238 /* INPSetupFeeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPSetupFeeModel.swift; sourceTree = "<group>"; };
-		A7EA964021F501F000CDA238 /* INPAccessTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAccessTypeModel.swift; sourceTree = "<group>"; };
-		A7EA964121F501F000CDA238 /* INPItemTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPItemTypeModel.swift; sourceTree = "<group>"; };
-		A7EA964221F501F000CDA238 /* INPItemAccessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPItemAccessModel.swift; sourceTree = "<group>"; };
-		A7EA964321F501F000CDA238 /* INPItemMetadataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPItemMetadataModel.swift; sourceTree = "<group>"; };
-		A7EA964421F501F000CDA238 /* INPItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPItemModel.swift; sourceTree = "<group>"; };
-		A7EA964621F501F000CDA238 /* INPAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAccountModel.swift; sourceTree = "<group>"; };
-		A7EA964721F501F000CDA238 /* INPCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPCredentials.swift; sourceTree = "<group>"; };
-		A7EA964821F501F000CDA238 /* INPAuthorizationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAuthorizationModel.swift; sourceTree = "<group>"; };
+		A7EA963C21F501F000CDA238 /* InPlayerAccessControlType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerAccessControlType.swift; sourceTree = "<group>"; };
+		A7EA963D21F501F000CDA238 /* InPlayerAccessFee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerAccessFee.swift; sourceTree = "<group>"; };
+		A7EA963E21F501F000CDA238 /* InPlayerTrialPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerTrialPeriod.swift; sourceTree = "<group>"; };
+		A7EA963F21F501F000CDA238 /* InPlayerSetupFee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerSetupFee.swift; sourceTree = "<group>"; };
+		A7EA964021F501F000CDA238 /* InPlayerAccessType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerAccessType.swift; sourceTree = "<group>"; };
+		A7EA964121F501F000CDA238 /* InPlayerItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerItemType.swift; sourceTree = "<group>"; };
+		A7EA964221F501F000CDA238 /* InPlayerItemAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerItemAccess.swift; sourceTree = "<group>"; };
+		A7EA964321F501F000CDA238 /* InPlayerItemMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerItemMetadata.swift; sourceTree = "<group>"; };
+		A7EA964421F501F000CDA238 /* InPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerItem.swift; sourceTree = "<group>"; };
+		A7EA964621F501F000CDA238 /* InPlayerAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerAccount.swift; sourceTree = "<group>"; };
+		A7EA964721F501F000CDA238 /* InPlayerCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerCredentials.swift; sourceTree = "<group>"; };
+		A7EA964821F501F000CDA238 /* InPlayerAuthorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerAuthorization.swift; sourceTree = "<group>"; };
 		A7EA964921F501F000CDA238 /* INPAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAuthHandler.swift; sourceTree = "<group>"; };
-		A7EA964A21F501F000CDA238 /* INPSessionAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPSessionAPIManager.swift; sourceTree = "<group>"; };
-		A7EA964C21F501F000CDA238 /* INPHttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPHttpError.swift; sourceTree = "<group>"; };
-		A7EA964D21F501F000CDA238 /* INPUnknownError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPUnknownError.swift; sourceTree = "<group>"; };
+		A7EA964A21F501F000CDA238 /* InPlayerSessionAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerSessionAPIManager.swift; sourceTree = "<group>"; };
+		A7EA964C21F501F000CDA238 /* InPlayerHttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerHttpError.swift; sourceTree = "<group>"; };
+		A7EA964D21F501F000CDA238 /* InPlayerUnknownError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerUnknownError.swift; sourceTree = "<group>"; };
 		A7EA964E21F501F000CDA238 /* InPlayerErrorMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerErrorMapper.swift; sourceTree = "<group>"; };
-		A7EA964F21F501F000CDA238 /* INPInvalidResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPInvalidResponseError.swift; sourceTree = "<group>"; };
-		A7EA965021F501F000CDA238 /* INPUnauthorizedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPUnauthorizedError.swift; sourceTree = "<group>"; };
+		A7EA964F21F501F000CDA238 /* InPlayerInvalidResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerInvalidResponseError.swift; sourceTree = "<group>"; };
+		A7EA965021F501F000CDA238 /* InPlayerUnauthorizedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerUnauthorizedError.swift; sourceTree = "<group>"; };
 		A7EA965321F501F000CDA238 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A7EA965421F501F000CDA238 /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		A7EA965721F501F000CDA238 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		A7EA965921F501F000CDA238 /* NotificationNetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNetworkConstants.swift; sourceTree = "<group>"; };
 		A7EA965B21F501F000CDA238 /* InPlayerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerNotification.swift; sourceTree = "<group>"; };
-		A7EA965C21F501F000CDA238 /* INPAwsKeyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPAwsKeyModel.swift; sourceTree = "<group>"; };
-		A7EA965D21F501F000CDA238 /* INPItemRevokedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPItemRevokedModel.swift; sourceTree = "<group>"; };
+		A7EA965C21F501F000CDA238 /* InPlayerAwsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerAwsKey.swift; sourceTree = "<group>"; };
+		A7EA965D21F501F000CDA238 /* InPlayerItemRevoked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerItemRevoked.swift; sourceTree = "<group>"; };
 		A7EA965E21F501F000CDA238 /* INPNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPNotificationService.swift; sourceTree = "<group>"; };
-		A7EA965F21F501F000CDA238 /* INPNotificationAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INPNotificationAPIManager.swift; sourceTree = "<group>"; };
+		A7EA965F21F501F000CDA238 /* InPlayerNotificationAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerNotificationAPIManager.swift; sourceTree = "<group>"; };
 		A7EA966421F501F000CDA238 /* PaymentNetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentNetworkConstants.swift; sourceTree = "<group>"; };
 		A7EA966621F501F000CDA238 /* InPlayerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InPlayerSDK.h; sourceTree = "<group>"; };
 		A7EA966721F501F000CDA238 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -248,7 +246,7 @@
 				A7EA963721F501F000CDA238 /* INPAPIConfiguration.swift */,
 				A7EA963821F501F000CDA238 /* NetworkDataSource.swift */,
 				A7EA964921F501F000CDA238 /* INPAuthHandler.swift */,
-				A7EA964A21F501F000CDA238 /* INPSessionAPIManager.swift */,
+				A7EA964A21F501F000CDA238 /* InPlayerSessionAPIManager.swift */,
 				A7EA965121F501F000CDA238 /* Account */,
 				A7EA963421F501F000CDA238 /* Asset */,
 				A7EA965421F501F000CDA238 /* NetworkConstants.swift */,
@@ -277,16 +275,15 @@
 		A7EA963A21F501F000CDA238 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				A7EA964421F501F000CDA238 /* INPItemModel.swift */,
-				A7EA963B21F501F000CDA238 /* INPItemMetahashModel.swift */,
-				A7EA963C21F501F000CDA238 /* INPAccessControlTypeModel.swift */,
-				A7EA963D21F501F000CDA238 /* INPAccessFeeModel.swift */,
-				A7EA963E21F501F000CDA238 /* INPTrialPeriodModel.swift */,
-				A7EA963F21F501F000CDA238 /* INPSetupFeeModel.swift */,
-				A7EA964021F501F000CDA238 /* INPAccessTypeModel.swift */,
-				A7EA964121F501F000CDA238 /* INPItemTypeModel.swift */,
-				A7EA964221F501F000CDA238 /* INPItemAccessModel.swift */,
-				A7EA964321F501F000CDA238 /* INPItemMetadataModel.swift */,
+				A7EA964421F501F000CDA238 /* InPlayerItem.swift */,
+				A7EA963C21F501F000CDA238 /* InPlayerAccessControlType.swift */,
+				A7EA963D21F501F000CDA238 /* InPlayerAccessFee.swift */,
+				A7EA963E21F501F000CDA238 /* InPlayerTrialPeriod.swift */,
+				A7EA963F21F501F000CDA238 /* InPlayerSetupFee.swift */,
+				A7EA964021F501F000CDA238 /* InPlayerAccessType.swift */,
+				A7EA964121F501F000CDA238 /* InPlayerItemType.swift */,
+				A7EA964221F501F000CDA238 /* InPlayerItemAccess.swift */,
+				A7EA964321F501F000CDA238 /* InPlayerItemMetadata.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -294,9 +291,9 @@
 		A7EA964521F501F000CDA238 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				A7EA964621F501F000CDA238 /* INPAccountModel.swift */,
-				A7EA964721F501F000CDA238 /* INPCredentials.swift */,
-				A7EA964821F501F000CDA238 /* INPAuthorizationModel.swift */,
+				A7EA964621F501F000CDA238 /* InPlayerAccount.swift */,
+				A7EA964721F501F000CDA238 /* InPlayerCredentials.swift */,
+				A7EA964821F501F000CDA238 /* InPlayerAuthorization.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -304,11 +301,11 @@
 		A7EA964B21F501F000CDA238 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				A7EA964C21F501F000CDA238 /* INPHttpError.swift */,
-				A7EA964D21F501F000CDA238 /* INPUnknownError.swift */,
+				A7EA964C21F501F000CDA238 /* InPlayerHttpError.swift */,
+				A7EA964D21F501F000CDA238 /* InPlayerUnknownError.swift */,
 				A7EA964E21F501F000CDA238 /* InPlayerErrorMapper.swift */,
-				A7EA964F21F501F000CDA238 /* INPInvalidResponseError.swift */,
-				A7EA965021F501F000CDA238 /* INPUnauthorizedError.swift */,
+				A7EA964F21F501F000CDA238 /* InPlayerInvalidResponseError.swift */,
+				A7EA965021F501F000CDA238 /* InPlayerUnauthorizedError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -337,7 +334,7 @@
 			children = (
 				A7EA965921F501F000CDA238 /* NotificationNetworkConstants.swift */,
 				A7EA965E21F501F000CDA238 /* INPNotificationService.swift */,
-				A7EA965F21F501F000CDA238 /* INPNotificationAPIManager.swift */,
+				A7EA965F21F501F000CDA238 /* InPlayerNotificationAPIManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -346,8 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				A7EA965B21F501F000CDA238 /* InPlayerNotification.swift */,
-				A7EA965C21F501F000CDA238 /* INPAwsKeyModel.swift */,
-				A7EA965D21F501F000CDA238 /* INPItemRevokedModel.swift */,
+				A7EA965C21F501F000CDA238 /* InPlayerAwsKey.swift */,
+				A7EA965D21F501F000CDA238 /* InPlayerItemRevoked.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -560,51 +557,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EA967D21F501F000CDA238 /* INPCredentials.swift in Sources */,
-				A7EA968521F501F000CDA238 /* INPUnauthorizedError.swift in Sources */,
-				A7EA967621F501F000CDA238 /* INPSetupFeeModel.swift in Sources */,
+				A7EA967D21F501F000CDA238 /* InPlayerCredentials.swift in Sources */,
+				A7EA968521F501F000CDA238 /* InPlayerUnauthorizedError.swift in Sources */,
+				A7EA967621F501F000CDA238 /* InPlayerSetupFee.swift in Sources */,
 				A7EA968B21F501F000CDA238 /* NotificationNetworkConstants.swift in Sources */,
-				A7EA968021F501F000CDA238 /* INPSessionAPIManager.swift in Sources */,
+				A7EA968021F501F000CDA238 /* InPlayerSessionAPIManager.swift in Sources */,
 				A7EA966A21F501F000CDA238 /* UserDefaultsExt.swift in Sources */,
-				A7EA967421F501F000CDA238 /* INPAccessFeeModel.swift in Sources */,
+				A7EA967421F501F000CDA238 /* InPlayerAccessFee.swift in Sources */,
 				A7EA967021F501F000CDA238 /* INPAPIConfiguration.swift in Sources */,
-				A7EA967521F501F000CDA238 /* INPTrialPeriodModel.swift in Sources */,
+				A7EA967521F501F000CDA238 /* InPlayerTrialPeriod.swift in Sources */,
 				A7EA966B21F501F000CDA238 /* DataDecodeExt.swift in Sources */,
 				A7EA966C21F501F000CDA238 /* DateExt.swift in Sources */,
-				A7EA968D21F501F000CDA238 /* INPAwsKeyModel.swift in Sources */,
+				A7EA968D21F501F000CDA238 /* InPlayerAwsKey.swift in Sources */,
 				A7EA96E121F52C9600CDA238 /* INPPaymentService.swift in Sources */,
-				A7EA968E21F501F000CDA238 /* INPItemRevokedModel.swift in Sources */,
-				A7EA967B21F501F000CDA238 /* INPItemModel.swift in Sources */,
+				A7EA968E21F501F000CDA238 /* InPlayerItemRevoked.swift in Sources */,
+				A7EA967B21F501F000CDA238 /* InPlayerItem.swift in Sources */,
 				A7EA96DF21F52C0000CDA238 /* INPCredentialProvider.swift in Sources */,
 				A7EA966821F501F000CDA238 /* Configuration.swift in Sources */,
 				A7EA966D21F501F000CDA238 /* InPlayer.swift in Sources */,
 				A7EA96D421F52B8400CDA238 /* INPAssetService.swift in Sources */,
-				A7EA967C21F501F000CDA238 /* INPAccountModel.swift in Sources */,
+				A7EA967C21F501F000CDA238 /* InPlayerAccount.swift in Sources */,
 				A7EA96D621F52BD500CDA238 /* INPAccountService.swift in Sources */,
 				A7EA96D221F52B6900CDA238 /* InPlayerConstants.swift in Sources */,
 				A7EA968C21F501F000CDA238 /* InPlayerNotification.swift in Sources */,
-				A7EA967321F501F000CDA238 /* INPAccessControlTypeModel.swift in Sources */,
+				A7EA967321F501F000CDA238 /* InPlayerAccessControlType.swift in Sources */,
 				A7EA967121F501F000CDA238 /* NetworkDataSource.swift in Sources */,
-				A7EA968421F501F000CDA238 /* INPInvalidResponseError.swift in Sources */,
+				A7EA968421F501F000CDA238 /* InPlayerInvalidResponseError.swift in Sources */,
 				A7EA968F21F501F000CDA238 /* INPNotificationService.swift in Sources */,
-				A7EA969021F501F000CDA238 /* INPNotificationAPIManager.swift in Sources */,
+				A7EA969021F501F000CDA238 /* InPlayerNotificationAPIManager.swift in Sources */,
 				A7EA969321F501F000CDA238 /* PaymentNetworkConstants.swift in Sources */,
-				A7EA967A21F501F000CDA238 /* INPItemMetadataModel.swift in Sources */,
-				A7EA968221F501F000CDA238 /* INPUnknownError.swift in Sources */,
+				A7EA967A21F501F000CDA238 /* InPlayerItemMetadata.swift in Sources */,
+				A7EA968221F501F000CDA238 /* InPlayerUnknownError.swift in Sources */,
 				A7EA968721F501F000CDA238 /* Account.swift in Sources */,
 				A7EA966F21F501F000CDA238 /* Asset.swift in Sources */,
 				A7EA968321F501F000CDA238 /* InPlayerErrorMapper.swift in Sources */,
 				A7EA96E321F52C9B00CDA238 /* Payment.swift in Sources */,
 				A7EA968821F501F000CDA238 /* NetworkConstants.swift in Sources */,
 				A7EA96DE21F52C0000CDA238 /* INPAWSManager.swift in Sources */,
-				A7EA967E21F501F000CDA238 /* INPAuthorizationModel.swift in Sources */,
-				A7EA968121F501F000CDA238 /* INPHttpError.swift in Sources */,
-				A7EA967921F501F000CDA238 /* INPItemAccessModel.swift in Sources */,
-				A7EA967221F501F000CDA238 /* INPItemMetahashModel.swift in Sources */,
+				A7EA967E21F501F000CDA238 /* InPlayerAuthorization.swift in Sources */,
+				A7EA968121F501F000CDA238 /* InPlayerHttpError.swift in Sources */,
+				A7EA967921F501F000CDA238 /* InPlayerItemAccess.swift in Sources */,
 				A7EA968A21F501F000CDA238 /* Notification.swift in Sources */,
-				A7EA967721F501F000CDA238 /* INPAccessTypeModel.swift in Sources */,
+				A7EA967721F501F000CDA238 /* InPlayerAccessType.swift in Sources */,
 				A7EA967F21F501F000CDA238 /* INPAuthHandler.swift in Sources */,
-				A7EA967821F501F000CDA238 /* INPItemTypeModel.swift in Sources */,
+				A7EA967821F501F000CDA238 /* InPlayerItemType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

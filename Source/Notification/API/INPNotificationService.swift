@@ -4,8 +4,8 @@ import Alamofire
 class INPNotificationService {
     private init() {}
 
-    static func takeAwsCredentials(completion: @escaping RequestCompletion<INPAwsKeyModel>) {
-        NetworkDataSource.performRequest(session: INPNotificationAPIManager.default.session,
+    static func takeAwsCredentials(completion: @escaping RequestCompletion<InPlayerAwsKey>) {
+        NetworkDataSource.performRequest(session: InPlayerNotificationAPIManager.default.session,
                                          route: NotificationAPIRouter.takeAwsCredentials(),
                                          completion: completion)
     }

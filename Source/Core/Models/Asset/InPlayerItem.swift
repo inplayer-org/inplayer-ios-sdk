@@ -1,18 +1,18 @@
 import Foundation
 
 /// Item model
-public struct INPItemModel : Codable {
+public struct InPlayerItem : Codable {
 
-    public let accessControlType : INPAccessControlTypeModel?
-    public let accessFees : [INPAccessFeeModel]?
+    public let accessControlType : InPlayerAccessControlType?
+    public let accessFees : [InPlayerAccessFee]?
     public let createdAt : Double?
     public let id : Int?
     public let isActive : Bool?
-    public let itemType : INPItemTypeModel?
+    public let itemType : InPlayerItemType?
     public let merchantId : Int?
     public let merchantUuid : String?
-    public let metadata : [INPItemMetadataModel]?
-    public let metahash : INPItemMetahashModel?
+    public let metadata : [InPlayerItemMetadata]?
+    public let metahash : [String: String]?
     public let title : String?
     public let updatedAt : Double?
     public let content: String?
@@ -36,16 +36,16 @@ public struct INPItemModel : Codable {
     /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        accessControlType = try values.decodeIfPresent(INPAccessControlTypeModel.self, forKey: .accessControlType)
-        accessFees = try values.decodeIfPresent([INPAccessFeeModel].self, forKey: .accessFees)
+        accessControlType = try values.decodeIfPresent(InPlayerAccessControlType.self, forKey: .accessControlType)
+        accessFees = try values.decodeIfPresent([InPlayerAccessFee].self, forKey: .accessFees)
         createdAt = try values.decodeIfPresent(Double.self, forKey: .createdAt)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
-        itemType = try values.decodeIfPresent(INPItemTypeModel.self, forKey: .itemType)
+        itemType = try values.decodeIfPresent(InPlayerItemType.self, forKey: .itemType)
         merchantId = try values.decodeIfPresent(Int.self, forKey: .merchantId)
         merchantUuid = try values.decodeIfPresent(String.self, forKey: .merchantUuid)
-        metadata = try values.decodeIfPresent([INPItemMetadataModel].self, forKey: .metadata)
-        metahash = try values.decodeIfPresent(INPItemMetahashModel.self, forKey: .metahash)
+        metadata = try values.decodeIfPresent([InPlayerItemMetadata].self, forKey: .metadata)
+        metahash = try values.decodeIfPresent([String: String].self, forKey: .metahash)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         updatedAt = try values.decodeIfPresent(Double.self, forKey: .updatedAt)
         content = try values.decode(String.self, forKey: .content)

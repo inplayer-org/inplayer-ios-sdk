@@ -1,9 +1,9 @@
 import Foundation
 
 // Access fee model
-public struct INPAccessFeeModel : Codable {
+public struct InPlayerAccessFee : Codable {
 
-    public let accessType : INPAccessTypeModel?
+    public let accessType : InPlayerAccessType?
     public let amount : Int?
     public let currency : String?
     public let descriptionField : String?
@@ -11,8 +11,8 @@ public struct INPAccessFeeModel : Codable {
     public let itemType : String?
     public let merchantId : Int?
     public let startsAt : Double?
-    public let trialPeriod: INPTrialPeriodModel?
-    public let setupFee: INPSetupFeeModel?
+    public let trialPeriod: InPlayerTrialPeriod?
+    public let setupFee: InPlayerSetupFee?
 
     enum CodingKeys: String, CodingKey {
         case accessType = "access_type"
@@ -30,7 +30,7 @@ public struct INPAccessFeeModel : Codable {
     /// Decoder Method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        accessType = try values.decodeIfPresent(INPAccessTypeModel.self, forKey: .accessType)
+        accessType = try values.decodeIfPresent(InPlayerAccessType.self, forKey: .accessType)
         amount = try values.decodeIfPresent(Int.self, forKey: .amount)
         currency = try values.decodeIfPresent(String.self, forKey: .currency)
         descriptionField = try values.decodeIfPresent(String.self, forKey: .descriptionField)
@@ -38,8 +38,8 @@ public struct INPAccessFeeModel : Codable {
         itemType = try values.decodeIfPresent(String.self, forKey: .itemType)
         merchantId = try values.decodeIfPresent(Int.self, forKey: .merchantId)
         startsAt = try values.decodeIfPresent(Double.self, forKey: .startsAt)
-        trialPeriod = try values.decode(INPTrialPeriodModel.self, forKey: .trialPeriod)
-        setupFee = try values.decode(INPSetupFeeModel.self, forKey: .setupFee)
+        trialPeriod = try values.decode(InPlayerTrialPeriod.self, forKey: .trialPeriod)
+        setupFee = try values.decode(InPlayerSetupFee.self, forKey: .setupFee)
     }
 
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 /// Item metadata model
-public struct INPItemMetadataModel : Codable {
+public struct InPlayerItemMetadata : Codable {
 
     public let id : Int?
     public let name : String?

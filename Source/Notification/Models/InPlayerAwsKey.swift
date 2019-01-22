@@ -1,6 +1,6 @@
 import Foundation
 
-struct INPAwsKeyModel : Codable {
+struct InPlayerAwsKey : Codable {
 
     let accessKey : String?
     let iotEndpoint : String?

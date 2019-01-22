@@ -1,7 +1,7 @@
 import Foundation
 
 /// Item type model
-public struct INPItemTypeModel : Codable {
+public struct InPlayerItemType : Codable {
 
     public let contentType : String?
     public let descriptionField : String?

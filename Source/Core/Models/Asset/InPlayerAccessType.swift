@@ -1,14 +1,16 @@
 import Foundation
 
-/// Trial period model
-public struct INPTrialPeriodModel : Codable {
+/// Access type model
+public struct InPlayerAccessType : Codable {
 
-    public let descriptionField : String?
+    public let id : Int?
+    public let name : String?
     public let period : String?
     public let quantity : Int?
 
     enum CodingKeys: String, CodingKey {
-        case descriptionField = "description"
+        case id = "id"
+        case name = "name"
         case period = "period"
         case quantity = "quantity"
     }
@@ -16,7 +18,8 @@ public struct INPTrialPeriodModel : Codable {
     /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        descriptionField = try values.decodeIfPresent(String.self, forKey: .descriptionField)
+        id = try values.decodeIfPresent(Int.self, forKey: .id)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
         period = try values.decodeIfPresent(String.self, forKey: .period)
         quantity = try values.decodeIfPresent(Int.self, forKey: .quantity)
     }

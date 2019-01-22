@@ -1,7 +1,7 @@
 import Foundation
 
 /// Item Revoked model
-public struct INPItemRevokedModel: Codable {
+public struct InPlayerItemRevoked: Codable {
     public var itemId: Int?
 
     private enum CodingKeys: String, CodingKey {

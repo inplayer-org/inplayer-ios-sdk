@@ -13,7 +13,7 @@ public extension InPlayer {
          - Returns: User credentials. (Optional)
          */
 
-        public static func getCredentials() -> INPCredentials? {
+        public static func getCredentials() -> InPlayerCredentials? {
             return UserDefaults.credentials
         }
 
@@ -44,7 +44,7 @@ public extension InPlayer {
                                          password: String,
                                          passwordConfirmation: String,
                                          metadata: [String: Any]? = nil,
-                                         success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
+                                         success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
                                          failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.createAccount(fullName: fullName,
                                             email: email,
@@ -68,7 +68,7 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getAccountInformation(success: @escaping (_ account: INPAccountModel) -> Void,
+        public static func getAccountInformation(success: @escaping (_ account: InPlayerAccount) -> Void,
                                                  failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.getUserInfo(completion: { (account, error) in
                 if let error = error {
@@ -91,7 +91,7 @@ public extension InPlayer {
          */
         public static func authenticate(username: String,
                                         password: String,
-                                        success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
+                                        success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
                                         failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.authenticate(username: username,
                                            password: password,
@@ -134,7 +134,7 @@ public extension InPlayer {
          */
         public static func updateAccount(fullName: String,
                                          metadata: [String : Any]? = nil,
-                                         success: @escaping (_ account: INPAccountModel) -> Void,
+                                         success: @escaping (_ account: InPlayerAccount) -> Void,
                                          failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.updateAccount(fullName: fullName,
                                             metadata: metadata,
@@ -252,7 +252,7 @@ public extension InPlayer {
              - error: Containing information about the error that occurred.
          */
         public static func refreshAccessToken(using refreshToken: String,
-                                              success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
+                                              success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
                                               failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.refreshAccessToken(using: refreshToken, completion: { (authorization, error) in
                 if let error = error {
@@ -273,7 +273,7 @@ public extension InPlayer {
              - error: Containing information about the error that occurred.
          */
         public static func authenticateUsingClientCredentials(clientSecret: String,
-                                                              success: @escaping (_ authorization: INPAuthorizationModel) -> Void,
+                                                              success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
                                                               failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.authenticateUsingClientCredentials(clientSecret: clientSecret,
                                                                  completion: { (authorization, error) in

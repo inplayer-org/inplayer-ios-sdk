@@ -1,7 +1,7 @@
 import Foundation
 
 /// Item access model
-public struct INPItemAccessModel : Codable {
+public struct InPlayerItemAccess : Codable {
 
     public let accountId : Int?
     public let countryCode : String?
@@ -11,7 +11,7 @@ public struct INPItemAccessModel : Codable {
     public let expiresAt : Double?
     public let id : Int?
     public let ipAddress : String?
-    public let item : INPItemModel?
+    public let item : InPlayerItem?
     public let startsAt: Double?
 
     enum CodingKeys: String, CodingKey {
@@ -38,7 +38,7 @@ public struct INPItemAccessModel : Codable {
         expiresAt = try values.decodeIfPresent(Double.self, forKey: .expiresAt)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         ipAddress = try values.decodeIfPresent(String.self, forKey: .ipAddress)
-        item = try values.decodeIfPresent(INPItemModel.self, forKey: .item)
+        item = try values.decodeIfPresent(InPlayerItem.self, forKey: .item)
         startsAt = try values.decode(Double.self, forKey: .startsAt)
     }
 

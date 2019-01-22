@@ -9,7 +9,7 @@ public enum AccountType: String, Codable {
 }
 
 /// Account Model
-public struct INPAccountModel : Codable {
+public struct InPlayerAccount : Codable {
 
     public let completed : Bool?
     public let email : String?

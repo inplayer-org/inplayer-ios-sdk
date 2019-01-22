@@ -3,7 +3,7 @@ import Foundation
 /**
  User not authenticated Error
  */
-public struct INPUnauthorizedError: InPlayerError {
+public struct InPlayerUnauthorizedError: InPlayerError {
     public var code: Int
     public var message: String?
     public var errorList: [String]?

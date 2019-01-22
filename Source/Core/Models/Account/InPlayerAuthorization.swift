@@ -1,11 +1,11 @@
 import Foundation
 
 /// Authorization Model
-public struct INPAuthorizationModel : Codable {
+public struct InPlayerAuthorization : Codable {
 
     public let accessToken : String?
     public let refreshToken: String?
-    public let account : INPAccountModel?
+    public let account : InPlayerAccount?
     public let expires: Double?
 
     private enum CodingKeys: String, CodingKey {
@@ -22,7 +22,7 @@ public struct INPAuthorizationModel : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accessToken = try values.decodeIfPresent(String.self, forKey: .accessToken)
         refreshToken = try values.decodeIfPresent(String.self, forKey: .refreshToken)
-        account = try values.decodeIfPresent(INPAccountModel.self, forKey: .account)
+        account = try values.decodeIfPresent(InPlayerAccount.self, forKey: .account)
         expires = try values.decodeIfPresent(Double.self, forKey: .expires)
     }
 

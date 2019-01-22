@@ -20,7 +20,7 @@ class INPPaymentService {
                 let error = NSError(domain: "Error",
                                     code: 0,
                                     userInfo: [NSLocalizedDescriptionKey: "Invalid format of product identifier"])
-                let inpError = INPUnknownError(code: 0,
+                let inpError = InPlayerUnknownError(code: 0,
                                                message: message,
                                                errorList: [message],
                                                error: error)
@@ -31,7 +31,7 @@ class INPPaymentService {
             PaymentParameters.itemId: itemId,
             PaymentParameters.accessFeeId: accessFeeId
         ]
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: PaymentAPIRouter.validatePayment(parameters: params),
                                          completion: completion)
     }

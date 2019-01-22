@@ -2,9 +2,9 @@ import AWSCore.AWSCredentialsProvider
 
 final class INPCredentialProvider: AWSCredentials, AWSCredentialsProvider {
 
-    let awsKeys: INPAwsKeyModel
+    let awsKeys: InPlayerAwsKey
 
-    init(awsKeys: INPAwsKeyModel) {
+    init(awsKeys: InPlayerAwsKey) {
         self.awsKeys = awsKeys
         super.init()
     }

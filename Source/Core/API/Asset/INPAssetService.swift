@@ -6,23 +6,23 @@ import Alamofire
 class INPAssetService {
     static func getItemDetails(id: Int,
                                merchantUUID: String,
-                               completion: @escaping RequestCompletion<INPItemModel>) {
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+                               completion: @escaping RequestCompletion<InPlayerItem>) {
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemDetails(id: id,
                                                                               merchantUUID: merchantUUID),
                                          completion: completion)
     }
 
     static func getItemAccessFees(id: Int,
-                                  completion: @escaping RequestCompletion<[INPAccessFeeModel]>) {
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+                                  completion: @escaping RequestCompletion<[InPlayerAccessFee]>) {
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemAccessFees(id: id),
                                          completion: completion)
     }
 
     static func getItemAccess(id: Int,
-                              completion: @escaping RequestCompletion<INPItemAccessModel>) {
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+                              completion: @escaping RequestCompletion<InPlayerItemAccess>) {
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemAccess(id: id),
                                          completion: completion)
     }

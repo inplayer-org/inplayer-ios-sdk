@@ -19,7 +19,7 @@ public extension InPlayer {
              - error: Containing information about the error that occurred.
          */
         public static func getItemDetails(id: Int,
-                                          success: @escaping (INPItemModel) -> Void,
+                                          success: @escaping (InPlayerItem) -> Void,
                                           failure: @escaping (InPlayerError) -> Void) {
             let merchantUUID = InPlayer.Configuration.getClientId()
             INPAssetService.getItemDetails(id: id, merchantUUID: merchantUUID, completion: { (item, error) in
@@ -41,7 +41,7 @@ public extension InPlayer {
              - error: Containing information about the error that occurred.
          */
         public static func getItemAccessFees(id: Int,
-                                             success: @escaping ([INPAccessFeeModel]) -> Void,
+                                             success: @escaping ([InPlayerAccessFee]) -> Void,
                                              failure: @escaping (InPlayerError) -> Void) {
             INPAssetService.getItemAccessFees(id: id, completion: { (accessFees, error) in
                 if let error = error {
@@ -62,7 +62,7 @@ public extension InPlayer {
              - error: Containing information about the error that occurred.
          */
         public static func getItemAccess(id: Int,
-                                         success: @escaping (INPItemAccessModel) -> Void,
+                                         success: @escaping (InPlayerItemAccess) -> Void,
                                          failure: @escaping (InPlayerError) -> Void) {
             INPAssetService.getItemAccess(id: id, completion: { (itemAccess, error) in
                 if let error = error {
