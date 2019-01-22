@@ -61,13 +61,13 @@ final class InPlayerErrorMapper {
                     code = (originalError as NSError).code
                 }
 
-                return INPHttpError(code: code, message: message, errorList: errors, error: originalError)
+                return InPlayerHttpError(code: code, message: message, errorList: errors, error: originalError)
             } catch {
                 return INPInvalidJSONError(error: originalError)
             }
         } else {
             guard let afError = originalError.asAFError else {
-                return INPHttpError(code: (originalError as NSError).code,
+                return InPlayerHttpError(code: (originalError as NSError).code,
                                     message: originalError.localizedDescription,
                                     errorList: [originalError.localizedDescription],
                                     error: originalError)
@@ -76,9 +76,9 @@ final class InPlayerErrorMapper {
                 let code = afError.responseCode,
                 let message = afError.errorDescription
             else {
-                return INPUnknownError(error: originalError)
+                return InPlayerUnknownError(error: originalError)
             }
-            return INPHttpError(code: code, message: message, errorList: [message], error: originalError)
+            return InPlayerHttpError(code: code, message: message, errorList: [message], error: originalError)
         }
     }
 }

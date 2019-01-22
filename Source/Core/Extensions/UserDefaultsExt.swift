@@ -1,16 +1,6 @@
 import Foundation
 
-protocol UserDefaultsDataSource {
-    /// Sets and retrieves clientId from UserDefaults
-    static var clientId: String { set get }
-
-    /// Sets and retrieves environment
-    static var environment: EnvironmentType { set get }
-
-    static var credentials: INPCredentials? { get set }
-}
-
-extension UserDefaults: UserDefaultsDataSource {
+extension UserDefaults {
 
     static var clientId: String {
         get {
@@ -21,11 +11,11 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var environment: EnvironmentType {
+    static var environment: InPlayerEnvironmentType {
         get {
             guard
                 let environmentString = standard.string(forKey: InPlayerConstants.UserDefaultsKeys.environment),
-                let environment = EnvironmentType(rawValue: environmentString)
+                let environment = InPlayerEnvironmentType(rawValue: environmentString)
             else {
                 return .production
             }
@@ -37,11 +27,11 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var credentials: INPCredentials? {
+    static var credentials: InPlayerCredentials? {
         get {
             guard
                 let savedCredentialData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.credentials) as? Data,
-                let credentials = try? JSONDecoder().decode(INPCredentials.self, from: savedCredentialData)
+                let credentials = try? JSONDecoder().decode(InPlayerCredentials.self, from: savedCredentialData)
             else {
                 return nil
             }
@@ -57,11 +47,11 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var account: INPAccountModel? {
+    static var account: InPlayerAccount? {
         get {
             guard
                 let savedAccountData = standard.object(forKey: InPlayerConstants.UserDefaultsKeys.account) as? Data,
-                let account = try? JSONDecoder().decode(INPAccountModel.self, from: savedAccountData)
+                let account = try? JSONDecoder().decode(InPlayerAccount.self, from: savedAccountData)
                 else {
                     return nil
             }

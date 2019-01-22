@@ -19,12 +19,12 @@ class NetworkDataSource {
         - completion: A closure to be executed once the request has finished.
         - result: Generic enum Result containing response or error depending of its state
      */
-    static func performRequest<T:Decodable>(session: INPSession,
-                                                   route: INPAPIConfiguration,
-                                                   decoder: JSONDecoder = JSONDecoder(),
-                                                   completion: @escaping RequestCompletion<T>) {
+    static func performRequest<T:Decodable>(session: InPlayerSession,
+                                            route: INPAPIConfiguration,
+                                            decoder: JSONDecoder = JSONDecoder(),
+                                            completion: @escaping RequestCompletion<T>) {
         if route.requiresAuthorization, !session.isAuthorized {
-            return completion(nil, INPUnauthorizedError())
+            return completion(nil, InPlayerUnauthorizedError())
         }
         session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
             if response.result.isFailure {

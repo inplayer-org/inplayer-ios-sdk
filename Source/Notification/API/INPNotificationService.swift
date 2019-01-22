@@ -4,8 +4,8 @@ import Alamofire
 class INPNotificationService {
     private init() {}
 
-    static func takeAwsCredentials(completion: @escaping RequestCompletion<INPAwsKeyModel>) {
-        NetworkDataSource.performRequest(session: INPNotificationAPIManager.default.session,
+    static func takeAwsCredentials(completion: @escaping RequestCompletion<InPlayerAwsKey>) {
+        NetworkDataSource.performRequest(session: InPlayerNotificationAPIManager.default.session,
                                          route: NotificationAPIRouter.takeAwsCredentials(),
                                          completion: completion)
     }
@@ -18,14 +18,7 @@ private enum NotificationAPIRouter: INPAPIConfiguration {
     var baseURL: String {
         switch self {
         case .takeAwsCredentials:
-            switch InPlayer.Configuration.getEnvironment() {
-            case .debug:
-                return NetworkConstants.BaseUrls.Notification.debug
-            case .staging:
-                return NetworkConstants.BaseUrls.Notification.staging
-            case .production:
-                return NetworkConstants.BaseUrls.Notification.production
-            }
+            return InPlayerNotificationAPIManager.getBaseUrlString
         }
     }
 

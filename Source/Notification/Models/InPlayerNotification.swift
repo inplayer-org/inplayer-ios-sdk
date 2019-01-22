@@ -12,8 +12,8 @@ import Foundation
  ```
 */
 public enum NotificationType {
-    case accessGranted(resource: INPItemAccessModel)
-    case accessRevoked(resource: INPItemRevokedModel)
+    case accessGranted(resource: InPlayerItemAccess)
+    case accessRevoked(resource: InPlayerItemRevoked)
     case accountLogout
     case accountErased
     case accountDeactivated
@@ -48,10 +48,10 @@ public struct InPlayerNotification: Codable {
         let typeString = try values.decode(String.self, forKey: .typeString)
         switch typeString {
         case NotificationTypeStrings.accessGranted:
-            let resource = try values.decode(INPItemAccessModel.self, forKey: .resource)
+            let resource = try values.decode(InPlayerItemAccess.self, forKey: .resource)
             type = .accessGranted(resource: resource)
         case NotificationTypeStrings.accessRevoked:
-            let resource = try values.decode(INPItemRevokedModel.self, forKey: .resource)
+            let resource = try values.decode(InPlayerItemRevoked.self, forKey: .resource)
             type = .accessRevoked(resource: resource)
         case NotificationTypeStrings.accountLogout:
             type = .accountLogout

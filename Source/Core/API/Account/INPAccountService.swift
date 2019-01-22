@@ -9,65 +9,65 @@ class INPAccountService {
                               password: String,
                               passwordConfirmation: String,
                               metadata: [String: Any]?,
-                              completion: @escaping RequestCompletion<INPAuthorizationModel>) {
+                              completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         var params: [String: Any] = [
             AccountParameters.fullName: fullName,
             AccountParameters.email: email,
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation,
             AccountParameters.type: AccountType.consumer.rawValue,
-            AccountParameters.merchantUUID: InPlayer.Configuration.getClientId()
+            AccountParameters.merchantUUID: InPlayer.clientId
         ]
-        if let referrer = InPlayer.Configuration.getReferrer() {
+        if let referrer = InPlayer.referrer {
             params[AccountParameters.referrer] = referrer
         }
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
         }
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.createAccount(parameters: params),
                                          completion: completion)
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.createAccount(parameters: params),
-                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                         completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
                                             updateAuthorization(authorization: authorization, error: error, completion: completion)
         })
     }
 
-    static func getUserInfo(completion: @escaping RequestCompletion<INPAccountModel>) {
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+    static func getUserInfo(completion: @escaping RequestCompletion<InPlayerAccount>) {
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getAccountInfo(),
                                          completion: completion)
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getAccountInfo(),
-                                         completion: { (account: INPAccountModel?, error: InPlayerError?) in
+                                         completion: { (account: InPlayerAccount?, error: InPlayerError?) in
                                             saveAccount(account: account, error: error, completion: completion)
         })
     }
 
     static func authenticate(username: String,
                              password: String,
-                             completion: @escaping RequestCompletion<INPAuthorizationModel>) {
+                             completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         let params = [
             AccountParameters.username: username,
             AccountParameters.password: password,
             AccountParameters.grantType: AuthenticationTypes.password.rawValue,
-            AccountParameters.clientId: InPlayer.Configuration.getClientId()
+            AccountParameters.clientId: InPlayer.clientId
         ]
 
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticate(parameters: params),
-                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                         completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
                                             updateAuthorization(authorization: authorization, error: error, completion: completion)
 
         })
     }
 
     static func logout(completion: @escaping RequestCompletion<Empty>) {
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.logout(),
                                          completion: completion)
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.logout(),
                                          completion: { (empty: Empty?, error: InPlayerError?) in
                                             if error != nil {
@@ -82,17 +82,17 @@ class INPAccountService {
 
     static func updateAccount(fullName: String,
                               metadata: [String: Any]?,
-                              completion: @escaping RequestCompletion<INPAccountModel>) {
+                              completion: @escaping RequestCompletion<InPlayerAccount>) {
         var params: [String: Any] = [AccountParameters.fullName: fullName]
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
         }
-        if let referrer = InPlayer.Configuration.getReferrer() {
+        if let referrer = InPlayer.referrer {
             params[AccountParameters.referrer] = referrer
         }
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.updateAccount(parameters: params),
-                                         completion: { (account: INPAccountModel?, error: InPlayerError?) in
+                                         completion: { (account: InPlayerAccount?, error: InPlayerError?) in
                                             saveAccount(account: account, error: error, completion: completion)
 
         })
@@ -107,7 +107,7 @@ class INPAccountService {
             AccountParameters.password: newPassword,
             AccountParameters.passwordConfirmation: newPasswordConfirmation
         ]
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.changePassword(parameters: params),
                                          completion: completion)
     }
@@ -115,7 +115,7 @@ class INPAccountService {
     static func eraseAccount(password: String,
                              completion: @escaping RequestCompletion<Empty>) {
         let params = [AccountParameters.password: password]
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.eraseAccount(parameters: params),
                                          completion: { (empty: Empty?, error: InPlayerError?) in
                                             if error != nil {
@@ -136,7 +136,7 @@ class INPAccountService {
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation
         ]
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.setNewPassword(token: token,
                                                                                 parameters: params),
                                          completion: completion)
@@ -145,47 +145,47 @@ class INPAccountService {
     static func forgotPassword(email: String,
                                completion: @escaping RequestCompletion<Empty>) {
         let params = [
-            AccountParameters.merchantUUID: InPlayer.Configuration.getClientId(),
+            AccountParameters.merchantUUID: InPlayer.clientId,
             AccountParameters.email: email
         ]
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.forgotPassword(parameters: params),
                                          completion: completion)
     }
 
     static func refreshAccessToken(using refreshToken: String,
-                                   completion: @escaping RequestCompletion<INPAuthorizationModel>) {
+                                   completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         let params = [
-            AccountParameters.clientId: InPlayer.Configuration.getClientId(),
+            AccountParameters.clientId: InPlayer.clientId,
             AccountParameters.grantType: AuthenticationTypes.refreshToken.rawValue,
             AccountParameters.refreshToken: refreshToken
         ]
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.refreshToken(parameters: params),
-                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                         completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
                                             updateAuthorization(authorization: authorization, error: error, completion: completion)
         })
     }
 
     static func authenticateUsingClientCredentials(clientSecret: String,
-                                                   completion: @escaping RequestCompletion<INPAuthorizationModel>) {
+                                                   completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         let params = [
-            AccountParameters.clientId: InPlayer.Configuration.getClientId(),
+            AccountParameters.clientId: InPlayer.clientId,
             AccountParameters.grantType: AuthenticationTypes.clientCredentials.rawValue,
             AccountParameters.clientSecret: clientSecret
         ]
-        NetworkDataSource.performRequest(session: INPSessionAPIManager.default.session,
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
-                                         completion: { (authorization: INPAuthorizationModel?, error: InPlayerError?) in
+                                         completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
                                             updateAuthorization(authorization: authorization, error: error, completion: completion)
         })
     }
 }
 
 private extension INPAccountService {
-    private static func updateAuthorization(authorization: INPAuthorizationModel?,
+    private static func updateAuthorization(authorization: InPlayerAuthorization?,
                                             error: InPlayerError?,
-                                            completion: @escaping RequestCompletion<INPAuthorizationModel>) {
+                                            completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         if error != nil {
             completion(authorization, error)
         } else {
@@ -194,10 +194,10 @@ private extension INPAccountService {
                 let refreshToken = auth.refreshToken,
                 let expires = auth.expires
                 else {
-                    return completion(authorization, INPUnauthorizedError())
+                    return completion(authorization, InPlayerUnauthorizedError())
             }
 
-            UserDefaults.credentials = INPCredentials(accessToken: accessToken,
+            UserDefaults.credentials = InPlayerCredentials(accessToken: accessToken,
                                                       refreshToken: refreshToken,
                                                       expires: expires)
             UserDefaults.account = auth.account
@@ -205,9 +205,9 @@ private extension INPAccountService {
         }
     }
 
-    private static func saveAccount(account: INPAccountModel?,
+    private static func saveAccount(account: InPlayerAccount?,
                                     error: InPlayerError?,
-                                    completion: @escaping RequestCompletion<INPAccountModel>) {
+                                    completion: @escaping RequestCompletion<InPlayerAccount>) {
         if error != nil {
             completion(account, error)
         } else {

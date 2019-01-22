@@ -9,7 +9,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // On first start of the app call this:
-        InPlayer.initialize(withClienId: "xxx", environment: .staging)
+        let configuration = InPlayer.Configuration(clientId: "xxx")
+        InPlayer.initialize(configuration: configuration)
+        
         return true
     }
 }

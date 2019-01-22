@@ -10,7 +10,7 @@ final class INPAWSManager {
 
     private typealias InPlayerPayloadResult = INPPayloadResult<InPlayerNotification, InPlayerError>
     private static let InPlayerIoTDataManager = "InPlayerIoTDataManager"
-    private static var awsKeys: INPAwsKeyModel?
+    private static var awsKeys: InPlayerAwsKey?
     private static var iotDataManager: AWSIoTDataManager?
 
     private init() {}
@@ -20,8 +20,8 @@ final class INPAWSManager {
                           onError: @escaping (_ error: InPlayerError) -> Void) {
 
         // Get credentials
-        guard let clientUUID = UserDefaults.account?.uuid else {
-            return onError(INPUnauthorizedError())
+        guard let clientUUID = InPlayer.Account.getAccount()?.uuid else {
+            return onError(InPlayerUnauthorizedError())
         }
 
         takeAWSCredentials(success: { awsKeys in
@@ -73,7 +73,7 @@ extension INPAWSManager {
         iotDataManager = AWSIoTDataManager(forKey: InPlayerIoTDataManager)
     }
 
-    private static func takeAWSCredentials(success: @escaping (_ awsKeys: INPAwsKeyModel) -> Void,
+    private static func takeAWSCredentials(success: @escaping (_ awsKeys: InPlayerAwsKey) -> Void,
                                            failure: @escaping (_ error: InPlayerError) -> Void) {
         INPNotificationService.takeAwsCredentials { (awsKeys, error) in
             if let error = error {
@@ -135,7 +135,7 @@ public enum InPlayerNotificationStatus: String {
     }
 }
 
-extension INPAwsKeyModel {
+extension InPlayerAwsKey {
     func getAwsRegion() -> AWSRegionType {
         guard let region = region else { return .Unknown }
         switch region {
