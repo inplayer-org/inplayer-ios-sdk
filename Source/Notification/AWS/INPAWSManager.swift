@@ -20,7 +20,7 @@ final class INPAWSManager {
                           onError: @escaping (_ error: InPlayerError) -> Void) {
 
         // Get credentials
-        guard let clientUUID = UserDefaults.account?.uuid else {
+        guard let clientUUID = InPlayer.Account.getAccount()?.uuid else {
             return onError(InPlayerUnauthorizedError())
         }
 

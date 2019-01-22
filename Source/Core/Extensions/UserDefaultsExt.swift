@@ -1,16 +1,6 @@
 import Foundation
 
-protocol UserDefaultsDataSource {
-    /// Sets and retrieves clientId from UserDefaults
-    static var clientId: String { set get }
-
-    /// Sets and retrieves environment
-    static var environment: EnvironmentType { set get }
-
-    static var credentials: InPlayerCredentials? { get set }
-}
-
-extension UserDefaults: UserDefaultsDataSource {
+extension UserDefaults {
 
     static var clientId: String {
         get {
@@ -21,11 +11,11 @@ extension UserDefaults: UserDefaultsDataSource {
         }
     }
 
-    static var environment: EnvironmentType {
+    static var environment: InPlayerEnvironmentType {
         get {
             guard
                 let environmentString = standard.string(forKey: InPlayerConstants.UserDefaultsKeys.environment),
-                let environment = EnvironmentType(rawValue: environmentString)
+                let environment = InPlayerEnvironmentType(rawValue: environmentString)
             else {
                 return .production
             }

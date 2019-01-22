@@ -5,16 +5,24 @@ public extension InPlayer {
     /**
      Class providing Account related actions.
      */
-    final public class Account {
+    public final class Account {
         private init() {}
 
         /**
-         Get user credentials.
-         - Returns: User credentials. (Optional)
+         Get user credentials if present, else returns nil.
+         - Returns: User credentials or nil.
          */
 
         public static func getCredentials() -> InPlayerCredentials? {
             return UserDefaults.credentials
+        }
+        
+        /**
+         Get account if logged in, else it returns nil
+         - Returns: Account or nil
+         */
+        public static func getAccount() -> InPlayerAccount? {
+            return UserDefaults.account
         }
 
         /**

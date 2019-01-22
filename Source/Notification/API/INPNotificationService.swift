@@ -18,14 +18,7 @@ private enum NotificationAPIRouter: INPAPIConfiguration {
     var baseURL: String {
         switch self {
         case .takeAwsCredentials:
-            switch InPlayer.Configuration.getEnvironment() {
-            case .debug:
-                return NetworkConstants.BaseUrls.Notification.debug
-            case .staging:
-                return NetworkConstants.BaseUrls.Notification.staging
-            case .production:
-                return NetworkConstants.BaseUrls.Notification.production
-            }
+            return InPlayerNotificationAPIManager.getBaseUrlString
         }
     }
 

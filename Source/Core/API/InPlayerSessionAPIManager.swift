@@ -20,7 +20,7 @@ public final class InPlayerSessionAPIManager {
     }
 
     private init() {
-        baseURLString = InPlayer.Configuration.getBaseUrlString()
+        baseURLString = InPlayer.getBaseUrlString()
         let handler = INPAuthHandler(baseURLString: baseURLString)
         session = InPlayerSession(adapter: handler, retrier: handler)
     }

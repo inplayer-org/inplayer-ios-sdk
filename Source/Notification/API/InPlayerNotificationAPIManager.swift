@@ -25,8 +25,8 @@ public final class InPlayerNotificationAPIManager {
         session = InPlayerSession(adapter: handler, retrier: handler)
     }
 
-    private static var getBaseUrlString: String {
-        switch InPlayer.Configuration.getEnvironment() {
+    static var getBaseUrlString: String {
+        switch InPlayer.environment {
         case .debug:
             return NetworkConstants.BaseUrls.Notification.debug
         case .staging:

@@ -3,19 +3,19 @@ import Foundation
 /**
  Main class throught which developer access InPlayer API.
  */
-public class InPlayer {
+public final class InPlayer {
     private init () {}
 
     /**
-     Initialize SDK with clientID, referrer string and enviorment type.
+     Initializes SDK with Configuration. It can be called only once.
      - Parameters:
-         - clientId: Also called merchantId, to identify client using the SDK.
-         - referrer: The request’s source URL
-         - environment: Sets SDK environment.
+         - configuration: Configuration object
      */
-    public static func initialize(withClienId clientId: String,
-                                  referrer: String? = nil,
-                                  environment: EnvironmentType = .production) {
-        InPlayer.Configuration.configure(withClientId: clientId, referrer: referrer, environment: environment)
+    public static func initialize(configuration: Configuration) {
+        guard isConfigured == false else { return }
+        clientId = configuration.clientId
+        referrer = configuration.referrer
+        environment = configuration.environment
+        isConfigured = true
     }
 }

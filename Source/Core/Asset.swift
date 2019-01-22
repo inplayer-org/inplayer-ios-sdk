@@ -5,7 +5,7 @@ public extension InPlayer {
     /**
      Class providing Asset related actions.
      */
-    final public class Asset {
+    public final class Asset {
 
         private init() {}
 
@@ -21,7 +21,7 @@ public extension InPlayer {
         public static func getItemDetails(id: Int,
                                           success: @escaping (InPlayerItem) -> Void,
                                           failure: @escaping (InPlayerError) -> Void) {
-            let merchantUUID = InPlayer.Configuration.getClientId()
+            let merchantUUID = InPlayer.clientId
             INPAssetService.getItemDetails(id: id, merchantUUID: merchantUUID, completion: { (item, error) in
                 if let error = error {
                     failure(error)

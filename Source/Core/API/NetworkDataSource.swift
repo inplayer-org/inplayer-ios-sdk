@@ -20,9 +20,9 @@ class NetworkDataSource {
         - result: Generic enum Result containing response or error depending of its state
      */
     static func performRequest<T:Decodable>(session: InPlayerSession,
-                                                   route: INPAPIConfiguration,
-                                                   decoder: JSONDecoder = JSONDecoder(),
-                                                   completion: @escaping RequestCompletion<T>) {
+                                            route: INPAPIConfiguration,
+                                            decoder: JSONDecoder = JSONDecoder(),
+                                            completion: @escaping RequestCompletion<T>) {
         if route.requiresAuthorization, !session.isAuthorized {
             return completion(nil, InPlayerUnauthorizedError())
         }

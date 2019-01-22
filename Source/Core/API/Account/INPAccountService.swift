@@ -16,9 +16,9 @@ class INPAccountService {
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation,
             AccountParameters.type: AccountType.consumer.rawValue,
-            AccountParameters.merchantUUID: InPlayer.Configuration.getClientId()
+            AccountParameters.merchantUUID: InPlayer.clientId
         ]
-        if let referrer = InPlayer.Configuration.getReferrer() {
+        if let referrer = InPlayer.referrer {
             params[AccountParameters.referrer] = referrer
         }
         if let metadata = metadata {
@@ -52,7 +52,7 @@ class INPAccountService {
             AccountParameters.username: username,
             AccountParameters.password: password,
             AccountParameters.grantType: AuthenticationTypes.password.rawValue,
-            AccountParameters.clientId: InPlayer.Configuration.getClientId()
+            AccountParameters.clientId: InPlayer.clientId
         ]
 
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
@@ -87,7 +87,7 @@ class INPAccountService {
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
         }
-        if let referrer = InPlayer.Configuration.getReferrer() {
+        if let referrer = InPlayer.referrer {
             params[AccountParameters.referrer] = referrer
         }
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
@@ -145,7 +145,7 @@ class INPAccountService {
     static func forgotPassword(email: String,
                                completion: @escaping RequestCompletion<Empty>) {
         let params = [
-            AccountParameters.merchantUUID: InPlayer.Configuration.getClientId(),
+            AccountParameters.merchantUUID: InPlayer.clientId,
             AccountParameters.email: email
         ]
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
@@ -156,7 +156,7 @@ class INPAccountService {
     static func refreshAccessToken(using refreshToken: String,
                                    completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         let params = [
-            AccountParameters.clientId: InPlayer.Configuration.getClientId(),
+            AccountParameters.clientId: InPlayer.clientId,
             AccountParameters.grantType: AuthenticationTypes.refreshToken.rawValue,
             AccountParameters.refreshToken: refreshToken
         ]
@@ -170,7 +170,7 @@ class INPAccountService {
     static func authenticateUsingClientCredentials(clientSecret: String,
                                                    completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         let params = [
-            AccountParameters.clientId: InPlayer.Configuration.getClientId(),
+            AccountParameters.clientId: InPlayer.clientId,
             AccountParameters.grantType: AuthenticationTypes.clientCredentials.rawValue,
             AccountParameters.clientSecret: clientSecret
         ]
