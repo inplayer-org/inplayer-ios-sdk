@@ -4,10 +4,9 @@ import Alamofire
 class INPPaymentService {
     private init() {}
 
-    static func validate(receiptData: Data,
+    static func validate(receiptString: String,
                          productIdentifier: String,
                          completion: @escaping RequestCompletion<Empty>) {
-        let receiptString = receiptData.base64EncodedString()
 
         let productComponents = productIdentifier.components(separatedBy: "_")
         guard
