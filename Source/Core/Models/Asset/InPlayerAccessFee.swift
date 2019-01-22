@@ -3,15 +3,32 @@ import Foundation
 // Access fee model
 public struct InPlayerAccessFee : Codable {
 
+    /// Access type model
     public let accessType : InPlayerAccessType?
+
+    /// The amount of the asset’s fee
     public let amount : Int?
+
+    /// The currency of the asset’s fee
     public let currency : String?
+
+    /// The description for the asset’s fee
     public let descriptionField : String?
+
+    /// Fee ID
     public let id : Int?
     public let itemType : String?
+
+    /// Merchant ID
     public let merchantId : Int?
     public let startsAt : Double?
+
+    /// The period when customers have access to the asset before deciding whether to subscribe
+    /// Note: This only applies for the subscription model
     public let trialPeriod: InPlayerTrialPeriod?
+
+    /// The initial one-time fee that is charged when subscribing for accessing the asset
+    /// Note: This only applies for the subscription model
     public let setupFee: InPlayerSetupFee?
 
     enum CodingKeys: String, CodingKey {

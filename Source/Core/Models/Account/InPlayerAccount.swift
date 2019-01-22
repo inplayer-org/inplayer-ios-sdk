@@ -11,18 +11,38 @@ public enum AccountType: String, Codable {
 /// Account Model
 public struct InPlayerAccount : Codable {
 
+    /// Refers to whether the customer account registration has been completed
     public let completed : Bool?
+
+    /// Account’s email address
     public let email : String?
+
+    /// Account’s first and last name
     public let fullName : String?
+
+    /// Account's username
     public let username: String?
+
+    /// Unique account ID
     public let id : Int?
+
+    /// The request’s source URL
     public let referrer : String?
+
+    /// Account’s roles
     public let roles : [AccountType]?
+
+    /// Time at which the account was created, measured in seconds since 1 January 1970 (UTC)
     public let createdAt : Double?
+
+    /// Time at which the account was updated, measured in seconds since 1 January 1970 (UTC)
     public let updatedAt : Double?
+
     public let uuid: String?
     public let merchantId: Int?
     public let merchantUUID: String?
+
+    /// Additional information about the account that can be attached to the account object
     public let metadata : [String: String]?
 
     enum CodingKeys: String, CodingKey {
@@ -66,6 +86,5 @@ public struct InPlayerAccount : Codable {
         merchantUUID = try values.decodeIfPresent(String.self, forKey: .merchantUUID)
         metadata = try values.decodeIfPresent([String: String].self, forKey: .metadata)
     }
-
 }
 

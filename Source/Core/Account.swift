@@ -37,11 +37,11 @@ public extension InPlayer {
         /**
          Creates new account.
          - Parameters:
-             - fullName: Full name of account
-             - email: Email of account
-             - password: Password of account
-             - passwordConfirmation: Password confirmation of account
-             - metadata: Additional information for account
+            - fullName: Account's first and last name
+             - email: Account’s email address
+             - password: Password containing minimum 8 characters
+             - passwordConfirmation: The same password with minimum 8 characters
+             - metadata: Additional information about the account that can be attached to the account object
              - success: A closure to be executed once the request has finished successfully.
              - authorization: Authorization model containing info regarding token and account
              - failure: A closure to be executed once the request has finished with error.
@@ -90,8 +90,8 @@ public extension InPlayer {
         /**
          Authenticates account using username and password
          - Parameters:
-             - username: Account username
-             - password: Account password
+             - username: The email address of the account.
+             - password: The account password
              - success: A closure to be executed once the request has finished successfully.
              - authorization: Model containing access tokens and logged in account.
              - failure: A closure to be executed once the request has finished with error.
@@ -133,8 +133,8 @@ public extension InPlayer {
         /**
          Updates account information.
          - Parameters:
-             - fullName: Account full name. Can be new or updated. (Required).
-             - metadata: Optional key-value object containing additional fields that needs to be updated or added.
+             - fullName: The full name of the account.
+            - metadata: Additional information about the account that can be attached to the account object
              - success: A closure to be executed once the request has finished successfully.
              - account: Contains account info.
              - failure: A closure to be executed once the request has finished with error.
@@ -158,9 +158,9 @@ public extension InPlayer {
         /**
          Updates account password.
          - Parameters:
-             - oldPassword: Old account password.
-             - newPassword: New account password.
-             - newPasswordConfirmation: New password confirmation
+            - oldPassword: Account's old password.
+             - newPassword: The account's new password
+             - newPasswordConfirmation: The account's new password for confirmation.
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
@@ -185,7 +185,7 @@ public extension InPlayer {
         /**
          Deletes account and all information stored with it.
          - Parameters:
-             - password: Account password.
+             - password: Password confirmation.
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
@@ -205,9 +205,9 @@ public extension InPlayer {
         /**
          Sets new password for account using the token from account's email.
          - Parameters:
-             - token: String received on account's email.
-             - password: New account password.
-             - passwordConfirmation: New password confirmation.
+             - token: The forgot password token sent to your email address.
+             - password: The account’s new password.
+             - passwordConfirmation: The password confirmation.
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
@@ -232,7 +232,7 @@ public extension InPlayer {
         /**
          Sends forgot password instructions on specified email.
          - Parameters:
-             - email: Email on which instructions should be sent.
+             - email: Account’s email address.
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
@@ -253,7 +253,8 @@ public extension InPlayer {
         /**
          Refreshes account access_token
          - Parameters:
-             - refreshToken: Valid refresh token.
+             - refreshToken: An auto-generated token that enables access when the original access token has
+         expired without requiring re authentication
              - success: A closure to be executed once the request has finished successfully.
              - authorization: Model containing access tokens and logged in account.
              - failure: A closure to be executed once the request has finished with error.
@@ -274,7 +275,7 @@ public extension InPlayer {
         /**
          Authenticates account using client credentials
          - Parameters:
-             - clientSecret: Client secret
+             - clientSecret: Corresponding secret between the client and the application.
              - success: A closure to be executed once the request has finished successfully.
              - authorization: Model containing access tokens and logged in account.
              - failure: A closure to be executed once the request has finished with error.

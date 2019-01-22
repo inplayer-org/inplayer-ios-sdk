@@ -3,10 +3,19 @@ import Foundation
 /// Item type model
 public struct InPlayerItemType : Codable {
 
+    /// One of the content types (html, ovp, dlc, rss)
     public let contentType : String?
+
+    /// The description of the asset type
     public let descriptionField : String?
+
+    /// The platform hosting the content (OVP, CDN etc.)
     public let host : String?
+
+    /// Asset type ID
     public let id : Int?
+
+    /// The name of the asset type
     public let name : String?
 
     enum CodingKeys: String, CodingKey {

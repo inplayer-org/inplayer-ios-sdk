@@ -3,23 +3,43 @@ import Foundation
 /// Item model
 public struct InPlayerItem : Codable {
 
+    /// Access control type object
     public let accessControlType : InPlayerAccessControlType?
-    public let accessFees : [InPlayerAccessFee]?
+
+    /// The date the asset was created on, measured in seconds since 1 January 1970 (UTC)
     public let createdAt : Double?
+
+    /// Item's ID
     public let id : Int?
+
+    /// Shows whether the asset is active and can be monetized
     public let isActive : Bool?
+
+    /// Item type object
     public let itemType : InPlayerItemType?
+
+    /// Merchant's ID
     public let merchantId : Int?
+
+    /// Merchant's UUID
     public let merchantUuid : String?
+
+    /// Object containing additional information about the item
     public let metadata : [InPlayerItemMetadata]?
+
     public let metahash : [String: String]?
+
+    /// The asset’s title
     public let title : String?
+
+    /// The date when the asset was last updated, measured in seconds since 1 January 1970 (UTC)
     public let updatedAt : Double?
+
+    /// The asset’s content which can be a json object, a string, an html or an xml document
     public let content: String?
 
     enum CodingKeys: String, CodingKey {
         case accessControlType = "access_control_type"
-        case accessFees = "access_fees"
         case createdAt = "created_at"
         case id = "id"
         case isActive = "is_active"
@@ -37,7 +57,6 @@ public struct InPlayerItem : Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accessControlType = try values.decodeIfPresent(InPlayerAccessControlType.self, forKey: .accessControlType)
-        accessFees = try values.decodeIfPresent([InPlayerAccessFee].self, forKey: .accessFees)
         createdAt = try values.decodeIfPresent(Double.self, forKey: .createdAt)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)

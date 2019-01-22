@@ -3,8 +3,13 @@ import Foundation
 /// Access control type model
 public struct InPlayerAccessControlType : Codable {
 
+    /// Access control type ID
     public let id: Int?
+
+    /// Shows whether the access is acquired by authentication
     public let auth : Bool?
+
+    /// Denotes one of the control types (free, paid or code) that enable the customer to access the asset.
     public let name : String?
 
     enum CodingKeys: String, CodingKey {

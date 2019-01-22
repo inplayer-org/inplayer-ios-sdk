@@ -3,15 +3,33 @@ import Foundation
 /// Item access model
 public struct InPlayerItemAccess : Codable {
 
+    /// Merchant's Account ID
     public let accountId : Int?
+
+    /// Customer's country
     public let countryCode : String?
+
+    /// The date when access to the asset was created, measured in seconds since 1 January 1970 (UTC)
     public let createdAt : Double?
+
+    /// Customer's Account ID
     public let customerId : Int?
+
+    /// Customer's Account UUID
     public let customerUuid : String?
+
+    /// The date when the access expires, measured in seconds since 1 January 1970 (UTC)
     public let expiresAt : Double?
+
+    /// The access ID
     public let id : Int?
+
+    /// Customer's IP Address
     public let ipAddress : String?
+
+    /// Item model
     public let item : InPlayerItem?
+    
     public let startsAt: Double?
 
     enum CodingKeys: String, CodingKey {

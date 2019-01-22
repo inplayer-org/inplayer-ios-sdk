@@ -12,7 +12,7 @@ public extension InPlayer {
         /**
          Gets details about given item id
          - Parameters:
-             - id: Id of item that we are interested in.
+             - id: Item ID
              - success: A closure to be executed once the request has finished successfully.
              - item: Contains item info.
              - failure: A closure to be executed once the request has finished with error.
@@ -34,7 +34,7 @@ public extension InPlayer {
         /**
          Returns a collection of fees for a specific item
          - Parameters:
-             - id: Id of item that we are interested in.
+             - id: Item ID.
              - success: A closure to be executed once the request has finished successfully.
              - accessFees: Collection of access fees for specific asset.
              - failure: A closure to be executed once the request has finished with error.
@@ -55,7 +55,7 @@ public extension InPlayer {
         /**
          Grants access to item
          - Parameters:
-             - id: Id of item that we want access to
+             - id: Item ID
              - success: A closure to be executed once the request has finished successfully.
              - itemAccess: Object containing info about the item plus additional info.
              - failure: A closure to be executed once the request has finished with error.
