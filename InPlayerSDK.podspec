@@ -68,7 +68,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { :path => 'https://github.com/inplayer-org/inplayer-ios-sdk', :tag => s.version.to_s, :submodules => true}
+  s.source = { :git => 'https://github.com/inplayer-org/inplayer-ios-sdk.git', :tag => '1.0.0', :submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files = "Source/**/*.{h.swift}"
+  s.source_files = "Source/**/*.swift"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -120,15 +120,17 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |core|
       core.source_files = "Source/Core/**/*.swift"
-      s.dependency 'Alamofire', '5.0.0.beta.1'
+      core.dependency 'Alamofire', '5.0.0.beta.1'
   end
 
   s.subspec 'Notification' do |notification|
       notification.source_files = "Source/{Core,Notification}/**/*.swift"
+      notification.dependency 'Alamofire', '5.0.0.beta.1'
       notification.dependency 'AWSIoT', '2.8.4'
   end
 
   s.subspec 'Payment' do |payment|
       payment.source_files = "Source/{Core,Payment}/**/*.swift"
+      payment.dependency 'Alamofire', '5.0.0.beta.1'
   end
 end
