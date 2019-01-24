@@ -69,9 +69,9 @@ Account related methods.
 Authenticate method:
 
     InPlayer.Account.authenticate(username: "<YOUR USERNAME>", password: "<YOUR PASSWORD>", success: { (authorization) in
-    // Successfully logged in.
+        // Successfully logged in.
     }, failure: { (error) in
-    // Some error occured.
+        // Some error occured.
     })
 
 ##### Asset
@@ -80,11 +80,11 @@ Asset related methods
 ###### Example
 Get item details:
     
-        InPlayer.Asset.getItemDetails(id: <ITEM_ ID>, success: { (item) in
+    InPlayer.Asset.getItemDetails(id: <ITEM_ ID>, success: { (item) in
         // Successfully obtained item details.
-        }, failure: { error in
+    }, failure: { error in
         // Some error occured.
-        }
+    }
 
 ##### Notification
 
@@ -99,13 +99,13 @@ and
 Subscribe method:
 
     InPlayer.Notification.subscribe(onStatusChanged: { (status) in
-                // Notification status changed
-            }, onMessageReceived: { (message) in
-                // Because message has type which is enum containing associated value, this is one of the ways to use it.
-                if case let NotificationType.accessGranted(resource) = message.type {
-                    // Access was granted, you can use resource
-                }
-            }) { (error) in
-                // InPlayerError containing info about what happened
-            }
+        // Notification status changed
+    }, onMessageReceived: { (message) in
+        // Because message has type which is enum containing associated value, this is one of the ways to use it.
+        if case let NotificationType.accessGranted(resource) = message.type {
+            // Access was granted, you can use resource
+        }
+    }, failure: { (error) in
+        // InPlayerError containing info about what happened
+    })
     
