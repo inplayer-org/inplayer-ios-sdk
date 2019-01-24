@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "InPlayerSDK"
-  s.version      = "0.0.1"
-  s.summary      = "iOS SDK wrapping InPlayer API."
+  s.version      = "1.0.0"
+  s.summary      = "InPlayer's iOS API client wrapper."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -41,7 +41,6 @@ Pod::Spec.new do |s|
 #  s.license      = "MIT"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Specify the authors of the library, with email addresses. Email addresses
@@ -52,9 +51,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "odimitrov" => "oliver.dimitrov@adeva.co" }
-  # Or just: s.author    = "odimitrov"
-  # s.authors            = { "odimitrov" => "oliver.dimitrov@adeva.co" }
+  s.author             = { "Srdjan Rakic" => "srdjan@inplayer.com" }
   # s.social_media_url   = "http://twitter.com/"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -71,8 +68,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  # s.source       = { :git => "http://EXAMPLE/InPlayerSDK.git", :tag => "#{s.version}" }
-  s.source = { :path => '.', :submodules => true}
+  s.source = { :path => 'https://github.com/inplayer-org/inplayer-ios-sdk', :tag => s.version.to_s, :submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
