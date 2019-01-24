@@ -271,27 +271,5 @@ public extension InPlayer {
                 }
             })
         }
-
-        /**
-         Authenticates account using client credentials
-         - Parameters:
-             - clientSecret: Corresponding secret between the client and the application.
-             - success: A closure to be executed once the request has finished successfully.
-             - authorization: Model containing access tokens and logged in account.
-             - failure: A closure to be executed once the request has finished with error.
-             - error: Containing information about the error that occurred.
-         */
-        public static func authenticateUsingClientCredentials(clientSecret: String,
-                                                              success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
-                                                              failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.authenticateUsingClientCredentials(clientSecret: clientSecret,
-                                                                 completion: { (authorization, error) in
-                if let error = error {
-                    failure(error)
-                } else {
-                    success(authorization!)
-                }
-            })
-        }
     }
 }

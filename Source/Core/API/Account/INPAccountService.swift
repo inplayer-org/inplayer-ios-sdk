@@ -24,9 +24,7 @@ class INPAccountService {
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
         }
-        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.createAccount(parameters: params),
-                                         completion: completion)
+
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.createAccount(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
@@ -35,9 +33,6 @@ class INPAccountService {
     }
 
     static func getUserInfo(completion: @escaping RequestCompletion<InPlayerAccount>) {
-        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.getAccountInfo(),
-                                         completion: completion)
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getAccountInfo(),
                                          completion: { (account: InPlayerAccount?, error: InPlayerError?) in
@@ -64,9 +59,6 @@ class INPAccountService {
     }
 
     static func logout(completion: @escaping RequestCompletion<Empty>) {
-        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.logout(),
-                                         completion: completion)
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.logout(),
                                          completion: { (empty: Empty?, error: InPlayerError?) in

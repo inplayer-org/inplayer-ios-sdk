@@ -12,6 +12,7 @@ final class INPAWSManager {
     private static let InPlayerIoTDataManager = "InPlayerIoTDataManager"
     private static var awsKeys: InPlayerAwsKey?
     private static var iotDataManager: AWSIoTDataManager?
+    private static var isSubscribed: Bool = false
 
     private init() {}
 
@@ -19,13 +20,17 @@ final class INPAWSManager {
                           onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void,
                           onError: @escaping (_ error: InPlayerError) -> Void) {
 
-        // Get credentials
+        guard isSubscribed == false else { return }
+
         guard let clientUUID = InPlayer.Account.getAccount()?.uuid else {
             return onError(InPlayerUnauthorizedError())
         }
+        isSubscribed = true
 
+        // Get credentials
         takeAWSCredentials(success: { awsKeys in
             self.awsKeys = awsKeys
+
             // setup aws
             setupAWSConfiguration()
 
@@ -41,19 +46,23 @@ final class INPAWSManager {
                             onMessageReceived(notification)
                         case .failure(let error):
                             onError(error)
+                            isSubscribed = false
                         }
                     })
+                } else if status != .connecting {
+                    isSubscribed = false
                 }
             })
         }, failure: { (error) in
             onError(error)
+            isSubscribed = false
         })
     }
 
     static func disconnect() {
         iotDataManager?.disconnect()
+        isSubscribed = false
     }
-
 }
 
 extension INPAWSManager {
@@ -63,7 +72,7 @@ extension INPAWSManager {
     private static func setupAWSConfiguration() {
         guard let awsKeys = awsKeys, let endpoint = awsKeys.iotEndpoint else { return }
         let credentialsProvider = INPCredentialProvider(awsKeys: awsKeys)
-        let iotEndpoint = AWSEndpoint(urlString: "https://" + endpoint)
+        let iotEndpoint = AWSEndpoint(urlString: "https://" + NetworkConstants.BaseUrls.AWS.endpoint) //  AWSEndpoint(urlString: "https://" + endpoint)
         let awsConfiguration = AWSServiceConfiguration(region: awsKeys.getAwsRegion(),
                                                        endpoint: iotEndpoint,
                                                        credentialsProvider: credentialsProvider)!
