@@ -121,49 +121,49 @@
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 117,
+      "line": 126,
       "symbol": "InPlayerNotificationStatus.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 118,
+      "line": 127,
       "symbol": "InPlayerNotificationStatus.connecting",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 119,
+      "line": 128,
       "symbol": "InPlayerNotificationStatus.connected",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 120,
+      "line": 129,
       "symbol": "InPlayerNotificationStatus.disconnected",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 121,
+      "line": 130,
       "symbol": "InPlayerNotificationStatus.connectionRefused",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 122,
+      "line": 131,
       "symbol": "InPlayerNotificationStatus.connectionError",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
-      "line": 123,
+      "line": 132,
       "symbol": "InPlayerNotificationStatus.protocolError",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
@@ -215,6 +215,20 @@
       "line": 20,
       "symbol": "NotificationType.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "line": 25,
+      "symbol": "InPlayerNotification.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "line": 26,
+      "symbol": "InPlayerNotification.timestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],

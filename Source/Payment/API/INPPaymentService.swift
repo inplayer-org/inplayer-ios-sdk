@@ -9,20 +9,22 @@ class INPPaymentService {
                          completion: @escaping RequestCompletion<Empty>) {
 
         let productComponents = productIdentifier.components(separatedBy: "_")
+
+        let message = "Invalid format of product identifier"
+        let error = NSError(domain: "Error",
+                            code: 0,
+                            userInfo: [NSLocalizedDescriptionKey: "Invalid format of product identifier"])
+        let inpError = InPlayerUnknownError(code: 0,
+                                            message: message,
+                                            errorList: [message],
+                                            error: error)
+        guard productComponents.count > 1 else {
+            return completion(nil, inpError)
+        }
+
         guard
-            let itemIdString = productComponents.first,
-            let itemId = Int(itemIdString),
-            let accessFeeIdString = productComponents.last,
-            let accessFeeId = Int(accessFeeIdString) else {
-                // create invalid input error
-                let message = "Invalid format of product identifier"
-                let error = NSError(domain: "Error",
-                                    code: 0,
-                                    userInfo: [NSLocalizedDescriptionKey: "Invalid format of product identifier"])
-                let inpError = InPlayerUnknownError(code: 0,
-                                               message: message,
-                                               errorList: [message],
-                                               error: error)
+            let itemId = Int(productComponents[0]),
+            let accessFeeId = Int(productComponents[1]) else {
                 return completion(nil, inpError)
         }
         let params: [String: Any] = [

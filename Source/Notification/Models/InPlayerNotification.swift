@@ -22,8 +22,8 @@ public enum NotificationType {
 
 /// InPlayer Notification
 public struct InPlayerNotification: Codable {
-    var type: NotificationType
-    var timestamp: Double
+    public var type: NotificationType
+    public var timestamp: Double
 
     private enum CodingKeys: String, CodingKey {
         case typeString = "type"
