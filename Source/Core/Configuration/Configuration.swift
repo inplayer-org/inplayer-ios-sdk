@@ -8,9 +8,9 @@ public extension InPlayer {
         public let referrer: String?
         public let environment: InPlayerEnvironmentType
 
-        public init(clientId: String, refferrer: String? = nil, environment: InPlayerEnvironmentType = .production) {
+        public init(clientId: String, referrer: String? = nil, environment: InPlayerEnvironmentType = .production) {
             self.clientId = clientId
-            self.referrer = refferrer
+            self.referrer = referrer
             self.environment = environment
         }
     }
