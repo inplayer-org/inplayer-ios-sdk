@@ -118,3 +118,17 @@ Subscribe method:
         // InPlayerError containing info about what happened
     })
 
+
+## Contributing
+
+We are thankful for any contributions made by the community. By contributing you agree to abide by
+the Code of Conduct in the [Contributing Guidelines](https://github.com/inplayer-org/inplayer-ui/blob/master/.github/CONTRIBUTING.md).
+
+## License
+
+Licensed under the MIT License, Copyright © 2018-present InPlayer.
+
+See [LICENSE](https://github.com/inplayer-org/inplayer-ios-sdk/blob/master/LICENSE) for more information.
+
+[license-badge]: https://img.shields.io/npm/l/@inplayer-org/inplayer-ios-sdk.svg?style=flat-square
+[license]: https://github.com/inplayer-org/inplayer-ios-sdk/blob/master/LICENSE
