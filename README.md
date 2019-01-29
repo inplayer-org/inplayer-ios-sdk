@@ -1,4 +1,13 @@
-# inplayer-ios-sdk
+<h1 align="center">
+  <a target="_blank" href="https://inplayer-org.github.io/inplayer-ui/">
+    <img src="https://assets.inplayer.com/images/inplayer-256.png" alt="inplayer-ui" title="InPlayer UI" width="300">
+    <br />
+    <span style="font-size: 1.5rem; color: blue">InPlayer's iOS SDK</span>
+  </a>
+</h1>
+<p align="center" style="font-size: 1.2rem;">InPlayer's iOS API client wrapper</p>
+
+[![MIT License][license-badge]][license]
 
 ## Requirements
 
@@ -18,7 +27,7 @@ To integrate InPlayerSDK into your Xcode project using CocoaPods, specify it in 
 
     source 'https://github.com/CocoaPods/Specs.git'
     platform :ios, '10.0'
-    
+
     target '<Your Target name>' do
         use_frameworks!
         pod 'InPlayerSDK'
@@ -27,9 +36,9 @@ To integrate InPlayerSDK into your Xcode project using CocoaPods, specify it in 
 Then, run the following command:
 
     $ pod install
-    
+
 **Note**: InPlayerSDK is build with submodules. So if you like you can call it like this in your Podfile:
-    
+
     pod 'InPlayerSDK/Core' (all features, default)
     pod 'InPlayerSDK/Payment' (includes Core and Payment modules)
     pod 'InPlayerSDK/Notification' (includes Core and Notification modules)
@@ -52,11 +61,11 @@ To intialize SDK and start using it, you must first do the following steps:
 Create configuration object:
 
      let configuration = InPlayer.Configuration(clientId: "<YOUR CLIENT ID HERE>", referrer: "<REFERRER URL GOES HERE>" environment: <ENVIORMENT TYPE>)
-        
+
 Initialize InPlayer:
 
     InPlayer.initialize(configuration: configuration)
-    
+
 ### Services
 
 InPlayerSDK consists out of four services:
@@ -79,7 +88,7 @@ Asset related methods
 
 ###### Example
 Get item details:
-    
+
     InPlayer.Asset.getItemDetails(id: <ITEM_ ID>, success: { (item) in
         // Successfully obtained item details.
     }, failure: { error in
@@ -91,10 +100,10 @@ Get item details:
 Notification service has two methods:
 
     public static func subscribe(onStatusChanged: @escaping (_ status: InPlayerNotificationStatus) -> Void, onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void, onError: @escaping (_ error: InPlayerError) -> Void)
-and 
-    
-    public static func disconnect() 
-    
+and
+
+    public static func disconnect()
+
 ###### Example:
 Subscribe method:
 
@@ -108,4 +117,4 @@ Subscribe method:
     }, failure: { (error) in
         // InPlayerError containing info about what happened
     })
-    
+
