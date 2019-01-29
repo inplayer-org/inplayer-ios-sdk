@@ -7,8 +7,6 @@
 </h1>
 <p align="center" style="font-size: 1.2rem;">InPlayer's iOS API client wrapper</p>
 
-[![MIT License][license-badge]][license]
-
 ## Requirements
 
  * iOS 10.0+
@@ -129,6 +127,3 @@ the Code of Conduct in the [Contributing Guidelines](https://github.com/inplayer
 Licensed under the MIT License, Copyright © 2018-present InPlayer.
 
 See [LICENSE](https://github.com/inplayer-org/inplayer-ios-sdk/blob/master/LICENSE) for more information.
-
-[license-badge]: https://img.shields.io/npm/l/@inplayer-org/inplayer-ios-sdk.svg?style=flat-square
-[license]: https://github.com/inplayer-org/inplayer-ios-sdk/blob/master/LICENSE
