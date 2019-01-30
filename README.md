@@ -5,7 +5,7 @@
     <span style="font-size: 1.5rem; color: blue">InPlayer's iOS SDK</span>
   </a>
 </h1>
-<p align="center" style="font-size: 1.2rem;">InPlayer's iOS API client wrapper</p>
+<p align="center" style="font-size: 1.2rem;">InPlayer's iOS API Client Wrapper</p>
 
 ## Requirements
 
