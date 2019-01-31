@@ -1,6 +1,6 @@
 <h1 align="center">
-  <a target="_blank" href="https://inplayer-org.github.io/inplayer-ui/">
-    <img src="https://assets.inplayer.com/images/inplayer-256.png" alt="inplayer-ui" title="InPlayer UI" width="300">
+  <a target="_blank" href="https://inplayer-org.github.io/inplayer-ios-sdk/">
+    <img src="https://assets.inplayer.com/images/inplayer-256.png" alt="inplayer-ios-sdk" title="InPlayer iOS SDK" width="300">
     <br />
     <span style="font-size: 1.5rem; color: blue">InPlayer's iOS SDK</span>
   </a>
