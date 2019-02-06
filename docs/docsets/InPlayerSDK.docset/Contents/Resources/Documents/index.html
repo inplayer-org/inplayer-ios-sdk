@@ -152,12 +152,133 @@
         <section>
           <section class="section">
             
-            <h1 id='inplayer-ios-sdk' class='heading'>inplayer-ios-sdk</h1>
+            <h1 align="center">
+  <a target="_blank" href="https://inplayer-org.github.io/inplayer-ios-sdk/">
+    <img src="https://assets.inplayer.com/images/inplayer-256.png" alt="inplayer-ios-sdk" title="InPlayer iOS SDK" width="300">
+    <br />
+    <span style="font-size: 1.5rem; color: blue">InPlayer&rsquo;s iOS SDK</span>
+  </a>
+</h1>
+
+<p align="center" style="font-size: 1.2rem;">InPlayer&rsquo;s iOS API Client Wrapper</p>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 10.0+</li>
+<li>Xcode 10.1+</li>
+<li>Swift 4.2+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p><a href="https://cocoapods.org/">CocoaPods</a> is a dependency manager for Cocoa projects. You can install it with the following command:</p>
+<pre class="highlight plaintext"><code>$ gem install cocoapods
+</code></pre>
+
+<p>To integrate InPlayerSDK into your Xcode project using CocoaPods, specify it in your <code>Podfile</code></p>
+<pre class="highlight plaintext"><code>source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+
+target '&lt;Your Target name&gt;' do
+    use_frameworks!
+    pod 'InPlayerSDK'
+end
+</code></pre>
+
+<p>Then, run the following command:</p>
+<pre class="highlight plaintext"><code>$ pod install
+</code></pre>
+
+<p><strong>Note</strong>: InPlayerSDK is build with submodules. So if you like you can call it like this in your Podfile:</p>
+<pre class="highlight plaintext"><code>pod 'InPlayerSDK/Core' (all features, default)
+pod 'InPlayerSDK/Payment' (includes Core and Payment modules)
+pod 'InPlayerSDK/Notification' (includes Core and Notification modules)
+</code></pre>
+<h3 id='dependencies' class='heading'>Dependencies</h3>
+
+<p>This SDK has dependencies that it relies on. The list consists of:</p>
+<pre class="highlight plaintext"><code> pod 'Alamofire', '5.0.0.beta.1'
+ pod 'AWSIoT', '2.8.4' (only Notifications module)
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Import <code>InPlayerSDK</code> to your file.</p>
+<h3 id='configuration' class='heading'>Configuration</h3>
+
+<p>To intialize SDK and start using it, you must first do the following steps:</p>
+
+<p>Create configuration object:</p>
+<pre class="highlight plaintext"><code> let configuration = InPlayer.Configuration(clientId: "&lt;YOUR CLIENT ID HERE&gt;", referrer: "&lt;REFERRER URL GOES HERE&gt;" environment: &lt;ENVIORMENT TYPE&gt;)
+</code></pre>
+
+<p>Initialize InPlayer:</p>
+<pre class="highlight plaintext"><code>InPlayer.initialize(configuration: configuration)
+</code></pre>
+<h3 id='services' class='heading'>Services</h3>
+
+<p>InPlayerSDK consists out of four services:
+<code>Account</code>, <code>Asset</code>, <code>Payment</code> and <code>Notification</code>.</p>
+<h5 id='account' class='heading'>Account</h5>
+
+<p>Account related methods.</p>
+<h6 id='example' class='heading'>Example</h6>
+
+<p>Authenticate method:</p>
+<pre class="highlight plaintext"><code>InPlayer.Account.authenticate(username: "&lt;YOUR USERNAME&gt;", password: "&lt;YOUR PASSWORD&gt;", success: { (authorization) in
+    // Successfully logged in.
+}, failure: { (error) in
+    // Some error occured.
+})
+</code></pre>
+<h5 id='asset' class='heading'>Asset</h5>
+
+<p>Asset related methods</p>
+<h6 id='example' class='heading'>Example</h6>
+
+<p>Get item details:</p>
+<pre class="highlight plaintext"><code>InPlayer.Asset.getItemDetails(id: &lt;ITEM_ ID&gt;, success: { (item) in
+    // Successfully obtained item details.
+}, failure: { error in
+    // Some error occured.
+}
+</code></pre>
+<h5 id='notification' class='heading'>Notification</h5>
+
+<p>Notification service has two methods:</p>
+<pre class="highlight plaintext"><code>public static func subscribe(onStatusChanged: @escaping (_ status: InPlayerNotificationStatus) -&gt; Void, onMessageReceived: @escaping (_ notification: InPlayerNotification) -&gt; Void, onError: @escaping (_ error: InPlayerError) -&gt; Void)
+</code></pre>
+
+<p>and</p>
+<pre class="highlight plaintext"><code>public static func disconnect()
+</code></pre>
+<h6 id='example' class='heading'>Example:</h6>
+
+<p>Subscribe method:</p>
+<pre class="highlight plaintext"><code>InPlayer.Notification.subscribe(onStatusChanged: { (status) in
+    // Notification status changed
+}, onMessageReceived: { (message) in
+    // Because message has type which is enum containing associated value, this is one of the ways to use it.
+    if case let NotificationType.accessGranted(resource) = message.type {
+        // Access was granted, you can use resource
+    }
+}, failure: { (error) in
+    // InPlayerError containing info about what happened
+})
+</code></pre>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>We are thankful for any contributions made by the community. By contributing you agree to abide by
+the Code of Conduct in the <a href="https://github.com/inplayer-org/inplayer-ui/blob/master/.github/CONTRIBUTING.md">Contributing Guidelines</a>.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>Licensed under the MIT License, Copyright © 2018-present InPlayer.</p>
+
+<p>See <a href="https://github.com/inplayer-org/inplayer-ios-sdk/blob/master/LICENSE">LICENSE</a> for more information.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-01-24)</p>
+          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-02-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
