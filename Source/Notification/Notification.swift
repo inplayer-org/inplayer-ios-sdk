@@ -29,8 +29,12 @@ public extension InPlayer {
         /**
          Disconnects from websocket and stop receving `InPlayerNotification`.
          */
-        public static func disconnect() {
-            INPAWSManager.disconnect()
+        public static func unsubscribe() {
+            INPAWSManager.unsubscribe()
+        }
+        
+        public static func isSubscribed() -> Bool {
+            return INPAWSManager.isSubscribed
         }
     }
 }

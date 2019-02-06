@@ -4,7 +4,7 @@ import Alamofire
  Class that provides asset services which handles request creation and passes completion result
  */
 class INPAssetService {
-    static func getItemDetails(id: Int,
+    static func getAssetDetails(id: Int,
                                merchantUUID: String,
                                completion: @escaping RequestCompletion<InPlayerItem>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
@@ -13,15 +13,15 @@ class INPAssetService {
                                          completion: completion)
     }
 
-    static func getItemAccessFees(id: Int,
-                                  completion: @escaping RequestCompletion<[InPlayerAccessFee]>) {
+    static func getAssetAccessFees(id: Int,
+                                   completion: @escaping RequestCompletion<[InPlayerAccessFee]>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemAccessFees(id: id),
                                          completion: completion)
     }
 
-    static func getItemAccess(id: Int,
-                              completion: @escaping RequestCompletion<InPlayerItemAccess>) {
+    static func checkAccessForAsset(id: Int,
+                                    completion: @escaping RequestCompletion<InPlayerItemAccess>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemAccess(id: id),
                                          completion: completion)
