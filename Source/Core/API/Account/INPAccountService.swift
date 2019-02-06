@@ -4,12 +4,12 @@ import Alamofire
  Class that provides account services which handles request creation and passes completion result
  */
 class INPAccountService {
-    static func createAccount(fullName: String,
-                              email: String,
-                              password: String,
-                              passwordConfirmation: String,
-                              metadata: [String: Any]?,
-                              completion: @escaping RequestCompletion<InPlayerAuthorization>) {
+    static func signUp(fullName: String,
+                       email: String,
+                       password: String,
+                       passwordConfirmation: String,
+                       metadata: [String: Any]?,
+                       completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         var params: [String: Any] = [
             AccountParameters.fullName: fullName,
             AccountParameters.email: email,
@@ -32,7 +32,7 @@ class INPAccountService {
         })
     }
 
-    static func getUserInfo(completion: @escaping RequestCompletion<InPlayerAccount>) {
+    static func getAccount(completion: @escaping RequestCompletion<InPlayerAccount>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getAccountInfo(),
                                          completion: { (account: InPlayerAccount?, error: InPlayerError?) in
@@ -58,7 +58,7 @@ class INPAccountService {
         })
     }
 
-    static func logout(completion: @escaping RequestCompletion<Empty>) {
+    static func signOut(completion: @escaping RequestCompletion<Empty>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.logout(),
                                          completion: { (empty: Empty?, error: InPlayerError?) in
@@ -104,8 +104,8 @@ class INPAccountService {
                                          completion: completion)
     }
 
-    static func eraseAccount(password: String,
-                             completion: @escaping RequestCompletion<Empty>) {
+    static func deleteAccount(password: String,
+                              completion: @escaping RequestCompletion<Empty>) {
         let params = [AccountParameters.password: password]
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.eraseAccount(parameters: params),
@@ -134,8 +134,8 @@ class INPAccountService {
                                          completion: completion)
     }
 
-    static func forgotPassword(email: String,
-                               completion: @escaping RequestCompletion<Empty>) {
+    static func requestNewPassword(email: String,
+                                   completion: @escaping RequestCompletion<Empty>) {
         let params = [
             AccountParameters.merchantUUID: InPlayer.clientId,
             AccountParameters.email: email
@@ -145,8 +145,8 @@ class INPAccountService {
                                          completion: completion)
     }
 
-    static func refreshAccessToken(using refreshToken: String,
-                                   completion: @escaping RequestCompletion<InPlayerAuthorization>) {
+    static func refreshToken(using refreshToken: String,
+                             completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         let params = [
             AccountParameters.clientId: InPlayer.clientId,
             AccountParameters.grantType: AuthenticationTypes.refreshToken.rawValue,
