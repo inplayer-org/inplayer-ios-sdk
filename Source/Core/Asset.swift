@@ -10,40 +10,40 @@ public extension InPlayer {
         private init() {}
 
         /**
-         Gets details about given item id
+         Gets details about given asset id
          - Parameters:
-             - id: Item ID
+             - id: Asset ID
              - success: A closure to be executed once the request has finished successfully.
-             - item: Contains item info.
+             - asset: Contains item info.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getItemDetails(id: Int,
-                                          success: @escaping (InPlayerItem) -> Void,
-                                          failure: @escaping (InPlayerError) -> Void) {
+        public static func getAsset(id: Int,
+                                    success: @escaping (InPlayerItem) -> Void,
+                                    failure: @escaping (InPlayerError) -> Void) {
             let merchantUUID = InPlayer.clientId
-            INPAssetService.getItemDetails(id: id, merchantUUID: merchantUUID, completion: { (item, error) in
+            INPAssetService.getAsset(id: id, merchantUUID: merchantUUID, completion: { (asset, error) in
                 if let error = error {
                     failure(error)
                 } else {
-                    success(item!)
+                    success(asset!)
                 }
             })
         }
 
         /**
-         Returns a collection of fees for a specific item
+         Returns a collection of fees for a specific asset
          - Parameters:
-             - id: Item ID.
+             - id: Asset ID.
              - success: A closure to be executed once the request has finished successfully.
              - accessFees: Collection of access fees for specific asset.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getItemAccessFees(id: Int,
-                                             success: @escaping ([InPlayerAccessFee]) -> Void,
-                                             failure: @escaping (InPlayerError) -> Void) {
-            INPAssetService.getItemAccessFees(id: id, completion: { (accessFees, error) in
+        public static func getAssetAccessFees(id: Int,
+                                              success: @escaping ([InPlayerAccessFee]) -> Void,
+                                              failure: @escaping (InPlayerError) -> Void) {
+            INPAssetService.getAssetAccessFees(id: id, completion: { (accessFees, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -53,18 +53,18 @@ public extension InPlayer {
         }
 
         /**
-         Grants access to item
+         This method checks and retrieves a customer's entitlement to an asset
          - Parameters:
-             - id: Item ID
+             - id: Asset ID
              - success: A closure to be executed once the request has finished successfully.
              - itemAccess: Object containing info about the item plus additional info.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getItemAccess(id: Int,
-                                         success: @escaping (InPlayerItemAccess) -> Void,
-                                         failure: @escaping (InPlayerError) -> Void) {
-            INPAssetService.getItemAccess(id: id, completion: { (itemAccess, error) in
+        public static func checkAccessForAsset(id: Int,
+                                               success: @escaping (InPlayerItemAccess) -> Void,
+                                               failure: @escaping (InPlayerError) -> Void) {
+            INPAssetService.checkAccessForAsset(id: id, completion: { (itemAccess, error) in
                 if let error = error {
                     failure(error)
                 } else {

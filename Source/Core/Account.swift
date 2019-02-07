@@ -47,19 +47,19 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func createAccount(fullName: String,
-                                         email: String,
-                                         password: String,
-                                         passwordConfirmation: String,
-                                         metadata: [String: Any]? = nil,
-                                         success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
-                                         failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.createAccount(fullName: fullName,
-                                            email: email,
-                                            password: password,
-                                            passwordConfirmation: passwordConfirmation,
-                                            metadata: metadata,
-                                            completion: { (authorization, error) in
+        public static func signUp(fullName: String,
+                                  email: String,
+                                  password: String,
+                                  passwordConfirmation: String,
+                                  metadata: [String: Any]? = nil,
+                                  success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
+                                  failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.signUp(fullName: fullName,
+                                     email: email,
+                                     password: password,
+                                     passwordConfirmation: passwordConfirmation,
+                                     metadata: metadata,
+                                     completion: { (authorization, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -76,9 +76,9 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getAccountInformation(success: @escaping (_ account: InPlayerAccount) -> Void,
-                                                 failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.getUserInfo(completion: { (account, error) in
+        public static func getAccount(success: @escaping (_ account: InPlayerAccount) -> Void,
+                                      failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.getAccount(completion: { (account, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -119,9 +119,9 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func logout(success: @escaping () -> Void,
+        public static func signOut(success: @escaping () -> Void,
                                   failure: @escaping (_ error: InPlayerError) -> Void){
-            INPAccountService.logout(completion: { (_, error) in
+            INPAccountService.signOut(completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -190,10 +190,10 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func eraseAccount(password: String,
-                                        success: @escaping () -> Void,
-                                        failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.eraseAccount(password: password, completion: { (_, error) in
+        public static func deleteAccount(password: String,
+                                         success: @escaping () -> Void,
+                                         failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.deleteAccount(password: password, completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -237,10 +237,10 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func forgotPassword(email: String,
-                                          success: @escaping () -> Void,
-                                          failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.forgotPassword(email: email, completion: { (_, error) in
+        public static func requestNewPassword(email: String,
+                                              success: @escaping () -> Void,
+                                              failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.requestNewPassword(email: email, completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -251,7 +251,7 @@ public extension InPlayer {
 
 
         /**
-         Refreshes account access_token
+         Refreshes account `access_token`
          - Parameters:
              - refreshToken: An auto-generated token that enables access when the original access token has
          expired without requiring re authentication
@@ -260,10 +260,10 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func refreshAccessToken(using refreshToken: String,
-                                              success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
-                                              failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.refreshAccessToken(using: refreshToken, completion: { (authorization, error) in
+        public static func refreshToken(using refreshToken: String,
+                                        success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
+                                        failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.refreshToken(using: refreshToken, completion: { (authorization, error) in
                 if let error = error {
                     failure(error)
                 } else {

@@ -81,7 +81,7 @@ final class INPAuthHandler: RequestAdapter, RequestRetrier {
         if let refreshToken = InPlayer.Account.getCredentials()?.refreshToken {
 
             isRefreshing = true
-            InPlayer.Account.refreshAccessToken(using: refreshToken, success: { [weak self] (authorization) in
+            InPlayer.Account.refreshToken(using: refreshToken, success: { [weak self] (authorization) in
                 guard let strongSelf = self else { return }
                 strongSelf.isRefreshing = false
                 completion(true, authorization.accessToken, authorization.refreshToken)
