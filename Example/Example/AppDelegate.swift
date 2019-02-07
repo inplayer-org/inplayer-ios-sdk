@@ -11,7 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // On first start of the app call this:
         let configuration = InPlayer.Configuration(clientId: "xxx")
         InPlayer.initialize(configuration: configuration)
-        
+
+        InPlayer.Account.getAccount()
         return true
     }
 }
