@@ -21,7 +21,7 @@ public extension InPlayer {
          Get account if logged in, else it returns nil
          - Returns: Account or nil
          */
-        public static func getAccount() -> InPlayerAccount? {
+        public static func getAccountInfo() -> InPlayerAccount? {
             return UserDefaults.account
         }
 
