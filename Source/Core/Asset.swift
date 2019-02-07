@@ -22,7 +22,7 @@ public extension InPlayer {
                                     success: @escaping (InPlayerItem) -> Void,
                                     failure: @escaping (InPlayerError) -> Void) {
             let merchantUUID = InPlayer.clientId
-            INPAssetService.getAssetDetails(id: id, merchantUUID: merchantUUID, completion: { (asset, error) in
+            INPAssetService.getAsset(id: id, merchantUUID: merchantUUID, completion: { (asset, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -40,9 +40,9 @@ public extension InPlayer {
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getItemAccessFees(id: Int,
-                                             success: @escaping ([InPlayerAccessFee]) -> Void,
-                                             failure: @escaping (InPlayerError) -> Void) {
+        public static func getAssetAccessFees(id: Int,
+                                              success: @escaping ([InPlayerAccessFee]) -> Void,
+                                              failure: @escaping (InPlayerError) -> Void) {
             INPAssetService.getAssetAccessFees(id: id, completion: { (accessFees, error) in
                 if let error = error {
                     failure(error)

@@ -230,13 +230,6 @@
       "symbol": "InPlayerNotification.timestamp",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Notification.swift",
-      "line": 36,
-      "symbol": "InPlayer.Notification.isSubscribed()",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/oliver/Documents/Work/Adeva/SDK"

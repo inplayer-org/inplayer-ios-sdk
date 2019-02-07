@@ -32,7 +32,10 @@ public extension InPlayer {
         public static func unsubscribe() {
             INPAWSManager.unsubscribe()
         }
-        
+
+        /**
+         Returns subscribed status
+         */
         public static func isSubscribed() -> Bool {
             return INPAWSManager.isSubscribed
         }
