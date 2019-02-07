@@ -4,9 +4,9 @@ import Alamofire
  Class that provides asset services which handles request creation and passes completion result
  */
 class INPAssetService {
-    static func getAssetDetails(id: Int,
-                               merchantUUID: String,
-                               completion: @escaping RequestCompletion<InPlayerItem>) {
+    static func getAsset(id: Int,
+                         merchantUUID: String,
+                         completion: @escaping RequestCompletion<InPlayerItem>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AssetAPIRouter.getItemDetails(id: id,
                                                                               merchantUUID: merchantUUID),
