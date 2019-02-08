@@ -82,25 +82,28 @@ Authenticate method:
     })
 
 ##### Asset
-Asset related methods
+Asset related methods:
 
 ###### Example
-Get item details:
+Get asset details:
 
-    InPlayer.Asset.getItemDetails(id: <ITEM_ ID>, success: { (item) in
-        // Successfully obtained item details.
+    InPlayer.Asset.getAsset(id: <ITEM_ ID>, success: { (item) in
+       // Successfully obtained item details.
     }, failure: { error in
-        // Some error occured.
+       // Some error occured.
     }
 
 ##### Notification
 
 Notification service has two methods:
 
-    public static func subscribe(onStatusChanged: @escaping (_ status: InPlayerNotificationStatus) -> Void, onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void, onError: @escaping (_ error: InPlayerError) -> Void)
-and
+   public static func subscribe(onStatusChanged: @escaping ( _status: InPlayerNotificationStatus) -> Void,          onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void, onError: @escaping (_ error: InPlayerError) -> Void)
 
-    public static func disconnect()
+   and
+
+   public static func unsubscribe()
+
+   public static func isSubscribed() -> Bool
 
 ###### Example:
 Subscribe method:
