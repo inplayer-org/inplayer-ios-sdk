@@ -24,7 +24,7 @@
     {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Configuration/Configuration.swift",
       "line": 11,
-      "symbol": "InPlayer.Configuration.init(clientId:refferrer:environment:)",
+      "symbol": "InPlayer.Configuration.init(clientId:referrer:environment:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

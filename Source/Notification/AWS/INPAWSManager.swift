@@ -12,7 +12,7 @@ final class INPAWSManager {
     private static let InPlayerIoTDataManager = "InPlayerIoTDataManager"
     private static var awsKeys: InPlayerAwsKey?
     private static var iotDataManager: AWSIoTDataManager?
-    private static var isSubscribed: Bool = false
+    static var isSubscribed: Bool = false
 
     private init() {}
 
@@ -38,7 +38,7 @@ final class INPAWSManager {
             connectToAws(clientUUID: clientUUID, statusCallback: { status in
                 onStatusChanged(status)
                 if status == .connected {
-
+                    isSubscribed = true
                     // subscribe for notifications
                     subscribe(clientUUID: clientUUID, messageCallback: { (result) in
                         switch result {
@@ -59,7 +59,7 @@ final class INPAWSManager {
         })
     }
 
-    static func disconnect() {
+    static func unsubscribe() {
         iotDataManager?.disconnect()
         isSubscribed = false
     }

@@ -199,9 +199,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC03getD0AA0abD0VSgyFZ"></a>
-                    <a name="//apple_ref/swift/Method/getAccount()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC03getD0AA0abD0VSgyFZ">getAccount()</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC03getD4InfoAA0abD0VSgyFZ"></a>
+                    <a name="//apple_ref/swift/Method/getAccountInfo()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC03getD4InfoAA0abD0VSgyFZ">getAccountInfo()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -216,7 +216,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getAccount</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/InPlayerAccount.html">InPlayerAccount</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getAccountInfo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/InPlayerAccount.html">InPlayerAccount</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -261,9 +261,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC06createD08fullName5email8password0I12Confirmation8metadata7success7failureySS_S3SSDySSypGSgyAA0aB13AuthorizationVcyAA0aB5Error_pctFZ"></a>
-                    <a name="//apple_ref/swift/Method/createAccount(fullName:email:password:passwordConfirmation:metadata:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC06createD08fullName5email8password0I12Confirmation8metadata7success7failureySS_S3SSDySSypGSgyAA0aB13AuthorizationVcyAA0aB5Error_pctFZ">createAccount(fullName:email:password:passwordConfirmation:metadata:success:failure:)</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC6signUp8fullName5email8password0J12Confirmation8metadata7success7failureySS_S3SSDySSypGSgyAA0aB13AuthorizationVcyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/signUp(fullName:email:password:passwordConfirmation:metadata:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC6signUp8fullName5email8password0J12Confirmation8metadata7success7failureySS_S3SSDySSypGSgyAA0aB13AuthorizationVcyAA0aB5Error_pctFZ">signUp(fullName:email:password:passwordConfirmation:metadata:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -278,13 +278,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createAccount</span><span class="p">(</span><span class="nv">fullName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                 <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                 <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                 <span class="nv">passwordConfirmation</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                 <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-                                 <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAuthorization.html">InPlayerAuthorization</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
-                                 <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">signUp</span><span class="p">(</span><span class="nv">fullName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                          <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                          <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                          <span class="nv">passwordConfirmation</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                          <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                          <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAuthorization.html">InPlayerAuthorization</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                          <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -409,9 +409,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC03getD11Information7success7failureyyAA0abD0Vc_yAA0aB5Error_pctFZ"></a>
-                    <a name="//apple_ref/swift/Method/getAccountInformation(success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC03getD11Information7success7failureyyAA0abD0Vc_yAA0aB5Error_pctFZ">getAccountInformation(success:failure:)</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC03getD07success7failureyyAA0abD0Vc_yAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/getAccount(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC03getD07success7failureyyAA0abD0Vc_yAA0aB5Error_pctFZ">getAccount(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -426,8 +426,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getAccountInformation</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">account</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAccount.html">InPlayerAccount</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
-                                         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getAccount</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">account</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAccount.html">InPlayerAccount</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                              <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -601,9 +601,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC6logout7success7failureyyyc_yAA0aB5Error_pctFZ"></a>
-                    <a name="//apple_ref/swift/Method/logout(success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC6logout7success7failureyyyc_yAA0aB5Error_pctFZ">logout(success:failure:)</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC7signOut7success7failureyyyc_yAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/signOut(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC7signOut7success7failureyyyc_yAA0aB5Error_pctFZ">signOut(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -618,7 +618,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">logout</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">signOut</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
                           <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -891,9 +891,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC05eraseD08password7success7failureySS_yycyAA0aB5Error_pctFZ"></a>
-                    <a name="//apple_ref/swift/Method/eraseAccount(password:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC05eraseD08password7success7failureySS_yycyAA0aB5Error_pctFZ">eraseAccount(password:success:failure:)</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC06deleteD08password7success7failureySS_yycyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteAccount(password:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC06deleteD08password7success7failureySS_yycyAA0aB5Error_pctFZ">deleteAccount(password:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -908,9 +908,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">eraseAccount</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
-                                <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteAccount</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                 <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                 <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1085,9 +1085,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC14forgotPassword5email7success7failureySS_yycyAA0aB5Error_pctFZ"></a>
-                    <a name="//apple_ref/swift/Method/forgotPassword(email:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC14forgotPassword5email7success7failureySS_yycyAA0aB5Error_pctFZ">forgotPassword(email:success:failure:)</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC18requestNewPassword5email7success7failureySS_yycyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/requestNewPassword(email:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC18requestNewPassword5email7success7failureySS_yycyAA0aB5Error_pctFZ">requestNewPassword(email:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1102,9 +1102,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">forgotPassword</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                  <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
-                                  <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">requestNewPassword</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                      <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                      <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1169,9 +1169,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC18refreshAccessToken5using7success7failureySS_yAA0aB13AuthorizationVcyAA0aB5Error_pctFZ"></a>
-                    <a name="//apple_ref/swift/Method/refreshAccessToken(using:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC18refreshAccessToken5using7success7failureySS_yAA0aB13AuthorizationVcyAA0aB5Error_pctFZ">refreshAccessToken(using:success:failure:)</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC12refreshToken5using7success7failureySS_yAA0aB13AuthorizationVcyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/refreshToken(using:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC12refreshToken5using7success7failureySS_yAA0aB13AuthorizationVcyAA0aB5Error_pctFZ">refreshToken(using:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1179,16 +1179,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Refreshes account access_token</p>
+                        <p>Refreshes account <code>access_token</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">refreshAccessToken</span><span class="p">(</span><span class="n">using</span> <span class="nv">refreshToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                      <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAuthorization.html">InPlayerAuthorization</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
-                                      <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">refreshToken</span><span class="p">(</span><span class="n">using</span> <span class="nv">refreshToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">authorization</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAuthorization.html">InPlayerAuthorization</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1268,7 +1268,7 @@ expired without requiring re authentication</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-01-24)</p>
+          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-02-07)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
