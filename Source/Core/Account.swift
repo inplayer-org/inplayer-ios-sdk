@@ -282,8 +282,14 @@ public extension InPlayer {
          */
         public static func exportUserData(password: String,
                                           success: @escaping () -> Void,
-                                          failure: @escaping ()-> Void) {
-            
+                                          failure: @escaping (_ error: InPlayerError)-> Void) {
+            INPAccountService.exportData(password: password) { (_, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            }
         }
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		753F5D595D59548CC1AF1909 /* Pods_InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DF19FEC807CF03559464F9 /* Pods_InPlayerSDK.framework */; };
+		A73211D0223AD06E00452C15 /* InPlayerCustomerAccessItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */; };
+		A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */; };
 		A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */; };
 		A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */; };
 		A7EA961921F5018600CDA238 /* InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */; };
@@ -79,6 +81,8 @@
 		863B37A5E53B1B204C406696 /* Pods-InPlayerSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKTests/Pods-InPlayerSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		89DF19FEC807CF03559464F9 /* Pods_InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42AFBEAB4A1A9893C497B3B /* Pods-InPlayerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDK/Pods-InPlayerSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerCustomerAccessItem.swift; sourceTree = "<group>"; };
+		A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerPurchaseHistory.swift; sourceTree = "<group>"; };
 		A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InPlayer+Configuration.swift"; sourceTree = "<group>"; };
 		A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerEnvironmentType.swift; sourceTree = "<group>"; };
 		A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +183,15 @@
 				0E319CEC0D79078C0D82AB59 /* Pods_InPlayerSDKTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A73211CE223AC9AD00452C15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */,
+				A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A7EA960521F5018600CDA238 = {
@@ -360,6 +373,7 @@
 			children = (
 				A7EA96E221F52C9B00CDA238 /* Payment.swift */,
 				A7EA966221F501F000CDA238 /* API */,
+				A73211CE223AC9AD00452C15 /* Models */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -588,8 +602,10 @@
 				A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */,
 				A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */,
 				A7EA968C21F501F000CDA238 /* InPlayerNotification.swift in Sources */,
+				A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */,
 				A7EA967321F501F000CDA238 /* InPlayerAccessControlType.swift in Sources */,
 				A7EA967121F501F000CDA238 /* NetworkDataSource.swift in Sources */,
+				A73211D0223AD06E00452C15 /* InPlayerCustomerAccessItem.swift in Sources */,
 				A7EA968421F501F000CDA238 /* InPlayerInvalidResponseError.swift in Sources */,
 				A7EA968F21F501F000CDA238 /* INPNotificationService.swift in Sources */,
 				A7EA969021F501F000CDA238 /* InPlayerNotificationAPIManager.swift in Sources */,

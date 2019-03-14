@@ -22,7 +22,7 @@ final class INPAWSManager {
 
         guard isSubscribed == false else { return }
 
-        guard let clientUUID = InPlayer.Account.getAccount()?.uuid else {
+        guard let clientUUID = InPlayer.Account.getAccountInfo()?.uuid else {
             return onError(InPlayerUnauthorizedError())
         }
         isSubscribed = true
