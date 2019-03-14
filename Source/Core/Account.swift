@@ -271,5 +271,19 @@ public extension InPlayer {
                 }
             })
         }
+
+        /**
+         Exports account data such as logins, payments, subscriptions, access to assets etc. After invoking the request the account will receive the data in a json format via e-mail.
+         - Parameters:
+            - password: Password of the current logged user
+            - success: A closure to be executed once the request has finished successfully.
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
+         */
+        public static func exportUserData(password: String,
+                                          success: @escaping () -> Void,
+                                          failure: @escaping ()-> Void) {
+            
+        }
     }
 }

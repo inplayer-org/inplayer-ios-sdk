@@ -29,6 +29,7 @@ struct NetworkConstants {
             static let forgotPassword = "/accounts/forgot-password"
             static let authenticate   = "/accounts/authenticate"
             static let setNewPassword = "/accounts/forgot-password/%@"
+            static let exportData     = "/accounts/export"
         }
 
         struct Asset {
