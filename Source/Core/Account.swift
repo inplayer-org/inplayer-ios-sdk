@@ -282,12 +282,30 @@ public extension InPlayer {
          */
         public static func exportUserData(password: String,
                                           success: @escaping () -> Void,
-                                          failure: @escaping (_ error: InPlayerError)-> Void) {
+                                          failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.exportData(password: password) { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
                     success()
+                }
+            }
+        }
+
+        /**
+         Gets register fields
+         - Parameters:
+             - success: A closure to be executed once the request has finished successfully.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
+         */
+        public static func getRegisterFields(success: @escaping () -> Void,
+                                             failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.getRegisterFields { (_, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success() // NEED TO UPDATE THE MODELS
                 }
             }
         }

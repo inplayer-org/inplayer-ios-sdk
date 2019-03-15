@@ -179,6 +179,13 @@ class INPAccountService {
                                          route: AccountAPIRouter.exportData(parameters: params),
                                          completion: completion)
     }
+
+    static func getRegisterFields(completion: @escaping RequestCompletion<Empty>) {
+        let merchantUUID = InPlayer.clientId
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.getRegisterFields(merchantUUID: merchantUUID),
+                                         completion: completion)
+    }
 }
 
 private extension INPAccountService {
@@ -265,6 +272,7 @@ private enum AccountAPIRouter: INPAPIConfiguration {
     case refreshToken(parameters: [String: Any])
     case authenticateClientCredentials(parameters: [String: Any])
     case exportData(parameters: [String: Any])
+    case getRegisterFields(merchantUUID: String)
 
     var method: HTTPMethod {
         switch self {
@@ -307,6 +315,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
             return NetworkConstants.Endpoints.Account.authenticate
         case .exportData:
             return NetworkConstants.Endpoints.Account.exportData
+        case .getRegisterFields(let merchantUUID):
+            return String(format: NetworkConstants.Endpoints.Account.registerFields, merchantUUID)
         }
 
     }

@@ -30,12 +30,17 @@ struct NetworkConstants {
             static let authenticate   = "/accounts/authenticate"
             static let setNewPassword = "/accounts/forgot-password/%@"
             static let exportData     = "/accounts/export"
+            static let registerFields = "/accounts/register-fields/%@"
         }
 
         struct Asset {
             static let itemDetails = "/items/%@/%@"
             static let itemAccessFees = "items/%@/access-fees"
             static let itemAccess = "items/%@/access"
+        }
+
+        struct Subscription {
+            static let subscriptionList = "/subscriptions"
         }
     }
 }
