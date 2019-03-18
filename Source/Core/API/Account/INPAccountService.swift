@@ -180,7 +180,7 @@ class INPAccountService {
                                          completion: completion)
     }
 
-    static func getRegisterFields(completion: @escaping RequestCompletion<Empty>) {
+    static func getRegisterFields(completion: @escaping RequestCompletion<InPlayerRegisterFieldsResponse>) {
         let merchantUUID = InPlayer.clientId
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getRegisterFields(merchantUUID: merchantUUID),

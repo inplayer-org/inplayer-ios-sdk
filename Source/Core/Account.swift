@@ -296,16 +296,17 @@ public extension InPlayer {
          Gets register fields
          - Parameters:
              - success: A closure to be executed once the request has finished successfully.
+             - registerFields: `InPlayerRegisterField` struct optionally containing associated values depending on the type enum.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getRegisterFields(success: @escaping () -> Void,
+        public static func getRegisterFields(success: @escaping (_ registerFields: [InPlayerRegisterField]) -> Void,
                                              failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.getRegisterFields { (_, error) in
+            INPAccountService.getRegisterFields { (response, error) in
                 if let error = error {
                     failure(error)
                 } else {
-                    success() // NEED TO UPDATE THE MODELS
+                    success(response!.collection)
                 }
             }
         }
