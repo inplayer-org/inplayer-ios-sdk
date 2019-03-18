@@ -14,7 +14,7 @@
     <a title="Structures  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">InPlayerSDK Docs</a> (83% documented)</p>
+        <p><a href="index.html">InPlayerSDK Docs</a> (66% documented)</p>
         <p class="header-right"><a href="https://github.com/inplayer-org/inplayer-ios-sdk"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -42,6 +42,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/InPlayer/Configuration.html">– Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/InPlayer/Subscription.html">– Subscription</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/InPlayer/Notification.html">– Notification</a>
@@ -74,6 +77,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Enums/NotificationType.html">NotificationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/PurchaseHistory.html">PurchaseHistory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RegisterFieldType.html">RegisterFieldType</a>
               </li>
             </ul>
           </li>
@@ -110,6 +119,15 @@
                 <a href="Structs/InPlayerCredentials.html">InPlayerCredentials</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/InPlayerCustomerAccessItem.html">InPlayerCustomerAccessItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/InPlayerCustomerPurchaseHistory.html">InPlayerCustomerPurchaseHistory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/InPlayerFieldCountry.html">InPlayerFieldCountry</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/InPlayerHttpError.html">InPlayerHttpError</a>
               </li>
               <li class="nav-group-task">
@@ -134,7 +152,16 @@
                 <a href="Structs/InPlayerNotification.html">InPlayerNotification</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/InPlayerRegisterField.html">InPlayerRegisterField</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/InPlayerSetupFee.html">InPlayerSetupFee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/InPlayerSubscription.html">InPlayerSubscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/InPlayerSubscriptionList.html">InPlayerSubscriptionList</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/InPlayerTrialPeriod.html">InPlayerTrialPeriod</a>
@@ -245,6 +272,70 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerCredentials</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB12FieldCountryV"></a>
+                    <a name="//apple_ref/swift/Struct/InPlayerFieldCountry" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB12FieldCountryV">InPlayerFieldCountry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/InPlayerFieldCountry.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerFieldCountry</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB13RegisterFieldV"></a>
+                    <a name="//apple_ref/swift/Struct/InPlayerRegisterField" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB13RegisterFieldV">InPlayerRegisterField</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>InPlayer Register Field</p>
+
+                        <a href="Structs/InPlayerRegisterField.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerRegisterField</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
                         </div>
                       </div>
@@ -702,6 +793,70 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:11InPlayerSDK0aB12SubscriptionV"></a>
+                    <a name="//apple_ref/swift/Struct/InPlayerSubscription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB12SubscriptionV">InPlayerSubscription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/InPlayerSubscription.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerSubscription</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB16SubscriptionListV"></a>
+                    <a name="//apple_ref/swift/Struct/InPlayerSubscriptionList" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB16SubscriptionListV">InPlayerSubscriptionList</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/InPlayerSubscriptionList.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerSubscriptionList</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:11InPlayerSDK0aB11ItemRevokedV"></a>
                     <a name="//apple_ref/swift/Struct/InPlayerItemRevoked" class="dashAnchor"></a>
                     <a class="token" href="#/s:11InPlayerSDK0aB11ItemRevokedV">InPlayerItemRevoked</a>
@@ -761,10 +916,74 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB18CustomerAccessItemV"></a>
+                    <a name="//apple_ref/swift/Struct/InPlayerCustomerAccessItem" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB18CustomerAccessItemV">InPlayerCustomerAccessItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/InPlayerCustomerAccessItem.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerCustomerAccessItem</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB23CustomerPurchaseHistoryV"></a>
+                    <a name="//apple_ref/swift/Struct/InPlayerCustomerPurchaseHistory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB23CustomerPurchaseHistoryV">InPlayerCustomerPurchaseHistory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/InPlayerCustomerPurchaseHistory.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerCustomerPurchaseHistory</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-02-07)</p>
+          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-03-18)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
