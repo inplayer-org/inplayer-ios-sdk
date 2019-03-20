@@ -123,13 +123,13 @@ extension INPAWSManager {
 
 /// Notification status regarding websocket connection
 public enum InPlayerNotificationStatus: String {
-    case unknown
     case connecting
     case connected
     case disconnected
     case connectionRefused
     case connectionError
     case protocolError
+    case unknown
 
     static func fromAwsStatus(status: AWSIoTMQTTStatus) -> InPlayerNotificationStatus {
         switch status {

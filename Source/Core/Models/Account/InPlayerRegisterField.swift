@@ -1,7 +1,7 @@
 import Foundation
 
 /**
- RegisterFieldType enum
+ Register Field Type enum
  ```
  case dropdown(options: [String: String]?)
  case radio(options: [String: String]?)
@@ -13,12 +13,25 @@ import Foundation
  ```
  */
 public enum RegisterFieldType {
+    /// When field type is `select` and provides additional options for a dropdown menu.
     case dropdown(options: [String: String]?)
+
+    /// When field type is `radio` and provides additional options for a radio selective button.
     case radio(options: [String: String]?)
+
+    /// When field type is `country` and provides additional options for a country selection.
     case country(options: [InPlayerFieldCountry])
+
+    /// When field type is `input`.
     case input
+
+    /// When field type is `datepicker`.
     case datepicker
+
+    /// When field type is `checkbox`.
     case checkbox
+
+    /// When field type cannot be determined.
     case unknown
 }
 
@@ -32,7 +45,7 @@ private struct RegisterFieldTypeStrings {
     static let unknown = "unknown"
 }
 
-/// InPlayer Register Field
+/// Register Field Model
 public struct InPlayerRegisterField : Codable {
 
     public let defaultValue : String?

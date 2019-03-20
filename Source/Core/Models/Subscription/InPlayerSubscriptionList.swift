@@ -1,5 +1,6 @@
 import Foundation
 
+/// Subscription List Server Response Model
 public struct InPlayerSubscriptionList: Codable {
     let collection : [InPlayerSubscription]
     let limit : Int?
@@ -15,6 +16,7 @@ public struct InPlayerSubscriptionList: Codable {
         case total = "total"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         collection = try values.decodeIfPresent([InPlayerSubscription].self, forKey: .collection) ?? []

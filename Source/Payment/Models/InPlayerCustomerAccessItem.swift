@@ -1,5 +1,6 @@
 import Foundation
 
+/// Customer Access Item Model
 public struct InPlayerCustomerAccessItem: Codable {
     public let consumerEmail : String?
     public let createdAt : Int?
@@ -45,6 +46,7 @@ public struct InPlayerCustomerAccessItem: Codable {
         case type = "type"
     }
 
+    /// Decoder Method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         consumerEmail = try values.decodeIfPresent(String.self, forKey: .consumerEmail)

@@ -1,5 +1,6 @@
 import Foundation
 
+/// Subscription Model
 public struct InPlayerSubscription: Codable {
 
     public let cancelToken: String?
@@ -32,6 +33,7 @@ public struct InPlayerSubscription: Codable {
         case unsubscribeUrl = "unsubscribe_url"
     }
 
+    /// Decoder method
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         cancelToken = try values.decodeIfPresent(String.self, forKey: .cancelToken)
