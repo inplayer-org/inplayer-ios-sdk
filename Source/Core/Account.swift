@@ -280,9 +280,9 @@ public extension InPlayer {
             - failure: A closure to be executed once the request has finished with error.
             - error: Containing information about the error that occurred.
          */
-        public static func exportUserData(password: String,
-                                          success: @escaping () -> Void,
-                                          failure: @escaping (_ error: InPlayerError) -> Void) {
+        public static func exportData(password: String,
+                                      success: @escaping () -> Void,
+                                      failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.exportData(password: password) { (_, error) in
                 if let error = error {
                     failure(error)
