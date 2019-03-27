@@ -22,7 +22,7 @@ final class INPAWSManager {
 
         guard isSubscribed == false else { return }
 
-        guard let clientUUID = InPlayer.Account.getAccount()?.uuid else {
+        guard let clientUUID = InPlayer.Account.getAccountInfo()?.uuid else {
             return onError(InPlayerUnauthorizedError())
         }
         isSubscribed = true
@@ -123,13 +123,13 @@ extension INPAWSManager {
 
 /// Notification status regarding websocket connection
 public enum InPlayerNotificationStatus: String {
-    case unknown
     case connecting
     case connected
     case disconnected
     case connectionRefused
     case connectionError
     case protocolError
+    case unknown
 
     static func fromAwsStatus(status: AWSIoTMQTTStatus) -> InPlayerNotificationStatus {
         switch status {

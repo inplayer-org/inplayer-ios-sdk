@@ -32,5 +32,38 @@ public extension InPlayer {
                 }
             })
         }
+
+        /**
+         Gets the purchase history
+         - Parameters:
+             - status: The status of the purchase - all/active/inactive.
+             - page: The current pag
+             - limit: The number of items per page
+             - type: Type
+             - customerId: Account's id
+             - success: A closure to be executed once the request has finished successfully.
+             - purchaseHistory: Purchase history model containing list of all purchased access items.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
+         */
+        public static func getPurchaseHistory(status: PurchaseHistory = .all,
+                                              page: Int,
+                                              limit: Int,
+                                              type: String? = nil,
+                                              customerId: Int? = nil,
+                                              success: @escaping (_ purchaseHistory: InPlayerCustomerPurchaseHistory) -> Void,
+                                              failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPPaymentService.getPurchaseHistory(status: status,
+                                                 page: page,
+                                                 limit: limit,
+                                                 type: type,
+                                                 customerId: customerId) { (purchaseHistory, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success(purchaseHistory!)
+                }
+            }
+        }
     }
 }

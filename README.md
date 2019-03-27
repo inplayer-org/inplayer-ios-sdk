@@ -35,9 +35,10 @@ Then, run the following command:
 
     $ pod install
 
-**Note**: InPlayerSDK is build with submodules. So if you like you can call it like this in your Podfile:
+**Note**: InPlayerSDK is build with submodules. So if you like you can add it like this in your Podfile:
 
-    pod 'InPlayerSDK/Core' (all features, default)
+    pod 'InPlayerSDK' (all features, default)
+    pod 'InPlayerSDK/Core' (includes Core features - Account, Asset, Subscription)
     pod 'InPlayerSDK/Payment' (includes Core and Payment modules)
     pod 'InPlayerSDK/Notification' (includes Core and Notification modules)
 
@@ -46,7 +47,7 @@ Then, run the following command:
 This SDK has dependencies that it relies on. The list consists of:
 
      pod 'Alamofire', '5.0.0.beta.1'
-     pod 'AWSIoT', '2.8.4' (only Notifications module)
+     pod 'AWSIoT', '2.9.3' (only Notifications module)
 
 ## Usage
 
@@ -66,8 +67,8 @@ Initialize InPlayer:
 
 ### Services
 
-InPlayerSDK consists out of four services:
-`Account`, `Asset`, `Payment` and `Notification`.
+InPlayerSDK consists out of five services:
+`Account`, `Asset`, `Payment`, `Subscription` and `Notification`.
 
 ##### Account
 Account related methods.
@@ -93,9 +94,33 @@ Get asset details:
        // Some error occured.
     }
 
+##### Payment
+Payment related methods:
+
+###### Example
+Validate purchase:
+
+    InPlayer.Payment.validate(receiptString: <RECEIPT_STRING>, productIdentifier: <PRODUCT_IDENTIFIER>, success: {
+        // Successfully validated receipt
+    }, failure: { (error) in
+        // Some error occured
+    })
+
+##### Subscription
+Subscription related methods:
+
+###### Example
+Get account subscriptions: 
+
+    InPlayer.Subscription.getSubscriptions(page: 1, limit: 10, success: { (list) in
+        // Successfully obtained subscription list
+    }, failure: { (error) in
+        // Some error occured
+    })
+
 ##### Notification
 
-Notification service has two methods:
+Notification service has three methods:
 
    public static func subscribe(onStatusChanged: @escaping ( _status: InPlayerNotificationStatus) -> Void,          onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void, onError: @escaping (_ error: InPlayerError) -> Void)
 

@@ -271,5 +271,44 @@ public extension InPlayer {
                 }
             })
         }
+
+        /**
+         Exports account data such as logins, payments, subscriptions, access to assets etc. After invoking the request the account will receive the data in a json format via e-mail.
+         - Parameters:
+            - password: Password of the current logged user
+            - success: A closure to be executed once the request has finished successfully.
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
+         */
+        public static func exportData(password: String,
+                                      success: @escaping () -> Void,
+                                      failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.exportData(password: password) { (_, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            }
+        }
+
+        /**
+         Gets register fields
+         - Parameters:
+             - success: A closure to be executed once the request has finished successfully.
+             - registerFields: `InPlayerRegisterField` struct optionally containing associated values depending on the type enum.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
+         */
+        public static func getRegisterFields(success: @escaping (_ registerFields: [InPlayerRegisterField]) -> Void,
+                                             failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.getRegisterFields { (response, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success(response!.collection)
+                }
+            }
+        }
     }
 }

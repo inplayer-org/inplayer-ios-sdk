@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		753F5D595D59548CC1AF1909 /* Pods_InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DF19FEC807CF03559464F9 /* Pods_InPlayerSDK.framework */; };
+		A73211D0223AD06E00452C15 /* InPlayerCustomerAccessItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */; };
+		A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */; };
+		A73211DA223C0D7E00452C15 /* InPlayerRegisterField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211D9223C0D7E00452C15 /* InPlayerRegisterField.swift */; };
+		A73211DC223C11B500452C15 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211DB223C11B500452C15 /* Subscription.swift */; };
+		A73211E1223C138E00452C15 /* INPSubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211E0223C138E00452C15 /* INPSubscriptionService.swift */; };
+		A73211E3223C182200452C15 /* InPlayerSubscriptionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211E2223C182200452C15 /* InPlayerSubscriptionList.swift */; };
+		A73211E5223C1A8800452C15 /* InPlayerSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211E4223C1A8800452C15 /* InPlayerSubscription.swift */; };
+		A73211E7224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211E6224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift */; };
+		A73211E922400B5700452C15 /* InPlayerFieldCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211E822400B5700452C15 /* InPlayerFieldCountry.swift */; };
+		A73211EB2240114C00452C15 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A73211EA2240114C00452C15 /* countries.json */; };
 		A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */; };
 		A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */; };
 		A7EA961921F5018600CDA238 /* InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */; };
@@ -79,6 +89,16 @@
 		863B37A5E53B1B204C406696 /* Pods-InPlayerSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKTests/Pods-InPlayerSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		89DF19FEC807CF03559464F9 /* Pods_InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42AFBEAB4A1A9893C497B3B /* Pods-InPlayerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDK/Pods-InPlayerSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerCustomerAccessItem.swift; sourceTree = "<group>"; };
+		A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerPurchaseHistory.swift; sourceTree = "<group>"; };
+		A73211D9223C0D7E00452C15 /* InPlayerRegisterField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerRegisterField.swift; sourceTree = "<group>"; };
+		A73211DB223C11B500452C15 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		A73211E0223C138E00452C15 /* INPSubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPSubscriptionService.swift; sourceTree = "<group>"; };
+		A73211E2223C182200452C15 /* InPlayerSubscriptionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSubscriptionList.swift; sourceTree = "<group>"; };
+		A73211E4223C1A8800452C15 /* InPlayerSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSubscription.swift; sourceTree = "<group>"; };
+		A73211E6224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerRegisterFieldsResponse.swift; sourceTree = "<group>"; };
+		A73211E822400B5700452C15 /* InPlayerFieldCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerFieldCountry.swift; sourceTree = "<group>"; };
+		A73211EA2240114C00452C15 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InPlayer+Configuration.swift"; sourceTree = "<group>"; };
 		A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerEnvironmentType.swift; sourceTree = "<group>"; };
 		A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +201,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A73211CE223AC9AD00452C15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */,
+				A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A73211DD223C124200452C15 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				A73211E2223C182200452C15 /* InPlayerSubscriptionList.swift */,
+				A73211E4223C1A8800452C15 /* InPlayerSubscription.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		A73211DF223C125600452C15 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				A73211E0223C138E00452C15 /* INPSubscriptionService.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
 		A7EA960521F5018600CDA238 = {
 			isa = PBXGroup;
 			children = (
@@ -217,11 +263,13 @@
 				A7EA963221F501F000CDA238 /* InPlayer.swift */,
 				A7EA965321F501F000CDA238 /* Account.swift */,
 				A7EA963621F501F000CDA238 /* Asset.swift */,
+				A73211DB223C11B500452C15 /* Subscription.swift */,
 				A7EA96D121F52B6900CDA238 /* InPlayerConstants.swift */,
 				A7EA962B21F501F000CDA238 /* Configuration */,
 				A7EA963921F501F000CDA238 /* Models */,
 				A7EA963321F501F000CDA238 /* API */,
 				A7EA962E21F501F000CDA238 /* Extensions */,
+				A73211EA2240114C00452C15 /* countries.json */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -255,6 +303,7 @@
 				A7EA964A21F501F000CDA238 /* InPlayerSessionAPIManager.swift */,
 				A7EA965121F501F000CDA238 /* Account */,
 				A7EA963421F501F000CDA238 /* Asset */,
+				A73211DF223C125600452C15 /* Subscription */,
 				A7EA965421F501F000CDA238 /* NetworkConstants.swift */,
 			);
 			path = API;
@@ -274,6 +323,7 @@
 				A7EA964B21F501F000CDA238 /* Errors */,
 				A7EA963A21F501F000CDA238 /* Asset */,
 				A7EA964521F501F000CDA238 /* Account */,
+				A73211DD223C124200452C15 /* Subscription */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +350,9 @@
 				A7EA964621F501F000CDA238 /* InPlayerAccount.swift */,
 				A7EA964721F501F000CDA238 /* InPlayerCredentials.swift */,
 				A7EA964821F501F000CDA238 /* InPlayerAuthorization.swift */,
+				A73211E6224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift */,
+				A73211D9223C0D7E00452C15 /* InPlayerRegisterField.swift */,
+				A73211E822400B5700452C15 /* InPlayerFieldCountry.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -360,6 +413,7 @@
 			children = (
 				A7EA96E221F52C9B00CDA238 /* Payment.swift */,
 				A7EA966221F501F000CDA238 /* API */,
+				A73211CE223AC9AD00452C15 /* Models */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -432,7 +486,6 @@
 				A7EA961421F5018600CDA238 /* Sources */,
 				A7EA961521F5018600CDA238 /* Frameworks */,
 				A7EA961621F5018600CDA238 /* Resources */,
-				14A810E310E51CC500354B4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -485,6 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73211EB2240114C00452C15 /* countries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,28 +552,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		14A810E310E51CC500354B4C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InPlayerSDKTests/Pods-InPlayerSDKTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSIoT/AWSIoT.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSIoT.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InPlayerSDKTests/Pods-InPlayerSDKTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8394ECE9E19E0EC962E775E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -572,6 +604,7 @@
 				A7EA967421F501F000CDA238 /* InPlayerAccessFee.swift in Sources */,
 				A7EA967021F501F000CDA238 /* INPAPIConfiguration.swift in Sources */,
 				A7EA967521F501F000CDA238 /* InPlayerTrialPeriod.swift in Sources */,
+				A73211DA223C0D7E00452C15 /* InPlayerRegisterField.swift in Sources */,
 				A7EA966B21F501F000CDA238 /* DataDecodeExt.swift in Sources */,
 				A7EA966C21F501F000CDA238 /* DateExt.swift in Sources */,
 				A7EA968D21F501F000CDA238 /* InPlayerAwsKey.swift in Sources */,
@@ -585,13 +618,20 @@
 				A7EA967C21F501F000CDA238 /* InPlayerAccount.swift in Sources */,
 				A7EA96D621F52BD500CDA238 /* INPAccountService.swift in Sources */,
 				A7EA96D221F52B6900CDA238 /* InPlayerConstants.swift in Sources */,
+				A73211E5223C1A8800452C15 /* InPlayerSubscription.swift in Sources */,
 				A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */,
+				A73211DC223C11B500452C15 /* Subscription.swift in Sources */,
+				A73211E7224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift in Sources */,
 				A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */,
+				A73211E3223C182200452C15 /* InPlayerSubscriptionList.swift in Sources */,
 				A7EA968C21F501F000CDA238 /* InPlayerNotification.swift in Sources */,
+				A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */,
 				A7EA967321F501F000CDA238 /* InPlayerAccessControlType.swift in Sources */,
 				A7EA967121F501F000CDA238 /* NetworkDataSource.swift in Sources */,
+				A73211D0223AD06E00452C15 /* InPlayerCustomerAccessItem.swift in Sources */,
 				A7EA968421F501F000CDA238 /* InPlayerInvalidResponseError.swift in Sources */,
 				A7EA968F21F501F000CDA238 /* INPNotificationService.swift in Sources */,
+				A73211E922400B5700452C15 /* InPlayerFieldCountry.swift in Sources */,
 				A7EA969021F501F000CDA238 /* InPlayerNotificationAPIManager.swift in Sources */,
 				A7EA969321F501F000CDA238 /* PaymentNetworkConstants.swift in Sources */,
 				A7EA967A21F501F000CDA238 /* InPlayerItemMetadata.swift in Sources */,
@@ -609,6 +649,7 @@
 				A7EA967721F501F000CDA238 /* InPlayerAccessType.swift in Sources */,
 				A7EA967F21F501F000CDA238 /* INPAuthHandler.swift in Sources */,
 				A7EA967821F501F000CDA238 /* InPlayerItemType.swift in Sources */,
+				A73211E1223C138E00452C15 /* INPSubscriptionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
