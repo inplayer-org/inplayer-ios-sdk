@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "InPlayerSDK"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "InPlayer's iOS API client wrapper."
 
   # This description is used to generate tags and improve search results.
@@ -81,7 +81,6 @@ Pod::Spec.new do |s|
 
   s.source_files = "Source/**/*.swift"
 
-
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
@@ -126,7 +125,7 @@ Pod::Spec.new do |s|
   s.subspec 'Notification' do |notification|
       notification.source_files = "Source/{Core,Notification}/**/*.swift"
       notification.dependency 'Alamofire', '5.0.0.beta.1'
-      notification.dependency 'AWSIoT', '2.8.4'
+      notification.dependency 'AWSIoT', '2.9.3'
   end
 
   s.subspec 'Payment' do |payment|

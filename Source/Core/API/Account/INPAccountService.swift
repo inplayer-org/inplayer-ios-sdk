@@ -172,6 +172,20 @@ class INPAccountService {
                                             updateAuthorization(authorization: authorization, error: error, completion: completion)
         })
     }
+
+    static func exportData(password: String, completion: @escaping RequestCompletion<Empty>) {
+        let params = [AccountParameters.password: password]
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.exportData(parameters: params),
+                                         completion: completion)
+    }
+
+    static func getRegisterFields(completion: @escaping RequestCompletion<InPlayerRegisterFieldsResponse>) {
+        let merchantUUID = InPlayer.clientId
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.getRegisterFields(merchantUUID: merchantUUID),
+                                         completion: completion)
+    }
 }
 
 private extension INPAccountService {
@@ -257,10 +271,18 @@ private enum AccountAPIRouter: INPAPIConfiguration {
     case authenticate(parameters: [String: Any])
     case refreshToken(parameters: [String: Any])
     case authenticateClientCredentials(parameters: [String: Any])
+    case exportData(parameters: [String: Any])
+    case getRegisterFields(merchantUUID: String)
 
     var method: HTTPMethod {
         switch self {
-        case .createAccount, .changePassword, .forgotPassword, .authenticate, .refreshToken, .authenticateClientCredentials:
+        case .createAccount,
+             .changePassword,
+             .forgotPassword,
+             .authenticate,
+             .refreshToken,
+             .authenticateClientCredentials,
+             .exportData:
             return .post
         case .updateAccount, .setNewPassword:
             return .put
@@ -291,7 +313,12 @@ private enum AccountAPIRouter: INPAPIConfiguration {
             return NetworkConstants.Endpoints.Account.forgotPassword
         case .authenticate, .refreshToken, .authenticateClientCredentials:
             return NetworkConstants.Endpoints.Account.authenticate
+        case .exportData:
+            return NetworkConstants.Endpoints.Account.exportData
+        case .getRegisterFields(let merchantUUID):
+            return String(format: NetworkConstants.Endpoints.Account.registerFields, merchantUUID)
         }
+
     }
 
     var parameters: Parameters? {
@@ -313,6 +340,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
         case .refreshToken(let parameters):
             return parameters
         case .authenticateClientCredentials(let parameters):
+            return parameters
+        case .exportData(let parameters):
             return parameters
         default:
             return nil

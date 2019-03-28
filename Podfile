@@ -4,7 +4,7 @@ target 'InPlayerSDK' do
   use_frameworks!
 
   pod 'Alamofire', '5.0.0.beta.1'
-  pod 'AWSIoT', '2.8.4'
+  pod 'AWSIoT', '2.9.3'
 
 target 'InPlayerSDKTests' do
     inherit! :search_paths
