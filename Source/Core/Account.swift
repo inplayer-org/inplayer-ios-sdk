@@ -5,7 +5,7 @@ public extension InPlayer {
     /**
      Class providing Account related actions.
      */
-    public final class Account {
+    final class Account {
         private init() {}
 
         /**
@@ -307,6 +307,26 @@ public extension InPlayer {
                     failure(error)
                 } else {
                     success(response!.collection)
+                }
+            }
+        }
+        
+        /**
+         Get List of Social URLs
+         - Parameters:
+            - success: A closure to be executed once the request has finished successfully.
+            - socialURLs: Array of objects, each containing different social service and its url.
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
+         */
+        
+        public static func getSocialUrls(success: @escaping (_ socialURLs: [[String: String]]) -> Void,
+                                         failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.getSocialURLs { (response, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success(response!.socialUrls)
                 }
             }
         }

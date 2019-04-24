@@ -28,6 +28,11 @@ extension InPlayer {
     static var environment: InPlayerEnvironmentType = .production
     
     /**
+     Redirect URI used for social integration
+     */
+    static var redirectURI: String = ""
+    
+    /**
  */
     static func getBaseUrlString() -> String {
         switch environment {

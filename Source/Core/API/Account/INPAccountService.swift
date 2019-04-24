@@ -34,7 +34,7 @@ class INPAccountService {
 
     static func getAccount(completion: @escaping RequestCompletion<InPlayerAccount>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.getAccountInfo(),
+                                         route: AccountAPIRouter.getAccountInfo,
                                          completion: { (account: InPlayerAccount?, error: InPlayerError?) in
                                             saveAccount(account: account, error: error, completion: completion)
         })
@@ -60,7 +60,7 @@ class INPAccountService {
 
     static func signOut(completion: @escaping RequestCompletion<Empty>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.logout(),
+                                         route: AccountAPIRouter.logout,
                                          completion: { (empty: Empty?, error: InPlayerError?) in
                                             if error != nil {
                                                 completion(empty, error)
@@ -186,6 +186,22 @@ class INPAccountService {
                                          route: AccountAPIRouter.getRegisterFields(merchantUUID: merchantUUID),
                                          completion: completion)
     }
+    
+    static func getSocialURLs(completion: @escaping RequestCompletion<InPlayerSocialUrlResponse>) {
+        let base64 = [ AccountParameters.clientId: InPlayer.clientId,
+                       AccountParameters.redirect: InPlayer.redirectURI
+                     ].toString()?.toBase64()
+        
+        var params: [String: String] = [:]
+        if let base64 = base64 {
+            params[AccountParameters.state] = base64
+        }
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.getSocialURLs(parameters: params),
+                                         completion: completion)
+        
+        
+    }
 }
 
 private extension INPAccountService {
@@ -250,6 +266,8 @@ private struct AccountParameters {
     static let clientId             = "client_id"
     static let refreshToken         = "refresh_token"
     static let clientSecret         = "client_secret"
+    static let state                = "state"
+    static let redirect             = "redirect"
 }
 
 private enum AuthenticationTypes: String {
@@ -261,8 +279,8 @@ private enum AuthenticationTypes: String {
 /// Enum of available account api routes
 private enum AccountAPIRouter: INPAPIConfiguration {
     case createAccount(parameters: [String: Any])
-    case getAccountInfo()
-    case logout()
+    case getAccountInfo
+    case logout
     case updateAccount(parameters: [String: Any])
     case changePassword(parameters: [String: Any])
     case eraseAccount(parameters: [String: Any])
@@ -273,6 +291,7 @@ private enum AccountAPIRouter: INPAPIConfiguration {
     case authenticateClientCredentials(parameters: [String: Any])
     case exportData(parameters: [String: Any])
     case getRegisterFields(merchantUUID: String)
+    case getSocialURLs(parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
@@ -317,6 +336,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
             return NetworkConstants.Endpoints.Account.exportData
         case .getRegisterFields(let merchantUUID):
             return String(format: NetworkConstants.Endpoints.Account.registerFields, merchantUUID)
+        case .getSocialURLs:
+            return NetworkConstants.Endpoints.Account.getSocialUrls
         }
 
     }
@@ -342,6 +363,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
         case .authenticateClientCredentials(let parameters):
             return parameters
         case .exportData(let parameters):
+            return parameters
+        case .getSocialURLs(let parameters):
             return parameters
         default:
             return nil

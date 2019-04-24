@@ -6,14 +6,14 @@ class INPNotificationService {
 
     static func takeAwsCredentials(completion: @escaping RequestCompletion<InPlayerAwsKey>) {
         NetworkDataSource.performRequest(session: InPlayerNotificationAPIManager.default.session,
-                                         route: NotificationAPIRouter.takeAwsCredentials(),
+                                         route: NotificationAPIRouter.takeAwsCredentials,
                                          completion: completion)
     }
 }
 
 private enum NotificationAPIRouter: INPAPIConfiguration {
 
-    case takeAwsCredentials()
+    case takeAwsCredentials
 
     var baseURL: String {
         switch self {
