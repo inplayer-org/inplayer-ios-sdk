@@ -26,14 +26,10 @@ extension InPlayer {
      Environment from the configuration. Defaults to production.
      */
     static var environment: InPlayerEnvironmentType = .production
-    
+
     /**
-     Redirect URI used for social integration
+     Returns base url based on environment
      */
-    static var redirectURI: String = ""
-    
-    /**
- */
     static func getBaseUrlString() -> String {
         switch environment {
         case .debug:
@@ -42,6 +38,20 @@ extension InPlayer {
             return NetworkConstants.BaseUrls.staging
         case .production:
             return NetworkConstants.BaseUrls.production
+        }
+    }
+
+    /**
+     Returns redirect uri based on environment
+     */
+    static func getRedirectURI() -> String {
+        switch environment {
+        case .debug:
+            return InPlayerConstants.SocialRedirectUri.staging
+        case .staging:
+            return InPlayerConstants.SocialRedirectUri.staging
+        case .production:
+            return InPlayerConstants.SocialRedirectUri.production
         }
     }
 }

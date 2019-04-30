@@ -16,14 +16,6 @@ public final class InPlayer {
         clientId = configuration.clientId
         referrer = configuration.referrer
         environment = configuration.environment
-        switch environment {
-        case .debug:
-            redirectURI = InPlayerConstants.SocialRedirectUri.staging
-        case .staging:
-            redirectURI = InPlayerConstants.SocialRedirectUri.staging
-        case .production:
-            redirectURI = InPlayerConstants.SocialRedirectUri.production
-        }
         isConfigured = true
     }
 }

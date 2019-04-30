@@ -189,7 +189,7 @@ class INPAccountService {
     
     static func getSocialURLs(completion: @escaping RequestCompletion<InPlayerSocialUrlResponse>) {
         let base64 = [ AccountParameters.clientId: InPlayer.clientId,
-                       AccountParameters.redirect: InPlayer.redirectURI
+                       AccountParameters.redirect: InPlayer.getRedirectURI()
                      ].toString()?.toBase64()
         
         var params: [String: String] = [:]
