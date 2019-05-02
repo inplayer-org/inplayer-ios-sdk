@@ -127,6 +127,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrlResponse.swift",
+      "line": 6,
+      "symbol": "InPlayerSocialUrlResponse.socialUrls",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
       "line": 4,
       "symbol": "InPlayerAccessFee",

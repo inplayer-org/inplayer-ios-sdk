@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>INPInvalidJSONError Structure Reference</title>
+    <title>InPlayerSocialUrlResponse Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/INPInvalidJSONError" class="dashAnchor"></a>
-    <a title="INPInvalidJSONError Structure Reference"></a>
+    <a name="//apple_ref/swift/Struct/InPlayerSocialUrlResponse" class="dashAnchor"></a>
+    <a title="InPlayerSocialUrlResponse Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">InPlayerSDK Docs</a> (73% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">InPlayerSDK Reference</a>
         <img id="carat" src="../img/carat.png" />
-        INPInvalidJSONError Structure Reference
+        InPlayerSocialUrlResponse Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -185,14 +185,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>INPInvalidJSONError</h1>
+            <h1>InPlayerSocialUrlResponse</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">INPInvalidJSONError</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/InPlayerError.html">InPlayerError</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerSocialUrlResponse</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
                 </div>
               </div>
-            <p>Invalid JSON Error</p>
+            <p>Social URLs Server response model</p>
 
           </section>
           <section class="section task-group-section">
@@ -201,9 +201,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB5ErrorP4codeSivp"></a>
-                    <a name="//apple_ref/swift/Property/code" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB5ErrorP4codeSivp">code</a>
+                    <a name="/s:11InPlayerSDK0aB17SocialUrlResponseV10socialUrlsSaySDyS2SGGvp"></a>
+                    <a name="//apple_ref/swift/Property/socialUrls" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB17SocialUrlResponseV10socialUrlsSaySDyS2SGGvp">socialUrls</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -211,13 +211,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Undocumented</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">socialUrls</span><span class="p">:</span> <span class="p">[[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]]</span></code></pre>
 
                         </div>
                       </div>
@@ -227,9 +228,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB5ErrorP7messageSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/message" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB5ErrorP7messageSSSgvp">message</a>
+                    <a name="/s:11InPlayerSDK0aB17SocialUrlResponseV4fromACs7Decoder_p_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB17SocialUrlResponseV4fromACs7Decoder_p_tKcfc">init(from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -237,91 +238,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                        <p>Decoder method</p>
 
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11InPlayerSDK0aB5ErrorP9errorListSaySSGSgvp"></a>
-                    <a name="//apple_ref/swift/Property/errorList" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB5ErrorP9errorListSaySSGSgvp">errorList</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorList</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11InPlayerSDK0aB5ErrorP08originalD0s0D0_pvp"></a>
-                    <a name="//apple_ref/swift/Property/originalError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB5ErrorP08originalD0s0D0_pvp">originalError</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">originalError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11InPlayerSDK0aB5ErrorP4code7message9errorList0G0xSi_SSSgSaySSGSgs0D0_ptcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(code:message:errorList:error:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB5ErrorP4code7message9errorList0G0xSi_SSSgSaySSGSgs0D0_ptcfc">init(code:message:errorList:error:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorList</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
