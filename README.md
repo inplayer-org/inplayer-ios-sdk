@@ -122,13 +122,15 @@ Get account subscriptions:
 
 Notification service has three methods:
 
-   public static func subscribe(onStatusChanged: @escaping ( _status: InPlayerNotificationStatus) -> Void,          onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void, onError: @escaping (_ error: InPlayerError) -> Void)
+    public static func subscribe(onStatusChanged: @escaping ( _status: InPlayerNotificationStatus) -> Void,       
+                                 onMessageReceived: @escaping (_ notification: InPlayerNotification) -> Void, 
+                                 onError: @escaping (_ error: InPlayerError) -> Void)
 
    and
 
-   public static func unsubscribe()
+    public static func unsubscribe()
 
-   public static func isSubscribed() -> Bool
+    public static func isSubscribed() -> Bool
 
 ###### Example:
 Subscribe method:
