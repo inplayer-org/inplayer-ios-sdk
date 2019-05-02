@@ -21,6 +21,7 @@
 		A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */; };
 		A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */; };
 		A75DE418227097B20057B2A7 /* InPlayerSocialUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */; };
+		A7A690D0227B8C600039AB59 /* InPlayerMalformedUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */; };
 		A7C4C8912270A92200EF6CF4 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4C8902270A92200EF6CF4 /* StringExt.swift */; };
 		A7C4C8932270A97400EF6CF4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */; };
 		A7EA961921F5018600CDA238 /* InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */; };
@@ -105,6 +106,7 @@
 		A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InPlayer+Configuration.swift"; sourceTree = "<group>"; };
 		A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerEnvironmentType.swift; sourceTree = "<group>"; };
 		A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrlResponse.swift; sourceTree = "<group>"; };
+		A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerMalformedUrlError.swift; sourceTree = "<group>"; };
 		A7C4C8902270A92200EF6CF4 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExt.swift; sourceTree = "<group>"; };
 		A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,6 +376,7 @@
 				A7EA964D21F501F000CDA238 /* InPlayerUnknownError.swift */,
 				A7EA964F21F501F000CDA238 /* InPlayerInvalidResponseError.swift */,
 				A7EA965021F501F000CDA238 /* InPlayerUnauthorizedError.swift */,
+				A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				A7C4C8932270A97400EF6CF4 /* DictionaryExt.swift in Sources */,
 				A7EA968E21F501F000CDA238 /* InPlayerItemRevoked.swift in Sources */,
 				A7EA967B21F501F000CDA238 /* InPlayerItem.swift in Sources */,
+				A7A690D0227B8C600039AB59 /* InPlayerMalformedUrlError.swift in Sources */,
 				A7EA96DF21F52C0000CDA238 /* INPCredentialProvider.swift in Sources */,
 				A7EA966821F501F000CDA238 /* Configuration.swift in Sources */,
 				A7EA966D21F501F000CDA238 /* InPlayer.swift in Sources */,

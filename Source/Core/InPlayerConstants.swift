@@ -7,9 +7,4 @@ struct InPlayerConstants {
         static let credentials = "InPlayer_credentials"
         static let account = "InPlayer_account"
     }
-    
-    struct SocialRedirectUri {
-        static let staging = "https://native.accounts.staging-v2.inplayer.com/sso/social/callback"
-        static let production = "https://native.accounts.inplayer.com/sso/social/callback"
-    }
 }

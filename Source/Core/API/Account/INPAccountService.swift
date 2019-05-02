@@ -28,7 +28,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.createAccount(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
         })
     }
 
@@ -53,7 +55,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticate(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
 
         })
     }
@@ -62,13 +66,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.logout,
                                          completion: { (empty: Empty?, error: InPlayerError?) in
-                                            if error != nil {
-                                                completion(empty, error)
-                                            } else {
-                                                UserDefaults.credentials = nil
-                                                UserDefaults.account = nil
-                                                completion(empty, error)
-                                            }
+                                            cleanUpCredentials(empty: empty,
+                                                               error: error,
+                                                               completion: completion)
         })
     }
 
@@ -85,7 +85,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.updateAccount(parameters: params),
                                          completion: { (account: InPlayerAccount?, error: InPlayerError?) in
-                                            saveAccount(account: account, error: error, completion: completion)
+                                            saveAccount(account: account,
+                                                        error: error,
+                                                        completion: completion)
 
         })
     }
@@ -110,13 +112,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.eraseAccount(parameters: params),
                                          completion: { (empty: Empty?, error: InPlayerError?) in
-                                            if error != nil {
-                                                completion(empty, error)
-                                            } else {
-                                                UserDefaults.credentials = nil
-                                                UserDefaults.account = nil
-                                                completion(empty, error)
-                                            }
+                                            cleanUpCredentials(empty: empty,
+                                                               error: error,
+                                                               completion: completion)
         })
     }
 
@@ -155,7 +153,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.refreshToken(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
         })
     }
 
@@ -169,7 +169,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
         })
     }
 
@@ -189,9 +191,9 @@ class INPAccountService {
     
     static func getSocialURLs(completion: @escaping RequestCompletion<InPlayerSocialUrlResponse>) {
         let base64 = [ AccountParameters.clientId: InPlayer.clientId,
-                       AccountParameters.redirect: InPlayer.getRedirectURI()
+                       AccountParameters.redirect: InPlayer.redirectUri
                      ].toString()?.toBase64()
-        
+
         var params: [String: String] = [:]
         if let base64 = base64 {
             params[AccountParameters.state] = base64
@@ -199,8 +201,36 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getSocialURLs(parameters: params),
                                          completion: completion)
-        
-        
+    }
+
+    static func validateSocialLogin(url: URL, completion: @escaping RequestCompletion<InPlayerAccount>) {
+        if url.absoluteString.starts(with: InPlayer.redirectUri),
+            let startRange = url.absoluteString.range(of: InPlayer.redirectUri)?.upperBound {
+            let authorizationValueString = String(url.absoluteString[startRange...])
+            let values = authorizationValueString.components(separatedBy: "&")
+            if values.count < 3 {
+                completion(nil,InPlayerMalformedUrlError())
+            } else {
+                let token = values.filter { return $0.starts(with: "#token") }.first
+                let expires = values.filter { return $0.starts(with: "expires") }.first
+                let refreshToken = values.filter { return $0.starts(with: "refresh_token") }.first
+
+                if let token = token,
+                    let expiresValue = expires,
+                    let refreshToken = refreshToken,
+                    let tokenRange = token.range(of: "=")?.upperBound,
+                    let expiresRange = expiresValue.range(of: "=")?.upperBound,
+                    let refreshTokenRange = refreshToken.range(of: "=")?.upperBound,
+                    let expires = Double(expiresValue[expiresRange...]) {
+                    UserDefaults.credentials = InPlayerCredentials(accessToken: String(token[tokenRange...]),
+                                                                   refreshToken: String(refreshToken[refreshTokenRange...]),
+                                                                   expires: expires)
+                    getAccount(completion: completion)
+                } else {
+                    completion(nil,InPlayerMalformedUrlError())
+                }
+            }
+        }
     }
 }
 
@@ -424,7 +454,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
              .setNewPassword,
              .forgotPassword,
              .authenticate,
-             .authenticateClientCredentials:
+             .authenticateClientCredentials,
+             .getSocialURLs:
             return false
         default:
             return true

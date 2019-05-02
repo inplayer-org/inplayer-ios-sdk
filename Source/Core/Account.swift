@@ -133,12 +133,12 @@ public extension InPlayer {
         /**
          Updates account information.
          - Parameters:
-             - fullName: The full name of the account.
+            - fullName: The full name of the account.
             - metadata: Additional information about the account that can be attached to the account object
-             - success: A closure to be executed once the request has finished successfully.
-             - account: Contains account info.
-             - failure: A closure to be executed once the request has finished with error.
-             - error: Containing information about the error that occurred.
+            - success: A closure to be executed once the request has finished successfully.
+            - account: Contains account info.
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
          */
         public static func updateAccount(fullName: String,
                                          metadata: [String : Any]? = nil,
@@ -320,13 +320,35 @@ public extension InPlayer {
             - error: Containing information about the error that occurred.
          */
         
-        public static func getSocialUrls(success: @escaping (_ socialURLs: [[String: String]]) -> Void,
+        public static func getSocialUrls(redirectUri: String,
+                                         success: @escaping (_ socialURLs: [[String: String]]) -> Void,
                                          failure: @escaping (_ error: InPlayerError) -> Void) {
+            InPlayer.redirectUri = redirectUri
             INPAccountService.getSocialURLs { (response, error) in
                 if let error = error {
                     failure(error)
                 } else {
                     success(response!.socialUrls)
+                }
+            }
+        }
+
+        /**
+         Validates social login redirect url
+         - Parameters:
+            - success: A closure to be executed once the request has finished successfully.
+            - account: Contains account info
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
+         */
+        public static func validateSocialLogin(url: URL,
+                                               success: @escaping (_ account: InPlayerAccount) -> Void,
+                                               failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.validateSocialLogin(url: url) { (account, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success(account!)
                 }
             }
         }
