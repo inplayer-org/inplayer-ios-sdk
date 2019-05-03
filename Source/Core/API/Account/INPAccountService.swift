@@ -194,7 +194,7 @@ class INPAccountService {
                        AccountParameters.redirect: InPlayer.redirectUri
                      ].toString()?.toBase64()
 
-        var params: [String: String] = [:]
+        var params: [String: Any] = [:]
         if let base64 = base64 {
             params[AccountParameters.state] = base64
         }

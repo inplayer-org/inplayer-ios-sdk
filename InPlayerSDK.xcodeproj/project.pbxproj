@@ -22,6 +22,8 @@
 		A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */; };
 		A75DE418227097B20057B2A7 /* InPlayerSocialUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */; };
 		A7A690D0227B8C600039AB59 /* InPlayerMalformedUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */; };
+		A7A690D4227C9CB20039AB59 /* InPlayerSocialUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A690D3227C9CB20039AB59 /* InPlayerSocialUrl.swift */; };
+		A7A690D6227CB0C20039AB59 /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */; };
 		A7C4C8912270A92200EF6CF4 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4C8902270A92200EF6CF4 /* StringExt.swift */; };
 		A7C4C8932270A97400EF6CF4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */; };
 		A7EA961921F5018600CDA238 /* InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */; };
@@ -107,6 +109,8 @@
 		A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerEnvironmentType.swift; sourceTree = "<group>"; };
 		A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrlResponse.swift; sourceTree = "<group>"; };
 		A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerMalformedUrlError.swift; sourceTree = "<group>"; };
+		A7A690D3227C9CB20039AB59 /* InPlayerSocialUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrl.swift; sourceTree = "<group>"; };
+		A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
 		A7C4C8902270A92200EF6CF4 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExt.swift; sourceTree = "<group>"; };
 		A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +304,7 @@
 				A7EA963121F501F000CDA238 /* DateExt.swift */,
 				A7C4C8902270A92200EF6CF4 /* StringExt.swift */,
 				A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */,
+				A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				A73211D9223C0D7E00452C15 /* InPlayerRegisterField.swift */,
 				A73211E822400B5700452C15 /* InPlayerFieldCountry.swift */,
 				A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */,
+				A7A690D3227C9CB20039AB59 /* InPlayerSocialUrl.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				A7EA967621F501F000CDA238 /* InPlayerSetupFee.swift in Sources */,
 				A7EA968B21F501F000CDA238 /* NotificationNetworkConstants.swift in Sources */,
 				A7EA968021F501F000CDA238 /* InPlayerSessionAPIManager.swift in Sources */,
+				A7A690D6227CB0C20039AB59 /* NotificationNameExt.swift in Sources */,
 				A7EA966A21F501F000CDA238 /* UserDefaultsExt.swift in Sources */,
 				A7EA967421F501F000CDA238 /* InPlayerAccessFee.swift in Sources */,
 				A7EA967021F501F000CDA238 /* INPAPIConfiguration.swift in Sources */,
@@ -640,6 +647,7 @@
 				A73211DC223C11B500452C15 /* Subscription.swift in Sources */,
 				A73211E7224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift in Sources */,
 				A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */,
+				A7A690D4227C9CB20039AB59 /* InPlayerSocialUrl.swift in Sources */,
 				A73211E3223C182200452C15 /* InPlayerSubscriptionList.swift in Sources */,
 				A7EA968C21F501F000CDA238 /* InPlayerNotification.swift in Sources */,
 				A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */,

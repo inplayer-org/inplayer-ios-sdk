@@ -321,14 +321,17 @@ public extension InPlayer {
          */
         
         public static func getSocialUrls(redirectUri: String,
-                                         success: @escaping (_ socialURLs: [[String: String]]) -> Void,
+                                         success: @escaping (_ socialURLs: [InPlayerSocialUrl]) -> Void,
                                          failure: @escaping (_ error: InPlayerError) -> Void) {
             InPlayer.redirectUri = redirectUri
             INPAccountService.getSocialURLs { (response, error) in
                 if let error = error {
                     failure(error)
                 } else {
-                    success(response!.socialUrls)
+                    let socialURLs = response?.socialUrls.map({ (dic:[String : String]) -> InPlayerSocialUrl in
+                        return InPlayerSocialUrl.initFromDictionary(dictionary: dic)
+                    })
+                    success(socialURLs ?? [])
                 }
             }
         }
@@ -349,6 +352,7 @@ public extension InPlayer {
                     failure(error)
                 } else {
                     success(account!)
+                    NotificationCenter.default.post(name: .didLoggedIn, object: nil)
                 }
             }
         }
