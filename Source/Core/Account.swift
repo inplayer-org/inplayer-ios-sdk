@@ -345,13 +345,13 @@ public extension InPlayer {
             - error: Containing information about the error that occurred.
          */
         public static func validateSocialLogin(url: URL,
-                                               success: @escaping (_ account: InPlayerAccount) -> Void,
-                                               failure: @escaping (_ error: InPlayerError) -> Void) {
+                                               success: ((_ account: InPlayerAccount) -> Void)? = nil,
+                                               failure: ((_ error: InPlayerError) -> Void)? = nil) {
             INPAccountService.validateSocialLogin(url: url) { (account, error) in
                 if let error = error {
-                    failure(error)
+                    failure?(error)
                 } else {
-                    success(account!)
+                    success?(account!)
                     NotificationCenter.default.post(name: .didLoggedIn, object: nil)
                 }
             }
