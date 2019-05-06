@@ -5,7 +5,7 @@ public extension InPlayer {
     /**
      Class providing Asset related actions.
      */
-    public final class Asset {
+    final class Asset {
 
         private init() {}
 

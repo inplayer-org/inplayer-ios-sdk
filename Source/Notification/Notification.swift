@@ -5,7 +5,7 @@ public extension InPlayer {
     /**
      Class that provides 
      */
-    public final class Notification {
+    final class Notification {
         private init() {}
 
         /**

@@ -2,7 +2,7 @@ import Foundation
 
 public extension InPlayer {
     /// Class that setup project configuration
-    public struct Configuration {
+    struct Configuration {
 
         public let clientId: String
         public let referrer: String?

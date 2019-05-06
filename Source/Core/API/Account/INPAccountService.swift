@@ -28,13 +28,15 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.createAccount(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
         })
     }
 
     static func getAccount(completion: @escaping RequestCompletion<InPlayerAccount>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.getAccountInfo(),
+                                         route: AccountAPIRouter.getAccountInfo,
                                          completion: { (account: InPlayerAccount?, error: InPlayerError?) in
                                             saveAccount(account: account, error: error, completion: completion)
         })
@@ -53,22 +55,20 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticate(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
 
         })
     }
 
     static func signOut(completion: @escaping RequestCompletion<Empty>) {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.logout(),
+                                         route: AccountAPIRouter.logout,
                                          completion: { (empty: Empty?, error: InPlayerError?) in
-                                            if error != nil {
-                                                completion(empty, error)
-                                            } else {
-                                                UserDefaults.credentials = nil
-                                                UserDefaults.account = nil
-                                                completion(empty, error)
-                                            }
+                                            cleanUpCredentials(empty: empty,
+                                                               error: error,
+                                                               completion: completion)
         })
     }
 
@@ -85,7 +85,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.updateAccount(parameters: params),
                                          completion: { (account: InPlayerAccount?, error: InPlayerError?) in
-                                            saveAccount(account: account, error: error, completion: completion)
+                                            saveAccount(account: account,
+                                                        error: error,
+                                                        completion: completion)
 
         })
     }
@@ -110,13 +112,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.eraseAccount(parameters: params),
                                          completion: { (empty: Empty?, error: InPlayerError?) in
-                                            if error != nil {
-                                                completion(empty, error)
-                                            } else {
-                                                UserDefaults.credentials = nil
-                                                UserDefaults.account = nil
-                                                completion(empty, error)
-                                            }
+                                            cleanUpCredentials(empty: empty,
+                                                               error: error,
+                                                               completion: completion)
         })
     }
 
@@ -155,7 +153,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.refreshToken(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
         })
     }
 
@@ -169,7 +169,9 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.authenticateClientCredentials(parameters: params),
                                          completion: { (authorization: InPlayerAuthorization?, error: InPlayerError?) in
-                                            updateAuthorization(authorization: authorization, error: error, completion: completion)
+                                            updateAuthorization(authorization: authorization,
+                                                                error: error,
+                                                                completion: completion)
         })
     }
 
@@ -185,6 +187,50 @@ class INPAccountService {
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.getRegisterFields(merchantUUID: merchantUUID),
                                          completion: completion)
+    }
+    
+    static func getSocialURLs(completion: @escaping RequestCompletion<InPlayerSocialUrlResponse>) {
+        let base64 = [ AccountParameters.clientId: InPlayer.clientId,
+                       AccountParameters.redirect: InPlayer.redirectUri
+                     ].toString()?.toBase64()
+
+        var params: [String: Any] = [:]
+        if let base64 = base64 {
+            params[AccountParameters.state] = base64
+        }
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.getSocialURLs(parameters: params),
+                                         completion: completion)
+    }
+
+    static func validateSocialLogin(url: URL, completion: @escaping RequestCompletion<InPlayerAccount>) {
+        if url.absoluteString.starts(with: InPlayer.redirectUri),
+            let startRange = url.absoluteString.range(of: InPlayer.redirectUri)?.upperBound {
+            let authorizationValueString = String(url.absoluteString[startRange...])
+            let values = authorizationValueString.components(separatedBy: "&")
+            if values.count < 3 {
+                completion(nil,InPlayerMalformedUrlError())
+            } else {
+                let token = values.filter { return $0.starts(with: "#token") }.first
+                let expires = values.filter { return $0.starts(with: "expires") }.first
+                let refreshToken = values.filter { return $0.starts(with: "refresh_token") }.first
+
+                if let token = token,
+                    let expiresValue = expires,
+                    let refreshToken = refreshToken,
+                    let tokenRange = token.range(of: "=")?.upperBound,
+                    let expiresRange = expiresValue.range(of: "=")?.upperBound,
+                    let refreshTokenRange = refreshToken.range(of: "=")?.upperBound,
+                    let expires = Double(expiresValue[expiresRange...]) {
+                    UserDefaults.credentials = InPlayerCredentials(accessToken: String(token[tokenRange...]),
+                                                                   refreshToken: String(refreshToken[refreshTokenRange...]),
+                                                                   expires: expires)
+                    getAccount(completion: completion)
+                } else {
+                    completion(nil,InPlayerMalformedUrlError())
+                }
+            }
+        }
     }
 }
 
@@ -250,6 +296,8 @@ private struct AccountParameters {
     static let clientId             = "client_id"
     static let refreshToken         = "refresh_token"
     static let clientSecret         = "client_secret"
+    static let state                = "state"
+    static let redirect             = "redirect"
 }
 
 private enum AuthenticationTypes: String {
@@ -261,8 +309,8 @@ private enum AuthenticationTypes: String {
 /// Enum of available account api routes
 private enum AccountAPIRouter: INPAPIConfiguration {
     case createAccount(parameters: [String: Any])
-    case getAccountInfo()
-    case logout()
+    case getAccountInfo
+    case logout
     case updateAccount(parameters: [String: Any])
     case changePassword(parameters: [String: Any])
     case eraseAccount(parameters: [String: Any])
@@ -273,6 +321,7 @@ private enum AccountAPIRouter: INPAPIConfiguration {
     case authenticateClientCredentials(parameters: [String: Any])
     case exportData(parameters: [String: Any])
     case getRegisterFields(merchantUUID: String)
+    case getSocialURLs(parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
@@ -317,6 +366,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
             return NetworkConstants.Endpoints.Account.exportData
         case .getRegisterFields(let merchantUUID):
             return String(format: NetworkConstants.Endpoints.Account.registerFields, merchantUUID)
+        case .getSocialURLs:
+            return NetworkConstants.Endpoints.Account.getSocialUrls
         }
 
     }
@@ -342,6 +393,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
         case .authenticateClientCredentials(let parameters):
             return parameters
         case .exportData(let parameters):
+            return parameters
+        case .getSocialURLs(let parameters):
             return parameters
         default:
             return nil
@@ -401,7 +454,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
              .setNewPassword,
              .forgotPassword,
              .authenticate,
-             .authenticateClientCredentials:
+             .authenticateClientCredentials,
+             .getSocialURLs:
             return false
         default:
             return true

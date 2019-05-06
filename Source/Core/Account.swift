@@ -5,7 +5,17 @@ public extension InPlayer {
     /**
      Class providing Account related actions.
      */
-    public final class Account {
+    final class Account {
+
+        /**
+         Social login closure typealias containing account and error.
+         - Parameters:
+             - account: The obtained account.
+             - error: The error that might occur.
+         */
+        public typealias SocialLoginCompletion = (_ account: InPlayerAccount?, _ error: InPlayerError?) -> Void
+        static var completionHandler: SocialLoginCompletion?
+
         private init() {}
 
         /**
@@ -133,12 +143,12 @@ public extension InPlayer {
         /**
          Updates account information.
          - Parameters:
-             - fullName: The full name of the account.
+            - fullName: The full name of the account.
             - metadata: Additional information about the account that can be attached to the account object
-             - success: A closure to be executed once the request has finished successfully.
-             - account: Contains account info.
-             - failure: A closure to be executed once the request has finished with error.
-             - error: Containing information about the error that occurred.
+            - success: A closure to be executed once the request has finished successfully.
+            - account: Contains account info.
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
          */
         public static func updateAccount(fullName: String,
                                          metadata: [String : Any]? = nil,
@@ -308,6 +318,59 @@ public extension InPlayer {
                 } else {
                     success(response!.collection)
                 }
+            }
+        }
+        
+        /**
+         Get List of Social URLs
+         - Parameters:
+            - success: A closure to be executed once the request has finished successfully.
+            - socialURLs: Array of objects, each containing different social service and its url.
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
+         */
+        
+        public static func getSocialUrls(redirectUri: String,
+                                         success: @escaping (_ socialURLs: [InPlayerSocialUrl]) -> Void,
+                                         failure: @escaping (_ error: InPlayerError) -> Void) {
+            InPlayer.redirectUri = redirectUri
+            INPAccountService.getSocialURLs { (response, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    let socialURLs = response?.socialUrls.map({ (dic:[String : String]) -> InPlayerSocialUrl in
+                        return InPlayerSocialUrl.initFromDictionary(dictionary: dic)
+                    })
+                    success(socialURLs ?? [])
+                }
+            }
+        }
+
+        /**
+         Validates social login redirect url
+         - Parameters:
+            - url: The redirect url to be processed.
+         */
+        public static func validateSocialLogin(url: URL) {
+            INPAccountService.validateSocialLogin(url: url) { (account, error) in
+                if let completion = completionHandler {
+                    completion(account, error)
+                    completionHandler = nil
+                }
+            }
+        }
+
+        /**
+         Opens external browser with the provided url.
+         - Parameters:
+             - url: The social url that needs to be open.
+             - completion: A closure to be executed once the request has finished. It contains `account` if the loging was successfull or `error` if something went wrong.
+         */
+        public static func socialLogin(withUrl url: URL, completion: @escaping SocialLoginCompletion) {
+            // keep completion handler
+            self.completionHandler = completion
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }

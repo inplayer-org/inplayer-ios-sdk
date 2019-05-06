@@ -5,7 +5,7 @@ public extension InPlayer {
     /**
      Class providing methods linked with payments.
      */
-    public final class Payment {
+    final class Payment {
         private init() {}
 
         /**
@@ -16,7 +16,6 @@ public extension InPlayer {
             - success: A closure to be executed once the request has finished successfully.
             - failure: A closure to be executed once the request has finished with error.
             - error: Containing information about the error that occurred.
-
          */
         public static func validate(receiptString: String,
                                     productIdentifier: String,

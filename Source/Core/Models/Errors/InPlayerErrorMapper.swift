@@ -68,9 +68,9 @@ final class InPlayerErrorMapper {
         } else {
             guard let afError = originalError.asAFError else {
                 return InPlayerHttpError(code: (originalError as NSError).code,
-                                    message: originalError.localizedDescription,
-                                    errorList: [originalError.localizedDescription],
-                                    error: originalError)
+                                         message: originalError.localizedDescription,
+                                         errorList: [originalError.localizedDescription],
+                                         error: originalError)
             }
             guard
                 let code = afError.responseCode,

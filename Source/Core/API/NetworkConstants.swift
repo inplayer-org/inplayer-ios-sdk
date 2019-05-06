@@ -31,6 +31,7 @@ struct NetworkConstants {
             static let setNewPassword = "/accounts/forgot-password/%@"
             static let exportData     = "/accounts/export"
             static let registerFields = "/accounts/register-fields/%@"
+            static let getSocialUrls  = "/accounts/social"
         }
 
         struct Asset {
