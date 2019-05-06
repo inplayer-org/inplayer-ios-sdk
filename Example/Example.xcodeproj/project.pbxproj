@@ -12,6 +12,9 @@
 		A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C05421CED043004D7EF7 /* AppDelegate.swift */; };
 		A718C05F21CED044004D7EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */; };
 		A718C06A21CED044004D7EF7 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718C06921CED044004D7EF7 /* ExampleTests.swift */; };
+		A7A17F1D2270E375004E19AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A17F1C2270E375004E19AD /* Main.storyboard */; };
+		A7A17F1F2270E3A0004E19AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A17F1E2270E3A0004E19AD /* ViewController.swift */; };
+		A7A690D2227C98590039AB59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A690D1227C98590039AB59 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,10 @@
 		A718C06521CED044004D7EF7 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A718C06921CED044004D7EF7 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		A718C06B21CED044004D7EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A17F1C2270E375004E19AD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A7A17F1E2270E3A0004E19AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7A17F202270EACD004E19AD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A7A690D1227C98590039AB59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B14D3BB340AB73CDBD270009 /* Pods-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleTests/Pods-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5619D38DC581CE16D4C3555 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE19ECACC8DD5EBAF6DD945 /* Pods_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +70,7 @@
 		353BF1AC704F4B2502AADE00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7A17F202270EACD004E19AD /* WebKit.framework */,
 				D5619D38DC581CE16D4C3555 /* Pods_Example.framework */,
 				DEE19ECACC8DD5EBAF6DD945 /* Pods_ExampleTests.framework */,
 			);
@@ -106,6 +114,9 @@
 				A718C05421CED043004D7EF7 /* AppDelegate.swift */,
 				A718C05D21CED044004D7EF7 /* LaunchScreen.storyboard */,
 				A718C06021CED044004D7EF7 /* Info.plist */,
+				A7A17F1C2270E375004E19AD /* Main.storyboard */,
+				A7A17F1E2270E3A0004E19AD /* ViewController.swift */,
+				A7A690D1227C98590039AB59 /* Assets.xcassets */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -130,7 +141,7 @@
 				A718C04D21CED043004D7EF7 /* Sources */,
 				A718C04E21CED043004D7EF7 /* Frameworks */,
 				A718C04F21CED043004D7EF7 /* Resources */,
-				F88C87179E343E858D236EC6 /* [CP] Embed Pods Frameworks */,
+				F76291AD9C735403AD4001AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A718C05F21CED044004D7EF7 /* LaunchScreen.storyboard in Resources */,
+				A7A690D2227C98590039AB59 /* Assets.xcassets in Resources */,
+				A7A17F1D2270E375004E19AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,10 +266,12 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F88C87179E343E858D236EC6 /* [CP] Embed Pods Frameworks */ = {
+		F76291AD9C735403AD4001AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
@@ -266,6 +281,8 @@
 				"${BUILT_PRODUCTS_DIR}/InPlayerSDK/InPlayerSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSIoT.framework",
@@ -284,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A17F1F2270E3A0004E19AD /* ViewController.swift in Sources */,
 				A718C05521CED043004D7EF7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

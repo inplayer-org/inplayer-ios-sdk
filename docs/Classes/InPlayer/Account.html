@@ -14,7 +14,7 @@
     <a title="Account Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../../index.html">InPlayerSDK Docs</a> (73% documented)</p>
+        <p><a href="../../index.html">InPlayerSDK Docs</a> (70% documented)</p>
         <p class="header-right"><a href="https://github.com/inplayer-org/inplayer-ios-sdk"><img src="../../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -83,6 +83,17 @@
               </li>
               <li class="nav-group-task">
                 <a href="../../Enums/RegisterFieldType.html">RegisterFieldType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/Notification.html">Notification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/Notification/Name.html">– Name</a>
               </li>
             </ul>
           </li>
@@ -161,7 +172,10 @@
                 <a href="../../Structs/InPlayerSetupFee.html">InPlayerSetupFee</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Structs/InPlayerSocialUrlResponse.html">InPlayerSocialUrlResponse</a>
+                <a href="../../Structs/InPlayerSocialUrl.html">InPlayerSocialUrl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/InPlayerSocialUrl/CodingKeys.html">– CodingKeys</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Structs/InPlayerSubscription.html">InPlayerSubscription</a>
@@ -198,6 +212,64 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC21SocialLoginCompletiona"></a>
+                    <a name="//apple_ref/swift/Alias/SocialLoginCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC21SocialLoginCompletiona">SocialLoginCompletion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Social login closure typealias containing account and error.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SocialLoginCompletion</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">account</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAccount.html">InPlayerAccount</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>account</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The obtained account.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error that might occur.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -1466,9 +1538,9 @@ expired without requiring re authentication</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC13getSocialUrls11redirectUri7success7failureySS_ySaySDyS2SGGcyAA0aB5Error_pctFZ"></a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC13getSocialUrls11redirectUri7success7failureySS_ySayAA0abF3UrlVGcyAA0aB5Error_pctFZ"></a>
                     <a name="//apple_ref/swift/Method/getSocialUrls(redirectUri:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC13getSocialUrls11redirectUri7success7failureySS_ySaySDyS2SGGcyAA0aB5Error_pctFZ">getSocialUrls(redirectUri:success:failure:)</a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC13getSocialUrls11redirectUri7success7failureySS_ySayAA0abF3UrlVGcyAA0aB5Error_pctFZ">getSocialUrls(redirectUri:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1484,7 +1556,7 @@ expired without requiring re authentication</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getSocialUrls</span><span class="p">(</span><span class="nv">redirectUri</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                                 <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">socialURLs</span><span class="p">:</span> <span class="p">[[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                 <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">socialURLs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Structs/InPlayerSocialUrl.html">InPlayerSocialUrl</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
                                  <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1550,9 +1622,9 @@ expired without requiring re authentication</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB0C7AccountC19validateSocialLogin3url7success7failurey10Foundation3URLV_yAA0abD0VcyAA0aB5Error_pctFZ"></a>
-                    <a name="//apple_ref/swift/Method/validateSocialLogin(url:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC19validateSocialLogin3url7success7failurey10Foundation3URLV_yAA0abD0VcyAA0aB5Error_pctFZ">validateSocialLogin(url:success:failure:)</a>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC19validateSocialLogin3urly10Foundation3URLV_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/validateSocialLogin(url:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC19validateSocialLogin3urly10Foundation3URLV_tFZ">validateSocialLogin(url:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1567,9 +1639,7 @@ expired without requiring re authentication</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">validateSocialLogin</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span>
-                                       <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">account</span><span class="p">:</span> <span class="kt"><a href="../../Structs/InPlayerAccount.html">InPlayerAccount</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
-                                       <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">validateSocialLogin</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1580,48 +1650,70 @@ expired without requiring re authentication</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>success</em>
+                                <em>url</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                  <p>The redirect url to be processed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB0C7AccountC11socialLogin7withUrl10completiony10Foundation3URLV_yAA0abD0VSg_AA0aB5Error_pSgtctFZ"></a>
+                    <a name="//apple_ref/swift/Method/socialLogin(withUrl:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7AccountC11socialLogin7withUrl10completiony10Foundation3URLV_yAA0abD0VSg_AA0aB5Error_pSgtctFZ">socialLogin(withUrl:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Opens external browser with the provided url.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">socialLogin</span><span class="p">(</span><span class="n">withUrl</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../../Classes/InPlayer/Account.html#/s:11InPlayerSDK0aB0C7AccountC21SocialLoginCompletiona">SocialLoginCompletion</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The social url that needs to be open.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>account</em>
+                                <em>completion</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Contains account info</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A closure to be executed once the request has finished with error.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Containing information about the error that occurred.</p>
+                                  <p>A closure to be executed once the request has finished. It contains <code>account</code> if the loging was successfull or <code>error</code> if something went wrong.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1636,7 +1728,7 @@ expired without requiring re authentication</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-05-02)</p>
+          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-05-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -6,6 +6,16 @@ public extension InPlayer {
      Class providing Account related actions.
      */
     final class Account {
+
+        /**
+         Social login closure typealias containing account and error.
+         - Parameters:
+             - account: The obtained account.
+             - error: The error that might occur.
+         */
+        public typealias SocialLoginCompletion = (_ account: InPlayerAccount?, _ error: InPlayerError?) -> Void
+        static var completionHandler: SocialLoginCompletion?
+
         private init() {}
 
         /**
@@ -339,21 +349,28 @@ public extension InPlayer {
         /**
          Validates social login redirect url
          - Parameters:
-            - success: A closure to be executed once the request has finished successfully.
-            - account: Contains account info
-            - failure: A closure to be executed once the request has finished with error.
-            - error: Containing information about the error that occurred.
+            - url: The redirect url to be processed.
          */
-        public static func validateSocialLogin(url: URL,
-                                               success: ((_ account: InPlayerAccount) -> Void)? = nil,
-                                               failure: ((_ error: InPlayerError) -> Void)? = nil) {
+        public static func validateSocialLogin(url: URL) {
             INPAccountService.validateSocialLogin(url: url) { (account, error) in
-                if let error = error {
-                    failure?(error)
-                } else {
-                    success?(account!)
-                    NotificationCenter.default.post(name: .didLoggedIn, object: nil)
+                if let completion = completionHandler {
+                    completion(account, error)
+                    completionHandler = nil
                 }
+            }
+        }
+
+        /**
+         Opens external browser with the provided url.
+         - Parameters:
+             - url: The social url that needs to be open.
+             - completion: A closure to be executed once the request has finished. It contains `account` if the loging was successfull or `error` if something went wrong.
+         */
+        public static func socialLogin(withUrl url: URL, completion: @escaping SocialLoginCompletion) {
+            // keep completion handler
+            self.completionHandler = completion
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }
