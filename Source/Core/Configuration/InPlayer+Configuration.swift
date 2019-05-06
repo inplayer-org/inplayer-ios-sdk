@@ -26,9 +26,15 @@ extension InPlayer {
      Environment from the configuration. Defaults to production.
      */
     static var environment: InPlayerEnvironmentType = .production
-    
+
     /**
- */
+     Redirect uri used for social login
+     */
+    static var redirectUri: String = ""
+
+    /**
+     Returns base url based on environment
+     */
     static func getBaseUrlString() -> String {
         switch environment {
         case .debug:

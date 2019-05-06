@@ -29,6 +29,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Extensions/NotificationNameExt.swift",
+      "line": 4,
+      "symbol": "Notification.Name.didLoggedIn",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
       "line": 7,
       "symbol": "AccountType.consumer",
@@ -124,6 +131,76 @@
       "line": 57,
       "symbol": "InPlayerRegisterField.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 3,
+      "symbol": "InPlayerSocialUrl",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 5,
+      "symbol": "InPlayerSocialUrl.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 6,
+      "symbol": "InPlayerSocialUrl.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 8,
+      "symbol": "InPlayerSocialUrl.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 9,
+      "symbol": "InPlayerSocialUrl.CodingKeys.name",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 10,
+      "symbol": "InPlayerSocialUrl.CodingKeys.url",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 13,
+      "symbol": "InPlayerSocialUrl.init(name:url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 18,
+      "symbol": "InPlayerSocialUrl.init(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 24,
+      "symbol": "InPlayerSocialUrl.encode(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "line": 30,
+      "symbol": "InPlayerSocialUrl.initFromDictionary(dictionary:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {

@@ -5,7 +5,7 @@ public extension InPlayer {
     /**
      Class providing Subscription related actions.
      */
-    public final class Subscription {
+    final class Subscription {
 
         private init() {}
 
