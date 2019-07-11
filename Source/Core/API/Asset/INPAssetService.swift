@@ -26,6 +26,25 @@ class INPAssetService {
                                          route: AssetAPIRouter.getItemAccess(id: id),
                                          completion: completion)
     }
+
+    static func getExternalAsset(assetType: String,
+                                 externalId: String,
+                                 merchantUUID: String?,
+                                 completion: @escaping RequestCompletion<InPlayerItem>) {
+        var parameters: [String: Any] = [:]
+        if let merchantUUID = merchantUUID {
+            parameters[AssetParameters.merchantUUID] = merchantUUID
+        }
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AssetAPIRouter.getExternalAsset(assetType: assetType,
+                                                                                externalID: externalId,
+                                                                                parameters: parameters),
+                                         completion: completion)
+    }
+}
+
+private struct AssetParameters {
+    static let merchantUUID = "merchant_uuid"
 }
 
 
@@ -34,6 +53,7 @@ private enum AssetAPIRouter: INPAPIConfiguration {
     case getItemDetails(id: Int, merchantUUID: String)
     case getItemAccessFees(id: Int)
     case getItemAccess(id: Int)
+    case getExternalAsset(assetType: String, externalID: String, parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
@@ -50,11 +70,15 @@ private enum AssetAPIRouter: INPAPIConfiguration {
             return String(format: NetworkConstants.Endpoints.Asset.itemAccessFees, "\(id)")
         case .getItemAccess(let id):
             return String(format: NetworkConstants.Endpoints.Asset.itemAccess, "\(id)")
+        case .getExternalAsset(let assetType, let externalID, _):
+            return String(format: NetworkConstants.Endpoints.Asset.externalItemDetails, assetType, externalID)
         }
     }
 
     var parameters: Parameters? {
         switch self {
+        case .getExternalAsset(_,_, let parameters):
+            return parameters
         default:
             return nil
         }
@@ -70,7 +94,8 @@ private enum AssetAPIRouter: INPAPIConfiguration {
     var requiresAuthorization: Bool {
         switch self {
         case .getItemAccessFees,
-             .getItemDetails:
+             .getItemDetails,
+             .getExternalAsset:
             return false
         default:
             return true

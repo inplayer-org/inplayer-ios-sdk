@@ -72,5 +72,32 @@ public extension InPlayer {
                 }
             })
         }
+
+        /**
+         Get an external assets info
+         - Parameters:
+             - type: The type ID of the asset
+             - externalID: The ID of the external asset
+             - merchantUUID: The merchant uuid
+             - success: A closure to be executed once the request has finished successfully.
+             - asset: Contains item info.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
+         */
+        public static func getExternalAsset(type: String,
+                                            externalID: String,
+                                            merchantUUID: String?,
+                                            success: @escaping (InPlayerItem) -> Void,
+                                            failure: @escaping (InPlayerError) -> Void) {
+            INPAssetService.getExternalAsset(assetType: type,
+                                             externalId: externalID,
+                                             merchantUUID: merchantUUID) { (asset, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success(asset!)
+                }
+            }
+        }
     }
 }
