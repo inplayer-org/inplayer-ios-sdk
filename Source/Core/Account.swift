@@ -1,12 +1,12 @@
 import Alamofire
 
 public extension InPlayer {
-
+    
     /**
      Class providing Account related actions.
      */
     final class Account {
-
+        
         /**
          Social login closure typealias containing account and error.
          - Parameters:
@@ -15,14 +15,14 @@ public extension InPlayer {
          */
         public typealias SocialLoginCompletion = (_ account: InPlayerAccount?, _ error: InPlayerError?) -> Void
         static var completionHandler: SocialLoginCompletion?
-
+        
         private init() {}
-
+        
         /**
          Get user credentials if present, else returns nil.
          - Returns: User credentials or nil.
          */
-
+        
         public static func getCredentials() -> InPlayerCredentials? {
             return UserDefaults.credentials
         }
@@ -34,7 +34,7 @@ public extension InPlayer {
         public static func getAccountInfo() -> InPlayerAccount? {
             return UserDefaults.account
         }
-
+        
         /**
          Check if current user has access token.
          - Returns: Bool result of the check.
@@ -43,11 +43,11 @@ public extension InPlayer {
             guard let credentials = getCredentials() else { return false }
             return !credentials.accessToken.isEmpty && credentials.accessToken != ""
         }
-
+        
         /**
          Creates new account.
          - Parameters:
-            - fullName: Account's first and last name
+             - fullName: Account's first and last name
              - email: Account’s email address
              - password: Password containing minimum 8 characters
              - passwordConfirmation: The same password with minimum 8 characters
@@ -70,14 +70,14 @@ public extension InPlayer {
                                      passwordConfirmation: passwordConfirmation,
                                      metadata: metadata,
                                      completion: { (authorization, error) in
-                if let error = error {
-                    failure(error)
-                } else {
-                    success(authorization!)
-                }
+                                        if let error = error {
+                                            failure(error)
+                                        } else {
+                                            success(authorization!)
+                                        }
             })
         }
-
+        
         /**
          Gets the account information for a given authorization token
          - Parameters:
@@ -96,7 +96,7 @@ public extension InPlayer {
                 }
             })
         }
-
+        
         /**
          Authenticates account using username and password
          - Parameters:
@@ -114,14 +114,14 @@ public extension InPlayer {
             INPAccountService.authenticate(username: username,
                                            password: password,
                                            completion: { (authorization, error) in
-                    if let error = error {
-                        failure(error)
-                    } else {
-                        success(authorization!)
-                    }
+                                            if let error = error {
+                                                failure(error)
+                                            } else {
+                                                success(authorization!)
+                                            }
             })
         }
-
+        
         /**
          Logout currently authenticated account
          - Parameters:
@@ -130,7 +130,7 @@ public extension InPlayer {
              - error: Containing information about the error that occurred.
          */
         public static func signOut(success: @escaping () -> Void,
-                                  failure: @escaping (_ error: InPlayerError) -> Void){
+                                   failure: @escaping (_ error: InPlayerError) -> Void){
             INPAccountService.signOut(completion: { (_, error) in
                 if let error = error {
                     failure(error)
@@ -139,16 +139,16 @@ public extension InPlayer {
                 }
             })
         }
-
+        
         /**
          Updates account information.
          - Parameters:
-            - fullName: The full name of the account.
-            - metadata: Additional information about the account that can be attached to the account object
-            - success: A closure to be executed once the request has finished successfully.
-            - account: Contains account info.
-            - failure: A closure to be executed once the request has finished with error.
-            - error: Containing information about the error that occurred.
+             - fullName: The full name of the account.
+             - metadata: Additional information about the account that can be attached to the account object
+             - success: A closure to be executed once the request has finished successfully.
+             - account: Contains account info.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
          */
         public static func updateAccount(fullName: String,
                                          metadata: [String : Any]? = nil,
@@ -157,18 +157,18 @@ public extension InPlayer {
             INPAccountService.updateAccount(fullName: fullName,
                                             metadata: metadata,
                                             completion: { (account, error) in
-                if let error = error {
-                    failure(error)
-                } else {
-                    success(account!)
-                }
+                                                if let error = error {
+                                                    failure(error)
+                                                } else {
+                                                    success(account!)
+                                                }
             })
         }
-
+        
         /**
          Updates account password.
          - Parameters:
-            - oldPassword: Account's old password.
+             - oldPassword: Account's old password.
              - newPassword: The account's new password
              - newPasswordConfirmation: The account's new password for confirmation.
              - success: A closure to be executed once the request has finished successfully.
@@ -184,14 +184,14 @@ public extension InPlayer {
                                              newPassword: newPassword,
                                              newPasswordConfirmation: newPasswordConfirmation,
                                              completion: { (_, error) in
-                if let error = error {
-                    failure(error)
-                } else {
-                    success()
-                }
+                                                if let error = error {
+                                                    failure(error)
+                                                } else {
+                                                    success()
+                                                }
             })
         }
-
+        
         /**
          Deletes account and all information stored with it.
          - Parameters:
@@ -211,7 +211,7 @@ public extension InPlayer {
                 }
             })
         }
-
+        
         /**
          Sets new password for account using the token from account's email.
          - Parameters:
@@ -231,14 +231,14 @@ public extension InPlayer {
                                              password: password,
                                              passwordConfirmation: passwordConfirmation,
                                              completion: { (_, error) in
-                if let error = error {
-                    failure(error)
-                } else {
-                    success()
-                }
+                                                if let error = error {
+                                                    failure(error)
+                                                } else {
+                                                    success()
+                                                }
             })
         }
-
+        
         /**
          Sends forgot password instructions on specified email.
          - Parameters:
@@ -258,8 +258,8 @@ public extension InPlayer {
                 }
             })
         }
-
-
+        
+        
         /**
          Refreshes account `access_token`
          - Parameters:
@@ -281,14 +281,14 @@ public extension InPlayer {
                 }
             })
         }
-
+        
         /**
          Exports account data such as logins, payments, subscriptions, access to assets etc. After invoking the request the account will receive the data in a json format via e-mail.
          - Parameters:
-            - password: Password of the current logged user
-            - success: A closure to be executed once the request has finished successfully.
-            - failure: A closure to be executed once the request has finished with error.
-            - error: Containing information about the error that occurred.
+             - password: Password of the current logged user
+             - success: A closure to be executed once the request has finished successfully.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
          */
         public static func exportData(password: String,
                                       success: @escaping () -> Void,
@@ -301,14 +301,14 @@ public extension InPlayer {
                 }
             }
         }
-
+        
         /**
          Gets register fields
          - Parameters:
-             - success: A closure to be executed once the request has finished successfully.
-             - registerFields: `InPlayerRegisterField` struct optionally containing associated values depending on the type enum.
-             - failure: A closure to be executed once the request has finished with error.
-             - error: Containing information about the error that occurred.
+            - success: A closure to be executed once the request has finished successfully.
+            - registerFields: `InPlayerRegisterField` struct optionally containing associated values depending on the type enum.
+            - failure: A closure to be executed once the request has finished with error.
+            - error: Containing information about the error that occurred.
          */
         public static func getRegisterFields(success: @escaping (_ registerFields: [InPlayerRegisterField]) -> Void,
                                              failure: @escaping (_ error: InPlayerError) -> Void) {
@@ -345,7 +345,7 @@ public extension InPlayer {
                 }
             }
         }
-
+        
         /**
          Validates social login redirect url
          - Parameters:
@@ -359,18 +359,61 @@ public extension InPlayer {
                 }
             }
         }
-
+        
         /**
          Opens external browser with the provided url.
          - Parameters:
-             - url: The social url that needs to be open.
-             - completion: A closure to be executed once the request has finished. It contains `account` if the loging was successfull or `error` if something went wrong.
+            - url: The social url that needs to be open.
+            - completion: A closure to be executed once the request has finished. It contains `account` if the loging was successfull or `error` if something went wrong.
          */
         public static func socialLogin(withUrl url: URL, completion: @escaping SocialLoginCompletion) {
             // keep completion handler
             self.completionHandler = completion
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+    
+        /**
+         Creates pin code and sends it to your email
+         - Parameters:
+             - brandingID: Optional parameter
+             - success: A closure to be executed once the request has finished successfully.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
+         */
+        
+        public static func sendPinCode(brandingID: Int?,
+                                       success: @escaping () -> Void,
+                                       failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.sendPinCode(brandingId: brandingID) { (_, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            }
+        }
+        
+        /**
+         Checks validity of pin code
+         - Parameters:
+             - pinCode: The pin code that was sent to your email
+             - success: A closure to be executed once the request has finished successfully.
+             - failure: A closure to be executed once the request has finished with error.
+             - error: Containing information about the error that occurred.
+         */
+        
+        public static func validatePinCode(_ pinCode: String,
+                                           success: @escaping () -> Void,
+                                           failure: @escaping (_ error: InPlayerError) -> Void) {
+            INPAccountService.validatePinCode(pinCode) { (_, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
             }
         }
     }

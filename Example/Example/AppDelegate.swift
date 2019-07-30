@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         InPlayer.Account.validateSocialLogin(url: url)
-
         return true
     }
 }
