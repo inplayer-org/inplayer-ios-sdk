@@ -1,621 +1,621 @@
 {
   "warnings": [
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Configuration/Configuration.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Configuration/Configuration.swift",
       "line": 7,
       "symbol": "InPlayer.Configuration.clientId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Configuration/Configuration.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Configuration/Configuration.swift",
       "line": 8,
       "symbol": "InPlayer.Configuration.referrer",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Configuration/Configuration.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Configuration/Configuration.swift",
       "line": 9,
       "symbol": "InPlayer.Configuration.environment",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Configuration/Configuration.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Configuration/Configuration.swift",
       "line": 11,
       "symbol": "InPlayer.Configuration.init(clientId:referrer:environment:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Extensions/NotificationNameExt.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Extensions/NotificationNameExt.swift",
       "line": 4,
       "symbol": "Notification.Name.didLoggedIn",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
       "line": 7,
       "symbol": "AccountType.consumer",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
       "line": 8,
       "symbol": "AccountType.merchant",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
       "line": 41,
       "symbol": "InPlayerAccount.uuid",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
       "line": 42,
       "symbol": "InPlayerAccount.merchantId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerAccount.swift",
       "line": 43,
       "symbol": "InPlayerAccount.merchantUUID",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerFieldCountry.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerFieldCountry.swift",
       "line": 5,
       "symbol": "InPlayerFieldCountry.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerFieldCountry.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerFieldCountry.swift",
       "line": 6,
       "symbol": "InPlayerFieldCountry.code",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
       "line": 51,
       "symbol": "InPlayerRegisterField.defaultValue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
       "line": 52,
       "symbol": "InPlayerRegisterField.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
       "line": 53,
       "symbol": "InPlayerRegisterField.label",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
       "line": 54,
       "symbol": "InPlayerRegisterField.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
       "line": 55,
       "symbol": "InPlayerRegisterField.placeholder",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
       "line": 56,
       "symbol": "InPlayerRegisterField.required",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerRegisterField.swift",
       "line": 57,
       "symbol": "InPlayerRegisterField.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 3,
       "symbol": "InPlayerSocialUrl",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 5,
       "symbol": "InPlayerSocialUrl.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 6,
       "symbol": "InPlayerSocialUrl.url",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 8,
       "symbol": "InPlayerSocialUrl.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 9,
       "symbol": "InPlayerSocialUrl.CodingKeys.name",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 10,
       "symbol": "InPlayerSocialUrl.CodingKeys.url",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 13,
       "symbol": "InPlayerSocialUrl.init(name:url:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 18,
       "symbol": "InPlayerSocialUrl.init(from:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 24,
       "symbol": "InPlayerSocialUrl.encode(to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Account/InPlayerSocialUrl.swift",
       "line": 30,
       "symbol": "InPlayerSocialUrl.initFromDictionary(dictionary:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
       "line": 4,
       "symbol": "InPlayerAccessFee",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
       "line": 20,
       "symbol": "InPlayerAccessFee.itemType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
       "line": 24,
       "symbol": "InPlayerAccessFee.startsAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
       "line": 30,
       "symbol": "InPlayerItem.metahash",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerItemAccess.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItemAccess.swift",
       "line": 33,
       "symbol": "InPlayerItemAccess.startsAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerItemMetadata.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItemMetadata.swift",
       "line": 6,
       "symbol": "InPlayerItemMetadata.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerItemMetadata.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItemMetadata.swift",
       "line": 7,
       "symbol": "InPlayerItemMetadata.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Asset/InPlayerItemMetadata.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItemMetadata.swift",
       "line": 8,
       "symbol": "InPlayerItemMetadata.value",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 6,
       "symbol": "InPlayerSubscription.cancelToken",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 7,
       "symbol": "InPlayerSubscription.status",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 8,
       "symbol": "InPlayerSubscription.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 9,
       "symbol": "InPlayerSubscription.assetTitle",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 10,
       "symbol": "InPlayerSubscription.assetId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 11,
       "symbol": "InPlayerSubscription.formattedAmount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 12,
       "symbol": "InPlayerSubscription.amount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 13,
       "symbol": "InPlayerSubscription.currency",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 14,
       "symbol": "InPlayerSubscription.merchantId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 15,
       "symbol": "InPlayerSubscription.createdAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 16,
       "symbol": "InPlayerSubscription.updatedAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 17,
       "symbol": "InPlayerSubscription.nextBillingDate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Subscription/InPlayerSubscription.swift",
       "line": 18,
       "symbol": "InPlayerSubscription.unsubscribeUrl",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/AWS/INPAWSManager.swift",
       "line": 126,
       "symbol": "InPlayerNotificationStatus.connecting",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/AWS/INPAWSManager.swift",
       "line": 127,
       "symbol": "InPlayerNotificationStatus.connected",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/AWS/INPAWSManager.swift",
       "line": 128,
       "symbol": "InPlayerNotificationStatus.disconnected",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/AWS/INPAWSManager.swift",
       "line": 129,
       "symbol": "InPlayerNotificationStatus.connectionRefused",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/AWS/INPAWSManager.swift",
       "line": 130,
       "symbol": "InPlayerNotificationStatus.connectionError",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/AWS/INPAWSManager.swift",
       "line": 131,
       "symbol": "InPlayerNotificationStatus.protocolError",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/AWS/INPAWSManager.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/AWS/INPAWSManager.swift",
       "line": 132,
       "symbol": "InPlayerNotificationStatus.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerItemRevoked.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerItemRevoked.swift",
       "line": 5,
       "symbol": "InPlayerItemRevoked.itemId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 15,
       "symbol": "NotificationType.accessGranted(resource:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 16,
       "symbol": "NotificationType.accessRevoked(resource:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 17,
       "symbol": "NotificationType.accountLogout",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 18,
       "symbol": "NotificationType.accountErased",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 19,
       "symbol": "NotificationType.accountDeactivated",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 20,
       "symbol": "NotificationType.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 25,
       "symbol": "InPlayerNotification.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Notification/Models/InPlayerNotification.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Notification/Models/InPlayerNotification.swift",
       "line": 26,
       "symbol": "InPlayerNotification.timestamp",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 5,
       "symbol": "InPlayerCustomerAccessItem.consumerEmail",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 6,
       "symbol": "InPlayerCustomerAccessItem.createdAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 7,
       "symbol": "InPlayerCustomerAccessItem.customerId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 8,
       "symbol": "InPlayerCustomerAccessItem.expiresAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 9,
       "symbol": "InPlayerCustomerAccessItem.isTrial",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 10,
       "symbol": "InPlayerCustomerAccessItem.itemAccessId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 11,
       "symbol": "InPlayerCustomerAccessItem.itemId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 12,
       "symbol": "InPlayerCustomerAccessItem.itemTitle",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 13,
       "symbol": "InPlayerCustomerAccessItem.merchantId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 14,
       "symbol": "InPlayerCustomerAccessItem.parentResourceId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 15,
       "symbol": "InPlayerCustomerAccessItem.paymentMethod",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 16,
       "symbol": "InPlayerCustomerAccessItem.paymentTool",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 17,
       "symbol": "InPlayerCustomerAccessItem.purchasedAccessFeeDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 18,
       "symbol": "InPlayerCustomerAccessItem.purchasedAccessFeeId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 19,
       "symbol": "InPlayerCustomerAccessItem.purchasedAccessFeeType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 20,
       "symbol": "InPlayerCustomerAccessItem.purchasedAmount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 21,
       "symbol": "InPlayerCustomerAccessItem.purchasedCurrency",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 22,
       "symbol": "InPlayerCustomerAccessItem.revoked",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 23,
       "symbol": "InPlayerCustomerAccessItem.startsAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerCustomerAccessItem.swift",
       "line": 24,
       "symbol": "InPlayerCustomerAccessItem.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerPurchaseHistory.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerPurchaseHistory.swift",
       "line": 18,
       "symbol": "InPlayerCustomerPurchaseHistory.collection",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/oliver/Documents/Work/Adeva/SDK/Source/Payment/Models/InPlayerPurchaseHistory.swift",
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Payment/Models/InPlayerPurchaseHistory.swift",
       "line": 19,
       "symbol": "InPlayerCustomerPurchaseHistory.total",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/oliver/Documents/Work/Adeva/SDK"
+  "source_directory": "/Users/oliver/Documents/Work/SDK"
 }
