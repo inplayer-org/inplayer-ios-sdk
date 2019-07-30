@@ -232,6 +232,24 @@ class INPAccountService {
             }
         }
     }
+    
+    static func sendPinCode(brandingId: Int?, completion: @escaping RequestCompletion<Empty>) {
+        var params: [String: Any] = [:]
+        if let brandingID = brandingId {
+            params[AccountParameters.brandingID] = brandingID
+        }
+        
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.getSocialURLs(parameters: params),
+                                         completion: completion)
+    }
+    
+    static func validatePinCode(_ pinCode: String, completion: @escaping RequestCompletion<Empty>) {
+        let params = [AccountParameters.pinCode: pinCode]
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: AccountAPIRouter.validatePinCode(parameters: params),
+                                         completion: completion)
+    }
 }
 
 private extension INPAccountService {
@@ -298,6 +316,8 @@ private struct AccountParameters {
     static let clientSecret         = "client_secret"
     static let state                = "state"
     static let redirect             = "redirect"
+    static let pinCode              = "pin_code"
+    static let brandingID           = "branding_id"
 }
 
 private enum AuthenticationTypes: String {
@@ -322,6 +342,8 @@ private enum AccountAPIRouter: INPAPIConfiguration {
     case exportData(parameters: [String: Any])
     case getRegisterFields(merchantUUID: String)
     case getSocialURLs(parameters: [String: Any])
+    case sendPinCode(parameters: [String: Any])
+    case validatePinCode(parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
@@ -331,7 +353,9 @@ private enum AccountAPIRouter: INPAPIConfiguration {
              .authenticate,
              .refreshToken,
              .authenticateClientCredentials,
-             .exportData:
+             .exportData,
+             .sendPinCode,
+             .validatePinCode:
             return .post
         case .updateAccount, .setNewPassword:
             return .put
@@ -368,6 +392,10 @@ private enum AccountAPIRouter: INPAPIConfiguration {
             return String(format: NetworkConstants.Endpoints.Account.registerFields, merchantUUID)
         case .getSocialURLs:
             return NetworkConstants.Endpoints.Account.getSocialUrls
+        case .sendPinCode:
+            return NetworkConstants.Endpoints.Account.sendPinCode
+        case .validatePinCode:
+            return NetworkConstants.Endpoints.Account.validatePinCode
         }
 
     }
@@ -395,6 +423,10 @@ private enum AccountAPIRouter: INPAPIConfiguration {
         case .exportData(let parameters):
             return parameters
         case .getSocialURLs(let parameters):
+            return parameters
+        case .sendPinCode(let parameters):
+            return parameters
+        case .validatePinCode(let parameters):
             return parameters
         default:
             return nil

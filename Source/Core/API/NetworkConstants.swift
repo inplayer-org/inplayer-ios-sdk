@@ -32,6 +32,8 @@ struct NetworkConstants {
             static let exportData     = "/accounts/export"
             static let registerFields = "/accounts/register-fields/%@"
             static let getSocialUrls  = "/accounts/social"
+            static let sendPinCode    = "/v2/accounts/pin-codes/send"
+            static let validatePinCode = "/v2/accounts/pin-codes/validate"
         }
 
         struct Asset {
