@@ -12,11 +12,12 @@ class INPAccountService {
                        completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         var params: [String: Any] = [
             AccountParameters.fullName: fullName,
-            AccountParameters.email: email,
+            AccountParameters.username: email,
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation,
             AccountParameters.type: AccountType.consumer.rawValue,
-            AccountParameters.merchantUUID: InPlayer.clientId
+            AccountParameters.clientId: InPlayer.clientId,
+            AccountParameters.grantType: AccountParameters.password
         ]
         if let referrer = InPlayer.referrer {
             params[AccountParameters.referrer] = referrer
