@@ -55,8 +55,8 @@ public struct InPlayerAccessFee : Codable {
         itemType = try values.decodeIfPresent(String.self, forKey: .itemType)
         merchantId = try values.decodeIfPresent(Int.self, forKey: .merchantId)
         startsAt = try values.decodeIfPresent(Double.self, forKey: .startsAt)
-        trialPeriod = try values.decode(InPlayerTrialPeriod.self, forKey: .trialPeriod)
-        setupFee = try values.decode(InPlayerSetupFee.self, forKey: .setupFee)
+        trialPeriod = try values.decodeIfPresent(InPlayerTrialPeriod.self, forKey: .trialPeriod)
+        setupFee = try values.decodeIfPresent(InPlayerSetupFee.self, forKey: .setupFee)
     }
 
 }

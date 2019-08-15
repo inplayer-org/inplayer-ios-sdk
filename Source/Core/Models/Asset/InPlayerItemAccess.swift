@@ -57,7 +57,7 @@ public struct InPlayerItemAccess : Codable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         ipAddress = try values.decodeIfPresent(String.self, forKey: .ipAddress)
         item = try values.decodeIfPresent(InPlayerItem.self, forKey: .item)
-        startsAt = try values.decode(Double.self, forKey: .startsAt)
+        startsAt = try values.decodeIfPresent(Double.self, forKey: .startsAt)
     }
 
 }
