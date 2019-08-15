@@ -67,7 +67,7 @@ public struct InPlayerItem : Codable {
         metahash = try values.decodeIfPresent([String: String].self, forKey: .metahash)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         updatedAt = try values.decodeIfPresent(Double.self, forKey: .updatedAt)
-        content = try values.decode(String.self, forKey: .content)
+        content = try values.decodeIfPresent(String.self, forKey: .content)
     }
 
 }

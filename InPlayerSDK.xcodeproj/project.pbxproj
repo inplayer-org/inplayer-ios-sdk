@@ -109,7 +109,7 @@
 		A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InPlayer+Configuration.swift"; sourceTree = "<group>"; };
 		A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerEnvironmentType.swift; sourceTree = "<group>"; };
 		A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrlResponse.swift; sourceTree = "<group>"; };
-		A77950FC228032AE003D112A /* InPlayerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InPlayerSDK.podspec; sourceTree = SOURCE_ROOT; };
+		A77950FC228032AE003D112A /* InPlayerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InPlayerSDK.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerMalformedUrlError.swift; sourceTree = "<group>"; };
 		A7A690D3227C9CB20039AB59 /* InPlayerSocialUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrl.swift; sourceTree = "<group>"; };
 		A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
