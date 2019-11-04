@@ -2,6 +2,12 @@ import Foundation
 
 /// Item model
 public struct InPlayerItem : Codable {
+    
+    public enum ContentType {
+        case html
+        case ovp(resource: OVPContentType)
+    }
+
 
     /// Access control type object
     public let accessControlType : InPlayerAccessControlType?
@@ -69,5 +75,41 @@ public struct InPlayerItem : Codable {
         updatedAt = try values.decodeIfPresent(Double.self, forKey: .updatedAt)
         content = try values.decodeIfPresent(String.self, forKey: .content)
     }
+    
+    public func parseContent() -> ContentType {
+        guard let contentType = itemType?.contentType, let content = content else { return .html }
+        switch contentType {
+        case "ovp":
+            let contentData = content.data(using: .utf8)!
+            let json = try! JSONSerialization.jsonObject(with: contentData, options: .allowFragments)
+            let data = try! JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
+            let resource = try! JSONDecoder().decode(OVPContentType.self, from: data)
+            return .ovp(resource: resource)
+        default:
+            // is html
+            return .html
+        }
+    }
 
+}
+
+
+public struct OVPContentType: Codable {
+    
+    public let streamId: String
+    public let partnerId: String
+    public let token: String
+    
+    enum CodingKeys: String, CodingKey {
+        case streamId = "stream_id"
+        case partnerId = "partner_id"
+        case token = "token"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        streamId = try values.decode(String.self, forKey: .streamId)
+        partnerId = try values.decode(String.self, forKey: .partnerId)
+        token = try values.decode(String.self, forKey: .token)
+    }
 }
