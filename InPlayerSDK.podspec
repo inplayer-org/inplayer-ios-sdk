@@ -125,7 +125,7 @@ Pod::Spec.new do |s|
   s.subspec 'Notification' do |notification|
       notification.source_files = "Source/{Core,Notification}/**/*.swift"
       notification.dependency 'Alamofire', '5.0.0.beta.1'
-      notification.dependency 'AWSIoT', '2.9.3'
+      notification.dependency 'AWSIoT', '2.12.1'
   end
 
   s.subspec 'Payment' do |payment|
