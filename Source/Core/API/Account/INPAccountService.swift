@@ -269,8 +269,8 @@ private extension INPAccountService {
             }
 
             UserDefaults.credentials = InPlayerCredentials(accessToken: accessToken,
-                                                      refreshToken: refreshToken,
-                                                      expires: expires)
+                                                           refreshToken: refreshToken,
+                                                           expires: expires)
             UserDefaults.account = auth.account
             completion(authorization, error)
         }
