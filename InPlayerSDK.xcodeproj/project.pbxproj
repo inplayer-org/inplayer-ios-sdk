@@ -299,6 +299,14 @@
 				A76EA2B223789F1D00B13D41 /* AssetJSONDecoder.swift */,
 			);
 			path = AssetDecoder;
+            sourceTree = "<group>";
+        };
+		A76EA290237866E800B13D41 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A73211EA2240114C00452C15 /* countries.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		A7EA960521F5018600CDA238 = {
@@ -343,7 +351,7 @@
 				A7EA963921F501F000CDA238 /* Models */,
 				A7EA963321F501F000CDA238 /* API */,
 				A7EA962E21F501F000CDA238 /* Extensions */,
-				A73211EA2240114C00452C15 /* countries.json */,
+				A76EA290237866E800B13D41 /* Resource */,
 			);
 			path = Core;
 			sourceTree = "<group>";
