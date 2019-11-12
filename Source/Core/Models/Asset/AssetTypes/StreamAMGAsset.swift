@@ -1,5 +1,6 @@
 import Foundation
 
+/// StreamAMGAsset model
 public struct StreamAMGAsset: Codable, AssetJSONDecoder {
     public let partnerId: String
     public let uiconfigId: String

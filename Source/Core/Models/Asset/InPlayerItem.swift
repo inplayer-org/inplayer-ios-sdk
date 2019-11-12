@@ -3,6 +3,28 @@ import Foundation
 /// Item model
 public struct InPlayerItem : Codable {
     
+/**Custom content type enum with associated values
+ ```
+     case html(content: String)
+     case accedo(asset: AccedoAsset)
+     case brightcove(asset: BrightcoveAsset)
+     case cloudfront(asset: CloudfrontAsset)
+     case daCast(asset: DaCastAsset)
+     case jwPlayer(asset: JwPlayerAsset)
+     case laola(asset: LaolaAsset)
+     case kaltura(asset: KalturaAsset)
+     case livestream(asset: LivestreamAsset)
+     case mediaspace(content: String)
+     case panopto(content: String)
+     case piksel(content: String)
+     case qbrick(asset: QbrickAsset)
+     case sportOne(asset: SportOneAsset)
+     case sportRadar(asset: SportRadarAsset)
+     case streamAMG(asset: StreamAMGAsset)
+     case witsia(asset: WitsiaAsset)
+     case wowza(asset: WowzaAsset)
+     case unknown
+ */
     public enum ContentType {
         case html(content: String)
         case accedo(asset: AccedoAsset)
@@ -93,6 +115,7 @@ public struct InPlayerItem : Codable {
         content = try values.decodeIfPresent(String.self, forKey: .content)
     }
     
+    /// Method that return parsed content as enum with associated values
     public func parseContent() -> ContentType {
         do {
             guard let type = itemType?.name,

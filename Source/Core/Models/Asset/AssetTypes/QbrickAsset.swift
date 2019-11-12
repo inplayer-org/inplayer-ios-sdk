@@ -1,5 +1,6 @@
 import Foundation
 
+/// Qbrick asset model
 public struct QbrickAsset: Codable, AssetJSONDecoder {
     
     public let mediaId: String

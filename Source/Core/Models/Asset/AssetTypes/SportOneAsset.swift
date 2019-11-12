@@ -1,5 +1,6 @@
 import Foundation
 
+/// SportOne asset model
 public struct SportOneAsset: Codable, AssetJSONDecoder {
     
     public let videoId: String

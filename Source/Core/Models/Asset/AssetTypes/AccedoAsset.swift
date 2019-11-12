@@ -1,5 +1,6 @@
 import Foundation
 
+/// Accedo asset model
 public struct AccedoAsset: Codable, AssetJSONDecoder {
 
     public let videoKey: String

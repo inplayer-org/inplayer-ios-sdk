@@ -7,15 +7,15 @@
 </h1>
 <p align="center" style="font-size: 1.2rem;">InPlayer's iOS API Client Wrapper</p>
 
-## Requirements
+# Requirements
 
  * iOS 10.0+
  * Xcode 10.1+
  * Swift 4.2+
 
-## Installation
+# Installation
 
-### CocoaPods
+## CocoaPods
 
 [CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. You can install it with the following command:
 
@@ -42,12 +42,12 @@ Then, run the following command:
     pod 'InPlayerSDK/Payment' (includes Core and Payment modules)
     pod 'InPlayerSDK/Notification' (includes Core and Notification modules)
 
-### Dependencies
+## Dependencies
 
 This SDK has dependencies that it relies on. The list consists of:
 
-     pod 'Alamofire', '5.0.0.beta.1'
-     pod 'AWSIoT', '2.9.3' (only Notifications module)
+     pod 'Alamofire', '5.0.0-rc.3'
+     pod 'AWSIoT', '2.12.1' (only Notifications module)
 
 ## Usage
 
@@ -88,10 +88,24 @@ Asset related methods:
 ###### Example
 Get asset details:
 
-    InPlayer.Asset.getAsset(id: <ITEM_ ID>, success: { (item) in
+    InPlayer.Asset.getAsset(id: <ITEM_ID>, success: { (item) in
        // Successfully obtained item details.
     }, failure: { error in
        // Some error occured.
+    }
+
+Check asset access:
+
+    InPlayer.Asset.checkAccessForAsset(id: <ITEM_ID>), success: { (itemAccess) in
+        // You have access to this asset
+    }, failure: { (error) in
+        // Some error occured.            
+    })
+
+Additionally when checking access for asset, in `itemAccess.item` there is `content` that can be plain string or json string. In order to parse the model accordingly and have access to its properties (every type has different properties), we encorage you to use it in this matter while in `success` block:
+
+    if let ContentType.accedo(asset) = itemAccess.item.parseContent() {
+        // Parsed content is of type `accedo`, and the `asset` is the resource you can use it
     }
 
 ##### Payment
@@ -147,12 +161,12 @@ Subscribe method:
     })
 
 
-## Contributing
+# Contributing
 
 We are thankful for any contributions made by the community. By contributing you agree to abide by
 the Code of Conduct in the [Contributing Guidelines](https://github.com/inplayer-org/inplayer-ui/blob/master/.github/CONTRIBUTING.md).
 
-## License
+# License
 
 Licensed under the MIT License, Copyright © 2018-present InPlayer.
 

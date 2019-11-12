@@ -1,5 +1,6 @@
 import Foundation
 
+/// Wowza asset model
 public struct WowzaAsset: Codable, AssetJSONDecoder {
     
     public let videoId: String
