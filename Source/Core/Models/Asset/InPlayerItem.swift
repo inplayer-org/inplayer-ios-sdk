@@ -2,6 +2,29 @@ import Foundation
 
 /// Item model
 public struct InPlayerItem : Codable {
+    
+    public enum ContentType {
+        case html(content: String)
+        case accedo(asset: AccedoAsset)
+        case brightcove(asset: BrightcoveAsset)
+        case cloudfront(asset: CloudfrontAsset)
+        case daCast(asset: DaCastAsset)
+        case jwPlayer(asset: JwPlayerAsset)
+        case laola(asset: LaolaAsset)
+        case kaltura(asset: KalturaAsset)
+        case livestream(asset: LivestreamAsset)
+        case mediaspace(content: String)
+        case panopto(content: String)
+        case piksel(content: String)
+        case qbrick(asset: QbrickAsset)
+        case sportOne(asset: SportOneAsset)
+        case sportRadar(asset: SportRadarAsset)
+        case streamAMG(asset: StreamAMGAsset)
+        case witsia(asset: WitsiaAsset)
+        case wowza(asset: WowzaAsset)
+        case unknown
+    }
+
 
     /// Access control type object
     public let accessControlType : InPlayerAccessControlType?
@@ -69,5 +92,71 @@ public struct InPlayerItem : Codable {
         updatedAt = try values.decodeIfPresent(Double.self, forKey: .updatedAt)
         content = try values.decodeIfPresent(String.self, forKey: .content)
     }
-
+    
+    public func parseContent() -> ContentType {
+        do {
+            guard let type = itemType?.name,
+                let content = content,
+                let data = try content.toJsonData()
+            else { return .unknown}
+            
+            switch type {
+            case "html_asset":
+                return .html(content: content)
+            case "accedo_asset":
+                let asset: AccedoAsset = try AccedoAsset.from(data: data)
+                return .accedo(asset: asset)
+            case "brigthcove_asset":
+                let asset: BrightcoveAsset = try BrightcoveAsset.from(data: data)
+                return .brightcove(asset: asset)
+            case "cloudfront_asset":
+                let asset: CloudfrontAsset = try CloudfrontAsset.from(data: data)
+                return .cloudfront(asset: asset)
+            case "dacast_asset":
+                let asset: DaCastAsset = try DaCastAsset.from(data: data)
+                return .daCast(asset: asset)
+            case "jw_asset":
+                let asset: JwPlayerAsset = try JwPlayerAsset.from(data: data)
+                return .jwPlayer(asset: asset)
+            case "laola_asset":
+                let asset: LaolaAsset = try LaolaAsset.from(data: data)
+                return .laola(asset: asset)
+            case "kaltura_asset":
+                let asset: KalturaAsset = try KalturaAsset.from(data: data)
+                return .kaltura(asset: asset)
+            case "livestream_asset":
+                let asset: LivestreamAsset = try LivestreamAsset.from(data: data)
+                return .livestream(asset: asset)
+            case "kaltura_mediaspace_asset":
+                return .mediaspace(content: content)
+            case "panopto_asset":
+                return .panopto(content: content)
+            case "piksel_asset":
+                return .piksel(content: content)
+            case "qbrick_asset":
+                let asset: QbrickAsset = try QbrickAsset.from(data: data)
+                return .qbrick(asset: asset)
+            case "sport1_asset":
+                let asset: SportOneAsset = try SportOneAsset.from(data: data)
+                return .sportOne(asset: asset)
+            case "sportradar_asset":
+                let asset: SportRadarAsset = try SportRadarAsset.from(data: data)
+                return .sportRadar(asset: asset)
+            case "stramamg_asset":
+                let asset: StreamAMGAsset = try StreamAMGAsset.from(data: data)
+                return .streamAMG(asset: asset)
+            case "wistia_asset":
+                let asset: WitsiaAsset = try WitsiaAsset.from(data: data)
+                return .witsia(asset: asset)
+            case "wowza_asset":
+                let asset: WowzaAsset = try WowzaAsset.from(data: data)
+                return .wowza(asset: asset)
+            default:
+                return .unknown
+            }
+        }
+        catch {
+            return .unknown
+        }
+    }
 }

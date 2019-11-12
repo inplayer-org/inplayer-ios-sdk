@@ -21,6 +21,21 @@
 		A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */; };
 		A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */; };
 		A75DE418227097B20057B2A7 /* InPlayerSocialUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */; };
+		A76EA2932378916A00B13D41 /* AccedoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2922378916A00B13D41 /* AccedoAsset.swift */; };
+		A76EA2952378917600B13D41 /* BrigthcoveAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2942378917600B13D41 /* BrigthcoveAsset.swift */; };
+		A76EA2972378917F00B13D41 /* CloudfrontAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2962378917F00B13D41 /* CloudfrontAsset.swift */; };
+		A76EA2992378919800B13D41 /* DaCastAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2982378919800B13D41 /* DaCastAsset.swift */; };
+		A76EA29B237891A800B13D41 /* JwPlayerAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA29A237891A800B13D41 /* JwPlayerAsset.swift */; };
+		A76EA29D237891AF00B13D41 /* LaolaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA29C237891AF00B13D41 /* LaolaAsset.swift */; };
+		A76EA29F237891BB00B13D41 /* KalturaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA29E237891BB00B13D41 /* KalturaAsset.swift */; };
+		A76EA2A1237891C200B13D41 /* LivestreamAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2A0237891C200B13D41 /* LivestreamAsset.swift */; };
+		A76EA2A72378922300B13D41 /* QbrickAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2A62378922300B13D41 /* QbrickAsset.swift */; };
+		A76EA2A92378922D00B13D41 /* SportOneAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2A82378922D00B13D41 /* SportOneAsset.swift */; };
+		A76EA2AB2378923500B13D41 /* SportRadarAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2AA2378923500B13D41 /* SportRadarAsset.swift */; };
+		A76EA2AD2378924100B13D41 /* StreamAMGAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2AC2378924100B13D41 /* StreamAMGAsset.swift */; };
+		A76EA2AF2378925D00B13D41 /* WitsiaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2AE2378925D00B13D41 /* WitsiaAsset.swift */; };
+		A76EA2B1237892B400B13D41 /* WowzaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2B0237892B400B13D41 /* WowzaAsset.swift */; };
+		A76EA2B323789F1D00B13D41 /* AssetJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2B223789F1D00B13D41 /* AssetJSONDecoder.swift */; };
 		A77950FD228032AF003D112A /* InPlayerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A77950FC228032AE003D112A /* InPlayerSDK.podspec */; };
 		A7A690D0227B8C600039AB59 /* InPlayerMalformedUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */; };
 		A7A690D4227C9CB20039AB59 /* InPlayerSocialUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A690D3227C9CB20039AB59 /* InPlayerSocialUrl.swift */; };
@@ -109,6 +124,21 @@
 		A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InPlayer+Configuration.swift"; sourceTree = "<group>"; };
 		A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerEnvironmentType.swift; sourceTree = "<group>"; };
 		A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrlResponse.swift; sourceTree = "<group>"; };
+		A76EA2922378916A00B13D41 /* AccedoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccedoAsset.swift; sourceTree = "<group>"; };
+		A76EA2942378917600B13D41 /* BrigthcoveAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrigthcoveAsset.swift; sourceTree = "<group>"; };
+		A76EA2962378917F00B13D41 /* CloudfrontAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudfrontAsset.swift; sourceTree = "<group>"; };
+		A76EA2982378919800B13D41 /* DaCastAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaCastAsset.swift; sourceTree = "<group>"; };
+		A76EA29A237891A800B13D41 /* JwPlayerAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwPlayerAsset.swift; sourceTree = "<group>"; };
+		A76EA29C237891AF00B13D41 /* LaolaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaolaAsset.swift; sourceTree = "<group>"; };
+		A76EA29E237891BB00B13D41 /* KalturaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KalturaAsset.swift; sourceTree = "<group>"; };
+		A76EA2A0237891C200B13D41 /* LivestreamAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamAsset.swift; sourceTree = "<group>"; };
+		A76EA2A62378922300B13D41 /* QbrickAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QbrickAsset.swift; sourceTree = "<group>"; };
+		A76EA2A82378922D00B13D41 /* SportOneAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportOneAsset.swift; sourceTree = "<group>"; };
+		A76EA2AA2378923500B13D41 /* SportRadarAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportRadarAsset.swift; sourceTree = "<group>"; };
+		A76EA2AC2378924100B13D41 /* StreamAMGAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamAMGAsset.swift; sourceTree = "<group>"; };
+		A76EA2AE2378925D00B13D41 /* WitsiaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitsiaAsset.swift; sourceTree = "<group>"; };
+		A76EA2B0237892B400B13D41 /* WowzaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WowzaAsset.swift; sourceTree = "<group>"; };
+		A76EA2B223789F1D00B13D41 /* AssetJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetJSONDecoder.swift; sourceTree = "<group>"; };
 		A77950FC228032AE003D112A /* InPlayerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InPlayerSDK.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A7A690CF227B8C600039AB59 /* InPlayerMalformedUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerMalformedUrlError.swift; sourceTree = "<group>"; };
 		A7A690D3227C9CB20039AB59 /* InPlayerSocialUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrl.swift; sourceTree = "<group>"; };
@@ -241,6 +271,36 @@
 			path = Subscription;
 			sourceTree = "<group>";
 		};
+		A76EA2912378914B00B13D41 /* AssetTypes */ = {
+			isa = PBXGroup;
+			children = (
+				A76EA2B42378A1AE00B13D41 /* AssetDecoder */,
+				A76EA2922378916A00B13D41 /* AccedoAsset.swift */,
+				A76EA2942378917600B13D41 /* BrigthcoveAsset.swift */,
+				A76EA2962378917F00B13D41 /* CloudfrontAsset.swift */,
+				A76EA2982378919800B13D41 /* DaCastAsset.swift */,
+				A76EA29A237891A800B13D41 /* JwPlayerAsset.swift */,
+				A76EA29C237891AF00B13D41 /* LaolaAsset.swift */,
+				A76EA29E237891BB00B13D41 /* KalturaAsset.swift */,
+				A76EA2A0237891C200B13D41 /* LivestreamAsset.swift */,
+				A76EA2A62378922300B13D41 /* QbrickAsset.swift */,
+				A76EA2A82378922D00B13D41 /* SportOneAsset.swift */,
+				A76EA2AA2378923500B13D41 /* SportRadarAsset.swift */,
+				A76EA2AC2378924100B13D41 /* StreamAMGAsset.swift */,
+				A76EA2AE2378925D00B13D41 /* WitsiaAsset.swift */,
+				A76EA2B0237892B400B13D41 /* WowzaAsset.swift */,
+			);
+			path = AssetTypes;
+			sourceTree = "<group>";
+		};
+		A76EA2B42378A1AE00B13D41 /* AssetDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				A76EA2B223789F1D00B13D41 /* AssetJSONDecoder.swift */,
+			);
+			path = AssetDecoder;
+            sourceTree = "<group>";
+        };
 		A76EA290237866E800B13D41 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +416,7 @@
 		A7EA963A21F501F000CDA238 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				A76EA2912378914B00B13D41 /* AssetTypes */,
 				A7EA964421F501F000CDA238 /* InPlayerItem.swift */,
 				A7EA963C21F501F000CDA238 /* InPlayerAccessControlType.swift */,
 				A7EA963D21F501F000CDA238 /* InPlayerAccessFee.swift */,
@@ -632,13 +693,17 @@
 				A7EA967621F501F000CDA238 /* InPlayerSetupFee.swift in Sources */,
 				A7EA968B21F501F000CDA238 /* NotificationNetworkConstants.swift in Sources */,
 				A7EA968021F501F000CDA238 /* InPlayerSessionAPIManager.swift in Sources */,
+				A76EA29B237891A800B13D41 /* JwPlayerAsset.swift in Sources */,
 				A7A690D6227CB0C20039AB59 /* NotificationNameExt.swift in Sources */,
+				A76EA29D237891AF00B13D41 /* LaolaAsset.swift in Sources */,
 				A7EA966A21F501F000CDA238 /* UserDefaultsExt.swift in Sources */,
 				A7EA967421F501F000CDA238 /* InPlayerAccessFee.swift in Sources */,
 				A7EA967021F501F000CDA238 /* INPAPIConfiguration.swift in Sources */,
 				A7EA967521F501F000CDA238 /* InPlayerTrialPeriod.swift in Sources */,
+				A76EA2972378917F00B13D41 /* CloudfrontAsset.swift in Sources */,
 				A73211DA223C0D7E00452C15 /* InPlayerRegisterField.swift in Sources */,
 				A7EA966B21F501F000CDA238 /* DataDecodeExt.swift in Sources */,
+				A76EA2AD2378924100B13D41 /* StreamAMGAsset.swift in Sources */,
 				A7EA966C21F501F000CDA238 /* DateExt.swift in Sources */,
 				A7EA968D21F501F000CDA238 /* InPlayerAwsKey.swift in Sources */,
 				A7EA96E121F52C9600CDA238 /* INPPaymentService.swift in Sources */,
@@ -649,12 +714,14 @@
 				A7EA96DF21F52C0000CDA238 /* INPCredentialProvider.swift in Sources */,
 				A7EA966821F501F000CDA238 /* Configuration.swift in Sources */,
 				A7EA966D21F501F000CDA238 /* InPlayer.swift in Sources */,
+				A76EA2B1237892B400B13D41 /* WowzaAsset.swift in Sources */,
 				A7EA96D421F52B8400CDA238 /* INPAssetService.swift in Sources */,
 				A7EA967C21F501F000CDA238 /* InPlayerAccount.swift in Sources */,
 				A7EA96D621F52BD500CDA238 /* INPAccountService.swift in Sources */,
 				A7EA96D221F52B6900CDA238 /* InPlayerConstants.swift in Sources */,
 				A75DE418227097B20057B2A7 /* InPlayerSocialUrlResponse.swift in Sources */,
 				A73211E5223C1A8800452C15 /* InPlayerSubscription.swift in Sources */,
+				A76EA2A1237891C200B13D41 /* LivestreamAsset.swift in Sources */,
 				A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */,
 				A73211DC223C11B500452C15 /* Subscription.swift in Sources */,
 				A73211E7224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift in Sources */,
@@ -664,15 +731,21 @@
 				A7EA968C21F501F000CDA238 /* InPlayerNotification.swift in Sources */,
 				A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */,
 				A7EA967321F501F000CDA238 /* InPlayerAccessControlType.swift in Sources */,
+				A76EA2952378917600B13D41 /* BrigthcoveAsset.swift in Sources */,
 				A7EA967121F501F000CDA238 /* NetworkDataSource.swift in Sources */,
 				A73211D0223AD06E00452C15 /* InPlayerCustomerAccessItem.swift in Sources */,
 				A7EA968421F501F000CDA238 /* InPlayerInvalidResponseError.swift in Sources */,
+				A76EA2AF2378925D00B13D41 /* WitsiaAsset.swift in Sources */,
 				A7EA968F21F501F000CDA238 /* INPNotificationService.swift in Sources */,
 				A73211E922400B5700452C15 /* InPlayerFieldCountry.swift in Sources */,
 				A7EA969021F501F000CDA238 /* InPlayerNotificationAPIManager.swift in Sources */,
+				A76EA2B323789F1D00B13D41 /* AssetJSONDecoder.swift in Sources */,
 				A7EA969321F501F000CDA238 /* PaymentNetworkConstants.swift in Sources */,
+				A76EA2AB2378923500B13D41 /* SportRadarAsset.swift in Sources */,
 				A7EA967A21F501F000CDA238 /* InPlayerItemMetadata.swift in Sources */,
 				A7EA968221F501F000CDA238 /* InPlayerUnknownError.swift in Sources */,
+				A76EA2932378916A00B13D41 /* AccedoAsset.swift in Sources */,
+				A76EA2A92378922D00B13D41 /* SportOneAsset.swift in Sources */,
 				A7EA968721F501F000CDA238 /* Account.swift in Sources */,
 				A7EA966F21F501F000CDA238 /* Asset.swift in Sources */,
 				A7EA968321F501F000CDA238 /* InPlayerErrorMapper.swift in Sources */,
@@ -681,6 +754,9 @@
 				A7EA96DE21F52C0000CDA238 /* INPAWSManager.swift in Sources */,
 				A7EA967E21F501F000CDA238 /* InPlayerAuthorization.swift in Sources */,
 				A7EA968121F501F000CDA238 /* InPlayerHttpError.swift in Sources */,
+				A76EA2992378919800B13D41 /* DaCastAsset.swift in Sources */,
+				A76EA2A72378922300B13D41 /* QbrickAsset.swift in Sources */,
+				A76EA29F237891BB00B13D41 /* KalturaAsset.swift in Sources */,
 				A7EA967921F501F000CDA238 /* InPlayerItemAccess.swift in Sources */,
 				A7EA968A21F501F000CDA238 /* Notification.swift in Sources */,
 				A7EA967721F501F000CDA238 /* InPlayerAccessType.swift in Sources */,
