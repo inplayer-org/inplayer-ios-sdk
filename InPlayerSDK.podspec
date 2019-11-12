@@ -118,18 +118,18 @@ Pod::Spec.new do |s|
   s.swift_version = "4.2"
 
   s.subspec 'Core' do |core|
-      core.source_files = "Source/Core/**/*.swift"
-      core.dependency 'Alamofire', '5.0.0.beta.1'
+      core.source_files = "Source/Core/**/*.*"
+      core.dependency 'Alamofire', '5.0.0-rc.3'
   end
 
   s.subspec 'Notification' do |notification|
-      notification.source_files = "Source/{Core,Notification}/**/*.swift"
-      notification.dependency 'Alamofire', '5.0.0.beta.1'
-      notification.dependency 'AWSIoT', '2.9.3'
+      notification.source_files = "Source/Notification/**/*.*"
+      notification.dependency 'InPlayerSDK/Core'
+      notification.dependency 'AWSIoT', '2.12.1'
   end
 
   s.subspec 'Payment' do |payment|
-      payment.source_files = "Source/{Core,Payment}/**/*.swift"
-      payment.dependency 'Alamofire', '5.0.0.beta.1'
+      payment.source_files = "Source/Payment/**/*.*"
+      payment.dependency 'InPlayerSDK/Core'
   end
 end
