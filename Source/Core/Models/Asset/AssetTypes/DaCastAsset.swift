@@ -1,5 +1,6 @@
 import Foundation
 
+/// DaCast asset model
 public struct DaCastAsset: Codable, AssetJSONDecoder {
     
     public let contentId: String

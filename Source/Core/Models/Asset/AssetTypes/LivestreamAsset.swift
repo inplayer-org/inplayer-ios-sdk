@@ -1,5 +1,6 @@
 import Foundation
 
+/// Livestream asset model
 public struct LivestreamAsset: Codable, AssetJSONDecoder {
     
     public let accountId: String

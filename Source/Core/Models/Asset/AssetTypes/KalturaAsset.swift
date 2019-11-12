@@ -1,5 +1,6 @@
 import Foundation
 
+/// Kaltura asset model
 public struct KalturaAsset: Codable, AssetJSONDecoder {
     
     public let entryId: String

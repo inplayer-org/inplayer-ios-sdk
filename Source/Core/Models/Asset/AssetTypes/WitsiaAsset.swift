@@ -1,5 +1,6 @@
 import Foundation
 
+/// Witsia asset model
 public struct WitsiaAsset: Codable, AssetJSONDecoder {
     
     public let videoId: String

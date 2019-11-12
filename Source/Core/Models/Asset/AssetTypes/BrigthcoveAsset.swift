@@ -1,5 +1,6 @@
 import Foundation
 
+/// Birghtcove asset model
 public struct BrightcoveAsset: Codable, AssetJSONDecoder {
     
     public let accountId: String

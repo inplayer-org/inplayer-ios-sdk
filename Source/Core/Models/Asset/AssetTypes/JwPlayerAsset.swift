@@ -1,5 +1,6 @@
 import Foundation
 
+/// JwPlayer asset model
 public struct JwPlayerAsset: Codable, AssetJSONDecoder {
     
     public let videoId: String

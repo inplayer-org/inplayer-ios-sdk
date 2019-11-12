@@ -1,11 +1,3 @@
-//
-//  DictionaryExt.swift
-//  InPlayerSDK
-//
-//  Created by Oliver Dimitrov on 4/24/19.
-//  Copyright © 2019 InPlayer. All rights reserved.
-//
-
 import Foundation
 
 extension Dictionary {

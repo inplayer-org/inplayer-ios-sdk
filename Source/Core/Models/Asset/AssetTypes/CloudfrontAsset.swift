@@ -1,5 +1,6 @@
 import Foundation
 
+/// Cloudfront asset model
 public struct CloudfrontAsset: Codable, AssetJSONDecoder {
     
     public let player: String

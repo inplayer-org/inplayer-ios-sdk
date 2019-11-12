@@ -1,5 +1,6 @@
 import Foundation
 
+/// Laola asset model
 public struct LaolaAsset: Codable, AssetJSONDecoder {
     
     public let videoId: String

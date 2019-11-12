@@ -1,5 +1,6 @@
 import Foundation
 
+/// SportRadar asset model
 public struct SportRadarAsset: Codable, AssetJSONDecoder {
     
     public let streamId: String
