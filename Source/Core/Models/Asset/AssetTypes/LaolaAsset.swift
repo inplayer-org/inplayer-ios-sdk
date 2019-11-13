@@ -7,7 +7,7 @@ public struct LaolaAsset: Codable, AssetJSONDecoder {
     public let partnerId: String
     
     enum CodingKeys: String, CodingKey {
-        case videoId = "videoId"
+        case videoId = "video_id"
         case partnerId = "partner_id"
     }
     
