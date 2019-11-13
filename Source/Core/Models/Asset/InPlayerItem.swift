@@ -119,35 +119,42 @@ public struct InPlayerItem : Codable {
     public func parseContent() -> ContentType {
         do {
             guard let type = itemType?.name,
-                let content = content,
-                let data = try content.toJsonData()
+                let content = content
             else { return .unknown}
             
             switch type {
             case "html_asset":
                 return .html(content: content)
             case "accedo_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: AccedoAsset = try AccedoAsset.from(data: data)
                 return .accedo(asset: asset)
             case "brigthcove_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: BrightcoveAsset = try BrightcoveAsset.from(data: data)
                 return .brightcove(asset: asset)
             case "cloudfront_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: CloudfrontAsset = try CloudfrontAsset.from(data: data)
                 return .cloudfront(asset: asset)
             case "dacast_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: DaCastAsset = try DaCastAsset.from(data: data)
                 return .daCast(asset: asset)
             case "jw_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: JwPlayerAsset = try JwPlayerAsset.from(data: data)
                 return .jwPlayer(asset: asset)
             case "laola_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: LaolaAsset = try LaolaAsset.from(data: data)
                 return .laola(asset: asset)
             case "kaltura_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: KalturaAsset = try KalturaAsset.from(data: data)
                 return .kaltura(asset: asset)
             case "livestream_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: LivestreamAsset = try LivestreamAsset.from(data: data)
                 return .livestream(asset: asset)
             case "kaltura_mediaspace_asset":
@@ -157,21 +164,27 @@ public struct InPlayerItem : Codable {
             case "piksel_asset":
                 return .piksel(content: content)
             case "qbrick_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: QbrickAsset = try QbrickAsset.from(data: data)
                 return .qbrick(asset: asset)
             case "sport1_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: SportOneAsset = try SportOneAsset.from(data: data)
                 return .sportOne(asset: asset)
             case "sportradar_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: SportRadarAsset = try SportRadarAsset.from(data: data)
                 return .sportRadar(asset: asset)
-            case "stramamg_asset":
+            case "streamamg_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: StreamAMGAsset = try StreamAMGAsset.from(data: data)
                 return .streamAMG(asset: asset)
             case "wistia_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: WitsiaAsset = try WitsiaAsset.from(data: data)
                 return .witsia(asset: asset)
             case "wowza_asset":
+                guard let data = try content.toJsonData() else { return .unknown }
                 let asset: WowzaAsset = try WowzaAsset.from(data: data)
                 return .wowza(asset: asset)
             default:
