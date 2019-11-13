@@ -14,7 +14,7 @@
     <a title="InPlayerItem Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">InPlayerSDK Docs</a> (71% documented)</p>
+        <p><a href="../index.html">InPlayerSDK Docs</a> (64% documented)</p>
         <p class="header-right"><a href="https://github.com/inplayer-org/inplayer-ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -101,6 +101,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/AssetJSONDecoder.html">AssetJSONDecoder</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/InPlayerError.html">InPlayerError</a>
               </li>
             </ul>
@@ -108,6 +111,18 @@
           <li class="nav-group-name">
             <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AccedoAsset.html">AccedoAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BrightcoveAsset.html">BrightcoveAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CloudfrontAsset.html">CloudfrontAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DaCastAsset.html">DaCastAsset</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Structs/INPInvalidJSONError.html">INPInvalidJSONError</a>
               </li>
@@ -146,6 +161,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/InPlayerItem.html">InPlayerItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerItem/ContentType.html">– ContentType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/InPlayerItemAccess.html">InPlayerItemAccess</a>
@@ -192,6 +210,36 @@
               <li class="nav-group-task">
                 <a href="../Structs/InPlayerUnknownError.html">InPlayerUnknownError</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Structs/JwPlayerAsset.html">JwPlayerAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KalturaAsset.html">KalturaAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LaolaAsset.html">LaolaAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LivestreamAsset.html">LivestreamAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/QbrickAsset.html">QbrickAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SportOneAsset.html">SportOneAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SportRadarAsset.html">SportRadarAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StreamAMGAsset.html">StreamAMGAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WitsiaAsset.html">WitsiaAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WowzaAsset.html">WowzaAsset</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -212,6 +260,54 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB4ItemV11ContentTypeO"></a>
+                    <a name="//apple_ref/swift/Enum/ContentType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB4ItemV11ContentTypeO">ContentType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Custom content type enum with associated values</p>
+<pre class="highlight swift"><code>     <span class="k">case</span> <span class="nf">html</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">accedo</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">AccedoAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">brightcove</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">BrightcoveAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">cloudfront</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">CloudfrontAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">daCast</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">DaCastAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">jwPlayer</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">JwPlayerAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">laola</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">LaolaAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">kaltura</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">KalturaAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">livestream</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">LivestreamAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">mediaspace</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">panopto</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">piksel</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">qbrick</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">QbrickAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">sportOne</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">SportOneAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">sportRadar</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">SportRadarAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">streamAMG</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">StreamAMGAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">witsia</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">WitsiaAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="nf">wowza</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">WowzaAsset</span><span class="p">)</span>
+     <span class="k">case</span> <span class="n">unknown</span>
+</code></pre>
+
+                        <a href="../Structs/InPlayerItem/ContentType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ContentType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -563,13 +659,40 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB4ItemV12parseContentAC0F4TypeOyF"></a>
+                    <a name="//apple_ref/swift/Method/parseContent()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB4ItemV12parseContentAC0F4TypeOyF">parseContent()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method that return parsed content as enum with associated values</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseContent</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/InPlayerItem/ContentType.html">ContentType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-07-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-11-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

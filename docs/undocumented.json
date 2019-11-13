@@ -204,6 +204,216 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/AccedoAsset.swift",
+      "line": 6,
+      "symbol": "AccedoAsset.videoKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/BrigthcoveAsset.swift",
+      "line": 6,
+      "symbol": "BrightcoveAsset.accountId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/BrigthcoveAsset.swift",
+      "line": 7,
+      "symbol": "BrightcoveAsset.videoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/BrigthcoveAsset.swift",
+      "line": 8,
+      "symbol": "BrightcoveAsset.token",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/CloudfrontAsset.swift",
+      "line": 6,
+      "symbol": "CloudfrontAsset.player",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/CloudfrontAsset.swift",
+      "line": 7,
+      "symbol": "CloudfrontAsset.sourceUrl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/DaCastAsset.swift",
+      "line": 6,
+      "symbol": "DaCastAsset.contentId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/DaCastAsset.swift",
+      "line": 7,
+      "symbol": "DaCastAsset.token",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/JwPlayerAsset.swift",
+      "line": 6,
+      "symbol": "JwPlayerAsset.videoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/JwPlayerAsset.swift",
+      "line": 7,
+      "symbol": "JwPlayerAsset.playerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/KalturaAsset.swift",
+      "line": 6,
+      "symbol": "KalturaAsset.entryId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/KalturaAsset.swift",
+      "line": 7,
+      "symbol": "KalturaAsset.uiconfigId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/KalturaAsset.swift",
+      "line": 8,
+      "symbol": "KalturaAsset.partnerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/LaolaAsset.swift",
+      "line": 6,
+      "symbol": "LaolaAsset.videoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/LaolaAsset.swift",
+      "line": 7,
+      "symbol": "LaolaAsset.partnerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/LivestreamAsset.swift",
+      "line": 6,
+      "symbol": "LivestreamAsset.accountId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/LivestreamAsset.swift",
+      "line": 7,
+      "symbol": "LivestreamAsset.eventId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/LivestreamAsset.swift",
+      "line": 8,
+      "symbol": "LivestreamAsset.videoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/QbrickAsset.swift",
+      "line": 6,
+      "symbol": "QbrickAsset.mediaId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/QbrickAsset.swift",
+      "line": 7,
+      "symbol": "QbrickAsset.accountId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/SportOneAsset.swift",
+      "line": 6,
+      "symbol": "SportOneAsset.videoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/SportRadarAsset.swift",
+      "line": 6,
+      "symbol": "SportRadarAsset.streamId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/SportRadarAsset.swift",
+      "line": 7,
+      "symbol": "SportRadarAsset.partnerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/SportRadarAsset.swift",
+      "line": 8,
+      "symbol": "SportRadarAsset.token",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/StreamAMGAsset.swift",
+      "line": 5,
+      "symbol": "StreamAMGAsset.partnerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/StreamAMGAsset.swift",
+      "line": 6,
+      "symbol": "StreamAMGAsset.uiconfigId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/StreamAMGAsset.swift",
+      "line": 7,
+      "symbol": "StreamAMGAsset.entryId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/StreamAMGAsset.swift",
+      "line": 8,
+      "symbol": "StreamAMGAsset.token",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/WitsiaAsset.swift",
+      "line": 6,
+      "symbol": "WitsiaAsset.videoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/AssetTypes/WowzaAsset.swift",
+      "line": 6,
+      "symbol": "WowzaAsset.videoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
       "line": 4,
       "symbol": "InPlayerAccessFee",
@@ -226,7 +436,140 @@
     },
     {
       "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 29,
+      "symbol": "InPlayerItem.ContentType.html(content:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
       "line": 30,
+      "symbol": "InPlayerItem.ContentType.accedo(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 31,
+      "symbol": "InPlayerItem.ContentType.brightcove(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 32,
+      "symbol": "InPlayerItem.ContentType.cloudfront(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 33,
+      "symbol": "InPlayerItem.ContentType.daCast(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 34,
+      "symbol": "InPlayerItem.ContentType.jwPlayer(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 35,
+      "symbol": "InPlayerItem.ContentType.laola(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 36,
+      "symbol": "InPlayerItem.ContentType.kaltura(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 37,
+      "symbol": "InPlayerItem.ContentType.livestream(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 38,
+      "symbol": "InPlayerItem.ContentType.mediaspace(content:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 39,
+      "symbol": "InPlayerItem.ContentType.panopto(content:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 40,
+      "symbol": "InPlayerItem.ContentType.piksel(content:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 41,
+      "symbol": "InPlayerItem.ContentType.qbrick(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 42,
+      "symbol": "InPlayerItem.ContentType.sportOne(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 43,
+      "symbol": "InPlayerItem.ContentType.sportRadar(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 44,
+      "symbol": "InPlayerItem.ContentType.streamAMG(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 45,
+      "symbol": "InPlayerItem.ContentType.witsia(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 46,
+      "symbol": "InPlayerItem.ContentType.wowza(asset:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 47,
+      "symbol": "InPlayerItem.ContentType.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 75,
       "symbol": "InPlayerItem.metahash",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"

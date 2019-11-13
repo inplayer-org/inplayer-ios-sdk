@@ -1,10 +1,10 @@
 import Alamofire
 
 /**
- Authorization Handler. If some request returns 401 or 403 this handler will try to fetch new access token
- using the `refreshToken` endpoint.
- */
-final class INPAuthHandler: RequestAdapter, RequestRetrier {
+Authorization Handler. If some request returns 401 or 403 this handler will try to fetch new access token
+using the `refreshToken` endpoint.
+*/
+final class INPAuthHandler: RequestInterceptor {
     /**
      A closure to be executed once the refresh request has finished.
      - Parameters:
@@ -24,59 +24,56 @@ final class INPAuthHandler: RequestAdapter, RequestRetrier {
     private let lock = NSLock()
 
     /// Array of requests that are waiting to be retried.
-    private var requestToRetry: [RequestRetryCompletion] = []
-
+    private var requestToRetry: [(RetryResult) -> Void] = []
+    
     init(baseURLString: String) {
         self.baseURLString = baseURLString
     }
 
-    func adapt(_ urlRequest: URLRequest, completion: @escaping (Result<URLRequest>) -> Void) {
-        let result: Result<URLRequest> = Result {
-            if let authenticationType = urlRequest.value(forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType),
-                authenticationType == NetworkConstants.HeaderParameters.refreshToken {
-                    return urlRequest
-            }
-            guard
-                let accessToken = InPlayer.Account.getCredentials()?.accessToken,
-                let urlString = urlRequest.url?.absoluteString,
-                urlString.hasPrefix(baseURLString)
-            else {
-                return urlRequest
-            }
-
-            var urlRequest = urlRequest
-            urlRequest.setValue( NetworkConstants.HeaderParameters.bearerToken + accessToken,
-                                 forHTTPHeaderField: NetworkConstants.HeaderParameters.authorization)
-            return urlRequest
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+        var adaptedRequest = urlRequest
+        if let authenticationType = adaptedRequest.value(forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType),
+            authenticationType == NetworkConstants.HeaderParameters.refreshToken {
+            completion(.success(adaptedRequest))
+            return
         }
-        completion(result)
-    }
+        guard
+            let accessToken = InPlayer.Account.getCredentials()?.accessToken,
+            let urlString = adaptedRequest.url?.absoluteString,
+            urlString.hasPrefix(baseURLString)
+        else {
+            return completion(.success(adaptedRequest))
+        }
+        adaptedRequest.setValue( NetworkConstants.HeaderParameters.bearerToken + accessToken,
+                             forHTTPHeaderField: NetworkConstants.HeaderParameters.authorization)
+        completion(.success(adaptedRequest))
+     }
 
-    func should(_ manager: Session, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
+     func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
         lock.lock(); defer { lock.unlock() }
 
         if let authenticationType = request.request?.value(forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType),
             authenticationType == NetworkConstants.HeaderParameters.refreshToken {
-            return completion(false, 0.0)
+            return completion(.doNotRetry)
         }
         guard
             request.retryCount == 0,
             let response = request.response,
             response.statusCode == 401 || response.statusCode == 403
         else {
-            return completion(false, 0.0)
+            return completion(.doNotRetry)
         }
         requestToRetry.append(completion)
 
         if !isRefreshing {
             refreshTokens { [weak self] (succeeded, accessToken, refreshToken) in
                 guard let strongSelf = self else { return }
-                strongSelf.requestToRetry.forEach { $0(succeeded, 0.25) }
+                strongSelf.requestToRetry.forEach { $0(.retryWithDelay(0.25)) }
                 strongSelf.requestToRetry.removeAll()
             }
         }
     }
-
+    
     private func refreshTokens(completion: @escaping RefreshCompletion) {
         if let refreshToken = InPlayer.Account.getCredentials()?.refreshToken {
 

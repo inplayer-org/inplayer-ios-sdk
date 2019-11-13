@@ -15,14 +15,14 @@ public final class InPlayerSessionAPIManager {
     public var baseURLString: String {
         didSet {
             let handler = INPAuthHandler(baseURLString: baseURLString)
-            session = InPlayerSession(adapter: handler, retrier: handler)
+            session = InPlayerSession(interceptor: handler)
         }
     }
 
     private init() {
         baseURLString = InPlayer.getBaseUrlString()
         let handler = INPAuthHandler(baseURLString: baseURLString)
-        session = InPlayerSession(adapter: handler, retrier: handler)
+        session = InPlayerSession(interceptor: handler)
     }
 }
 

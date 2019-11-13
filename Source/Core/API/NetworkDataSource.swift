@@ -26,13 +26,15 @@ class NetworkDataSource {
         if route.requiresAuthorization, !session.isAuthorized {
             return completion(nil, InPlayerUnauthorizedError())
         }
-        session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T>) in
-            if response.result.isFailure {
-                let error = InPlayerErrorMapper.mapFromError(originalError: response.result.error!,
+        
+        session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T, AFError>) in
+            switch response.result {
+            case .success(let result):
+                completion(result, nil)
+            case .failure(let error):
+                let error = InPlayerErrorMapper.mapFromError(originalError: error,
                                                              withResponseData: response.data)
                 completion(nil, error)
-            } else {
-                completion(response.result.value, nil)
             }
         }
     }
