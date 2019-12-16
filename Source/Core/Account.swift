@@ -36,11 +36,12 @@ public extension InPlayer {
         }
         
         /**
-         Check if current user has access token.
+         Check if current user has valid access token.
          - Returns: Bool result of the check.
          */
         public static func isAuthenticated() -> Bool {
             guard let credentials = getCredentials() else { return false }
+            guard Date().timeIntervalSince1970.isLess(than: credentials.expires) else { return false }
             return !credentials.accessToken.isEmpty && credentials.accessToken != ""
         }
         

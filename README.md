@@ -24,6 +24,8 @@
 To integrate InPlayerSDK into your Xcode project using CocoaPods, specify it in your `Podfile`
 
     source 'https://github.com/CocoaPods/Specs.git'
+    install! 'cocoapods',
+         : preserve_pod_file_structure => true
     platform :ios, '10.0'
 
     target '<Your Target name>' do
