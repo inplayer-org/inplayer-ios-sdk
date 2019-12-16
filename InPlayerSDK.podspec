@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "InPlayerSDK"
-  s.version      = "1.5.0"
+  s.version      = "1.5.1"
   s.summary      = "InPlayer's iOS API client wrapper."
 
   # This description is used to generate tags and improve search results.
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files = "Source/**/*.swift"
+  s.source_files = "Source/**/*.*"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
