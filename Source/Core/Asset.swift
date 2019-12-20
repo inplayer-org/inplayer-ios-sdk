@@ -56,15 +56,17 @@ public extension InPlayer {
          This method checks and retrieves a customer's entitlement to an asset
          - Parameters:
              - id: Asset ID
+             - entryId: Optional string specifying external video id
              - success: A closure to be executed once the request has finished successfully.
              - itemAccess: Object containing info about the item plus additional info.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
         public static func checkAccessForAsset(id: Int,
+                                               entryId: String?,
                                                success: @escaping (InPlayerItemAccess) -> Void,
                                                failure: @escaping (InPlayerError) -> Void) {
-            INPAssetService.checkAccessForAsset(id: id, completion: { (itemAccess, error) in
+            INPAssetService.checkAccessForAsset(id: id, entryId: entryId, completion: { (itemAccess, error) in
                 if let error = error {
                     failure(error)
                 } else {
