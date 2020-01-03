@@ -36,6 +36,19 @@ class INPPaymentService {
                                          route: PaymentAPIRouter.validatePayment(parameters: params),
                                          completion: completion)
     }
+    
+    static func validateByProductName(productName: String,
+                                      receipt: String,
+                                      completion: @escaping RequestCompletion<Empty>) {
+        let params: [String: Any] = [
+            PaymentParameters.receipt: receipt,
+            PaymentParameters.productName: productName
+        ]
+        NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
+                                         route: PaymentAPIRouter.validatePaymentByProductName(parameters: params),
+                                         completion: completion)
+        
+    }
 
     static func getPurchaseHistory(status: PurchaseHistory,
                                    page: Int,
@@ -64,11 +77,12 @@ class INPPaymentService {
 private enum PaymentAPIRouter: INPAPIConfiguration {
 
     case validatePayment(parameters: [String: Any])
+    case validatePaymentByProductName(parameters: [String: Any])
     case getPurchaseHistory(parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
-        case .validatePayment:
+        case .validatePayment, .validatePaymentByProductName:
             return .post
         case .getPurchaseHistory:
             return .get
@@ -77,7 +91,7 @@ private enum PaymentAPIRouter: INPAPIConfiguration {
 
     var path: String {
         switch self {
-        case .validatePayment:
+        case .validatePayment, .validatePaymentByProductName:
             return NetworkConstants.Endpoints.Payment.validate
         case .getPurchaseHistory:
             return NetworkConstants.Endpoints.Payment.purchaseHistory
@@ -87,6 +101,8 @@ private enum PaymentAPIRouter: INPAPIConfiguration {
     var parameters: Parameters? {
         switch self {
         case .validatePayment(let parameters):
+            return parameters
+        case .validatePaymentByProductName(let parameters):
             return parameters
         case .getPurchaseHistory(let parameters):
             return parameters
@@ -118,4 +134,5 @@ private struct PaymentParameters {
     static let limit = "size"
     static let type = "type"
     static let customerId = "customerID"
+    static let productName = "product_name"
 }
