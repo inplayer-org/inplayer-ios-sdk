@@ -360,6 +360,103 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:11InPlayerSDK0aB0C7PaymentC21validateByProductName07productH07receipt7success7failureySS_SSyycyAA0aB5Error_pctFZ"></a>
+                    <a name="//apple_ref/swift/Method/validateByProductName(productName:receipt:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7PaymentC21validateByProductName07productH07receipt7success7failureySS_SSyycyAA0aB5Error_pctFZ">validateByProductName(productName:receipt:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Contact InPlayer server and validate if purchase was successfull.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">validateByProductName</span><span class="p">(</span><span class="nv">productName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                         <span class="nv">receipt</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                                         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Purchased product name</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>receipt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Base64EncodedString of the recept data stored on device after successfull in-app purchase.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished successfully.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to be executed once the request has finished with error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Containing information about the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:11InPlayerSDK0aB0C7PaymentC18getPurchaseHistory6status4page5limit4type10customerId7success7failureyAA0fG0O_S2iSSSgSiSgyAA0ab8CustomerfG0VcyAA0aB5Error_pctFZ"></a>
                     <a name="//apple_ref/swift/Method/getPurchaseHistory(status:page:limit:type:customerId:success:failure:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:11InPlayerSDK0aB0C7PaymentC18getPurchaseHistory6status4page5limit4type10customerId7success7failureyAA0fG0O_S2iSSSgSiSgyAA0ab8CustomerfG0VcyAA0aB5Error_pctFZ">getPurchaseHistory(status:page:limit:type:customerId:success:failure:)</a>
@@ -510,7 +607,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2019-12-20)</p>
+          <p>&copy; 2020 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2020-01-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
