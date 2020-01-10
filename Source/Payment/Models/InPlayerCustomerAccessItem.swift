@@ -17,7 +17,7 @@ public struct InPlayerCustomerAccessItem: Codable {
     public let purchasedAccessFeeDescription : String?
     public let purchasedAccessFeeId : Int?
     public let purchasedAccessFeeType : String?
-    public let purchasedAmount : Int?
+    public let purchasedAmount : Double?
     public let purchasedCurrency : String?
     public let revoked : Int?
     public let startsAt : Int?
@@ -64,7 +64,7 @@ public struct InPlayerCustomerAccessItem: Codable {
         purchasedAccessFeeDescription = try values.decodeIfPresent(String.self, forKey: .purchasedAccessFeeDescription)
         purchasedAccessFeeId = try values.decodeIfPresent(Int.self, forKey: .purchasedAccessFeeId)
         purchasedAccessFeeType = try values.decodeIfPresent(String.self, forKey: .purchasedAccessFeeType)
-        purchasedAmount = try values.decodeIfPresent(Int.self, forKey: .purchasedAmount)
+        purchasedAmount = try values.decodeIfPresent(Double.self, forKey: .purchasedAmount)
         purchasedCurrency = try values.decodeIfPresent(String.self, forKey: .purchasedCurrency)
         revoked = try values.decodeIfPresent(Int.self, forKey: .revoked)
         startsAt = try values.decodeIfPresent(Int.self, forKey: .startsAt)
