@@ -3,7 +3,7 @@ import Foundation
 /// Customer Access Item Model
 public struct InPlayerCustomerAccessItem: Codable {
     public let consumerEmail : String?
-    public let createdAt : Int?
+    public let createdAt : Double?
     public let customerId : Int?
     public let expiresAt : Int?
     public let isTrial : Bool?
@@ -17,10 +17,10 @@ public struct InPlayerCustomerAccessItem: Codable {
     public let purchasedAccessFeeDescription : String?
     public let purchasedAccessFeeId : Int?
     public let purchasedAccessFeeType : String?
-    public let purchasedAmount : Int?
+    public let purchasedAmount : Double?
     public let purchasedCurrency : String?
     public let revoked : Int?
-    public let startsAt : Int?
+    public let startsAt : Double?
     public let type : String?
 
     enum CodingKeys: String, CodingKey {
@@ -50,7 +50,7 @@ public struct InPlayerCustomerAccessItem: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         consumerEmail = try values.decodeIfPresent(String.self, forKey: .consumerEmail)
-        createdAt = try values.decodeIfPresent(Int.self, forKey: .createdAt)
+        createdAt = try values.decodeIfPresent(Double.self, forKey: .createdAt)
         customerId = try values.decodeIfPresent(Int.self, forKey: .customerId)
         expiresAt = try values.decodeIfPresent(Int.self, forKey: .expiresAt)
         isTrial = try values.decodeIfPresent(Bool.self, forKey: .isTrial)
@@ -64,10 +64,10 @@ public struct InPlayerCustomerAccessItem: Codable {
         purchasedAccessFeeDescription = try values.decodeIfPresent(String.self, forKey: .purchasedAccessFeeDescription)
         purchasedAccessFeeId = try values.decodeIfPresent(Int.self, forKey: .purchasedAccessFeeId)
         purchasedAccessFeeType = try values.decodeIfPresent(String.self, forKey: .purchasedAccessFeeType)
-        purchasedAmount = try values.decodeIfPresent(Int.self, forKey: .purchasedAmount)
+        purchasedAmount = try values.decodeIfPresent(Double.self, forKey: .purchasedAmount)
         purchasedCurrency = try values.decodeIfPresent(String.self, forKey: .purchasedCurrency)
         revoked = try values.decodeIfPresent(Int.self, forKey: .revoked)
-        startsAt = try values.decodeIfPresent(Int.self, forKey: .startsAt)
+        startsAt = try values.decodeIfPresent(Double.self, forKey: .startsAt)
         type = try values.decodeIfPresent(String.self, forKey: .type)
     }
 
