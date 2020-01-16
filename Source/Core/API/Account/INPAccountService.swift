@@ -488,6 +488,7 @@ private enum AccountAPIRouter: INPAPIConfiguration {
              .forgotPassword,
              .authenticate,
              .authenticateClientCredentials,
+             .refreshToken,
              .getRegisterFields,
              .getSocialURLs:
             return false

@@ -28,6 +28,14 @@ public extension InPlayer {
         }
         
         /**
+         Removes account and user credentials
+         */
+        public static func removeCredentials() {
+            UserDefaults.credentials = nil
+            UserDefaults.account = nil
+        }
+        
+        /**
          Get account if logged in, else it returns nil
          - Returns: Account or nil
          */
