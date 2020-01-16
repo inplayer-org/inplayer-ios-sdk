@@ -76,11 +76,17 @@ final class INPAuthHandler: RequestInterceptor {
                 if !isRefreshing {
                     refreshTokens { [weak self] (succeeded, accessToken, refreshToken) in
                         guard let strongSelf = self else { return }
-                        strongSelf.requestToRetry.forEach { $0(.retryWithDelay(0.25)) }
+                        if succeeded {
+                            strongSelf.requestToRetry.forEach { $0(.retryWithDelay(0.25)) }
+                        } else {
+                            InPlayer.Account.removeCredentials()
+                        }
                         strongSelf.requestToRetry.removeAll()
                     }
                 }
             }
+        } else {
+            return completion(.doNotRetry)
         }
     }
     
