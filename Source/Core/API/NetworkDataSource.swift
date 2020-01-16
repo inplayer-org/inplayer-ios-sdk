@@ -23,9 +23,6 @@ class NetworkDataSource {
                                             route: INPAPIConfiguration,
                                             decoder: JSONDecoder = JSONDecoder(),
                                             completion: @escaping RequestCompletion<T>) {
-        if route.requiresAuthorization, !session.isAuthorized {
-            return completion(nil, InPlayerUnauthorizedError())
-        }
         
         session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T, AFError>) in
             switch response.result {

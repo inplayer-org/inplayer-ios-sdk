@@ -34,8 +34,7 @@ final class INPAuthHandler: RequestInterceptor {
         var adaptedRequest = urlRequest
         if let authenticationType = adaptedRequest.value(forHTTPHeaderField: NetworkConstants.HeaderParameters.authenticationType),
             authenticationType == NetworkConstants.HeaderParameters.refreshToken {
-            completion(.success(adaptedRequest))
-            return
+            return completion(.success(adaptedRequest))
         }
         guard
             let accessToken = InPlayer.Account.getCredentials()?.accessToken,
@@ -63,14 +62,31 @@ final class INPAuthHandler: RequestInterceptor {
         else {
             return completion(.doNotRetry)
         }
-        requestToRetry.append(completion)
+        
+        if let credentials = InPlayer.Account.getCredentials() {
+            if Date().timeIntervalSince1970.isLess(than: credentials.expires) {
+                
+                // token is not expired, but invalidated. Remove from storage and do not retry
+                InPlayer.Account.removeCredentials()
+                
+                return completion(.doNotRetry)
+            } else {
+                requestToRetry.append(completion)
 
-        if !isRefreshing {
-            refreshTokens { [weak self] (succeeded, accessToken, refreshToken) in
-                guard let strongSelf = self else { return }
-                strongSelf.requestToRetry.forEach { $0(.retryWithDelay(0.25)) }
-                strongSelf.requestToRetry.removeAll()
+                if !isRefreshing {
+                    refreshTokens { [weak self] (succeeded, accessToken, refreshToken) in
+                        guard let strongSelf = self else { return }
+                        if succeeded {
+                            strongSelf.requestToRetry.forEach { $0(.retryWithDelay(0.25)) }
+                        } else {
+                            InPlayer.Account.removeCredentials()
+                        }
+                        strongSelf.requestToRetry.removeAll()
+                    }
+                }
             }
+        } else {
+            return completion(.doNotRetry)
         }
     }
     
