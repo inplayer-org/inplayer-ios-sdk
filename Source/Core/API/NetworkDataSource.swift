@@ -23,11 +23,11 @@ class NetworkDataSource {
                                             route: INPAPIConfiguration,
                                             decoder: JSONDecoder = JSONDecoder(),
                                             completion: @escaping RequestCompletion<T>) {
-        
-        session.request(route).validate().responseDecodable(decoder: decoder) { (response: DataResponse<T, AFError>) in
+        session.request(route).validate().responseData { (response:DataResponse<Data>) in
             switch response.result {
-            case .success(let result):
-                completion(result, nil)
+            case .success(let data):
+                let parsedModel = try? decoder.decode(T.self, from: data)
+                completion(parsedModel, nil)
             case .failure(let error):
                 let error = InPlayerErrorMapper.mapFromError(originalError: error,
                                                              withResponseData: response.data)
