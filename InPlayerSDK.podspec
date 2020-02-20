@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |core|
       core.source_files = "Source/Core/**/*.*"
-      core.dependency 'Alamofire', '5.0.0-rc.3'
+      core.dependency 'Alamofire', '4.9.1'
   end
 
   s.subspec 'Notification' do |notification|
