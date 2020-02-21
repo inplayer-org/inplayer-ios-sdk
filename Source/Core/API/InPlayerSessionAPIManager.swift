@@ -15,21 +15,25 @@ public final class InPlayerSessionAPIManager {
     public var baseURLString: String {
         didSet {
             let handler = INPAuthHandler(baseURLString: baseURLString)
-            session = InPlayerSession(interceptor: handler)
+            session = InPlayerSession();
+            session.adapter = handler;
+            session.retrier = handler;
         }
     }
 
     private init() {
         baseURLString = InPlayer.getBaseUrlString()
         let handler = INPAuthHandler(baseURLString: baseURLString)
-        session = InPlayerSession(interceptor: handler)
+        session = InPlayerSession();
+        session.adapter = handler;
+        session.retrier = handler;
     }
 }
 
 /**
  Subclass of Alamofire Session object.
  */
-public class InPlayerSession: Session {
+public class InPlayerSession: SessionManager {
 
     /// Bool check if there is logged in account.
     var isAuthorized: Bool {
