@@ -68,7 +68,9 @@ final class INPAuthHandler: RequestAdapter, RequestRetrier {
 
         if !isRefreshing {
             refreshTokens { [weak self] (succeeded, accessToken, refreshToken) in
-                guard let strongSelf = self else { return }
+                guard let strongSelf = self else {
+                    return completion(false, 0.0)
+                }
                 strongSelf.requestToRetry.forEach { $0(succeeded, 0.25) }
                 strongSelf.requestToRetry.removeAll()
             }
@@ -80,12 +82,16 @@ final class INPAuthHandler: RequestAdapter, RequestRetrier {
 
             isRefreshing = true
             InPlayer.Account.refreshToken(using: refreshToken, success: { [weak self] (authorization) in
-                guard let strongSelf = self else { return }
+                guard let strongSelf = self else {
+                    return completion(false, nil, nil)
+                }
                 strongSelf.isRefreshing = false
                 completion(true, authorization.accessToken, authorization.refreshToken)
                 
             }) { [weak self] (error) in
-                guard let strongSelf = self else { return }
+                guard let strongSelf = self else {
+                    return completion(false, nil, nil)
+                }
                 strongSelf.isRefreshing = false
                 completion(false, nil, nil)
             }
