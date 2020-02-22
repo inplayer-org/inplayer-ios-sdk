@@ -42,6 +42,8 @@
 		A7A690D6227CB0C20039AB59 /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */; };
 		A7C4C8912270A92200EF6CF4 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4C8902270A92200EF6CF4 /* StringExt.swift */; };
 		A7C4C8932270A97400EF6CF4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */; };
+		A7DABF1923FEAB5100AA47B5 /* ErrorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DABF1823FEAB5100AA47B5 /* ErrorExt.swift */; };
+		A7DABF1B23FEAF3700AA47B5 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DABF1A23FEAF3700AA47B5 /* Empty.swift */; };
 		A7EA961921F5018600CDA238 /* InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */; };
 		A7EA966821F501F000CDA238 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA962C21F501F000CDA238 /* Configuration.swift */; };
 		A7EA966A21F501F000CDA238 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA962F21F501F000CDA238 /* UserDefaultsExt.swift */; };
@@ -145,6 +147,8 @@
 		A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
 		A7C4C8902270A92200EF6CF4 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExt.swift; sourceTree = "<group>"; };
+		A7DABF1823FEAB5100AA47B5 /* ErrorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExt.swift; sourceTree = "<group>"; };
+		A7DABF1A23FEAF3700AA47B5 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		A7EA960F21F5018600CDA238 /* InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EA961821F5018600CDA238 /* InPlayerSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InPlayerSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EA962C21F501F000CDA238 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -271,6 +275,14 @@
 			path = Subscription;
 			sourceTree = "<group>";
 		};
+		A76EA290237866E800B13D41 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A73211EA2240114C00452C15 /* countries.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		A76EA2912378914B00B13D41 /* AssetTypes */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,14 +311,6 @@
 				A76EA2B223789F1D00B13D41 /* AssetJSONDecoder.swift */,
 			);
 			path = AssetDecoder;
-            sourceTree = "<group>";
-        };
-		A76EA290237866E800B13D41 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				A73211EA2240114C00452C15 /* countries.json */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		A7EA960521F5018600CDA238 = {
@@ -375,6 +379,7 @@
 				A7C4C8902270A92200EF6CF4 /* StringExt.swift */,
 				A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */,
 				A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */,
+				A7DABF1823FEAB5100AA47B5 /* ErrorExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				A7EA963A21F501F000CDA238 /* Asset */,
 				A7EA964521F501F000CDA238 /* Account */,
 				A73211DD223C124200452C15 /* Subscription */,
+				A7DABF1A23FEAF3700AA47B5 /* Empty.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -698,6 +704,7 @@
 				A76EA29D237891AF00B13D41 /* LaolaAsset.swift in Sources */,
 				A7EA966A21F501F000CDA238 /* UserDefaultsExt.swift in Sources */,
 				A7EA967421F501F000CDA238 /* InPlayerAccessFee.swift in Sources */,
+				A7DABF1923FEAB5100AA47B5 /* ErrorExt.swift in Sources */,
 				A7EA967021F501F000CDA238 /* INPAPIConfiguration.swift in Sources */,
 				A7EA967521F501F000CDA238 /* InPlayerTrialPeriod.swift in Sources */,
 				A76EA2972378917F00B13D41 /* CloudfrontAsset.swift in Sources */,
@@ -721,6 +728,7 @@
 				A7EA96D221F52B6900CDA238 /* InPlayerConstants.swift in Sources */,
 				A75DE418227097B20057B2A7 /* InPlayerSocialUrlResponse.swift in Sources */,
 				A73211E5223C1A8800452C15 /* InPlayerSubscription.swift in Sources */,
+				A7DABF1B23FEAF3700AA47B5 /* Empty.swift in Sources */,
 				A76EA2A1237891C200B13D41 /* LivestreamAsset.swift in Sources */,
 				A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */,
 				A73211DC223C11B500452C15 /* Subscription.swift in Sources */,

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "InPlayerSDK"
-  s.version      = "1.5.12"
+  s.version      = "2.0.0"
   s.summary      = "InPlayer's iOS API client wrapper."
 
   # This description is used to generate tags and improve search results.
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |core|
       core.source_files = "Source/Core/**/*.*"
-      core.dependency 'Alamofire', '5.0.0-rc.3'
+      core.dependency 'Alamofire', '4.9.1'
   end
 
   s.subspec 'Notification' do |notification|

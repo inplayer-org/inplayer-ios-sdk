@@ -3,7 +3,7 @@ platform :ios, '10.0'
 target 'InPlayerSDK' do
   use_frameworks!
 
-  pod 'Alamofire', '5.0.0-rc.3'
+  pod 'Alamofire', '4.9.1'
   pod 'AWSIoT', '2.12.1'
 
 target 'InPlayerSDKTests' do

@@ -15,14 +15,18 @@ public final class InPlayerNotificationAPIManager {
     public var baseURLString: String {
         didSet {
             let handler = INPAuthHandler(baseURLString: baseURLString)
-            session = InPlayerSession(interceptor: handler)
+            session = InPlayerSession()
+            session.adapter = handler;
+            session.retrier = handler;
         }
     }
 
     private init() {
         baseURLString = InPlayerNotificationAPIManager.getBaseUrlString
         let handler = INPAuthHandler(baseURLString: baseURLString)
-        session = InPlayerSession(interceptor: handler)
+        session = InPlayerSession()
+        session.adapter = handler;
+        session.retrier = handler;
     }
 
     static var getBaseUrlString: String {
