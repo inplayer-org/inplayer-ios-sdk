@@ -48,7 +48,7 @@ Then, run the following command:
 
 This SDK has dependencies that it relies on. The list consists of:
 
-     pod 'Alamofire', '5.0.0-rc.3'
+     pod 'Alamofire', '4.9.1'
      pod 'AWSIoT', '2.12.1' (only Notifications module)
 
 ## Usage
