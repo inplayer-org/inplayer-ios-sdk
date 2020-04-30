@@ -7,7 +7,7 @@ public struct InPlayerAccessFee : Codable {
     public let accessType : InPlayerAccessType?
 
     /// The amount of the asset’s fee
-    public let amount : Int?
+    public let amount : Double?
 
     /// The currency of the asset’s fee
     public let currency : String?
@@ -48,7 +48,7 @@ public struct InPlayerAccessFee : Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accessType = try values.decodeIfPresent(InPlayerAccessType.self, forKey: .accessType)
-        amount = try values.decodeIfPresent(Int.self, forKey: .amount)
+        amount = try values.decodeIfPresent(Double.self, forKey: .amount)
         currency = try values.decodeIfPresent(String.self, forKey: .currency)
         descriptionField = try values.decodeIfPresent(String.self, forKey: .descriptionField)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
