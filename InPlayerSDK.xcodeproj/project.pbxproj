@@ -20,6 +20,12 @@
 		A73211EB2240114C00452C15 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A73211EA2240114C00452C15 /* countries.json */; };
 		A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */; };
 		A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */; };
+		A75D20D62461F1D400910FCF /* InPlayerVoucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D20D12461F1D400910FCF /* InPlayerVoucher.swift */; };
+		A75D20D72461F1D400910FCF /* InPlayerAgeRestriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D20D22461F1D400910FCF /* InPlayerAgeRestriction.swift */; };
+		A75D20D82461F1D400910FCF /* InPlayerGeoRestriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D20D32461F1D400910FCF /* InPlayerGeoRestriction.swift */; };
+		A75D20D92461F1D400910FCF /* InPlayerVoucherRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D20D42461F1D400910FCF /* InPlayerVoucherRule.swift */; };
+		A75D20DA2461F1D400910FCF /* InPlayerSeasonalFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D20D52461F1D400910FCF /* InPlayerSeasonalFee.swift */; };
+		A75D20DC2461FBA000910FCF /* InPlayerExternalFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D20DB2461FBA000910FCF /* InPlayerExternalFee.swift */; };
 		A75DE418227097B20057B2A7 /* InPlayerSocialUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */; };
 		A76EA2932378916A00B13D41 /* AccedoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2922378916A00B13D41 /* AccedoAsset.swift */; };
 		A76EA2952378917600B13D41 /* BrigthcoveAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA2942378917600B13D41 /* BrigthcoveAsset.swift */; };
@@ -123,6 +129,12 @@
 		A73211EA2240114C00452C15 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		A741EAA821F7799B00290AFD /* InPlayer+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InPlayer+Configuration.swift"; sourceTree = "<group>"; };
 		A741EAAA21F77A8700290AFD /* InPlayerEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerEnvironmentType.swift; sourceTree = "<group>"; };
+		A75D20D12461F1D400910FCF /* InPlayerVoucher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerVoucher.swift; sourceTree = "<group>"; };
+		A75D20D22461F1D400910FCF /* InPlayerAgeRestriction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerAgeRestriction.swift; sourceTree = "<group>"; };
+		A75D20D32461F1D400910FCF /* InPlayerGeoRestriction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerGeoRestriction.swift; sourceTree = "<group>"; };
+		A75D20D42461F1D400910FCF /* InPlayerVoucherRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerVoucherRule.swift; sourceTree = "<group>"; };
+		A75D20D52461F1D400910FCF /* InPlayerSeasonalFee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPlayerSeasonalFee.swift; sourceTree = "<group>"; };
+		A75D20DB2461FBA000910FCF /* InPlayerExternalFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerExternalFee.swift; sourceTree = "<group>"; };
 		A75DE417227097B20057B2A7 /* InPlayerSocialUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerSocialUrlResponse.swift; sourceTree = "<group>"; };
 		A76EA2922378916A00B13D41 /* AccedoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccedoAsset.swift; sourceTree = "<group>"; };
 		A76EA2942378917600B13D41 /* BrigthcoveAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrigthcoveAsset.swift; sourceTree = "<group>"; };
@@ -416,6 +428,12 @@
 		A7EA963A21F501F000CDA238 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				A75D20D22461F1D400910FCF /* InPlayerAgeRestriction.swift */,
+				A75D20D32461F1D400910FCF /* InPlayerGeoRestriction.swift */,
+				A75D20D52461F1D400910FCF /* InPlayerSeasonalFee.swift */,
+				A75D20D12461F1D400910FCF /* InPlayerVoucher.swift */,
+				A75D20D42461F1D400910FCF /* InPlayerVoucherRule.swift */,
+				A75D20DB2461FBA000910FCF /* InPlayerExternalFee.swift */,
 				A76EA2912378914B00B13D41 /* AssetTypes */,
 				A7EA964421F501F000CDA238 /* InPlayerItem.swift */,
 				A7EA963C21F501F000CDA238 /* InPlayerAccessControlType.swift */,
@@ -702,6 +720,7 @@
 				A7EA967521F501F000CDA238 /* InPlayerTrialPeriod.swift in Sources */,
 				A76EA2972378917F00B13D41 /* CloudfrontAsset.swift in Sources */,
 				A73211DA223C0D7E00452C15 /* InPlayerRegisterField.swift in Sources */,
+				A75D20D92461F1D400910FCF /* InPlayerVoucherRule.swift in Sources */,
 				A7EA966B21F501F000CDA238 /* DataDecodeExt.swift in Sources */,
 				A76EA2AD2378924100B13D41 /* StreamAMGAsset.swift in Sources */,
 				A7EA966C21F501F000CDA238 /* DateExt.swift in Sources */,
@@ -723,6 +742,7 @@
 				A73211E5223C1A8800452C15 /* InPlayerSubscription.swift in Sources */,
 				A76EA2A1237891C200B13D41 /* LivestreamAsset.swift in Sources */,
 				A741EAAB21F77A8700290AFD /* InPlayerEnvironmentType.swift in Sources */,
+				A75D20D62461F1D400910FCF /* InPlayerVoucher.swift in Sources */,
 				A73211DC223C11B500452C15 /* Subscription.swift in Sources */,
 				A73211E7224006AC00452C15 /* InPlayerRegisterFieldsResponse.swift in Sources */,
 				A741EAA921F7799B00290AFD /* InPlayer+Configuration.swift in Sources */,
@@ -730,12 +750,16 @@
 				A73211E3223C182200452C15 /* InPlayerSubscriptionList.swift in Sources */,
 				A7EA968C21F501F000CDA238 /* InPlayerNotification.swift in Sources */,
 				A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */,
+				A75D20DC2461FBA000910FCF /* InPlayerExternalFee.swift in Sources */,
+				A75D20D72461F1D400910FCF /* InPlayerAgeRestriction.swift in Sources */,
 				A7EA967321F501F000CDA238 /* InPlayerAccessControlType.swift in Sources */,
 				A76EA2952378917600B13D41 /* BrigthcoveAsset.swift in Sources */,
 				A7EA967121F501F000CDA238 /* NetworkDataSource.swift in Sources */,
+				A75D20D82461F1D400910FCF /* InPlayerGeoRestriction.swift in Sources */,
 				A73211D0223AD06E00452C15 /* InPlayerCustomerAccessItem.swift in Sources */,
 				A7EA968421F501F000CDA238 /* InPlayerInvalidResponseError.swift in Sources */,
 				A76EA2AF2378925D00B13D41 /* WitsiaAsset.swift in Sources */,
+				A75D20DA2461F1D400910FCF /* InPlayerSeasonalFee.swift in Sources */,
 				A7EA968F21F501F000CDA238 /* INPNotificationService.swift in Sources */,
 				A73211E922400B5700452C15 /* InPlayerFieldCountry.swift in Sources */,
 				A7EA969021F501F000CDA238 /* InPlayerNotificationAPIManager.swift in Sources */,

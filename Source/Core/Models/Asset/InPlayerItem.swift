@@ -47,21 +47,8 @@ public struct InPlayerItem : Codable {
         case unknown
     }
 
-
-    /// Access control type object
-    public let accessControlType : InPlayerAccessControlType?
-
-    /// The date the asset was created on, measured in seconds since 1 January 1970 (UTC)
-    public let createdAt : Double?
-
     /// Item's ID
     public let id : Int?
-
-    /// Shows whether the asset is active and can be monetized
-    public let isActive : Bool?
-
-    /// Item type object
-    public let itemType : InPlayerItemType?
 
     /// Merchant's ID
     public let merchantId : Int?
@@ -69,19 +56,37 @@ public struct InPlayerItem : Codable {
     /// Merchant's UUID
     public let merchantUuid : String?
 
-    /// Object containing additional information about the item
-    public let metadata : [InPlayerItemMetadata]?
-
-    public let metahash : [String: String]?
+    /// Shows whether the asset is active and can be monetized
+    public let isActive : Bool?
 
     /// The asset’s title
     public let title : String?
 
+    /// Access control type object
+    public let accessControlType : InPlayerAccessControlType?
+
+    /// Item type object
+    public let itemType : InPlayerItemType?
+
+    /// Age Restriction object
+    public let ageRestriction: InPlayerAgeRestriction?
+    
+    /// Object containing additional information about the item
+    public let metadata : [InPlayerItemMetadata]?
+    
+    public let metahash : [String: String]?
+    
+    /// The date the asset was created on, measured in seconds since 1 January 1970 (UTC)
+    public let createdAt : Double?
+    
     /// The date when the asset was last updated, measured in seconds since 1 January 1970 (UTC)
     public let updatedAt : Double?
 
     /// The asset’s content which can be a json object, a string, an html or an xml document
     public let content: String?
+    
+    /// Template id for asset
+    public let templateId: Int?
 
     enum CodingKeys: String, CodingKey {
         case accessControlType = "access_control_type"
@@ -96,6 +101,8 @@ public struct InPlayerItem : Codable {
         case title = "title"
         case updatedAt = "updated_at"
         case content = "content"
+        case templateId = "template_id"
+        case ageRestriction = "age_restriction"
     }
 
     /// Decoder method
@@ -113,6 +120,27 @@ public struct InPlayerItem : Codable {
         title = try values.decodeIfPresent(String.self, forKey: .title)
         updatedAt = try values.decodeIfPresent(Double.self, forKey: .updatedAt)
         content = try values.decodeIfPresent(String.self, forKey: .content)
+        templateId = try values.decodeIfPresent(Int.self, forKey: .templateId)
+        ageRestriction = try values.decodeIfPresent(InPlayerAgeRestriction.self, forKey: .ageRestriction)
+    }
+    
+    /// Encoder method
+    public func encode(to encoder: Encoder) throws {
+        var values = encoder.container(keyedBy: CodingKeys.self)
+        try values.encodeIfPresent(id, forKey: .id)
+        try values.encodeIfPresent(merchantId, forKey: .merchantId)
+        try values.encodeIfPresent(merchantUuid, forKey: .merchantUuid)
+        try values.encodeIfPresent(accessControlType, forKey: .accessControlType)
+        try values.encodeIfPresent(createdAt, forKey: .createdAt)
+        try values.encodeIfPresent(isActive, forKey: .isActive)
+        try values.encodeIfPresent(itemType, forKey: .itemType)
+        try values.encodeIfPresent(metadata, forKey: .metadata)
+        try values.encodeIfPresent(metahash, forKey: .metahash)
+        try values.encodeIfPresent(title, forKey: .title)
+        try values.encodeIfPresent(updatedAt, forKey: .updatedAt)
+        try values.encodeIfPresent(content, forKey: .content)
+        try values.encodeIfPresent(templateId, forKey: .templateId)
+        try values.encodeIfPresent(ageRestriction, forKey: .ageRestriction)
     }
     
     /// Method that return parsed content as enum with associated values

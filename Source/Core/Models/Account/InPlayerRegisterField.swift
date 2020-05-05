@@ -114,31 +114,31 @@ public struct InPlayerRegisterField : Codable {
     /// Encoder method
     public func encode(to encoder: Encoder) throws {
         var values = encoder.container(keyedBy: CodingKeys.self)
-        try values.encode(defaultValue, forKey: .defaultValue)
-        try values.encode(id, forKey: .id)
-        try values.encode(label, forKey: .label)
-        try values.encode(name, forKey: .name)
-        try values.encode(placeholder, forKey: .placeholder)
-        try values.encode(required, forKey: .required)
+        try values.encodeIfPresent(defaultValue, forKey: .defaultValue)
+        try values.encodeIfPresent(id, forKey: .id)
+        try values.encodeIfPresent(label, forKey: .label)
+        try values.encodeIfPresent(name, forKey: .name)
+        try values.encodeIfPresent(placeholder, forKey: .placeholder)
+        try values.encodeIfPresent(required, forKey: .required)
 
         switch type {
         case .dropdown(let options):
-            try values.encode(options, forKey: .options)
-            try values.encode(RegisterFieldTypeStrings.dropdown, forKey: .typeString)
+            try values.encodeIfPresent(options, forKey: .options)
+            try values.encodeIfPresent(RegisterFieldTypeStrings.dropdown, forKey: .typeString)
         case .radio(let options):
-            try values.encode(options, forKey: .options)
-            try values.encode(RegisterFieldTypeStrings.radio, forKey: .typeString)
+            try values.encodeIfPresent(options, forKey: .options)
+            try values.encodeIfPresent(RegisterFieldTypeStrings.radio, forKey: .typeString)
         case .country(let options):
-            try values.encode(options, forKey: .options)
-            try values.encode(RegisterFieldTypeStrings.country, forKey: .typeString)
+            try values.encodeIfPresent(options, forKey: .options)
+            try values.encodeIfPresent(RegisterFieldTypeStrings.country, forKey: .typeString)
         case .input:
-            try values.encode(RegisterFieldTypeStrings.input, forKey: .typeString)
+            try values.encodeIfPresent(RegisterFieldTypeStrings.input, forKey: .typeString)
         case .datepicker:
-            try values.encode(RegisterFieldTypeStrings.datepicker, forKey: .typeString)
+            try values.encodeIfPresent(RegisterFieldTypeStrings.datepicker, forKey: .typeString)
         case .checkbox:
-            try values.encode(RegisterFieldTypeStrings.checkbox, forKey: .typeString)
+            try values.encodeIfPresent(RegisterFieldTypeStrings.checkbox, forKey: .typeString)
         default:
-            try values.encode(RegisterFieldTypeStrings.unknown, forKey: .typeString)
+            try values.encodeIfPresent(RegisterFieldTypeStrings.unknown, forKey: .typeString)
         }
     }
 }

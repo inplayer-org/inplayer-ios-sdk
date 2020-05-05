@@ -35,15 +35,17 @@ public extension InPlayer {
          Returns a collection of fees for a specific asset
          - Parameters:
              - id: Asset ID.
+             - voucherId: Voucher ID
              - success: A closure to be executed once the request has finished successfully.
              - accessFees: Collection of access fees for specific asset.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
         public static func getAssetAccessFees(id: Int,
+                                              voucherId: Int?,
                                               success: @escaping ([InPlayerAccessFee]) -> Void,
                                               failure: @escaping (InPlayerError) -> Void) {
-            INPAssetService.getAssetAccessFees(id: id, completion: { (accessFees, error) in
+            INPAssetService.getAssetAccessFees(id: id, voucherId: voucherId, completion: { (accessFees, error) in
                 if let error = error {
                     failure(error)
                 } else {

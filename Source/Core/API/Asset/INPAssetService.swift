@@ -14,9 +14,14 @@ class INPAssetService {
     }
 
     static func getAssetAccessFees(id: Int,
+                                   voucherId: Int?,
                                    completion: @escaping RequestCompletion<[InPlayerAccessFee]>) {
+        var parameters: [String: Any] = [:]
+        if let voucherId = voucherId {
+            parameters[AssetParameters.voucherExpand] = voucherId
+        }
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AssetAPIRouter.getItemAccessFees(id: id),
+                                         route: AssetAPIRouter.getItemAccessFees(id: id, parameters: parameters),
                                          completion: completion)
     }
 
@@ -51,62 +56,65 @@ class INPAssetService {
 private struct AssetParameters {
     static let merchantUUID = "merchant_uuid"
     static let entryId = "entry_id"
+    static let voucherExpand = "voucher[expand]"
 }
 
 
 /// Enum of available asset api routes
 private enum AssetAPIRouter: INPAPIConfiguration {
     case getItemDetails(id: Int, merchantUUID: String)
-    case getItemAccessFees(id: Int)
+    case getItemAccessFees(id: Int, parameters: [String: Any])
     case getItemAccess(id: Int, parameters: [String: Any])
     case getExternalAsset(assetType: String, externalID: String, parameters: [String: Any])
 
     var method: HTTPMethod {
         switch self {
-        default:
-            return .get
+            default:
+                return .get
         }
     }
 
     var path: String {
         switch self {
-        case .getItemDetails(let id, let merchantUUID):
-            return String(format: NetworkConstants.Endpoints.Asset.itemDetails, merchantUUID, "\(id)")
-        case .getItemAccessFees(let id):
-            return String(format: NetworkConstants.Endpoints.Asset.itemAccessFees, "\(id)")
-        case .getItemAccess(let id, _):
-            return String(format: NetworkConstants.Endpoints.Asset.itemAccess, "\(id)")
-        case .getExternalAsset(let assetType, let externalID, _):
-            return String(format: NetworkConstants.Endpoints.Asset.externalItemDetails, assetType, externalID)
+            case .getItemDetails(let id, let merchantUUID):
+                return String(format: NetworkConstants.Endpoints.Asset.itemDetails, merchantUUID, "\(id)")
+            case .getItemAccessFees(let id, _):
+                return String(format: NetworkConstants.Endpoints.Asset.itemAccessFees, "\(id)")
+            case .getItemAccess(let id, _):
+                return String(format: NetworkConstants.Endpoints.Asset.itemAccess, "\(id)")
+            case .getExternalAsset(let assetType, let externalID, _):
+                return String(format: NetworkConstants.Endpoints.Asset.externalItemDetails, assetType, externalID)
         }
     }
 
     var parameters: Parameters? {
         switch self {
-        case .getItemAccess(_, let parameters):
-            return parameters
-        case .getExternalAsset(_,_, let parameters):
-            return parameters
-        default:
-            return nil
+            case .getItemAccessFees(_, let parameters):
+                return parameters
+            case .getItemAccess(_, let parameters):
+                return parameters
+            case .getExternalAsset(_,_, let parameters):
+                return parameters
+            default:
+                return nil
         }
     }
 
     var urlEncoding: Bool {
         switch self {
-        default:
-            return true
+            default:
+                return true
         }
     }
 
     var requiresAuthorization: Bool {
         switch self {
-        case .getItemAccessFees,
-             .getItemDetails,
-             .getExternalAsset:
-            return false
-        default:
-            return true
+            case .getItemAccessFees,
+                 .getItemDetails,
+                 .getExternalAsset:
+                return false
+            default:
+                return true
         }
     }
 }

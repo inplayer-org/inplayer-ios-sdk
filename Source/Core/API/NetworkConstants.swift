@@ -38,8 +38,8 @@ struct NetworkConstants {
 
         struct Asset {
             static let itemDetails = "/items/%@/%@"
-            static let itemAccessFees = "items/%@/access-fees"
-            static let itemAccess = "items/%@/access"
+            static let itemAccessFees = "/v2/items/%@/access-fees"
+            static let itemAccess = "/items/%@/access"
             static let externalItemDetails = "/items/assets/external/%@/%@"
         }
 
