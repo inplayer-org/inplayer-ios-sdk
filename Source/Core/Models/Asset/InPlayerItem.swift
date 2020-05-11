@@ -46,7 +46,7 @@ public struct InPlayerItem : Codable {
         case wowza(asset: WowzaAsset)
         case unknown
     }
-
+    
     /// Item's ID
     public let id : Int?
 
@@ -58,6 +58,8 @@ public struct InPlayerItem : Codable {
 
     /// Shows whether the asset is active and can be monetized
     public let isActive : Bool?
+    
+    public let active : Bool?
 
     /// The asset’s title
     public let title : String?
@@ -93,6 +95,7 @@ public struct InPlayerItem : Codable {
         case createdAt = "created_at"
         case id = "id"
         case isActive = "is_active"
+        case active = "active"
         case itemType = "item_type"
         case merchantId = "merchant_id"
         case merchantUuid = "merchant_uuid"
@@ -122,6 +125,7 @@ public struct InPlayerItem : Codable {
         content = try values.decodeIfPresent(String.self, forKey: .content)
         templateId = try values.decodeIfPresent(Int.self, forKey: .templateId)
         ageRestriction = try values.decodeIfPresent(InPlayerAgeRestriction.self, forKey: .ageRestriction)
+        active = try values.decodeIfPresent(Bool.self, forKey: .active)
     }
     
     /// Encoder method
@@ -141,6 +145,7 @@ public struct InPlayerItem : Codable {
         try values.encodeIfPresent(content, forKey: .content)
         try values.encodeIfPresent(templateId, forKey: .templateId)
         try values.encodeIfPresent(ageRestriction, forKey: .ageRestriction)
+        try values.encodeIfPresent(active, forKey: .active)
     }
     
     /// Method that return parsed content as enum with associated values
