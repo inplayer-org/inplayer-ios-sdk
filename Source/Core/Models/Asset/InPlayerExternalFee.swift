@@ -13,7 +13,7 @@ public struct InPlayerExternalFee: Codable {
     public let id: Int?
     public let paymentProviderId: Int?
     public let accessFeeId: Int?
-    public let externalId: Int?
+    public let externalId: String?
     public let merchantId: Int?
     
     enum CodingKeys: String, CodingKey {
@@ -30,7 +30,7 @@ public struct InPlayerExternalFee: Codable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         paymentProviderId = try values.decodeIfPresent(Int.self, forKey: .paymentProviderId)
         accessFeeId = try values.decodeIfPresent(Int.self, forKey: .accessFeeId)
-        externalId = try values.decodeIfPresent(Int.self, forKey: .externalId)
+        externalId = try values.decodeIfPresent(String.self, forKey: .externalId)
         merchantId = try values.decodeIfPresent(Int.self, forKey: .merchantId)
     }
     

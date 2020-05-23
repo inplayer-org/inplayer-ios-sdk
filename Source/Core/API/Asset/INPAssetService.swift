@@ -56,7 +56,7 @@ class INPAssetService {
 private struct AssetParameters {
     static let merchantUUID = "merchant_uuid"
     static let entryId = "entry_id"
-    static let voucherExpand = "voucher[expand]"
+    static let voucherExpand = "expand[voucher]"
 }
 
 

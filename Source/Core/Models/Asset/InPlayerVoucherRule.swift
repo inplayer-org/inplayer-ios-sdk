@@ -17,7 +17,7 @@ public struct InPlayerVoucherRule: Codable {
     public let ruleType: String?
     
     /// Value
-    public let value: Int?
+    public let value: String?
     
     /// Voucher
     public let voucher: InPlayerVoucher?
@@ -34,7 +34,7 @@ public struct InPlayerVoucherRule: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         ruleType = try values.decodeIfPresent(String.self, forKey: .ruleType)
-        value = try values.decodeIfPresent(Int.self, forKey: .value)
+        value = try values.decodeIfPresent(String.self, forKey: .value)
         voucher = try values.decodeIfPresent(InPlayerVoucher.self, forKey: .voucher)
     }
     

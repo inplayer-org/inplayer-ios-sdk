@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		753F5D595D59548CC1AF1909 /* Pods_InPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DF19FEC807CF03559464F9 /* Pods_InPlayerSDK.framework */; };
+		A725D2462479A85900255FBB /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A725D2452479A85900255FBB /* IntExt.swift */; };
 		A73211D0223AD06E00452C15 /* InPlayerCustomerAccessItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */; };
 		A73211D6223AD42300452C15 /* InPlayerPurchaseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */; };
 		A73211DA223C0D7E00452C15 /* InPlayerRegisterField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73211D9223C0D7E00452C15 /* InPlayerRegisterField.swift */; };
@@ -117,6 +118,7 @@
 		863B37A5E53B1B204C406696 /* Pods-InPlayerSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDKTests/Pods-InPlayerSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		89DF19FEC807CF03559464F9 /* Pods_InPlayerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPlayerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42AFBEAB4A1A9893C497B3B /* Pods-InPlayerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPlayerSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPlayerSDK/Pods-InPlayerSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		A725D2452479A85900255FBB /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
 		A73211CF223AD06E00452C15 /* InPlayerCustomerAccessItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerCustomerAccessItem.swift; sourceTree = "<group>"; };
 		A73211D5223AD42300452C15 /* InPlayerPurchaseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerPurchaseHistory.swift; sourceTree = "<group>"; };
 		A73211D9223C0D7E00452C15 /* InPlayerRegisterField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPlayerRegisterField.swift; sourceTree = "<group>"; };
@@ -283,6 +285,14 @@
 			path = Subscription;
 			sourceTree = "<group>";
 		};
+		A76EA290237866E800B13D41 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A73211EA2240114C00452C15 /* countries.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		A76EA2912378914B00B13D41 /* AssetTypes */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,14 +321,6 @@
 				A76EA2B223789F1D00B13D41 /* AssetJSONDecoder.swift */,
 			);
 			path = AssetDecoder;
-            sourceTree = "<group>";
-        };
-		A76EA290237866E800B13D41 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				A73211EA2240114C00452C15 /* countries.json */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		A7EA960521F5018600CDA238 = {
@@ -386,6 +388,7 @@
 				A7EA963121F501F000CDA238 /* DateExt.swift */,
 				A7C4C8902270A92200EF6CF4 /* StringExt.swift */,
 				A7C4C8922270A97400EF6CF4 /* DictionaryExt.swift */,
+				A725D2452479A85900255FBB /* IntExt.swift */,
 				A7A690D5227CB0C10039AB59 /* NotificationNameExt.swift */,
 			);
 			path = Extensions;
@@ -733,6 +736,7 @@
 				A7EA96DF21F52C0000CDA238 /* INPCredentialProvider.swift in Sources */,
 				A7EA966821F501F000CDA238 /* Configuration.swift in Sources */,
 				A7EA966D21F501F000CDA238 /* InPlayer.swift in Sources */,
+				A725D2462479A85900255FBB /* IntExt.swift in Sources */,
 				A76EA2B1237892B400B13D41 /* WowzaAsset.swift in Sources */,
 				A7EA96D421F52B8400CDA238 /* INPAssetService.swift in Sources */,
 				A7EA967C21F501F000CDA238 /* InPlayerAccount.swift in Sources */,

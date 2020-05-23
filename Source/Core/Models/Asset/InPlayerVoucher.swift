@@ -23,10 +23,10 @@ public struct InPlayerVoucher: Codable {
     public let rebillDiscount: Int?
     
     /// Voucher is valid from this date forward
-    public let startDate: String?
+    public let startDate: Double?
     
     /// Voucher validation ends on this date
-    public let endDate: String?
+    public let endDate: Double?
     
     /// Code provided by the merchant instead of generating it automatically
     public let code: String?
@@ -64,8 +64,8 @@ public struct InPlayerVoucher: Codable {
         name = try values.decodeIfPresent(String.self, forKey: .name)
         discount = try values.decodeIfPresent(Int.self, forKey: .discount)
         rebillDiscount = try values.decodeIfPresent(Int.self, forKey: .rebillDiscount)
-        startDate = try values.decodeIfPresent(String.self, forKey: .startDate)
-        endDate = try values.decodeIfPresent(String.self, forKey: .endDate)
+        startDate = try values.decodeIfPresent(Double.self, forKey: .startDate)
+        endDate = try values.decodeIfPresent(Double.self, forKey: .endDate)
         code = try values.decodeIfPresent(String.self, forKey: .code)
         usageLimit = try values.decodeIfPresent(Int.self, forKey: .usageLimit)
         usageCounter = try values.decodeIfPresent(Int.self, forKey: .usageCounter)

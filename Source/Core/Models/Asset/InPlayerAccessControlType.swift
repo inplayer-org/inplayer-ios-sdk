@@ -24,8 +24,14 @@ public struct InPlayerAccessControlType : Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
-        auth = try values.decodeIfPresent(Bool.self, forKey: .auth)
         name = try values.decodeIfPresent(String.self, forKey: .name)
+        
+        do {
+            auth = try values.decodeIfPresent(Bool.self, forKey: .auth)
+        } catch DecodingError.typeMismatch {
+            // There was something for the "auth" key, but it wasn't a boolean value. Try a Int.
+            if let value = try values.decodeIfPresent(Int.self, forKey: .auth) { auth = value.boolValue }
+            else { auth = false }
+        }
     }
-
 }

@@ -45,34 +45,9 @@ public struct InPlayerAccessFee : Codable {
     /// The date the access expires, measured in seconds since 1 January 1970 (UTC) Note: This only applies for the custom access type
     public let expiresAt: Double?
     
+    public let startsAt: Double?
+    
     enum CodingKeys: String, CodingKey {
-        /**
-         "id": 17308,
-         "merchant_id": 21,
-         "item_id": 72545,
-         "amount": 5,
-         "currency": "EUR",
-         "description": "Price With Everything",
-         "created_at": 1588234030,
-         "updated_at": 1588234030,
-         "starts_at": 1585735200,
-         "expires_at": 1609498800,
-         "access_type": {},
-         "item": {},
-         "trial_period": {},
-         "setup_fee": {},
-         "geo_restriction": {},
-         "external_fees": [
-             {
-                 "id": 459,
-                 "payment_provider_id": 14,
-                 "access_fee_id": 17308,
-                 "external_id": "123",
-                 "merchant_id": 21
-             }
-         ],
-         "seasonal_fee": {}
-         */
         
         case voucherRule = "voucher_rule"
         case id = "id"
@@ -88,6 +63,7 @@ public struct InPlayerAccessFee : Codable {
         case seasonalFee = "seasonal_fee"
         case expiresAt = "expires_at"
         case externalFees = "external_fees"
+        case startsAt = "starts_at"
     }
 
     /// Decoder Method
@@ -107,6 +83,7 @@ public struct InPlayerAccessFee : Codable {
         seasonalFee = try values.decodeIfPresent(InPlayerSeasonalFee.self, forKey: .seasonalFee)
         expiresAt = try values.decodeIfPresent(Double.self, forKey: .expiresAt)
         externalFees = try values.decodeIfPresent([InPlayerExternalFee].self, forKey: .externalFees)
+        startsAt = try values.decodeIfPresent(Double.self, forKey: .startsAt)
     }
     
     /// Encoder method
@@ -126,6 +103,7 @@ public struct InPlayerAccessFee : Codable {
         try values.encodeIfPresent(seasonalFee, forKey: .seasonalFee)
         try values.encodeIfPresent(expiresAt, forKey: .expiresAt)
         try values.encodeIfPresent(externalFees, forKey: .externalFees)
+        try values.encodeIfPresent(startsAt, forKey: .startsAt)
     }
 
 }
