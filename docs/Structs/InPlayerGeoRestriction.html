@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>InPlayerGeoRestriction Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/InPlayerGeoRestriction" class="dashAnchor"></a>
+    <a title="InPlayerGeoRestriction Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">InPlayerSDK Docs</a> (65% documented)</p>
+        <p class="header-right"><a href="https://github.com/inplayer-org/inplayer-ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">InPlayerSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        InPlayerGeoRestriction Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayer.html">InPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayer/Account.html">– Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayer/Asset.html">– Asset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayer/Configuration.html">– Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayer/Subscription.html">– Subscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayer/Notification.html">– Notification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayer/Payment.html">– Payment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayerNotificationAPIManager.html">InPlayerNotificationAPIManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:11InPlayerSDK0aB7SessionC">InPlayerSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InPlayerSessionAPIManager.html">InPlayerSessionAPIManager</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/InPlayerEnvironmentType.html">InPlayerEnvironmentType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/InPlayerNotificationStatus.html">InPlayerNotificationStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NotificationType.html">NotificationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PurchaseHistory.html">PurchaseHistory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RegisterFieldType.html">RegisterFieldType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification.html">Notification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification/Name.html">– Name</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AssetJSONDecoder.html">AssetJSONDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/InPlayerError.html">InPlayerError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AccedoAsset.html">AccedoAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BrightcoveAsset.html">BrightcoveAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CloudfrontAsset.html">CloudfrontAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DaCastAsset.html">DaCastAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/INPInvalidJSONError.html">INPInvalidJSONError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerAccessControlType.html">InPlayerAccessControlType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerAccessFee.html">InPlayerAccessFee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerAccessType.html">InPlayerAccessType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerAccount.html">InPlayerAccount</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerAgeRestriction.html">InPlayerAgeRestriction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerAuthorization.html">InPlayerAuthorization</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerCredentials.html">InPlayerCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerCustomerAccessItem.html">InPlayerCustomerAccessItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerCustomerPurchaseHistory.html">InPlayerCustomerPurchaseHistory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerExternalFee.html">InPlayerExternalFee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerFieldCountry.html">InPlayerFieldCountry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerGeoRestriction.html">InPlayerGeoRestriction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerHttpError.html">InPlayerHttpError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerInvalidResponseError.html">InPlayerInvalidResponseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerItem.html">InPlayerItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerItem/ContentType.html">– ContentType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerItemAccess.html">InPlayerItemAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerItemMetadata.html">InPlayerItemMetadata</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerItemRevoked.html">InPlayerItemRevoked</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerItemType.html">InPlayerItemType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerMalformedUrlError.html">InPlayerMalformedUrlError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerNotification.html">InPlayerNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerRegisterField.html">InPlayerRegisterField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerSeasonalFee.html">InPlayerSeasonalFee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerSetupFee.html">InPlayerSetupFee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerSocialUrl.html">InPlayerSocialUrl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerSocialUrl/CodingKeys.html">– CodingKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerSubscription.html">InPlayerSubscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerSubscriptionList.html">InPlayerSubscriptionList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerTrialPeriod.html">InPlayerTrialPeriod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerUnauthorizedError.html">InPlayerUnauthorizedError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerUnknownError.html">InPlayerUnknownError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerVoucher.html">InPlayerVoucher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerVoucherRule.html">InPlayerVoucherRule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/JwPlayerAsset.html">JwPlayerAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KalturaAsset.html">KalturaAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LaolaAsset.html">LaolaAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LivestreamAsset.html">LivestreamAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/QbrickAsset.html">QbrickAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SportOneAsset.html">SportOneAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SportRadarAsset.html">SportRadarAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StreamAMGAsset.html">StreamAMGAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WitsiaAsset.html">WitsiaAsset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WowzaAsset.html">WowzaAsset</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>InPlayerGeoRestriction</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InPlayerGeoRestriction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Geo Restrictions model</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV2idSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV2idSiSgvp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV10countryISOSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/countryISO" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV10countryISOSSSgvp">countryISO</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">countryISO</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV12countrySetIdSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/countrySetId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV12countrySetIdSiSgvp">countrySetId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">countrySetId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV4typeSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV4typeSSSgvp">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV9createdAtSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/createdAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV9createdAtSdSgvp">createdAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">createdAt</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV9updatedAtSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/updatedAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV9updatedAtSdSgvp">updatedAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">updatedAt</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV4fromACs7Decoder_p_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV4fromACs7Decoder_p_tKcfc">init(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Decoder method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB14GeoRestrictionV6encode2toys7Encoder_p_tKF"></a>
+                    <a name="//apple_ref/swift/Method/encode(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB14GeoRestrictionV6encode2toys7Encoder_p_tKF">encode(to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encoder method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="nv">encoder</span><span class="p">:</span> <span class="kt">Encoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2020-05-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

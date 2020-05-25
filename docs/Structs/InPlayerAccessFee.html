@@ -14,7 +14,7 @@
     <a title="InPlayerAccessFee Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">InPlayerSDK Docs</a> (64% documented)</p>
+        <p><a href="../index.html">InPlayerSDK Docs</a> (65% documented)</p>
         <p class="header-right"><a href="https://github.com/inplayer-org/inplayer-ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -139,6 +139,9 @@
                 <a href="../Structs/InPlayerAccount.html">InPlayerAccount</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/InPlayerAgeRestriction.html">InPlayerAgeRestriction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/InPlayerAuthorization.html">InPlayerAuthorization</a>
               </li>
               <li class="nav-group-task">
@@ -151,7 +154,13 @@
                 <a href="../Structs/InPlayerCustomerPurchaseHistory.html">InPlayerCustomerPurchaseHistory</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/InPlayerExternalFee.html">InPlayerExternalFee</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/InPlayerFieldCountry.html">InPlayerFieldCountry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerGeoRestriction.html">InPlayerGeoRestriction</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/InPlayerHttpError.html">InPlayerHttpError</a>
@@ -187,6 +196,9 @@
                 <a href="../Structs/InPlayerRegisterField.html">InPlayerRegisterField</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/InPlayerSeasonalFee.html">InPlayerSeasonalFee</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/InPlayerSetupFee.html">InPlayerSetupFee</a>
               </li>
               <li class="nav-group-task">
@@ -209,6 +221,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/InPlayerUnknownError.html">InPlayerUnknownError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerVoucher.html">InPlayerVoucher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InPlayerVoucherRule.html">InPlayerVoucherRule</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/JwPlayerAsset.html">JwPlayerAsset</a>
@@ -254,7 +272,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Access fee model</p>
 
           </section>
           <section class="section task-group-section">
@@ -263,9 +281,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB9AccessFeeV10accessTypeAA0abdG0VSgvp"></a>
-                    <a name="//apple_ref/swift/Property/accessType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV10accessTypeAA0abdG0VSgvp">accessType</a>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV11voucherRuleAA0ab7VoucherG0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/voucherRule" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV11voucherRuleAA0ab7VoucherG0VSgvp">voucherRule</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -273,14 +291,68 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Access type model</p>
+                        <p>Voucher Rule</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">accessType</span><span class="p">:</span> <span class="kt"><a href="../Structs/InPlayerAccessType.html">InPlayerAccessType</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">voucherRule</span><span class="p">:</span> <span class="kt"><a href="../Structs/InPlayerVoucherRule.html">InPlayerVoucherRule</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV2idSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV2idSiSgvp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unique item ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV10merchantIdSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/merchantId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV10merchantIdSiSgvp">merchantId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unique merchant ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">merchantId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -354,7 +426,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The description for the asset’s fee</p>
+                        <p>The description of the asset</p>
 
                       </div>
                       <div class="declaration">
@@ -371,9 +443,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB9AccessFeeV2idSiSgvp"></a>
-                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV2idSiSgvp">id</a>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV4itemAA0aB4ItemVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/item" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV4itemAA0aB4ItemVSgvp">item</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -381,14 +453,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Fee ID</p>
+                        <p>Item model</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Structs/InPlayerItem.html">InPlayerItem</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -398,9 +470,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11InPlayerSDK0aB9AccessFeeV8itemTypeSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/itemType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV8itemTypeSSSgvp">itemType</a>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV10accessTypeAA0abdG0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/accessType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV10accessTypeAA0abdG0VSgvp">accessType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -408,68 +480,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Access type model</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">itemType</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11InPlayerSDK0aB9AccessFeeV10merchantIdSiSgvp"></a>
-                    <a name="//apple_ref/swift/Property/merchantId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV10merchantIdSiSgvp">merchantId</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Merchant ID</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">merchantId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11InPlayerSDK0aB9AccessFeeV8startsAtSdSgvp"></a>
-                    <a name="//apple_ref/swift/Property/startsAt" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV8startsAtSdSgvp">startsAt</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">startsAt</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">accessType</span><span class="p">:</span> <span class="kt"><a href="../Structs/InPlayerAccessType.html">InPlayerAccessType</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -489,8 +507,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The period when customers have access to the asset before deciding whether to subscribe
-Note: This only applies for the subscription model</p>
+                        <p>The number denoting the duration of the access</p>
 
                       </div>
                       <div class="declaration">
@@ -535,6 +552,141 @@ Note: This only applies for the subscription model</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV14geoRestrictionAA0ab3GeoG0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/geoRestriction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV14geoRestrictionAA0ab3GeoG0VSgvp">geoRestriction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Geo restriction model</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">geoRestriction</span><span class="p">:</span> <span class="kt"><a href="../Structs/InPlayerGeoRestriction.html">InPlayerGeoRestriction</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV08seasonalE0AA0ab8SeasonalE0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/seasonalFee" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV08seasonalE0AA0ab8SeasonalE0VSgvp">seasonalFee</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Seasonal fee model</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">seasonalFee</span><span class="p">:</span> <span class="kt"><a href="../Structs/InPlayerSeasonalFee.html">InPlayerSeasonalFee</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV12externalFeesSayAA0ab8ExternalE0VGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/externalFees" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV12externalFeesSayAA0ab8ExternalE0VGSgvp">externalFees</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">externalFees</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/InPlayerExternalFee.html">InPlayerExternalFee</a></span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV9expiresAtSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/expiresAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV9expiresAtSdSgvp">expiresAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The date the access expires, measured in seconds since 1 January 1970 (UTC) Note: This only applies for the custom access type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">expiresAt</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV8startsAtSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/startsAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV8startsAtSdSgvp">startsAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">startsAt</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:11InPlayerSDK0aB9AccessFeeV4fromACs7Decoder_p_tKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV4fromACs7Decoder_p_tKcfc">init(from:)</a>
@@ -559,12 +711,39 @@ Note: This only applies for the subscription model</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11InPlayerSDK0aB9AccessFeeV6encode2toys7Encoder_p_tKF"></a>
+                    <a name="//apple_ref/swift/Method/encode(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB9AccessFeeV6encode2toys7Encoder_p_tKF">encode(to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encoder method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="nv">encoder</span><span class="p">:</span> <span class="kt">Encoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2020-04-30)</p>
+          <p>&copy; 2020 <a class="link" href="https://inplayer.com/" target="_blank" rel="external">InPlayer</a>. All rights reserved. (Last updated: 2020-05-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

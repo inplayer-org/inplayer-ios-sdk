@@ -415,22 +415,113 @@
     },
     {
       "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
-      "line": 4,
-      "symbol": "InPlayerAccessFee",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
-      "line": 20,
-      "symbol": "InPlayerAccessFee.itemType",
+      "line": 43,
+      "symbol": "InPlayerAccessFee.externalFees",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessFee.swift",
-      "line": 24,
+      "line": 48,
       "symbol": "InPlayerAccessFee.startsAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessType.swift",
+      "line": 21,
+      "symbol": "InPlayerAccessType.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerAccessType.swift",
+      "line": 22,
+      "symbol": "InPlayerAccessType.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerExternalFee.swift",
+      "line": 11,
+      "symbol": "InPlayerExternalFee",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerExternalFee.swift",
+      "line": 13,
+      "symbol": "InPlayerExternalFee.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerExternalFee.swift",
+      "line": 14,
+      "symbol": "InPlayerExternalFee.paymentProviderId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerExternalFee.swift",
+      "line": 15,
+      "symbol": "InPlayerExternalFee.accessFeeId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerExternalFee.swift",
+      "line": 16,
+      "symbol": "InPlayerExternalFee.externalId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerExternalFee.swift",
+      "line": 17,
+      "symbol": "InPlayerExternalFee.merchantId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerGeoRestriction.swift",
+      "line": 12,
+      "symbol": "InPlayerGeoRestriction.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerGeoRestriction.swift",
+      "line": 13,
+      "symbol": "InPlayerGeoRestriction.countryISO",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerGeoRestriction.swift",
+      "line": 14,
+      "symbol": "InPlayerGeoRestriction.countrySetId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerGeoRestriction.swift",
+      "line": 15,
+      "symbol": "InPlayerGeoRestriction.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerGeoRestriction.swift",
+      "line": 16,
+      "symbol": "InPlayerGeoRestriction.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerGeoRestriction.swift",
+      "line": 17,
+      "symbol": "InPlayerGeoRestriction.updatedAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -569,7 +660,14 @@
     },
     {
       "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
-      "line": 75,
+      "line": 62,
+      "symbol": "InPlayerItem.active",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
+      "line": 79,
       "symbol": "InPlayerItem.metahash",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -599,6 +697,69 @@
       "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItemMetadata.swift",
       "line": 8,
       "symbol": "InPlayerItemMetadata.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerSeasonalFee.swift",
+      "line": 13,
+      "symbol": "InPlayerSeasonalFee.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerSeasonalFee.swift",
+      "line": 15,
+      "symbol": "InPlayerSeasonalFee.accessFeeId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerSeasonalFee.swift",
+      "line": 17,
+      "symbol": "InPlayerSeasonalFee.merchantId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerSeasonalFee.swift",
+      "line": 28,
+      "symbol": "InPlayerSeasonalFee.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerSeasonalFee.swift",
+      "line": 29,
+      "symbol": "InPlayerSeasonalFee.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerSetupFee.swift",
+      "line": 15,
+      "symbol": "InPlayerSetupFee.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerSetupFee.swift",
+      "line": 16,
+      "symbol": "InPlayerSetupFee.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerTrialPeriod.swift",
+      "line": 18,
+      "symbol": "InPlayerTrialPeriod.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerTrialPeriod.swift",
+      "line": 19,
+      "symbol": "InPlayerTrialPeriod.updatedAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
