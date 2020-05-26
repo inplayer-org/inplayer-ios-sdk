@@ -42,7 +42,7 @@ public extension InPlayer {
              - error: Containing information about the error that occurred.
          */
         public static func getAssetAccessFees(id: Int,
-                                              voucherId: Int?,
+                                              voucherId: Int? = nil,
                                               success: @escaping ([InPlayerAccessFee]) -> Void,
                                               failure: @escaping (InPlayerError) -> Void) {
             INPAssetService.getAssetAccessFees(id: id, voucherId: voucherId, completion: { (accessFees, error) in
