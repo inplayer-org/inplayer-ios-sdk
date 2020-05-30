@@ -56,9 +56,10 @@ public struct InPlayerItem : Codable {
     /// Merchant's UUID
     public let merchantUuid : String?
 
-    /// Shows whether the asset is active and can be monetized
+    /// Shows whether the asset is active and can be monetized. If nil, use the `active` property
     public let isActive : Bool?
     
+    /// Shows whether the asset is active and can be monetized. If nil, use the `is_active` property
     public let active : Bool?
 
     /// The asset’s title

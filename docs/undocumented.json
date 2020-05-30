@@ -660,14 +660,7 @@
     },
     {
       "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
-      "line": 62,
-      "symbol": "InPlayerItem.active",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/oliver/Documents/Work/SDK/Source/Core/Models/Asset/InPlayerItem.swift",
-      "line": 79,
+      "line": 80,
       "symbol": "InPlayerItem.metahash",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
