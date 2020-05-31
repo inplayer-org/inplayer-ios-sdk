@@ -24,6 +24,8 @@ public struct InPlayerAccessFee : Codable {
     /// Item model
     public let item: InPlayerItem?
     
+    public let itemType: String?
+    
     /// Access type model
     public let accessType : InPlayerAccessType?
     
@@ -64,6 +66,7 @@ public struct InPlayerAccessFee : Codable {
         case expiresAt = "expires_at"
         case externalFees = "external_fees"
         case startsAt = "starts_at"
+        case itemType = "item_type"
     }
 
     /// Decoder Method
@@ -84,6 +87,7 @@ public struct InPlayerAccessFee : Codable {
         expiresAt = try values.decodeIfPresent(Double.self, forKey: .expiresAt)
         externalFees = try values.decodeIfPresent([InPlayerExternalFee].self, forKey: .externalFees)
         startsAt = try values.decodeIfPresent(Double.self, forKey: .startsAt)
+        itemType = try values.decodeIfPresent(String.self, forKey: .itemType)
     }
     
     /// Encoder method
@@ -104,6 +108,7 @@ public struct InPlayerAccessFee : Codable {
         try values.encodeIfPresent(expiresAt, forKey: .expiresAt)
         try values.encodeIfPresent(externalFees, forKey: .externalFees)
         try values.encodeIfPresent(startsAt, forKey: .startsAt)
+        try values.encodeIfPresent(itemType, forKey: .itemType)
     }
 
 }
