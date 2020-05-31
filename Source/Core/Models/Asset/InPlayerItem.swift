@@ -74,6 +74,9 @@ public struct InPlayerItem : Codable {
     /// Age Restriction object
     public let ageRestriction: InPlayerAgeRestriction?
     
+    /// List of access fees
+    public let accessFees: [InPlayerAccessFee]?
+    
     /// Object containing additional information about the item
     public let metadata : [InPlayerItemMetadata]?
     
@@ -107,6 +110,7 @@ public struct InPlayerItem : Codable {
         case content = "content"
         case templateId = "template_id"
         case ageRestriction = "age_restriction"
+        case accessFees = "access_fees"
     }
 
     /// Decoder method
@@ -127,6 +131,7 @@ public struct InPlayerItem : Codable {
         templateId = try values.decodeIfPresent(Int.self, forKey: .templateId)
         ageRestriction = try values.decodeIfPresent(InPlayerAgeRestriction.self, forKey: .ageRestriction)
         active = try values.decodeIfPresent(Bool.self, forKey: .active)
+        accessFees = try values.decodeIfPresent([InPlayerAccessFee].self, forKey: .accessFees)
     }
     
     /// Encoder method
@@ -147,6 +152,7 @@ public struct InPlayerItem : Codable {
         try values.encodeIfPresent(templateId, forKey: .templateId)
         try values.encodeIfPresent(ageRestriction, forKey: .ageRestriction)
         try values.encodeIfPresent(active, forKey: .active)
+        try values.encodeIfPresent(accessFees, forKey: .accessFees)
     }
     
     /// Method that return parsed content as enum with associated values
