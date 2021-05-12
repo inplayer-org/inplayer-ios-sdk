@@ -2,11 +2,11 @@ import Foundation
 
 /// Subscription List Server Response Model
 public struct InPlayerSubscriptionList: Codable {
-    let collection : [InPlayerSubscription]
-    let limit : Int?
-    let offset : Int?
-    let page : Int?
-    let total : Int?
+    public let collection : [InPlayerSubscription]
+    public let limit : Int?
+    public let offset : Int?
+    public let page : Int?
+    public let total : Int?
 
     enum CodingKeys: String, CodingKey {
         case collection = "collection"
