@@ -25,5 +25,4 @@ public struct InPlayerSubscriptionList: Codable {
         page = try values.decodeIfPresent(Int.self, forKey: .page)
         total = try values.decodeIfPresent(Int.self, forKey: .total)
     }
-
 }
