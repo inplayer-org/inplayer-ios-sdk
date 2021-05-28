@@ -21,15 +21,15 @@ public struct InPlayerSubscription: Codable {
         case cancelToken = "cancel_token"
         case status = "status"
         case description = "description"
-        case assetTitle = "asset_title"
-        case assetId = "asset_id"
+        case assetTitle = "item_title"
+        case assetId = "item_id"
         case formattedAmount = "formatted_amount"
         case amount = "amount"
         case currency = "currency"
         case merchantId = "merchant_id"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        case nextBillingDate = "next_billing_date"
+        case nextBillingDate = "next_rebill_date"
         case unsubscribeUrl = "unsubscribe_url"
     }
 
