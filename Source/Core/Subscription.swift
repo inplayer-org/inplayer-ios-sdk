@@ -12,14 +12,14 @@ public extension InPlayer {
         /**
          Gets all subscriptions for a given user
          - Parameters:
-             - page: Number of page. Defauls to 1.
+             - page: Number of page. Defauls to 0.
              - limit: Number of items per page. Defaults to 10.
              - success: A closure to be executed once the request has finished successfully.
              - subscriptionList: Model containing pagination info and a list of subscriptions.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
-        public static func getSubscriptions(page: Int = 1,
+        public static func getSubscriptions(page: Int = 0,
                                             limit: Int = 10,
                                             success: @escaping (_ subscriptionList: InPlayerSubscriptionList) -> Void,
                                             failure: @escaping (_ error: InPlayerError) -> Void) {
