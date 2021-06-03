@@ -4,7 +4,6 @@ import Foundation
 public struct InPlayerSubscription: Codable {
 
     public let cancelToken: String?
-    public let status: String?
     public let description: String?
     public let assetTitle: String?
     public let assetId: Int?
@@ -19,12 +18,11 @@ public struct InPlayerSubscription: Codable {
 
     enum CodingKeys: String, CodingKey {
         case cancelToken = "cancel_token"
-        case status = "status"
         case description = "description"
         case assetTitle = "item_title"
         case assetId = "item_id"
         case formattedAmount = "formatted_amount"
-        case amount = "amount"
+        case amount = "charged_amount"
         case currency = "currency"
         case merchantId = "merchant_id"
         case createdAt = "created_at"
@@ -37,7 +35,6 @@ public struct InPlayerSubscription: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         cancelToken = try values.decodeIfPresent(String.self, forKey: .cancelToken)
-        status = try values.decodeIfPresent(String.self, forKey: .status)
         description = try values.decodeIfPresent(String.self, forKey: .description)
         assetTitle = try values.decodeIfPresent(String.self, forKey: .assetTitle)
         assetId = try values.decodeIfPresent(Int.self, forKey: .assetId)
