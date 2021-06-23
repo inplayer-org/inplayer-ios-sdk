@@ -466,7 +466,11 @@ private enum AccountAPIRouter: INPAPIConfiguration {
         guard let parameters = parameters else { return urlRequest }
         if urlEncoding {
             do {
-                urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+                if method == .delete {
+                    urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
+                } else {
+                    urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+                }
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
