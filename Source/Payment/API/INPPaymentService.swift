@@ -6,6 +6,7 @@ class INPPaymentService {
 
     static func validate(receiptString: String,
                          productIdentifier: String,
+                         brandingId: Int?,
                          completion: @escaping RequestCompletion<Empty>) {
 
         let productComponents = productIdentifier.components(separatedBy: "_")
@@ -27,11 +28,16 @@ class INPPaymentService {
             let accessFeeId = Int(productComponents[1]) else {
                 return completion(nil, inpError)
         }
-        let params: [String: Any] = [
+        var params: [String: Any] = [
             PaymentParameters.receipt: receiptString,
             PaymentParameters.itemId: itemId,
             PaymentParameters.accessFeeId: accessFeeId
         ]
+        
+        if let brandingID = brandingId {
+            params[PaymentParameters.brandingID] = brandingID
+        }
+        
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: PaymentAPIRouter.validatePayment(parameters: params),
                                          completion: completion)
@@ -135,4 +141,5 @@ private struct PaymentParameters {
     static let type = "type"
     static let customerId = "customerID"
     static let productName = "product_name"
+    static let brandingID = "branding_id"
 }

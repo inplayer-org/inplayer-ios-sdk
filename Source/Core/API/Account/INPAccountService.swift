@@ -8,6 +8,7 @@ class INPAccountService {
                        email: String,
                        password: String,
                        passwordConfirmation: String,
+                       brandingId: Int?,
                        metadata: [String: Any]?,
                        completion: @escaping RequestCompletion<InPlayerAuthorization>) {
         var params: [String: Any] = [
@@ -24,6 +25,10 @@ class INPAccountService {
         }
         if let metadata = metadata {
             params[AccountParameters.metadata] = metadata
+        }
+        
+        if let brandingID = brandingId {
+            params[AccountParameters.brandingID] = brandingID
         }
 
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
@@ -96,20 +101,34 @@ class INPAccountService {
     static func changePassword(oldPassword: String,
                                newPassword: String,
                                newPasswordConfirmation: String,
+                               brandingId: Int?,
                                completion: @escaping RequestCompletion<Empty>) {
-        let params: [String: Any] = [
+        var params: [String: Any] = [
             AccountParameters.oldPassword: oldPassword,
             AccountParameters.password: newPassword,
-            AccountParameters.passwordConfirmation: newPasswordConfirmation
+            AccountParameters.passwordConfirmation: newPasswordConfirmation,
         ]
+        
+        if let brandingID = brandingId {
+            params[AccountParameters.brandingID] = brandingID
+        }
+        
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.changePassword(parameters: params),
                                          completion: completion)
     }
 
     static func deleteAccount(password: String,
+                              brandingId: Int?,
                               completion: @escaping RequestCompletion<Empty>) {
-        let params = [AccountParameters.password: password]
+        var params : [String: Any] = [
+            AccountParameters.password: password
+        ]
+        
+        if let brandingID = brandingId {
+            params[AccountParameters.brandingID] = brandingID
+        }
+        
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.eraseAccount(parameters: params),
                                          completion: { (empty: Empty?, error: InPlayerError?) in
@@ -122,11 +141,17 @@ class INPAccountService {
     static func setNewPassword(token: String,
                                password: String,
                                passwordConfirmation: String,
+                               brandingId: Int?,
                                completion: @escaping RequestCompletion<Empty>) {
-        let params = [
+        var params : [String: Any] = [
             AccountParameters.password: password,
             AccountParameters.passwordConfirmation: passwordConfirmation
         ]
+        
+        if let brandingID = brandingId {
+            params[AccountParameters.brandingID] = brandingID
+        }
+        
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.setNewPassword(token: token,
                                                                                 parameters: params),
@@ -134,11 +159,17 @@ class INPAccountService {
     }
 
     static func requestNewPassword(email: String,
+                                   brandingId: Int?,
                                    completion: @escaping RequestCompletion<Empty>) {
-        let params = [
+        var params : [String: Any] = [
             AccountParameters.merchantUUID: InPlayer.clientId,
             AccountParameters.email: email
         ]
+            
+        if let brandingID = brandingId {
+            params[AccountParameters.brandingID] = brandingID
+        }
+        
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.forgotPassword(parameters: params),
                                          completion: completion)
@@ -176,8 +207,14 @@ class INPAccountService {
         })
     }
 
-    static func exportData(password: String, completion: @escaping RequestCompletion<Empty>) {
-        let params = [AccountParameters.password: password]
+    static func exportData(password: String, brandingId: Int?, completion: @escaping RequestCompletion<Empty>) {
+        
+        var params : [String: Any] = [AccountParameters.password: password]
+        
+        if let brandingID = brandingId {
+            params[AccountParameters.brandingID] = brandingID
+        }
+        
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: AccountAPIRouter.exportData(parameters: params),
                                          completion: completion)

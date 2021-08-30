@@ -61,6 +61,7 @@ public extension InPlayer {
              - password: Password containing minimum 8 characters
              - passwordConfirmation: The same password with minimum 8 characters
              - metadata: Additional information about the account that can be attached to the account object
+             - brandingID: Optional parameter - system branding theme ID
              - success: A closure to be executed once the request has finished successfully.
              - authorization: Authorization model containing info regarding token and account
              - failure: A closure to be executed once the request has finished with error.
@@ -70,6 +71,7 @@ public extension InPlayer {
                                   email: String,
                                   password: String,
                                   passwordConfirmation: String,
+                                  brandingID: Int? = nil,
                                   metadata: [String: Any]? = nil,
                                   success: @escaping (_ authorization: InPlayerAuthorization) -> Void,
                                   failure: @escaping (_ error: InPlayerError) -> Void) {
@@ -77,6 +79,7 @@ public extension InPlayer {
                                      email: email,
                                      password: password,
                                      passwordConfirmation: passwordConfirmation,
+                                     brandingId: brandingID,
                                      metadata: metadata,
                                      completion: { (authorization, error) in
                                         if let error = error {
@@ -180,6 +183,7 @@ public extension InPlayer {
              - oldPassword: Account's old password.
              - newPassword: The account's new password
              - newPasswordConfirmation: The account's new password for confirmation.
+             - brandingID: Optional parameter - system branding theme ID
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
@@ -187,11 +191,13 @@ public extension InPlayer {
         public static func changePassword(oldPassword: String,
                                           newPassword: String,
                                           newPasswordConfirmation: String,
+                                          brandingID: Int? = nil,
                                           success: @escaping () -> Void,
                                           failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.changePassword(oldPassword: oldPassword,
                                              newPassword: newPassword,
                                              newPasswordConfirmation: newPasswordConfirmation,
+                                             brandingId: brandingID,
                                              completion: { (_, error) in
                                                 if let error = error {
                                                     failure(error)
@@ -205,14 +211,16 @@ public extension InPlayer {
          Deletes account and all information stored with it.
          - Parameters:
              - password: Password confirmation.
+             - brandingID: Optional parameter - system branding theme ID
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
         public static func deleteAccount(password: String,
+                                         brandingID: Int? = nil,
                                          success: @escaping () -> Void,
                                          failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.deleteAccount(password: password, completion: { (_, error) in
+            INPAccountService.deleteAccount(password: password, brandingId: brandingID, completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -227,6 +235,7 @@ public extension InPlayer {
              - token: The forgot password token sent to your email address.
              - password: The account’s new password.
              - passwordConfirmation: The password confirmation.
+             - brandingID: Optional parameter - system branding theme ID
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
@@ -234,11 +243,13 @@ public extension InPlayer {
         public static func setNewPassword(token: String,
                                           password: String,
                                           passwordConfirmation: String,
+                                          brandingID: Int? = nil,
                                           success: @escaping () -> Void,
                                           failure: @escaping (_ error: InPlayerError) -> Void) {
             INPAccountService.setNewPassword(token: token,
                                              password: password,
                                              passwordConfirmation: passwordConfirmation,
+                                             brandingId: brandingID,
                                              completion: { (_, error) in
                                                 if let error = error {
                                                     failure(error)
@@ -252,14 +263,16 @@ public extension InPlayer {
          Sends forgot password instructions on specified email.
          - Parameters:
              - email: Account’s email address.
+             - brandingID: Optional parameter - system branding theme ID
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
         public static func requestNewPassword(email: String,
+                                              brandingID: Int? = nil,
                                               success: @escaping () -> Void,
                                               failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.requestNewPassword(email: email, completion: { (_, error) in
+            INPAccountService.requestNewPassword(email: email, brandingId: brandingID, completion: { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
@@ -295,14 +308,16 @@ public extension InPlayer {
          Exports account data such as logins, payments, subscriptions, access to assets etc. After invoking the request the account will receive the data in a json format via e-mail.
          - Parameters:
              - password: Password of the current logged user
+             - brandingID: Optional parameter - system branding theme ID
              - success: A closure to be executed once the request has finished successfully.
              - failure: A closure to be executed once the request has finished with error.
              - error: Containing information about the error that occurred.
          */
         public static func exportData(password: String,
+                                      brandingID: Int? = nil,
                                       success: @escaping () -> Void,
                                       failure: @escaping (_ error: InPlayerError) -> Void) {
-            INPAccountService.exportData(password: password) { (_, error) in
+            INPAccountService.exportData(password: password, brandingId: brandingID) { (_, error) in
                 if let error = error {
                     failure(error)
                 } else {
