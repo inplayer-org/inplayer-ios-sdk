@@ -278,7 +278,7 @@ class INPAccountService {
         }
         
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
-                                         route: AccountAPIRouter.getSocialURLs(parameters: params),
+                                         route: AccountAPIRouter.sendPinCode(parameters: params),
                                          completion: completion)
     }
     
