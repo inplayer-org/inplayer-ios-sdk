@@ -393,7 +393,7 @@
                     <code>
                     <a name="/s:11InPlayerSDK0aB0C7PaymentC21validateByProductName07productH07receipt7success7failureySS_SSyycyAA0aB5Error_pctFZ"></a>
                     <a name="//apple_ref/swift/Method/validateByProductName(productName:receipt:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11InPlayerSDK0aB0C7PaymentC21validateByProductName07productH07receipt7success7failureySS_SSyycyAA0aB5Error_pctFZ">validateByProductName(productName:receipt:success:failure:)</a>
+                    <a class="token" href="#/s:11InPlayerSDK0aB0C7PaymentC21validateByProductName07productH07receipt7success7failureySS_SSyycyAA0aB5Error_pctFZ">validateByProductName(productName:receipt:brandingID:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -410,6 +410,7 @@
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">validateByProductName</span><span class="p">(</span><span class="nv">productName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
                                          <span class="nv">receipt</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                         <span class="nv">brandingID</span><span class="p">:</span> <span class="kt">Int?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                                          <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
                                          <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/InPlayerError.html">InPlayerError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
@@ -440,6 +441,18 @@
                               <td>
                                 <div>
                                   <p>Base64EncodedString of the recept data stored on device after successfull in-app purchase.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>brandingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional parameter - system branding theme ID</p>
                                 </div>
                               </td>
                             </tr>
