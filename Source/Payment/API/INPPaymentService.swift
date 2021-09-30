@@ -45,11 +45,17 @@ class INPPaymentService {
     
     static func validateByProductName(productName: String,
                                       receipt: String,
+                                      brandingId: Int?,
                                       completion: @escaping RequestCompletion<Empty>) {
-        let params: [String: Any] = [
+        var params: [String: Any] = [
             PaymentParameters.receipt: receipt,
             PaymentParameters.productName: productName
         ]
+        
+        if let brandingID = brandingId {
+            params[PaymentParameters.brandingID] = brandingID
+        }
+        
         NetworkDataSource.performRequest(session: InPlayerSessionAPIManager.default.session,
                                          route: PaymentAPIRouter.validatePaymentByProductName(parameters: params),
                                          completion: completion)

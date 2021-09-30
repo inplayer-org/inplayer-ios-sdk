@@ -40,6 +40,7 @@ public extension InPlayer {
          - Parameters:
             - productName: Purchased product name
             - receipt: Base64EncodedString of the recept data stored on device after successfull in-app purchase.
+            - brandingID: Optional parameter - system branding theme ID
             - success: A closure to be executed once the request has finished successfully.
             - failure: A closure to be executed once the request has finished with error.
             - error: Containing information about the error that occurred.
@@ -47,10 +48,12 @@ public extension InPlayer {
         
         public static func validateByProductName(productName: String,
                                                  receipt: String,
+                                                 brandingID: Int? = nil,
                                                  success: @escaping () -> Void,
                                                  failure: @escaping (_ error: InPlayerError) -> Void) {
             INPPaymentService.validateByProductName(productName: productName,
                                                     receipt: receipt,
+                                                    brandingId: brandingID,
                                                     completion: { (_, error) in
                 if let error = error {
                     failure(error)
