@@ -8,6 +8,6 @@ extension NetworkConstants.BaseUrls {
     }
 
     struct AWS {
-        static let endpoint = "a3gkl64duktvc4.iot.eu-west-1.amazonaws.com" // hc aws endpoint
+        static let endpoint = "a3gkl64duktvc4-ats.iot.eu-west-1.amazonaws.com" // hc aws endpoint
     }
 }
