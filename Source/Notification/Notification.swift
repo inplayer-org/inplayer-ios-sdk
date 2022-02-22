@@ -14,7 +14,7 @@ public extension InPlayer {
              - onStatusChanged: A closure to be executed everytime when connection status change occurs.
              - status: `InPlayerNotificationStatus` enum that shows current connection status
              - onMessageReceived: A closure to be executed everytime new notification is sent from the server.
-             - notification: `InPlayerNotification` struct optionally containing associated values depending on the type enum.
+             - notification: `InPlayerNotification` struct optionally containing associated values depending on the type enum. Default Notification with type if Notification is undefined
              - onError: A closure to be executed when some error occurred.
              - error: `InPlayerError` containing info about the error that occurred.
          */
