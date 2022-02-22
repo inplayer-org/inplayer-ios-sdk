@@ -17,7 +17,7 @@ public enum NotificationType {
     case accountLogout
     case accountErased
     case accountDeactivated
-    case unknown
+    case defaultNotification(type: String)
 }
 
 /// InPlayer Notification
@@ -37,7 +37,7 @@ public struct InPlayerNotification: Codable {
         static let accountLogout = "account.logout"
         static let accountErased = "account.erased"
         static let accountDeactivated = "account.deactivated"
-        static let unknown = "unknown"
+        static let defaultNotification = "default"
     }
 
     /// Decoder method
@@ -60,11 +60,7 @@ public struct InPlayerNotification: Codable {
         case NotificationTypeStrings.accountDeactivated:
             type = .accountDeactivated
         default:
-            type = .unknown
-            let error = NSError(domain: "Error",
-                                code: 0,
-                                userInfo: [NSLocalizedDescriptionKey: "Unsupported notification type"])
-            throw error
+            type = .defaultNotification(type: typeString)
         }
     }
 
@@ -86,7 +82,7 @@ public struct InPlayerNotification: Codable {
         case .accountDeactivated:
             try values.encode(NotificationTypeStrings.accountDeactivated, forKey: .typeString)
         default:
-            try values.encode(NotificationTypeStrings.unknown, forKey: .typeString)
+            try values.encode(NotificationTypeStrings.defaultNotification, forKey: .typeString)
         }
     }
 }
