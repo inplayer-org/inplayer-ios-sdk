@@ -13,12 +13,12 @@ public struct InPlayerPaymentSuccess: Codable {
     public var previewTitle: String?
     public var accessFeeId: Int?
     public var transaction: String?
-    public var decsription: String?
+    public var description: String?
     public var email: String?
     public var customerId: Int?
     public var formattedAmount: String?
-    public var amount: Double?
-    public var fullAmount: Double?
+    public var amount: String?
+    public var fullAmount: String?
     public var nextBillingDate: Double?
     public var paymentMethod: String?
     public var currency: String?
@@ -33,7 +33,7 @@ public struct InPlayerPaymentSuccess: Codable {
         case previewTitle
         case accessFeeId = "access_fee_id"
         case transaction
-        case decsription
+        case description
         case email
         case customerId = "customer_id"
         case formattedAmount = "formatted_amount"
@@ -56,12 +56,12 @@ public struct InPlayerPaymentSuccess: Codable {
         previewTitle = try values.decodeIfPresent(String.self, forKey: .previewTitle)
         accessFeeId = try values.decodeIfPresent(Int.self, forKey: .accessFeeId)
         transaction = try values.decodeIfPresent(String.self, forKey: .transaction)
-        decsription = try values.decodeIfPresent(String.self, forKey: .decsription)
+        description = try values.decodeIfPresent(String.self, forKey: .description)
         email = try values.decodeIfPresent(String.self, forKey: .email)
         customerId = try values.decodeIfPresent(Int.self, forKey: .customerId)
         formattedAmount = try values.decodeIfPresent(String.self, forKey: .formattedAmount)
-        amount = try values.decodeIfPresent(Double.self, forKey: .amount)
-        fullAmount = try values.decodeIfPresent(Double.self, forKey: .fullAmount)
+        amount = try values.decodeIfPresent(String.self, forKey: .amount)
+        fullAmount = try values.decodeIfPresent(String.self, forKey: .fullAmount)
         nextBillingDate = try values.decodeIfPresent(Double.self, forKey: .nextBillingDate)
         paymentMethod = try values.decodeIfPresent(String.self, forKey: .paymentMethod)
         currency = try values.decodeIfPresent(String.self, forKey: .currency)
