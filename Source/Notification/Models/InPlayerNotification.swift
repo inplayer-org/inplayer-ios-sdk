@@ -7,6 +7,7 @@ import Foundation
  case accessRevoked(resource: INPItemRevokedModel)
  case externalPaymentSuccess(resource: INPPaymentSuccessModel)
  case externalPaymentFailed(resource: INPExternalPaymentFailedModel)
+ case externalSubscribeCancelSuccess(resource: INPPaymentSuccessModel)
  case accountLogout
  case accountErased
  case accountDeactivated
@@ -18,6 +19,7 @@ public enum NotificationType {
     case accessRevoked(resource: InPlayerItemRevoked)
     case externalPaymentSuccess(resource: InPlayerPaymentSuccess)
     case externalPaymentFailed(resource: InPlayerExternalPaymentFailed)
+    case externalSubscribeCancelSuccess(resource: InPlayerPaymentSuccess)
     case accountLogout
     case accountErased
     case accountDeactivated
@@ -40,6 +42,7 @@ public struct InPlayerNotification: Codable {
         static let accessRevoked = "access.revoked"
         static let externalPaymentSuccess = "external.payment.success"
         static let externalPaymentFailed = "external.payment.failed"
+        static let externalSubscribeCancelSuccess = "external.subscribe.cancel.success"
         static let accountLogout = "account.logout"
         static let accountErased = "account.erased"
         static let accountDeactivated = "account.deactivated"
@@ -65,6 +68,9 @@ public struct InPlayerNotification: Codable {
         case NotificationTypeStrings.externalPaymentFailed:
             let resource = try values.decode(InPlayerExternalPaymentFailed.self, forKey: .resource)
             type = .externalPaymentFailed(resource: resource)
+        case NotificationTypeStrings.externalSubscribeCancelSuccess:
+            let resource = try values.decode(InPlayerPaymentSuccess.self, forKey: .resource)
+            type = .externalSubscribeCancelSuccess(resource: resource)
         case NotificationTypeStrings.accountLogout:
             type = .accountLogout
         case NotificationTypeStrings.accountErased:
@@ -93,6 +99,9 @@ public struct InPlayerNotification: Codable {
         case .externalPaymentFailed(let resource):
             try values.encode(resource, forKey: .resource)
             try values.encode(NotificationTypeStrings.externalPaymentFailed, forKey: .typeString)
+        case .externalSubscribeCancelSuccess(let resource):
+            try values.encode(resource, forKey: .resource)
+            try values.encode(NotificationTypeStrings.externalSubscribeCancelSuccess, forKey: .typeString)
         case .accountLogout:
             try values.encode(NotificationTypeStrings.accountLogout, forKey: .typeString)
         case .accountErased:

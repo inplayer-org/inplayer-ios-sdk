@@ -18,10 +18,15 @@ public struct InPlayerPaymentSuccess: Codable {
     public var customerId: Int?
     public var formattedAmount: String?
     public var amount: Double?
+    public var fullAmount: Double?
+    public var nextBillingDate: Double?
+    public var paymentMethod: String?
     public var currency: String?
     public var status: String?
+    public var voucherCode: String?
     public var timestamp: Double?
     public var code: Int?
+    public var discountPercent: Int?
     
     private enum CodingKeys: String, CodingKey {
         case itemId = "item_id"
@@ -33,10 +38,15 @@ public struct InPlayerPaymentSuccess: Codable {
         case customerId = "customer_id"
         case formattedAmount = "formatted_amount"
         case amount
+        case fullAmount = "full_amount"
+        case nextBillingDate = "next_rebill_date"
+        case paymentMethod = "payment_method"
         case currency = "currency_iso"
         case status
+        case voucherCode = "voucher_code"
         case timestamp
         case code
+        case discountPercent = "discount_percent"
     }
 
     /// Decoder method
@@ -51,9 +61,14 @@ public struct InPlayerPaymentSuccess: Codable {
         customerId = try values.decodeIfPresent(Int.self, forKey: .customerId)
         formattedAmount = try values.decodeIfPresent(String.self, forKey: .formattedAmount)
         amount = try values.decodeIfPresent(Double.self, forKey: .amount)
+        fullAmount = try values.decodeIfPresent(Double.self, forKey: .fullAmount)
+        nextBillingDate = try values.decodeIfPresent(Double.self, forKey: .nextBillingDate)
+        paymentMethod = try values.decodeIfPresent(String.self, forKey: .paymentMethod)
         currency = try values.decodeIfPresent(String.self, forKey: .currency)
         status = try values.decodeIfPresent(String.self, forKey: .status)
+        voucherCode = try values.decodeIfPresent(String.self, forKey: .voucherCode)
         timestamp = try values.decodeIfPresent(Double.self, forKey: .timestamp)
         code = try values.decodeIfPresent(Int.self, forKey: .code)
+        discountPercent = try values.decodeIfPresent(Int.self, forKey: .discountPercent)
     }
 }
