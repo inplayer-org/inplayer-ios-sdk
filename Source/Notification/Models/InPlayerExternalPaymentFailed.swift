@@ -11,7 +11,7 @@ import Foundation
 public struct InPlayerExternalPaymentFailed: Codable {
     public var message: String?
     public var explain: String?
-    public var code: String?
+    public var code: Int?
 
     private enum CodingKeys: String, CodingKey {
         case message
@@ -24,6 +24,6 @@ public struct InPlayerExternalPaymentFailed: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         message = try values.decodeIfPresent(String.self, forKey: .message)
         explain = try values.decodeIfPresent(String.self, forKey: .explain)
-        code = try values.decodeIfPresent(String.self, forKey: .code)
+        code = try values.decodeIfPresent(Int.self, forKey: .code)
     }
 }
