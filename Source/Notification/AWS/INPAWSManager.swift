@@ -70,9 +70,11 @@ extension INPAWSManager {
     // MARK: - Private
 
     private static func setupAWSConfiguration() {
-        guard let awsKeys = awsKeys, let endpoint = awsKeys.iotEndpoint else { return }
+        guard let awsKeys = awsKeys else { return }
+        let endpoint = awsKeys.iotEndpoint ?? NetworkConstants.BaseUrls.AWS.endpoint
+        
         let credentialsProvider = INPCredentialProvider(awsKeys: awsKeys)
-        let iotEndpoint = AWSEndpoint(urlString: "https://" + NetworkConstants.BaseUrls.AWS.endpoint) //  AWSEndpoint(urlString: "https://" + endpoint)
+        let iotEndpoint = AWSEndpoint(urlString: "https://" + endpoint) //  AWSEndpoint(urlString: "https://" + endpoint)
         let awsConfiguration = AWSServiceConfiguration(region: awsKeys.getAwsRegion(),
                                                        endpoint: iotEndpoint,
                                                        credentialsProvider: credentialsProvider)!

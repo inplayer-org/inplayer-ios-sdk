@@ -5,19 +5,25 @@ import Foundation
  ```
  case accessGranted(resource: INPItemAccessModel)
  case accessRevoked(resource: INPItemRevokedModel)
+ case externalPaymentSuccess(resource: INPPaymentSuccessModel)
+ case externalPaymentFailed(resource: INPExternalPaymentFailedModel)
+ case externalSubscribeCancelSuccess(resource: INPPaymentSuccessModel)
  case accountLogout
  case accountErased
  case accountDeactivated
- case unknown
+ case defaultNotification(type: String)
  ```
 */
 public enum NotificationType {
     case accessGranted(resource: InPlayerItemAccess)
     case accessRevoked(resource: InPlayerItemRevoked)
+    case externalPaymentSuccess(resource: InPlayerPaymentSuccess)
+    case externalPaymentFailed(resource: InPlayerExternalPaymentFailed)
+    case externalSubscribeCancelSuccess(resource: InPlayerPaymentSuccess)
     case accountLogout
     case accountErased
     case accountDeactivated
-    case unknown
+    case defaultNotification(type: String)
 }
 
 /// InPlayer Notification
@@ -34,10 +40,13 @@ public struct InPlayerNotification: Codable {
     private struct NotificationTypeStrings {
         static let accessGranted = "access.granted"
         static let accessRevoked = "access.revoked"
+        static let externalPaymentSuccess = "external.payment.success"
+        static let externalPaymentFailed = "external.payment.failed"
+        static let externalSubscribeCancelSuccess = "external.subscribe.cancel.success"
         static let accountLogout = "account.logout"
         static let accountErased = "account.erased"
         static let accountDeactivated = "account.deactivated"
-        static let unknown = "unknown"
+        static let defaultNotification = "default"
     }
 
     /// Decoder method
@@ -53,6 +62,15 @@ public struct InPlayerNotification: Codable {
         case NotificationTypeStrings.accessRevoked:
             let resource = try values.decode(InPlayerItemRevoked.self, forKey: .resource)
             type = .accessRevoked(resource: resource)
+        case NotificationTypeStrings.externalPaymentSuccess:
+            let resource = try values.decode(InPlayerPaymentSuccess.self, forKey: .resource)
+            type = .externalPaymentSuccess(resource: resource)
+        case NotificationTypeStrings.externalPaymentFailed:
+            let resource = try values.decode(InPlayerExternalPaymentFailed.self, forKey: .resource)
+            type = .externalPaymentFailed(resource: resource)
+        case NotificationTypeStrings.externalSubscribeCancelSuccess:
+            let resource = try values.decode(InPlayerPaymentSuccess.self, forKey: .resource)
+            type = .externalSubscribeCancelSuccess(resource: resource)
         case NotificationTypeStrings.accountLogout:
             type = .accountLogout
         case NotificationTypeStrings.accountErased:
@@ -60,11 +78,7 @@ public struct InPlayerNotification: Codable {
         case NotificationTypeStrings.accountDeactivated:
             type = .accountDeactivated
         default:
-            type = .unknown
-            let error = NSError(domain: "Error",
-                                code: 0,
-                                userInfo: [NSLocalizedDescriptionKey: "Unsupported notification type"])
-            throw error
+            type = .defaultNotification(type: typeString)
         }
     }
 
@@ -79,6 +93,15 @@ public struct InPlayerNotification: Codable {
         case .accessRevoked(let resource):
             try values.encode(resource, forKey: .resource)
             try values.encode(NotificationTypeStrings.accessRevoked, forKey: .typeString)
+        case .externalPaymentSuccess(let resource):
+            try values.encode(resource, forKey: .resource)
+            try values.encode(NotificationTypeStrings.externalPaymentSuccess, forKey: .typeString)
+        case .externalPaymentFailed(let resource):
+            try values.encode(resource, forKey: .resource)
+            try values.encode(NotificationTypeStrings.externalPaymentFailed, forKey: .typeString)
+        case .externalSubscribeCancelSuccess(let resource):
+            try values.encode(resource, forKey: .resource)
+            try values.encode(NotificationTypeStrings.externalSubscribeCancelSuccess, forKey: .typeString)
         case .accountLogout:
             try values.encode(NotificationTypeStrings.accountLogout, forKey: .typeString)
         case .accountErased:
@@ -86,7 +109,7 @@ public struct InPlayerNotification: Codable {
         case .accountDeactivated:
             try values.encode(NotificationTypeStrings.accountDeactivated, forKey: .typeString)
         default:
-            try values.encode(NotificationTypeStrings.unknown, forKey: .typeString)
+            try values.encode(NotificationTypeStrings.defaultNotification, forKey: .typeString)
         }
     }
 }
