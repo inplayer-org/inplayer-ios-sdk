@@ -1,3 +1,6 @@
+**THIS REPOSITORY IS MOVED TO GITLAB**
+
+
 <h1 align="center">
   <a target="_blank" href="https://inplayer-org.github.io/inplayer-ios-sdk/">
     <img src="https://assets.inplayer.com/images/inplayer-256.png" alt="inplayer-ios-sdk" title="InPlayer iOS SDK" width="300">
